@@ -8,11 +8,11 @@ url: "http://munjeongkang.github.io"
 author:
   name     : 'Munjeong Kang'
   email    : mj0225868@gmail.com
-  url      : http://munjeongkang.github.io
 
-github: http://munjeongkang.github.io
-disqus_shortname: "fernandomoreira"
-google_analytics: UA-52446115-1
+mylab: https://github.com/hufsoptblog/hufsoptblog.github.io
+
+#disqus_shortname: "fernandomoreira"
+#google_analytics: UA-52446115-1
 
 paginate: 2
 comments: true
@@ -25,3 +25,6 @@ sass:
 # Build settings
 markdown  : kramdown
 permalink : /:title/
+
+disqus_url : http://disqus.com/by/munjeong 
+disqus_id : munjeong
