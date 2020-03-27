@@ -1,16 +1,16 @@
 # Site settings
-title: mj
-email: zetsu@domain.com
-description: 첫화면 
+title: mj's blog
+email: mj0225868@gmail.com
+description: github blog
 baseurl : ""
 url: "http://munjeongkang.github.io"
 
 author:
-  name     : 'Fernando Moreira'
-  email    : hi@nandomoreira.me
-  url      : http://nandomoreira.me
-  facebook : http://facebook.com/fernando.dev
-  twitter  : http://twitter.com/nandomoreirame
+  name     : 'Munjeong Kang'
+  email    : mj0225868@gmail.com
+  url      : http://munjeongkang.github.io
+  facebook : 
+  twitter  :
 
 github: https://github.com/nandomoreirame/zetsu
 disqus_shortname: "fernandomoreira"
