@@ -11,6 +11,9 @@ author:
 
 mylab: https://github.com/hufsoptblog/hufsoptblog.github.io
 
+disqus_url : http://disqus.com/by/munjeong 
+disqus_id : munjeong
+
 #disqus_shortname: "fernandomoreira"
 #google_analytics: UA-52446115-1
 
@@ -26,5 +29,4 @@ sass:
 markdown  : kramdown
 permalink : /:title/
 
-disqus_url : http://disqus.com/by/munjeong 
-disqus_id : munjeong
+
