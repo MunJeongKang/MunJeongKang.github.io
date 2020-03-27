@@ -1,40 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  {%- include head.html -%}
-</head>
-<body>
-  <header class="texture-{{ site.texture.style }}">
-    <div class="container">
-      {%- include nav.html -%}
-    </div>
-    {%- include post_header.html -%}  
+---
+layout: default
+slug: single
+---
+<article class="post container card">
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <span class="post-meta">
+      <time class="post-date" datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date: "%b %-d, %Y" }}</time>
+      <span class="post-author">by {{ site.author.name }}</span>
+    </span>
   </header>
-  <main>
-    <div class="container">
-      <div class="post-container">
-          {{ content }}
-      </div>
 
-        <!-- Configure Disqus -->
-      {%- if site.texture.disqus_shortname -%}
-        <div id="disqus_thread" style="margin-top:25px"></div>
-        <script>
-          var disqus_config = function () {
-            this.page.url = '{{ page.url | absolute_url }}';
-            this.page.identifier = '{{ page.url | absolute_url }}';
-          };
-          (function() {
-            var d = document, s = d.createElement('script');
-            s.src = 'https://{{ site.texture.disqus_shortname }}.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-          })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-      {%- endif -%}
-    </div>
-  </main>
-  {%- include footer.html -%}
-</body>
-</html>
+  <div class="post-content">
+
+    {{ content }}
+
+    <aside class="share">
+
+      <span>Share this: </span>
+
+      <a href="http://twitter.com/share?text={{page.title}}&amp;url={{site.url}}{{ page.url }}&amp;hashtags=web,dev,blog,soudev&amp;via=nandomoreirame"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <i class="fa fa-twitter-square"></i>
+      </a>
+
+      <a href="https://www.facebook.com/sharer/sharer.php?u={{site.url}}{{page.url}}"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+        <i class="fa fa-facebook-square"></i>
+      </a>
+
+    </aside>
+
+    {% include comments.html %}
+
+  </div>
+</article>
