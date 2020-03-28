@@ -5,15 +5,66 @@ permalink: /about/
 slug: about
 ---
 
+-----
+<center>
+한국외대 최적화연구실 강문정입니다. <br>
+Hi, I'm mj from Hankuk University of Foreign Studies OptLab.
+</center>
+-----
+<p align="center">
+  <img width="250" height="300" src="/images/photo2.jpg">
+</p>
 
 <center>
-안녕하세요. <br>
-
-한국외대 최적화연구실 강문정입니다.
-
-<img src = "./images/photo.jpg" width="300" height="300">
+HUFS OptLab M.S. Student <br>
+Optimization/Python Programming
 </center>
 
-This is a Jekyll theme. You can find out more information about customizing your theme Jekyll, as well as basic documentation Jekyll use in [jekyllrb.com](http://jekyllrb.com/).
+-----
 
-[{{ site.author.name }}]({{ site.author.url }})
+#### * EXPERIENCE
+
+- 2017년도 <br>
+    - 차세대 여성리더 아이디어톤 공모전 대상 (여성가족부 장관상) with 유경, 나영 <br>
+꿈과 목표를 공유하고 싶은 다수의 여성들이 모여 원하는 주제에 대해 함께 공부하고, 네트워크를 넓힐 수 있도록 돕는 온라인 플랫폼 '**함께 모여**' , [관련기사링크](http://www.womennews.co.kr/news/articleView.html?idxno=116785) , [수상사진](/images/prize.jpg)<br>
+    - International Monetary Fund (IMF) 및 Word Bank 견학 <br>
+    <br>
+- 2018년도 <br>
+    - 제 14회 대한산업공학회 한국대학생 산업공학프로젝트 경진대회 대상 (과학기술정보통신부 장관상) **'지역별 중요도를 고려한 인공지능 드론 영역 감시 시스템'** with 유경, 나영.   [포스터](/images/poster.pdf) , [관련사진](/images/prize2.jpg) <br>
+    - 2018 SPRING GLOBAL HUFS 소식지 인터뷰 p.18~p.19. [e-book](http://e-book.hufs.ac.kr/20180503_155503_1/) <br>
+    <br>
+- 2019년도 <br>
+    -  INFORMS 2019 Analytics & O.R Student Team Competition **Third Prize** <br>
+    '**Redefining Vehicle Delivery with Autonomous Cars**' 자율주행차를 이용한 차량배송문제 <br>
+    Sponserd by Genernal Motors (GM) <br>
+    수리계획법과 강화학습을 결합하여 최적화 문제를 풀었다. with 진영, 유경, [발표영상](https://www.youtube.com/watch?v=P7u_W9_jtJk), [수상사진](/images/prize3.jpg) <br>
+    - 2019 SUMMER GLOBAL HUFS 소식지 인터뷰 p.18~p.19. [e-book](http://e-book.hufs.ac.kr/20190712_131010_1/) <br>
+    - 한국외대 영자신문사 The Argus 인터뷰. [관련링크](http://www.theargus.org/news/articleView.html?idxno=1563) <br>
+    <br>
+- 2020년도 <br>
+    - INFORMS 2020 Analytics & O.R Student Team Competition 참가 <br>
+    '**Network Design & Facility Operations Modeling**' <br>
+    Sponserd by Bayer <br>
+    수리계획법을 활용한 시뮬레이션을 구현하고 강화학습을 결합하여 최적화 문제를 풀었다. <br> with 현우, 기원, 형주.
+
+-----
+
+
+#### * CONFERENCE PRESENTATION
+
+- 강문정, 김나영, 이유경, 윤재욱 (2017). 모바일 간편결제 비대면/대면 서비스의 고객 요구사항 비교분석. 한국품질경영학회 추계품질대회, 정선, 10월 27일.
+
+- 이유경, 강문정, 김나영, 이충목 (2018). A column generation based Heuristic algorithm for Ddrone Location and Routing with Altitude. 대한산업공학회 춘계학술대회, 경주, 4월 6일.
+
+- 강문정, 이유경, 조진영, 이충목 (2019). A combined approach of reinforcement learning and mathematical programming for a real-world outbound supply chain optimization. 대한산업공학회 춘계학술대회, 광주, 4월 11일.
+
+- Munjeong Kang, Yukyung Lee, Jinyoung Cho, Chungmok Lee (2019). Outbound supply chain optimization by a combined approach of reinforcement learning and mathematical programming. Euro 2019, Dublin, Ireland, 6월 24일.
+
+- 강문정, 경지윤, 이충목 (2019). An Algorithm for TSP with Time Dependent Profits(TSPwTDP). 대한산업공학회 추계학술대회, 서울, 11월 8일.
+
+
+-----
+
+#### * PAPER
+
+- Lee, Y., Kang, M., Kim, N., & Lee, C. (2019). 지역별 중요도를 고려한 드론 최적 경로 감시 시스템 / Drone surveillance system considering dynamic POIs. Journal of the Korean Institute of Industrial Engineers, 45(5).
