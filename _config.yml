@@ -1,5 +1,5 @@
 # Site settings
-title: 일상일지
+title: 코딩새내기 일상일지
 email: mj0225868@gmail.com
 description: github blog
 baseurl : ""
@@ -11,10 +11,10 @@ author:
 
 mylab: https://github.com/hufsoptblog/hufsoptblog.github.io
 
-disqus_url : http://disqus.com/by/munjeong 
-disqus_id : munjeong
+disqus_url : munjeong.disqus.com
+disqus_id : disqus_65HYjgoI8N
 
-#disqus_shortname: "fernandomoreira"
+disqus_shortname: "munjeong"
 #google_analytics: UA-52446115-1
 
 paginate: 2
