@@ -5,9 +5,13 @@ permalink: /about/
 slug: about
 ---
 
-안녕하세요. 강문정입니다. 제 관심분야는 다음과 같습니다. 
+안녕하세요. 강문정입니다. 
 
 `Optimization`
+
+안녕하세요.
+
+![이미지](./images/photo.jpg)
 
 
 
