@@ -11,10 +11,10 @@ author:
 
 mylab: https://github.com/hufsoptblog/hufsoptblog.github.io
 
-disqus_url : munjeong.disqus.com
+disqus_url : https://munjeong.disqus.com/embed.js
 disqus_id : disqus_65HYjgoI8N
 
-disqus_shortname: "munjeong"
+#disqus_shortname: "munjeong"
 #google_analytics: UA-52446115-1
 
 paginate: 2
