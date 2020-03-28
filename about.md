@@ -5,15 +5,14 @@ permalink: /about/
 slug: about
 ---
 
-안녕하세요. 강문정입니다. 
 
-`Optimization`
+<center>
+안녕하세요. <br>
 
-안녕하세요.
+한국외대 최적화연구실 강문정입니다.
 
-![이미지](./images/photo.jpg)
-
-
+<img src = "./images/photo.jpg" width="300" height="300">
+</center>
 
 This is a Jekyll theme. You can find out more information about customizing your theme Jekyll, as well as basic documentation Jekyll use in [jekyllrb.com](http://jekyllrb.com/).
 
