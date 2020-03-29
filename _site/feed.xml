@@ -5,9 +5,37 @@
     <description>github blog</description>
     <link>http://munjeongkang.github.io/</link>
     <atom:link href="http://munjeongkang.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 29 Mar 2020 23:33:50 +0900</pubDate>
-    <lastBuildDate>Sun, 29 Mar 2020 23:33:50 +0900</lastBuildDate>
+    <pubDate>Mon, 30 Mar 2020 01:17:19 +0900</pubDate>
+    <lastBuildDate>Mon, 30 Mar 2020 01:17:19 +0900</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>맥북 단축기 정리</title>
+        <description>&lt;p&gt;맥북을 사용할 때 유용한 단축키에 대해 정리하려고 한다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;창 숨기기 : &lt;code&gt;command + H&lt;/code&gt; &lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;창 불러오기 : &lt;code&gt;command + Tab&lt;/code&gt; &lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;현재 창 닫기 : &lt;code&gt;command + W&lt;/code&gt; &lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;프로그램 종료 :  &lt;code&gt;command + Q&lt;/code&gt; &lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;이미지 자르기 : 이미지에서 자를 부분을 선택하고 &lt;code&gt;command + K&lt;/code&gt; &lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;부분 캡쳐하기 : &lt;code&gt;command + shift + $4&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;사용하는 창 전체를 캡쳐하기 : &lt;code&gt;command + shift + $4&lt;/code&gt; 를 누른 후 &lt;code&gt;space&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;이모지 입력하기 : &lt;code&gt;control + command + space&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;강제 종료하기 : &lt;code&gt;option + command + ESC&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;화면 확대하기 : &lt;code&gt;control + 트랙패드를 위로 쓸기&lt;/code&gt; (설정필요)&lt;/li&gt;
+  &lt;li&gt;화면 축소하기 : &lt;code&gt;control + 트랙패드를 아래로 쓸기&lt;/code&gt; (설정필요)&lt;/li&gt;
+  &lt;li&gt;fn : Desktop 화면으로 전환 (설정필요)&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sun, 29 Mar 2020 23:00:08 +0000</pubDate>
+        <link>http://munjeongkang.github.io/mac-command/</link>
+        <guid isPermaLink="true">http://munjeongkang.github.io/mac-command/</guid>
+        
+        
+        <category>memo</category>
+        
+      </item>
     
       <item>
         <title>macOS 업그레이드 후 에러</title>
@@ -25,7 +53,7 @@
 
 &lt;p&gt;에러를 고치기 위해 구글링 해보니 맥 OS 업데이트 후 이와 같은 에러가 많이 발생하는 것 같다.&lt;/p&gt;
 
-&lt;p&gt;이 경우 다음과 같이 XCode를 재설치되면 보통 해결된다고 한다.&lt;/p&gt;
+&lt;p&gt;이 경우 다음과 같이 XCode를 재설치하면 보통 해결된다고 한다.&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;xcode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;install&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
