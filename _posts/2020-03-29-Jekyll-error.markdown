@@ -24,7 +24,7 @@ xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools
 
 에러를 고치기 위해 구글링 해보니 맥 OS 업데이트 후 이와 같은 에러가 많이 발생하는 것 같다. 
 
-이 경우 다음과 같이 XCode를 재설치되면 보통 해결된다고 한다. 
+이 경우 다음과 같이 XCode를 재설치하면 보통 해결된다고 한다. 
 
 {% highlight ruby%}
 xcode-select --install
