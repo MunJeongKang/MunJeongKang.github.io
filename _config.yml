@@ -11,8 +11,8 @@ author:
 
 mylab: https://github.com/hufsoptblog/hufsoptblog.github.io
 
-disqus_url : 'https://munjeong.disqus.com/embed.js'
-disqus_id : disqus_65HYjgoI8N
+#disqus_url : 'https://munjeong.disqus.com/embed.js'
+#disqus_id : disqus_65HYjgoI8N
 
 disqus_shortname: "munjeong"
 #google_analytics: UA-52446115-1
@@ -28,11 +28,3 @@ sass:
 # Build settings
 markdown  : kramdown
 permalink : /:title/
-
-category_archive:
-  type: liquid
-  path: /categories/
-  
-tag_archive:
-  type: liquid
-  path: /tags/

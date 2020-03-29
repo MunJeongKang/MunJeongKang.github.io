@@ -5,23 +5,9 @@
     <description>github blog</description>
     <link>http://munjeongkang.github.io/</link>
     <atom:link href="http://munjeongkang.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 29 Mar 2020 17:49:38 +0900</pubDate>
-    <lastBuildDate>Sun, 29 Mar 2020 17:49:38 +0900</lastBuildDate>
+    <pubDate>Sun, 29 Mar 2020 19:12:57 +0900</pubDate>
+    <lastBuildDate>Sun, 29 Mar 2020 19:12:57 +0900</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
-    
-      <item>
-        <title>블로그 카테고리 추가</title>
-        <description>&lt;p&gt;카테고리가 추가되나?&lt;/p&gt;
-
-</description>
-        <pubDate>Mon, 30 Mar 2020 01:00:08 +0900</pubDate>
-        <link>http://munjeongkang.github.io/GitHub-category/</link>
-        <guid isPermaLink="true">http://munjeongkang.github.io/GitHub-category/</guid>
-        
-        
-        <category>memo</category>
-        
-      </item>
     
       <item>
         <title>GitHub 블로그 시작</title>
