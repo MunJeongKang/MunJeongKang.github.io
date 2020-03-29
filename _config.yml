@@ -17,7 +17,7 @@ disqus_id : disqus_65HYjgoI8N
 disqus_shortname: "munjeong"
 #google_analytics: UA-52446115-1
 
-paginate: 2
+paginate: 10
 comments: true
 paginate_path: "/page/:num"
 
@@ -29,4 +29,10 @@ sass:
 markdown  : kramdown
 permalink : /:title/
 
-
+category_archive:
+  type: liquid
+  path: /categories/
+  
+tag_archive:
+  type: liquid
+  path: /tags/
