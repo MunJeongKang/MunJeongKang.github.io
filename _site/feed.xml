@@ -5,9 +5,40 @@
     <description>github blog</description>
     <link>http://munjeongkang.github.io/</link>
     <atom:link href="http://munjeongkang.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 29 Mar 2020 19:20:21 +0900</pubDate>
-    <lastBuildDate>Sun, 29 Mar 2020 19:20:21 +0900</lastBuildDate>
+    <pubDate>Sun, 29 Mar 2020 23:33:50 +0900</pubDate>
+    <lastBuildDate>Sun, 29 Mar 2020 23:33:50 +0900</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>macOS 업그레이드 후 에러</title>
+        <description>&lt;p&gt;macOS로 모하비를 사용하고 있었는데 이 때는 모든 명령어가 잘 작동했었다. (지킬이나 깃 등)&lt;/p&gt;
+
+&lt;p&gt;그러나 카탈리나로 버전을 업데이트 했더니 홈페이지를 실시간으로 확인하는 명령어가 작동하지 않았다..&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;bundle&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jekyll&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;serve&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;bundel을 install 하라는 명령이 나오는데 이 또한 에러가 뜬다. ㅜ&lt;/p&gt;
+
+&lt;p&gt;git 명령어 또한 작동하지 않고 다음과 같은 에러가 뜬다.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;ss&quot;&gt;xcrun&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;invalid&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;active&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;developer&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;path&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/Library/&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Developer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;CommandLineTools&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;missing&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;xcrun&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;at&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;/Library/&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Developer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;CommandLineTools&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;usr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bin&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xcrun&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;에러를 고치기 위해 구글링 해보니 맥 OS 업데이트 후 이와 같은 에러가 많이 발생하는 것 같다.&lt;/p&gt;
+
+&lt;p&gt;이 경우 다음과 같이 XCode를 재설치되면 보통 해결된다고 한다.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;xcode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;install&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;XCode 재설치 후 bundle install을 하니 잘 작동한다.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 29 Mar 2020 23:00:08 +0000</pubDate>
+        <link>http://munjeongkang.github.io/Jekyll-error/</link>
+        <guid isPermaLink="true">http://munjeongkang.github.io/Jekyll-error/</guid>
+        
+        
+        <category>memo</category>
+        
+      </item>
     
       <item>
         <title>GitHub 블로그 시작</title>
@@ -19,7 +50,7 @@
 
 &lt;p&gt;앞으로 배워야할게 더 많을 것 같다. ㅠ_ㅠ&lt;/p&gt;
 </description>
-        <pubDate>Sun, 29 Mar 2020 03:00:08 +0900</pubDate>
+        <pubDate>Sat, 28 Mar 2020 18:00:08 +0000</pubDate>
         <link>http://munjeongkang.github.io/GitHub-blog-start/</link>
         <guid isPermaLink="true">http://munjeongkang.github.io/GitHub-blog-start/</guid>
         
