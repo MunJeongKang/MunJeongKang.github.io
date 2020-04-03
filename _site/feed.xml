@@ -5,8 +5,8 @@
     <description>github blog</description>
     <link>http://munjeongkang.github.io/</link>
     <atom:link href="http://munjeongkang.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 03 Apr 2020 19:17:13 +0900</pubDate>
-    <lastBuildDate>Fri, 03 Apr 2020 19:17:13 +0900</lastBuildDate>
+    <pubDate>Fri, 03 Apr 2020 22:50:00 +0900</pubDate>
+    <lastBuildDate>Fri, 03 Apr 2020 22:50:00 +0900</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -39,22 +39,101 @@ When &lt;u&gt;vehicle routing problems&lt;/u&gt; with additional constraints, su
 
 &lt;div style=&quot;font-weight:500; font-size:1.1em; margin-left: 1em; margin-right: 1em;text-align:justify; text-indent:5%; &quot;&gt;
 
-VRP란 주어진 고객들을 모두 방문하는 차량 경로들의 집합을 구하는 문제이다. 목적함수는 총 비용(거리)를 최소화하는 경로를 찾는 것이다. Column Generation을 적용하기 위해 set covering 문제로 reformulation을 하는데 이는 매우 타이트한 lower bound를 줄 수 있기 때문이다. 
+VRP란 주어진 고객들을 모두 방문하는 차량 경로들의 집합을 구하는 문제이다. 목적함수는 총 비용(거리)를 최소화하는 경로를 찾는 것이다. Column generation을 적용하기 위해 set covering 문제로 reformulation을 하는데 이렇게 하는 이유는 매우 타이트한 lower bound를 줄 수 있기 때문이다. 
 &lt;/div&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+&lt;div&gt;
+
+$$
 \begin{align}
-    \min \quad &amp; 1 - \sum_{i \in P} y_i z_i \\
+    \min \quad &amp;amp; \sum_{f \in \mathcal{F}} c_f z_f \notag  \\
     \text{s.t.} \quad
-    &amp; \sum_{i \in P} w_i z_i \le W \\
-    &amp; z_i \text{ integer}, \quad \forall i \in P
-\end{align} %]]&gt;&lt;/script&gt;
+    &amp;amp; \sum_{f \in \mathcal{F}} x_if z_f \ge 1 \quad \forall i \in \mathcal{N} \\
+    &amp;amp; - \sum_{f \in \mathcal{F}} z_f \ge -V \\
+    &amp;amp; z_f \in \{0,1\}, \quad \forall f \in \mathcal{F}
+\end{align}
+$$
 
-&lt;div style=&quot;font-weight:700; font-size:1.6em; margin-left: 0.7em;&quot;&gt;Cite&lt;/div&gt;
+&lt;div style=&quot;font-weight:500; font-size:1.1em; margin-left: 1em; margin-right: 1em;text-align:justify; text-indent:0%; &quot;&gt;
 
-&lt;p&gt;Righini, G., &amp;amp; Salani, M. (2006). Symmetry helps: Bounded bi-directional dynamic programming for the elementary shortest path problem with resource constraints. &lt;em&gt;Discrete Optimization, 3&lt;/em&gt;(3), 255-273.  &lt;a href=&quot;https://www.sciencedirect.com/science/article/pii/S1572528606000417&quot;&gt;논문 링크&lt;/a&gt;&lt;/p&gt;
+여기서 모든 경로의 집합인 $\mathcal{F}$의 개수가 매우 많기 때문에 column generation에서 reduced cost가 음수인 경로만 찾아서 추가해야한다. 더 이상 reduced cost가 음수인 경로가 없으면 column 추가를
+ 멈춘다. 이 논문에서는 2가지 bound를 사용하며 각각은 다음과 같다. 
+&lt;/div&gt;
+&lt;br /&gt;
+
+&lt;div style=&quot;font-weight:500; font-size:1.1em; margin-left: 1em; margin-right: 1em;text-align:center; text-indent:0%; &quot;&gt;
+
+&lt;b style=&quot;color:#d7385e; font-size:1.2&quot;&gt;
+Fathoming unpromising states &lt;br /&gt;
+Stopping the extension of the non-dominated states &lt;br /&gt;&lt;br /&gt;
+&lt;/b&gt;
+&lt;/div&gt;
+
+&lt;div style=&quot;font-weight:500; font-size:1.1em; margin-left: 1em; margin-right: 1em;text-align:justify; text-indent:0%; &quot;&gt;
+
+첫 번째는 말 그대로 가망없는 상태는 고려하지 않는 것이고 두 번째는 지배되지 않는 상태의 확장을 멈추는 것이다. 즉, 더 이상 branching할 필요가 없다고 판단되는 상태를 일찍 파악해서 불필요한 branching을 줄이는 것이다.
+&lt;/div&gt;
+&lt;br /&gt;
+&lt;div style=&quot;font-weight:300; font-size:0.9em; margin-left: 1em; margin-right: 1em;text-align:center; text-indent:0%; &quot;&gt;
+(이 논문에서 reduced cost를 구할 때 $\lambda$를 2로 나누는 이유는 bi-directional이라 symmetry를 만들기 위함이다.)
+&lt;/div&gt;
+&lt;br /&gt;
+
+&lt;div style=&quot;font-weight:500; font-size:1.1em; margin-left: 1em; margin-right: 1em;text-align:justify; text-indent:0%; &quot;&gt;
+앞서 3가지 VRP에 대해 실험한다고 했는데 각각은 CVRP (Capacitated vehicle routing probelm), VRPDC (vehicle routing problem with distribution and collection), CVRPTW (capacitated vehicle routing problem with time windows)이다. CVRP는 용량인 capacity만 고려하는 문제, VRPDC는 distribution과 collection을 고려하는 문제, CVRPTW는 capacity와 time windows를 고려하는 문제이다. 각각의 문제에 대해 제약을 만족하면서 완전한 경로가 되도록 state를 확장한다. 특히 &lt;b style=&quot;color:#d7385e; font-size:1.2&quot;&gt;dominance test&lt;/b&gt;는 이 알고리즘에서 굉장히 중요한 부분이다. 두 개의 레이블 $l_1 (S_1,R_1,C_1,i)$ 과 $l_2 (S_2,R_2,C_2,i)$에 대해 다음을 만족하면 $l_1$은 $l_2$를 지배한다. (여기서 $S$는 방문한 노드를 나타내는 벡터, $R$은 자원 소모를 나타내는 벡터, $C$는 cost를 나타낸다.)   
+&lt;br /&gt;&lt;br /&gt;
+
+&lt;!-- &lt;img src=&quot;/images/post_img/a1.jpg&quot;&gt; --&gt;
+&lt;/div&gt;
+
+&lt;div style=&quot;font-weight:500; font-size:1.1em; margin-left: 1em; margin-right: 1em;text-align:center; text-indent:0%; &quot;&gt;
+
+$$
+\begin{align}
+    &amp;amp; S_1 \le S_2 \notag\\
+    &amp;amp; R_1 \le R_2 \notag\\
+    &amp;amp; C_1 \le C_2 \notag\\
+\end{align}
+$$
+&lt;/div&gt;
+
+&lt;br /&gt;
+&lt;div style=&quot;font-weight:500; font-size:1.1em; margin-left: 1em; margin-right: 1em;text-align:justify; text-indent:0%; &quot;&gt;
+    위의 지배규칙을 적용하여 확장 가능한 노드로 계속 확장하면서 가능한 label의 집합을 구하는 다이나믹 알고리즘을 &lt;b style=&quot;color:#d7385e; font-size:1.2&quot;&gt;레이블링 알고리즘 (labeling algorithm)&lt;/b&gt; 이라고도 부른다. 더 이상 시행할 노드가 없을 때까지 반복한다. RCESPP의 mono-directional dynamic programming의 수도코드 (pseudocode)는 다음과 같다. 
+    &lt;br /&gt;&lt;br /&gt;
+    &lt;img src=&quot;/images/post_img/a1.jpg&quot; /&gt;
+    여기서 &lt;i&gt;&lt;b&gt;Extend&lt;/b&gt;&lt;/i&gt; 함수와 &lt;i&gt;&lt;b&gt;EFF&lt;/b&gt;&lt;/i&gt; 함수에서 다른 state로 확장시 자원 제약에 대해 확인하고 dominace test를 적용하여 state 추가 여부를 결정한다. 
+
+    &lt;br /&gt;&lt;br /&gt;
+
+    그러나 이러한 방법은 노드의 개수가 증가하면 label의 개수가 기하급수적으로 증가하기 때문에 계산시간이 급격하게 증가한다. 따라서 이 논문에서 bi-directional dynamic programming을 제안한 것이다. 고려해야할 state가 매우 많기 때문에 이를 절반으로 나누어 구하자는 생각이다. 즉, 시작노드와 끝노드에서 절반씩 경로를 구한 뒤 이를 합쳐 하나의 경로로 만드는 것이다. 이러한 방법은 기하급수적으로 많은 state를 다루지 않도록 해준다. Bi-directional dynamic programming의 수도코드는 다음과 같다. 
+    &lt;br /&gt;&lt;br /&gt;
+    &lt;img src=&quot;/images/post_img/a2.jpg&quot; /&gt;
+    mono-directional과 전체적으로 유사하며 &lt;b style=&quot;color:#d7385e;&quot;&gt;Forward&lt;/b&gt; 와 &lt;b style=&quot;color:#d7385e;&quot;&gt;Backward&lt;/b&gt;로 나누어 경로를 구하는 것이 다른 점이다. 여기서는 특정 방향 외의 다른 방향에서 path의 나머지 부분이 생긴다고 가정할 수 있다면 특정 방향으로는 확장을 하지 않아도 되고 optimal solution도 보장할 수 있음을 주장한다. 이를 위해 bounding에서는 optimal solution이 아닌 state를 알아내고 forward나 backward path의 확장을 멈추는 규칙을 적용한다. bi-directional 알고리즘에서 &lt;i&gt;&lt;b&gt;Join&lt;/b&gt;&lt;/i&gt; 함수의 수도코드는 다음과 같다. 
+    &lt;br /&gt;&lt;br /&gt;
+    &lt;img src=&quot;/images/post_img/a3.jpg&quot; /&gt;
+    이 알고리즘에서는 두 개의 path를 합치는 과정에서 중복된 솔루션이 포함될 수 있다. 중복된 솔루션이 생기면 계산적으로 비효율적이기 때문에 이를 방지하기 위해 &lt;i&gt;&lt;b&gt;Halfway&lt;/b&gt;&lt;/i&gt;를 고안하였다. 이는 forward와 backward로 결합된 path의 state가 half-way point에 가능한 가깝도록 하는 것이다. 즉, 가장 symmetry한 조합으로 두 개의 경로를 하나로 합치는 것이다. 
+    &lt;br /&gt;&lt;br /&gt;
+    실험결과 mono-directional에 비해 bi-directional이 확장되는 state의 총 개수도 적고 계산 시간도 더 빠른 편임을 보인다. 또한, 3600초 time-limit안에 mono-directional로 풀 수 없는 문제를 bi-directional으로 푼 경우도 있으므로 더 우수한 성능을 가졌다고 볼 수 있다. 
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;div style=&quot;font-weight:700; font-size:1.4em; text-align:center;&quot;&gt;Cite
+&lt;/div&gt;
+&lt;br /&gt;
+&lt;span style=&quot;font-weight:500; font-size:1.1em; margin-left: 1em; margin-right: 1em;text-align:justify; text-indent:0%; font-family: Times New Roman; &quot;&gt;
+Righini, G., &amp;amp; Salani, M. (2006). Symmetry helps: Bounded bi-directional dynamic programming for the elementary shortest path problem with resource constraints. &lt;i&gt;Discrete Optimization, 3&lt;/i&gt;(3), 255-273. 
+&lt;/span&gt;
+&lt;span style=&quot;font-weight:400; font-size:1.1em;&quot;&gt;
+&lt;a href=&quot;https://www.sciencedirect.com/science/article/pii/S1572528606000417&quot;&gt; 논문 링크 &lt;/a&gt;
+&lt;/span&gt;
 
 &lt;!-- &lt;span style=&quot;background-color: #f3c623&quot;&gt; --&gt;
+
+
+
+&lt;/div&gt;
 </description>
         <pubDate>Thu, 02 Apr 2020 18:00:08 +0000</pubDate>
         <link>http://munjeongkang.github.io/%5B%E1%84%82%E1%85%A9%E1%86%AB%E1%84%86%E1%85%AE%E1%86%AB%20%E1%84%85%E1%85%B5%E1%84%87%E1%85%B2%5D/</link>
