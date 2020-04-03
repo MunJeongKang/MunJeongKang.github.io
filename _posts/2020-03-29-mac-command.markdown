@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "맥북 단축기 정리"
+title:  "맥북 단축키 정리"
 date:   2020-03-29 23:00:08
 categories: memo
 comments: true
