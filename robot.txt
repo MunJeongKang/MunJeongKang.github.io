@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://optboy.github.io/sitemap.xml
+Sitemap: https://munjeongkang.github.io/sitemap.xml
