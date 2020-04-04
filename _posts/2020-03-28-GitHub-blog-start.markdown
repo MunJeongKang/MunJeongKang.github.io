@@ -2,7 +2,7 @@
 layout: post
 title:  "GitHub 블로그 시작"
 date:   2020-03-28 18:00:08
-categories: memo
+categories: 메모
 comments: true
 ---
 

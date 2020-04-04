@@ -5,8 +5,8 @@
     <description>github blog</description>
     <link>http://munjeongkang.github.io/</link>
     <atom:link href="http://munjeongkang.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 04 Apr 2020 13:19:32 +0900</pubDate>
-    <lastBuildDate>Sat, 04 Apr 2020 13:19:32 +0900</lastBuildDate>
+    <pubDate>Sat, 04 Apr 2020 13:34:18 +0900</pubDate>
+    <lastBuildDate>Sat, 04 Apr 2020 13:34:18 +0900</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -140,7 +140,7 @@ Righini, G., &amp;amp; Salani, M. (2006). Symmetry helps: Bounded bi-directional
         <guid isPermaLink="true">http://munjeongkang.github.io/%5B%E1%84%82%E1%85%A9%E1%86%AB%E1%84%86%E1%85%AE%E1%86%AB%20%E1%84%85%E1%85%B5%E1%84%87%E1%85%B2%5D/</guid>
         
         
-        <category>semina</category>
+        <category>논문리뷰</category>
         
       </item>
     
@@ -178,7 +178,7 @@ Righini, G., &amp;amp; Salani, M. (2006). Symmetry helps: Bounded bi-directional
         <guid isPermaLink="true">http://munjeongkang.github.io/mac-command/</guid>
         
         
-        <category>memo</category>
+        <category>메모</category>
         
       </item>
     
@@ -209,7 +209,7 @@ Righini, G., &amp;amp; Salani, M. (2006). Symmetry helps: Bounded bi-directional
         <guid isPermaLink="true">http://munjeongkang.github.io/Jekyll-error/</guid>
         
         
-        <category>memo</category>
+        <category>메모</category>
         
       </item>
     
@@ -228,7 +228,7 @@ Righini, G., &amp;amp; Salani, M. (2006). Symmetry helps: Bounded bi-directional
         <guid isPermaLink="true">http://munjeongkang.github.io/GitHub-blog-start/</guid>
         
         
-        <category>memo</category>
+        <category>메모</category>
         
       </item>
     

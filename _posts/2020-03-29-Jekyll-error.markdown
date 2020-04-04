@@ -2,7 +2,7 @@
 layout: post
 title:  "macOS 업그레이드 후 에러"
 date:   2020-03-29 23:00:08
-categories: memo
+categories: 메모
 comments: true
 ---
 
