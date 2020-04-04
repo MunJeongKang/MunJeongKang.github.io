@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[논문리뷰] Symmetry helps: Bounded bi-directional dynamic programming for the elementary shortest path problem with resource constraints"
+title:  "논문리뷰 - Symmetry helps: Bounded bi-directional dynamic programming for the elementary shortest path problem with resource constraints"
 date:   2020-04-02 18:00:08
 categories: semina
 comments: true
@@ -10,7 +10,7 @@ use_math: true
 
 <div style = "font-weight:700; font-size:1.4em; text-align:center;">Abstract </div>
 <br>
-<div style = "font-weight:500; font-size:1.1em; margin-left: 3em; margin-right: 3em;text-align:justify; ">
+<div style = "font-weight:500; font-size:1.1em; margin-left: 1em; margin-right: 1em;text-align:justify; ">
 When <u>vehicle routing problems</u> with additional constraints, such as capacity or time windows, <u>are solved via column generation and branch-and-price</u>, it is common that the pricing subproblem requires the computation of a minimum cost constrained path on a graph with costs on the arcs and prizes on the vertices. A common solution technique for this problem is dynamic programming. In this paper we illustrate how the basic dynamic programming algorithm can be improved by <u>bounded bi-directional search</u> and we experimentally evaluate the effectiveness of the enhancement proposed. We consider as benchmark problems the elementary shortest path problems arising as pricing subproblems in branch-and-price algorithms for the capacitated vehicle routing problem, the vehicle routing problem with distribution and collection and the capacitated vehicle routing problem with time windows.<br><br>
 <em>Keywords : Shortest path; Vehicle routing; Dynamic programming; Column generation </em> 
 </div>

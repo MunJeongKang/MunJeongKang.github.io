@@ -5,17 +5,17 @@
     <description>github blog</description>
     <link>http://munjeongkang.github.io/</link>
     <atom:link href="http://munjeongkang.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 04 Apr 2020 03:26:26 +0900</pubDate>
-    <lastBuildDate>Sat, 04 Apr 2020 03:26:26 +0900</lastBuildDate>
+    <pubDate>Sat, 04 Apr 2020 13:19:32 +0900</pubDate>
+    <lastBuildDate>Sat, 04 Apr 2020 13:19:32 +0900</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
-        <title>[논문리뷰] Symmetry helps: Bounded bi-directional dynamic programming for the elementary shortest path problem with resource constraints</title>
+        <title>논문리뷰 - Symmetry helps: Bounded bi-directional dynamic programming for the elementary shortest path problem with resource constraints</title>
         <description>&lt;hr /&gt;
 
 &lt;div style=&quot;font-weight:700; font-size:1.4em; text-align:center;&quot;&gt;Abstract &lt;/div&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;div style=&quot;font-weight:500; font-size:1.1em; margin-left: 3em; margin-right: 3em;text-align:justify; &quot;&gt;
+&lt;div style=&quot;font-weight:500; font-size:1.1em; margin-left: 1em; margin-right: 1em;text-align:justify; &quot;&gt;
 When &lt;u&gt;vehicle routing problems&lt;/u&gt; with additional constraints, such as capacity or time windows, &lt;u&gt;are solved via column generation and branch-and-price&lt;/u&gt;, it is common that the pricing subproblem requires the computation of a minimum cost constrained path on a graph with costs on the arcs and prizes on the vertices. A common solution technique for this problem is dynamic programming. In this paper we illustrate how the basic dynamic programming algorithm can be improved by &lt;u&gt;bounded bi-directional search&lt;/u&gt; and we experimentally evaluate the effectiveness of the enhancement proposed. We consider as benchmark problems the elementary shortest path problems arising as pricing subproblems in branch-and-price algorithms for the capacitated vehicle routing problem, the vehicle routing problem with distribution and collection and the capacitated vehicle routing problem with time windows.&lt;br /&gt;&lt;br /&gt;
 &lt;em&gt;Keywords : Shortest path; Vehicle routing; Dynamic programming; Column generation &lt;/em&gt; 
 &lt;/div&gt;
