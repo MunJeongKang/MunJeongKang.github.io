@@ -16,7 +16,7 @@ mylab: https://hufsoptblog.github.io
 #disqus_id : disqus_65HYjgoI8N
 
 disqus_shortname: "munjeong"
-#google_analytics: UA-52446115-1
+google_analytics: 227976938
 
 paginate: 10
 comments: true
