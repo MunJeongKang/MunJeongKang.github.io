@@ -29,3 +29,6 @@ sass:
 # Build settings
 markdown  : kramdown
 permalink : /:title/
+
+plugins:
+  - jekyll-sitemap
