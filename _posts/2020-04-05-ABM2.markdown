@@ -7,20 +7,20 @@ comments: true
 use_math: true
 ---
 -----
-<span style = "font-weight:700; font-size:1.4em; margin-left: 0.8em; margin-right: 1em;">
+<span style = "font-weight:700; font-size:1.3em; margin-left: 0.8em; margin-right: 1em;">
 모델 (MODEL)
 </span>
 <br>
-<div style = "font-weight:500; font-size:1.1em; margin-left: 1em; margin-right: 1em;text-align:justify; ">
+<div style = "font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; ">
 
 <b style = "color:#d7385e;font-size:1.2">모델</b>은 어떤 것에 대한 <b style = "color:#d7385e;font-size:1.2">추상화</b>(또는 단순화)이다. Object, Process, Event, Concept 등이 대상이 될 수 있으며 추상화는 가정(assumptions)과 근사(approximations)를 포함한다. 모델은 복잡한 것들을 이해하고 다루기 위해 사용되며, 모델을 통해 다양한 아이디어들을 시도해 볼 수 있다. 또한, 모델을 연구하는 것이 현실세계에 직접 적용하는 것보다 더 쉽고 빠르며 저렴하고 안전하다는 장점이 있다. 때론 모델을 만드는 것 자체가 유익하고 직관력을 줄 수도 있다. 
 </div>
 <br>
-<span style = "font-weight:700; font-size:1.4em; margin-left: 0.8em; margin-right: 1em;">
+<span style = "font-weight:700; font-size:1.3em; margin-left: 0.8em; margin-right: 1em;">
 모델링 (MODELING)
 </span>
 <br>
-<div style = "font-weight:500; font-size:1.1em; margin-left: 1em; margin-right: 1em;text-align:justify; ">
+<div style = "font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; ">
 모델을 만드는 과정을 <b style = "color:#d7385e;font-size:1.2">모델링</b>이라고 하며 모델링의 목적은 현실 세계의 문제들을 이해하거나 풀기 위함이다. 현실 세계의 문제는 솔루션을 바로 구해 적용하기 매우 어렵기 때문에 모델을 통해 시뮬레이션 해보고 비로소 현실세계에 적용한다. 모델은 다음과 같이 다양한 타입들이 있다. 
 
 <ul>
@@ -42,11 +42,11 @@ use_math: true
 <li>모델을 분석하고 테스트하고 수정한다. (Analyze, test, and revise the model) </li>
 </ol>
 </div>
-<span style = "font-weight:700; font-size:1.4em; margin-left: 0.8em; margin-right: 1em;">
+<span style = "font-weight:700; font-size:1.3em; margin-left: 0.8em; margin-right: 1em;">
 시뮬레이션 (SIMULATION)
 </span>
 <br>
-<div style = "font-weight:500; font-size:1.1em; margin-left: 1em; margin-right: 1em;text-align:justify; ">
+<div style = "font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; ">
 
 <b style = "color:#d7385e;font-size:1.2">What-if</b> 조건하에서 모델의 행동을 연구하는 것이 <b style = "color:#d7385e;font-size:1.2">시뮬레이션</b>이다. 여기서는 주로 logical simulation을 다루며 이는 적절한 소프트웨어의 컴퓨터 프로그램을 통해 나타내어진다. 주로 어떤 것에 대해 시도해보거나, 결과를 얻거나 모델 행동에 대해 배우기 위해 프로그램을 실행한다. 시뮬레이션 타입은 다음과 같이 나뉠 수 있다. 
 <br><br>
@@ -64,7 +64,7 @@ use_math: true
 <img src="/images/post_img/NL6.jpg" width="310" height="300">
 </div>
 
-<div style = "font-weight:500; font-size:1.1em; margin-left: 1em; margin-right: 1em;text-align:justify; ">
+<div style = "font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; ">
 <br>
 대부분의 시뮬레이션 모델링은 <b style = "color:#d7385e;font-size:1.2">dynamic</b>, <b style = "color:#d7385e;font-size:1.2">discrete-change</b>, <b style = "color:#d7385e;font-size:1.2">stochastic</b>한 특징을 가진다. 위의 그림은 scale의 추상화 정도와 시뮬레이션 모델링의 응용분야를 나타낸다. 추상화 정도가 높으면 detail이 적은 Macro level이며 추상화 정도가 낮으면 detail이 많은 Micro level이다. ABM은 그 중에서도 모든 추상화 범위를 아우를 수 있는 방법 중 하나이다. 
 <br><br>

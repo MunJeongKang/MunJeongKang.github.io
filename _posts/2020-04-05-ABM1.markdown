@@ -8,7 +8,7 @@ use_math: true
 ---
 -----
 
-<div style = "font-weight:500; font-size:1.1em; margin-left: 1em; margin-right: 1em;text-align:justify; ">
+<div style = "font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; ">
 <p align="center">
 <img src="/images/post_img/NL.png" width="400" height="100">
 </p>
@@ -23,7 +23,7 @@ use_math: true
 <img src="/images/post_img/NL2.png" width="300" height="300">
 </div>
 <br>
-<div style = "font-weight:500; font-size:1.1em; margin-left: 1em; margin-right: 1em;text-align:justify; ">
+<div style = "font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; ">
 
 까맣게 보이는 창을 <b style = "color:#d7385e;font-size:1.2">world </b> 라고 하며 agent인 <b style = "color:#d7385e;font-size:1.2">turtle</b>이 <b style = "color:#d7385e;font-size:1.2">patch</b>들로 이루어진 grid위에서 움직일 수 있다. edit을 누르면 world의 설정을 바꿀 수 있다. NetLogo의 기본적인 요소로 turtles, patches, links, observer가 있으며 각각의 특징은 다음과 같다. 
 <ul>
