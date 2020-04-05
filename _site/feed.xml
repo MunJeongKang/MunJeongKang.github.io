@@ -5,9 +5,60 @@
     <description>github blog</description>
     <link>http://munjeongkang.github.io/</link>
     <atom:link href="http://munjeongkang.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 04 Apr 2020 13:34:18 +0900</pubDate>
-    <lastBuildDate>Sat, 04 Apr 2020 13:34:18 +0900</lastBuildDate>
+    <pubDate>Sun, 05 Apr 2020 18:29:23 +0900</pubDate>
+    <lastBuildDate>Sun, 05 Apr 2020 18:29:23 +0900</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Agent Based Modeling - NetLogo Primer</title>
+        <description>&lt;hr /&gt;
+
+&lt;div style=&quot;font-weight:500; font-size:1.1em; margin-left: 1em; margin-right: 1em;text-align:justify; &quot;&gt;
+&lt;p align=&quot;center&quot;&gt;
+&lt;img src=&quot;/images/post_img/NL.png&quot; width=&quot;400&quot; height=&quot;100&quot; /&gt;
+&lt;/p&gt;
+&lt;b style=&quot;color:#d7385e; font-size:1.2&quot;&gt;NetLogo&lt;/b&gt;는 agent-based modeling 언어로 주로 자연 현상이나 사회 현상에 대해 시뮬레이션 할 때 사용되며 배우기 쉬운 ABM tool 중 하나이다. 디자인 원칙으로 Low threshold 와 High ceiling이 있다. Low threshold는 처음 사용하는 사람들도 간단한 모델을 만들 수 있다는 의미이고 High ceiling은 high end complex 모델을 가능하게 할 만큼 충분히 표현되어야 하며 논문 출간시 사용될 수 있다는 의미이다. NetLogo는 &lt;a href=&quot;https://ccl.northwestern.edu/netlogo/&quot; style=&quot;color:#d7385e;font-size:1.2&quot;&gt;홈페이지&lt;/a&gt;에서 다운받을 수 있으며 사용자 인터페이스는 다음과 같다. 
+&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;div style=&quot;border: 1px; float: right;margin-left: 1em; margin-right: 1em; &quot;&gt;
+&lt;img src=&quot;/images/post_img/NL3.png&quot; width=&quot;300&quot; height=&quot;300&quot; /&gt;
+&lt;/div&gt;
+&lt;div style=&quot;border: 1px; margin-left: 1em; margin-right: 1em; &quot;&gt;
+&lt;img src=&quot;/images/post_img/NL2.png&quot; width=&quot;300&quot; height=&quot;300&quot; /&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;div style=&quot;font-weight:500; font-size:1.1em; margin-left: 1em; margin-right: 1em;text-align:justify; &quot;&gt;
+
+까맣게 보이는 창을 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;world &lt;/b&gt; 라고 하며 agent인 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;turtle&lt;/b&gt;이 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;patch&lt;/b&gt;들로 이루어진 grid위에서 움직일 수 있다. edit을 누르면 world의 설정을 바꿀 수 있다. NetLogo의 기본적인 요소로 turtles, patches, links, observer가 있으며 각각의 특징은 다음과 같다. 
+&lt;ul&gt;
+&lt;li type=&quot;circle&quot;&gt;Turtles : 동적인 에이전트이며 각각은 독립적으로 표현되고 좌표는 실수(real number)값을 가진다.  &lt;/li&gt;
+&lt;li type=&quot;circle&quot;&gt;Patches : 정적인 에이전트이며 공간(space)으로 표현되고 좌표는 항상 정수(integer)값을 가진다. &lt;/li&gt;
+&lt;li type=&quot;circle&quot;&gt;Links : 에이전트는 서로 링크되어 연결될 수 있다. &lt;/li&gt;
+&lt;li type=&quot;circle&quot;&gt;Observer : 유저 인터페이스의 맨 아래를 보면 observer가 있다. 이 창을 통해 world를 관찰하고(observe), 통제하고(control), 명령하는 것(command)이 가능하다.  &lt;/li&gt;
+&lt;/ul&gt;
+NetLogo 모델 타입은 크게 3가지가 있다. Patch만으로 이루어진 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;Patch only&lt;/b&gt;, turtle만으로 이루어진 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;Turtle only&lt;/b&gt;, patch와 turtle 모두로 이루어진 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;Patch and Turtle&lt;/b&gt;이 있다.
+&lt;br /&gt;&lt;br /&gt;
+NetLogo는 화면 위쪽에는 Interface, Info, Code의 3가지 탭이 있다. Interface는 에이전트와 옵저버를 연결하는 역할을 하고 (즉, 첫 화면에서 world의 환경을 구성하고 실행하는 것) Info에는 NetLogo 모델에 대한 간략한 정보들이 있으며 code에서는 모델을 프로그래밍 하는 코드를 넣을 수 있다. 
+&lt;br /&gt;&lt;br /&gt;
+&lt;p align=&quot;center&quot;&gt;
+&lt;img src=&quot;/images/post_img/NL4.png&quot; width=&quot;350&quot; height=&quot;300&quot; /&gt;
+&lt;/p&gt;
+&lt;br /&gt;Interface 탭에서는 위와 같이 시뮬레이션 모델 실행을 통제할 수 있는 Button, Input, 파라미터 값을 설정할 수 있는 Silder, Switch, Chooser, 시뮬레이션 결과를 시각화해주는 Monitor, Plot, Output, Note 등을 생성할 수 있다. 
+&lt;br /&gt;&lt;br /&gt;
+
+
+
+&lt;/div&gt;
+</description>
+        <pubDate>Sun, 05 Apr 2020 18:00:08 +0000</pubDate>
+        <link>http://munjeongkang.github.io/ABM1/</link>
+        <guid isPermaLink="true">http://munjeongkang.github.io/ABM1/</guid>
+        
+        
+        <category>수업</category>
+        
+      </item>
     
       <item>
         <title>논문리뷰 - Symmetry helps: Bounded bi-directional dynamic programming for the elementary shortest path problem with resource constraints</title>
