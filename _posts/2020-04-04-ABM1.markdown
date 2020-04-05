@@ -34,7 +34,7 @@ use_math: true
 </ul>
 NetLogo 모델 타입은 크게 3가지가 있다. Patch만으로 이루어진 <b style = "color:#d7385e;font-size:1.2">Patch only</b>, turtle만으로 이루어진 <b style = "color:#d7385e;font-size:1.2">Turtle only</b>, patch와 turtle 모두로 이루어진 <b style = "color:#d7385e;font-size:1.2">Patch and Turtle</b>이 있다.
 <br><br>
-NetLogo는 화면 위쪽에는 Interface, Info, Code의 3가지 탭이 있다. Interface는 에이전트와 옵저버를 연결하는 역할을 하고 (즉, 첫 화면에서 world의 환경을 구성하고 실행하는 것) Info에는 NetLogo 모델에 대한 간략한 정보들이 있으며 code에서는 모델을 프로그래밍 하는 코드를 넣을 수 있다. 
+NetLogo의 화면 위쪽에는 Interface, Info, Code의 3가지 탭이 있다. Interface는 에이전트와 옵저버를 연결하는 역할을 하고 (즉, 첫 화면에서 world의 환경을 구성하고 실행하는 것) Info에는 NetLogo 모델에 대한 간략한 정보들이 있으며 code에서는 모델을 프로그래밍 하는 코드를 넣을 수 있다. 
 <br><br>
 <p align="center">
 <img src="/images/post_img/NL4.png" width="350" height="300">

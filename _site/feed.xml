@@ -5,9 +5,85 @@
     <description>github blog</description>
     <link>http://munjeongkang.github.io/</link>
     <atom:link href="http://munjeongkang.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 05 Apr 2020 18:29:23 +0900</pubDate>
-    <lastBuildDate>Sun, 05 Apr 2020 18:29:23 +0900</lastBuildDate>
+    <pubDate>Sun, 05 Apr 2020 21:40:35 +0900</pubDate>
+    <lastBuildDate>Sun, 05 Apr 2020 21:40:35 +0900</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Agent Based Modeling - Model, Modeling and Simulation</title>
+        <description>&lt;hr /&gt;
+&lt;p&gt;&lt;span style=&quot;font-weight:700; font-size:1.4em; margin-left: 0.8em; margin-right: 1em;&quot;&gt;
+모델 (MODEL)
+&lt;/span&gt;
+&lt;br /&gt;&lt;/p&gt;
+&lt;div style=&quot;font-weight:500; font-size:1.1em; margin-left: 1em; margin-right: 1em;text-align:justify; &quot;&gt;
+
+&lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;모델&lt;/b&gt;은 어떤 것에 대한 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;추상화&lt;/b&gt;(또는 단순화)이다. Object, Process, Event, Concept 등이 대상이 될 수 있으며 추상화는 가정(assumptions)과 근사(approximations)를 포함한다. 모델은 복잡한 것들을 이해하고 다루기 위해 사용되며, 모델을 통해 다양한 아이디어들을 시도해 볼 수 있다. 또한, 모델을 연구하는 것이 현실세계에 직접 적용하는 것보다 더 쉽고 빠르며 저렴하고 안전하다는 장점이 있다. 때론 모델을 만드는 것 자체가 유익하고 직관력을 줄 수도 있다. 
+&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;span style=&quot;font-weight:700; font-size:1.4em; margin-left: 0.8em; margin-right: 1em;&quot;&gt;
+모델링 (MODELING)
+&lt;/span&gt;
+&lt;br /&gt;&lt;/p&gt;
+&lt;div style=&quot;font-weight:500; font-size:1.1em; margin-left: 1em; margin-right: 1em;text-align:justify; &quot;&gt;
+모델을 만드는 과정을 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;모델링&lt;/b&gt;이라고 하며 모델링의 목적은 현실 세계의 문제들을 이해하거나 풀기 위함이다. 현실 세계의 문제는 솔루션을 바로 구해 적용하기 매우 어렵기 때문에 모델을 통해 시뮬레이션 해보고 비로소 현실세계에 적용한다. 모델은 다음과 같이 다양한 타입들이 있다. 
+
+&lt;ul&gt;
+&lt;li type=&quot;circle&quot;&gt;Physical Model  &lt;/li&gt;
+&lt;li type=&quot;circle&quot;&gt;Conceptual Model (Mental Model, Graphical Model)&lt;/li&gt;
+&lt;li type=&quot;circle&quot;&gt;Mathematical / Analytical Model&lt;/li&gt;
+&lt;li type=&quot;circle&quot;&gt;&lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;Computational / Numerical Model&lt;/b&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+개념적 모델(conceptual model)은 계산적 모델(computational model)을 실행하기 위한 첫번째 단계이다. Flow chart와 같이 어떻게 모델의 구조를 디자인할지 결정하는 가장 기본적인 단계이며 계산적 모델은 수치적인 방법(numerical method)을 통해 분석적인 모델을 푸는 것이다. 예를 들어 어떤 방정식을 풀기 위한 알고리즘을 푸는 것, 엑셀과 같이 분석적인 솔루션을 구하는 것, 분석적으로 풀기 불가능한 문제를 푸는 것(시뮬레이션) 등을 들 수가 있다. 수리 모형(mathematical model)은 수리적 공식(mathematical formula)을 이용하여 reality를 설명하도록 하는 것이다. &lt;strike style=&quot;color:grey;font-size:0.5&quot;&gt; 수리모형을 활용하는 것이 나의 주 전공이기도 하다..^^;&lt;/strike&gt;
+&lt;br /&gt;&lt;br /&gt;
+매우 크고 복잡한 문제는 분석적인(analytic) 솔루션이 존재하지 않고 찾기도 매우 힘들다. 계산적 모델을 사용한 시뮬레이션은 분석적 모델(수리 모형)보다 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;복잡성&lt;/b&gt;(complexity)을 더 잘 표현할 수 있다. 분석적 모델은 수치적 모델 보다 더 엄격한 가정(strict assumptions)이 요구되고 순간적인 행동을 거의 표현할 수 없다. 즉, No Dynamic Situation이다. 모델링의 cycle은 다음과 같이 이루어진다.  
+
+&lt;ol&gt;
+&lt;li&gt;문제를 공식화한다. (Formulate the question/problem) &lt;/li&gt;
+&lt;li&gt;필수적인 과정과 구조에 대한 가설들을 모은다. (Assemble hypotheses for essential processes and structures)  &lt;/li&gt;
+&lt;li&gt;모델 구조를 선택한다. (Choose model structure)  &lt;/li&gt;
+&lt;li&gt;모델을 실행한다. (Implement the model) &lt;/li&gt;
+&lt;li&gt;모델을 분석하고 테스트하고 수정한다. (Analyze, test, and revise the model) &lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;span style=&quot;font-weight:700; font-size:1.4em; margin-left: 0.8em; margin-right: 1em;&quot;&gt;
+시뮬레이션 (SIMULATION)
+&lt;/span&gt;
+&lt;br /&gt;&lt;/p&gt;
+&lt;div style=&quot;font-weight:500; font-size:1.1em; margin-left: 1em; margin-right: 1em;text-align:justify; &quot;&gt;
+
+&lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;What-if&lt;/b&gt; 조건하에서 모델의 행동을 연구하는 것이 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;시뮬레이션&lt;/b&gt;이다. 여기서는 주로 logical simulation을 다루며 이는 적절한 소프트웨어의 컴퓨터 프로그램을 통해 나타내어진다. 주로 어떤 것에 대해 시도해보거나, 결과를 얻거나 모델 행동에 대해 배우기 위해 프로그램을 실행한다. 시뮬레이션 타입은 다음과 같이 나뉠 수 있다. 
+&lt;br /&gt;&lt;br /&gt;
+&lt;div style=&quot;font-weight:500; font-size:1.1em; text-align:center; &quot;&gt;
+&lt;b&gt;Static &lt;/b&gt; vs  &lt;b&gt;Dynamic&lt;/b&gt;&lt;br /&gt;
+&lt;b&gt;Continuous &lt;/b&gt; vs &lt;b&gt; Discrete&lt;/b&gt;&lt;br /&gt;
+&lt;b&gt;Deterministic &lt;/b&gt; vs &lt;b&gt; Stochastic&lt;/b&gt;&lt;br /&gt;&lt;br /&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div style=&quot;border: 1px; float: right;margin-left: 1em; margin-right: 1em; &quot;&gt;
+&lt;img src=&quot;/images/post_img/NL7.jpg&quot; width=&quot;310&quot; height=&quot;300&quot; /&gt;
+&lt;/div&gt;
+&lt;div style=&quot;border: 1px; margin-left: 1em; margin-right: 1em; &quot;&gt;
+&lt;img src=&quot;/images/post_img/NL6.jpg&quot; width=&quot;310&quot; height=&quot;300&quot; /&gt;
+&lt;/div&gt;
+
+&lt;div style=&quot;font-weight:500; font-size:1.1em; margin-left: 1em; margin-right: 1em;text-align:justify; &quot;&gt;
+&lt;br /&gt;
+대부분의 시뮬레이션 모델링은 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;dynamic&lt;/b&gt;, &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;discrete-change&lt;/b&gt;, &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;stochastic&lt;/b&gt;한 특징을 가진다. 위의 그림은 scale의 추상화 정도와 시뮬레이션 모델링의 응용분야를 나타낸다. 추상화 정도가 높으면 detail이 적은 Macro level이며 추상화 정도가 낮으면 detail이 많은 Micro level이다. ABM은 그 중에서도 모든 추상화 범위를 아우를 수 있는 방법 중 하나이다. 
+&lt;br /&gt;&lt;br /&gt;
+&lt;/div&gt;
+
+</description>
+        <pubDate>Sun, 05 Apr 2020 18:00:08 +0000</pubDate>
+        <link>http://munjeongkang.github.io/ABM2/</link>
+        <guid isPermaLink="true">http://munjeongkang.github.io/ABM2/</guid>
+        
+        
+        <category>수업</category>
+        
+      </item>
     
       <item>
         <title>Agent Based Modeling - NetLogo Primer</title>
@@ -39,7 +115,7 @@
 &lt;/ul&gt;
 NetLogo 모델 타입은 크게 3가지가 있다. Patch만으로 이루어진 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;Patch only&lt;/b&gt;, turtle만으로 이루어진 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;Turtle only&lt;/b&gt;, patch와 turtle 모두로 이루어진 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;Patch and Turtle&lt;/b&gt;이 있다.
 &lt;br /&gt;&lt;br /&gt;
-NetLogo는 화면 위쪽에는 Interface, Info, Code의 3가지 탭이 있다. Interface는 에이전트와 옵저버를 연결하는 역할을 하고 (즉, 첫 화면에서 world의 환경을 구성하고 실행하는 것) Info에는 NetLogo 모델에 대한 간략한 정보들이 있으며 code에서는 모델을 프로그래밍 하는 코드를 넣을 수 있다. 
+NetLogo의 화면 위쪽에는 Interface, Info, Code의 3가지 탭이 있다. Interface는 에이전트와 옵저버를 연결하는 역할을 하고 (즉, 첫 화면에서 world의 환경을 구성하고 실행하는 것) Info에는 NetLogo 모델에 대한 간략한 정보들이 있으며 code에서는 모델을 프로그래밍 하는 코드를 넣을 수 있다. 
 &lt;br /&gt;&lt;br /&gt;
 &lt;p align=&quot;center&quot;&gt;
 &lt;img src=&quot;/images/post_img/NL4.png&quot; width=&quot;350&quot; height=&quot;300&quot; /&gt;
