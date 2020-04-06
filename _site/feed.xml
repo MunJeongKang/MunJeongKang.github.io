@@ -5,8 +5,8 @@
     <description>github blog</description>
     <link>http://munjeongkang.github.io/</link>
     <atom:link href="http://munjeongkang.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 05 Apr 2020 22:14:30 +0900</pubDate>
-    <lastBuildDate>Sun, 05 Apr 2020 22:14:30 +0900</lastBuildDate>
+    <pubDate>Mon, 06 Apr 2020 22:33:41 +0900</pubDate>
+    <lastBuildDate>Mon, 06 Apr 2020 22:33:41 +0900</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -18,65 +18,72 @@
 &lt;br /&gt;&lt;/p&gt;
 &lt;div style=&quot;font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; &quot;&gt;
 
-&lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;시스템&lt;/b&gt;은 어떤 목적을 이루기 위해 함께 상호작용하고 행동하는 요소들의 집합이다. 시스템을 모델링하는 두가지 측면이 있는데 각각은 Aggregate View (Top-down approach)와 Constituent View (Bottom-up approach)이다.     어떤 것에 대한 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;추상화&lt;/b&gt;(또는 단순화)이다. Object, Process, Event, Concept 등이 대상이 될 수 있으며 추상화는 가정(assumptions)과 근사(approximations)를 포함한다. 모델은 복잡한 것들을 이해하고 다루기 위해 사용되며, 모델을 통해 다양한 아이디어들을 시도해 볼 수 있다. 또한, 모델을 연구하는 것이 현실세계에 직접 적용하는 것보다 더 쉽고 빠르며 저렴하고 안전하다는 장점이 있다. 때론 모델을 만드는 것 자체가 유익하고 직관력을 줄 수도 있다. 
+&lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;시스템&lt;/b&gt;은 어떤 목적을 이루기 위해 함께 상호작용하고 행동하는 요소들의 집합이다. 시스템을 모델링하는 두 가지 측면이 있는데 각각은 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;Aggregate View&lt;/b&gt; (Top-down approach)와 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;Constituent View&lt;/b&gt; (Bottom-up approach)이다. Aggregate View는 target system의 프로세스, 내부 관계, 파라미터 등을 안다고 가정하는 것이고, 개인의 자유도는 보통 무시되며 (homogeneity) pre-determinded 구조를 가진다. Constituent View는 통합적인 것보다 각 요소의 성질이나 행동 (action, decision pattern 등)에 초점을 맞추며 진화하는 (evolving) 구조를 가진다.  
 &lt;/div&gt;
 &lt;p&gt;&lt;br /&gt;
 &lt;span style=&quot;font-weight:700; font-size:1.3em; margin-left: 0.8em; margin-right: 1em;&quot;&gt;
-모델링 (MODELING)
+복잡한 시스템 (COMPLEX SYSTEMS)
 &lt;/span&gt;
 &lt;br /&gt;&lt;/p&gt;
 &lt;div style=&quot;font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; &quot;&gt;
-모델을 만드는 과정을 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;모델링&lt;/b&gt;이라고 하며 모델링의 목적은 현실 세계의 문제들을 이해하거나 풀기 위함이다. 현실 세계의 문제는 솔루션을 바로 구해 적용하기 매우 어렵기 때문에 모델을 통해 시뮬레이션 해보고 비로소 현실세계에 적용한다. 모델은 다음과 같이 다양한 타입들이 있다. 
-
-&lt;ul&gt;
-&lt;li type=&quot;circle&quot;&gt;Physical Model  &lt;/li&gt;
-&lt;li type=&quot;circle&quot;&gt;Conceptual Model (Mental Model, Graphical Model)&lt;/li&gt;
-&lt;li type=&quot;circle&quot;&gt;Mathematical / Analytical Model&lt;/li&gt;
-&lt;li type=&quot;circle&quot;&gt;&lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;Computational / Numerical Model&lt;/b&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-개념적 모델(conceptual model)은 계산적 모델(computational model)을 실행하기 위한 첫번째 단계이다. Flow chart와 같이 어떻게 모델의 구조를 디자인할지 결정하는 가장 기본적인 단계이며 계산적 모델은 수치적인 방법(numerical method)을 통해 분석적인 모델을 푸는 것이다. 예를 들어 어떤 방정식을 풀기 위한 알고리즘을 푸는 것, 엑셀과 같이 분석적인 솔루션을 구하는 것, 분석적으로 풀기 불가능한 문제를 푸는 것(시뮬레이션) 등을 들 수가 있다. 수리 모형(mathematical model)은 수리적 공식(mathematical formula)을 이용하여 reality를 설명하도록 하는 것이다. &lt;strike style=&quot;color:grey;font-size:0.5&quot;&gt; 수리모형을 활용하는 것이 나의 주 전공이기도 하다..^^;&lt;/strike&gt;
+&lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;Complex systems&lt;/b&gt;은 다양한 분야의 문제에 대한 접근방법을 포괄하는 광범위한 용어로 사용되므로 어느 한 가지로 정의하기 힘들다. 어떤 요소의 행동으로 단순히 complex systems의 행동을 예측하기는 힘들고 전체 시스템을 부분으로 나누어 각각을 이해하는 것도 옳지 않다. 즉, 단순하게 1+1은 2가 아니라고 생각하면 쉽게 연상할 수 있다. Complex systems는 중심적인 제어장치와 단순한 운영 규칙이 없는 거대한 네트워크이며 복잡한 집단 행동, 정교한 정보처리, 학습을 통한 적응이 이루어진다. 또한, nontrivial emergent 또는 자기 조직적 행동을 나타낼 수도 있다. 예를 들어 각 개인의 거래자가 시스템이라면 그 거래자들이 모인 마켓의 수요와 공급을 complex systems로 볼 수 있다. 또는 뉴런이 모인 뇌를 complex systems로도 볼 수 있으며 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;채찍효과(Bullwhip Effect)&lt;/b&gt;도 예시로 들 수 있다. 
 &lt;br /&gt;&lt;br /&gt;
-매우 크고 복잡한 문제는 분석적인(analytic) 솔루션이 존재하지 않고 찾기도 매우 힘들다. 계산적 모델을 사용한 시뮬레이션은 분석적 모델(수리 모형)보다 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;복잡성&lt;/b&gt;(complexity)을 더 잘 표현할 수 있다. 분석적 모델은 수치적 모델 보다 더 엄격한 가정(strict assumptions)이 요구되고 순간적인 행동을 거의 표현할 수 없다. 즉, No Dynamic Situation이다. 모델링의 cycle은 다음과 같이 이루어진다.  
 
-&lt;ol&gt;
-&lt;li&gt;문제를 공식화한다. (Formulate the question/problem) &lt;/li&gt;
-&lt;li&gt;필수적인 과정과 구조에 대한 가설들을 모은다. (Assemble hypotheses for essential processes and structures)  &lt;/li&gt;
-&lt;li&gt;모델 구조를 선택한다. (Choose model structure)  &lt;/li&gt;
-&lt;li&gt;모델을 실행한다. (Implement the model) &lt;/li&gt;
-&lt;li&gt;모델을 분석하고 테스트하고 수정한다. (Analyze, test, and revise the model) &lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-&lt;p&gt;&lt;span style=&quot;font-weight:700; font-size:1.3em; margin-left: 0.8em; margin-right: 1em;&quot;&gt;
-시뮬레이션 (SIMULATION)
-&lt;/span&gt;
-&lt;br /&gt;&lt;/p&gt;
-&lt;div style=&quot;font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; &quot;&gt;
-
-&lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;What-if&lt;/b&gt; 조건하에서 모델의 행동을 연구하는 것이 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;시뮬레이션&lt;/b&gt;이다. 여기서는 주로 logical simulation을 다루며 이는 적절한 소프트웨어의 컴퓨터 프로그램을 통해 나타내어진다. 주로 어떤 것에 대해 시도해보거나, 결과를 얻거나 모델 행동에 대해 배우기 위해 프로그램을 실행한다. 시뮬레이션 타입은 다음과 같이 나뉠 수 있다. 
-&lt;br /&gt;&lt;br /&gt;
-&lt;div style=&quot;font-weight:500; font-size:1.1em; text-align:center; &quot;&gt;
-&lt;b&gt;Static &lt;/b&gt; vs  &lt;b&gt;Dynamic&lt;/b&gt;&lt;br /&gt;
-&lt;b&gt;Continuous &lt;/b&gt; vs &lt;b&gt; Discrete&lt;/b&gt;&lt;br /&gt;
-&lt;b&gt;Deterministic &lt;/b&gt; vs &lt;b&gt; Stochastic&lt;/b&gt;&lt;br /&gt;&lt;br /&gt;
-&lt;/div&gt;
 &lt;/div&gt;
 
 &lt;div style=&quot;border: 1px; float: right;margin-left: 1em; margin-right: 1em; &quot;&gt;
-&lt;img src=&quot;/images/post_img/NL7.jpg&quot; width=&quot;310&quot; height=&quot;300&quot; /&gt;
+&lt;img src=&quot;/images/post_img/NL8.jpg&quot; width=&quot;310&quot; height=&quot;300&quot; /&gt;
 &lt;/div&gt;
-&lt;div style=&quot;border: 1px; margin-left: 1em; margin-right: 1em; &quot;&gt;
-&lt;img src=&quot;/images/post_img/NL6.jpg&quot; width=&quot;310&quot; height=&quot;300&quot; /&gt;
+&lt;div style=&quot;border: 1px; margin-left: 2em; margin-right: 1em; &quot;&gt;
+&lt;img src=&quot;/images/post_img/NL9.jpg&quot; width=&quot;270&quot; height=&quot;300&quot; /&gt;
 &lt;/div&gt;
 
 &lt;div style=&quot;font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; &quot;&gt;
-&lt;br /&gt;
-대부분의 시뮬레이션 모델링은 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;dynamic&lt;/b&gt;, &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;discrete-change&lt;/b&gt;, &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;stochastic&lt;/b&gt;한 특징을 가진다. 위의 그림은 scale의 추상화 정도와 시뮬레이션 모델링의 응용분야를 나타낸다. 추상화 정도가 높으면 detail이 적은 Macro level이며 추상화 정도가 낮으면 detail이 많은 Micro level이다. ABM은 그 중에서도 모든 추상화 범위를 아우를 수 있는 방법 중 하나이다. 
+채찍효과란 고객주문 정보가 상류로 전달되는 과정에서 정보가 왜곡되고 확대되는 현상을 말한다. 말그대로 채찍질하는 사람을 생각하면 이해하기 쉽다. 처음에는 채찍의 폭이 좁지만 갈수록 커지는 것과 같아 붙여진 이름이다. Complex systems에서는 초기 조건의 작은 차이(반올림에 따른 값의 차이 등)가 완전히 다른 결과를 초래할 수 있다. 마치 나비효과처럼 말이다. 
+&lt;br /&gt;&lt;br /&gt;
+
+Complex systems는 5가지 특성을 가지는데 각각은 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;Non-linearity&lt;/b&gt;, &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;Interconnectedness&lt;/b&gt;, &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;Feedbacks&lt;/b&gt;, &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;Delays&lt;/b&gt;, &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;Heterogeneity&lt;/b&gt;이다. Input은 선형적인 방식으로 output에 영향을 미치는 것은 아니며 각각은 연결되어 있고 다른 결정에 영향을 미친다. 그러므로 각각을 하나씩 분리함으로써 문제를 풀 수는 없다. 또한, 시스템의 output에 따라 행동이 변할 수 있고, output이 input에 영향을 끼치기 위해 지연될 수 있으며, 각각은 여러가지 다양한 종류들로 이루어진다. Agent Based Model, System Dynamics, Network theory(complex networks) 모두 complex systems modeling이다.
+
+&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;span style=&quot;font-weight:700; font-size:1.3em; margin-left: 0.8em; margin-right: 1em;&quot;&gt;
+에이전트 기반 모델 (ABM)
+&lt;/span&gt;
+&lt;br /&gt;&lt;/p&gt;
+&lt;div style=&quot;font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; &quot;&gt;
+
+Complex systems에서 발생한 문제에 대한 답으로 단순한 모델은 더이상 충분하지 않다. &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;ABM&lt;/b&gt; (Agent Based Modeling)은 그에 대한 해답을 주는 주된 방법 중 하나이며, 시스템 전체에 미치는 영향을 평가하기 위한 목적으로 자율적인 에이전트의 행동과 상호작용을 시뮬레이션하는 계산 모델의 일종이다. 또한, 복잡한 현상의 출현을 re-create하고 예측하면서 동시다발적인 현상과 다수의 agent들의 상호작용을 시뮬레이션하는 microscale 모델의 일종이다. 
+&lt;br /&gt;&lt;br /&gt;
+여기서 Agent는 특정한 성질(property)이나 상태(state) 또는 행동(action)을 지닌 자율적이고 계산적인 객체를 의미하며 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;Emergence&lt;/b&gt;는 다수의 분포된 element들의 상호작용을 통해 발생한 새롭고 일관적인 구조, 패턴, 성질을 의미한다. Emergent 구조는 element의 성질로 부터 단독으로 추론될 수 없고 element의 상호작용을 통해 생긴다. 또한, 어떠한 제어 요소없이 자발적으로 발생되기 때문에 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;self-organizes&lt;/b&gt;라고 할 수 있다. 에이전트 기반 모델링의 핵심은 어떤 현상에 대한 간단한 규칙을 찾아 emergence를 활용하는 것이다. 
 &lt;br /&gt;&lt;br /&gt;
 &lt;/div&gt;
+&lt;div style=&quot;border: 1px; float: right;margin-left: 1em; margin-right: 1em; &quot;&gt;
+&lt;img src=&quot;/images/post_img/v_shape.jpg&quot; width=&quot;310&quot; height=&quot;300&quot; /&gt;
+&lt;/div&gt;
+&lt;div style=&quot;border: 1px; margin-left: 1em; margin-right: 1em; &quot;&gt;
+&lt;img src=&quot;/images/post_img/fish-flocking.jpg&quot; width=&quot;310&quot; height=&quot;300&quot; /&gt;
+&lt;/div&gt;
 
+&lt;div style=&quot;font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; &quot;&gt;
+Emergence의 예시로 자연현상에서 모티브를 받은 건축물, Fish Flocking (물고기들이 떼지어 헤엄치는 것), Bird Flocking (새들이 떼지어 날아다니는 것), 기러기떼가 V자 형태로 날아가는 것 등을 들 수 있다. NetLogo 모델의 example로 Flocking.nlogo 파일이 있으므로 참고해도 좋다. 이 모델은 새들이 떼지어 다니는 행동을 시뮬레이션하기 위해 Craig Reynolds가 1986년에 고안해낸 모델이다.
+&lt;br /&gt;&lt;br /&gt;
+&lt;p align=&quot;center&quot;&gt;
+&lt;img src=&quot;/images/post_img/flocking.gif&quot; width=&quot;250&quot; height=&quot;250&quot; /&gt;
+&lt;/p&gt;
+
+이 모델에서는 새들의 움직임을 시뮬레이션하기 위해 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;Separate&lt;/b&gt;, &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;Cohere&lt;/b&gt;, &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;Align&lt;/b&gt;의 특징을 가진다고 가정한다. Separate는 다른 모든 객체들과 최소 거리를 유지해야함을 뜻하고 Cohere는 flockmate를 향해 움직여야함을, Align은 flockmate와 같은 방향으로 움직여야함을 뜻한다. 
+&lt;br /&gt;&lt;br /&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;span style=&quot;font-weight:700; font-size:1.3em; margin-left: 0.8em; margin-right: 1em;&quot;&gt;
+ABM 장점 및 단점 
+&lt;/span&gt;&lt;/p&gt;
+&lt;div style=&quot;font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; &quot;&gt;
+ABM은 복잡한 현상을 이해하기 쉽게 시각적으로 표현해주고 상호작용하는 요소들 사이의 연결을 잘 나태내어주는 장점을 가진다. 또한 귀납적(induction), 연역적(deduction)방법을 통합한 방법을 사용하여 알려진 전제들로 일반적인 이론을 만들기 위한 특정한 데이터 집합을 만들 수 있다. 우리가 알려진 하나의 전제를 알고 있을 경우 통합적인 패턴을 결정하는 것은 어렵지만 ABM은 이를 이해하기 쉽게 해주고, 반대로 통합적인 패턴을 알고 있을 경우에는 규칙을 제안하여 그 현상이 만들어지는지 확인함으로써 각각의 전제를 알 수 있도록 해준다. 
+&lt;br /&gt;&lt;br /&gt;
+그러나 ABM의 계산적인 모델은 예측가능한 결과를 주로 만들고 구체적인 상황에 근사적으로 맞춰져있으며 확실하지 않다. 또한, 계산 모델을 수정하고 이해하기가 쉽지 않다는 단점이 있다.
+&lt;/div&gt;
 </description>
-        <pubDate>Sun, 05 Apr 2020 18:00:08 +0000</pubDate>
+        <pubDate>Mon, 06 Apr 2020 18:00:08 +0000</pubDate>
         <link>http://munjeongkang.github.io/ABM3/</link>
         <guid isPermaLink="true">http://munjeongkang.github.io/ABM3/</guid>
         
