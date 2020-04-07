@@ -21,7 +21,6 @@ use_math: true
 <li>turtle 1의 색깔, 사이즈, 모양 바꾸기 : <code>ask turtle 1 [set size 5 set shape "cat" set color yellow]</code></li>
 <li>초기화하기 : <code>clear-all</code>또는 <code>ca</code></li>
 <li>turtle이 움직인 경로 나타내기 : <code>pen-down</code></li>
-<li>초기화하기 : <code></code></li>
 </ol>
 </div>
 
