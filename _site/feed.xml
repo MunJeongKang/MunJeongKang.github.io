@@ -5,9 +5,40 @@
     <description>github blog</description>
     <link>http://munjeongkang.github.io/</link>
     <atom:link href="http://munjeongkang.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 07 Apr 2020 17:23:05 +0900</pubDate>
-    <lastBuildDate>Tue, 07 Apr 2020 17:23:05 +0900</lastBuildDate>
+    <pubDate>Tue, 07 Apr 2020 21:19:51 +0900</pubDate>
+    <lastBuildDate>Tue, 07 Apr 2020 21:19:51 +0900</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Agent Based Modeling - From Animations to Science</title>
+        <description>&lt;hr /&gt;
+
+&lt;div style=&quot;font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; &quot;&gt;
+모델은 그 자체가 목적은 아니다. 관찰된 사실이나 증명된 이론을 사용하여 실제 실험이나 가상의 실험을 수행할 수 있도록 돕는 역할을 한다. 일반적으로 과학적 접근방법의 프로세스는 다음과 같다. 먼저 경험적 연구(Observation/Measurement 등)와 이론적 연구(Ideas/Abstract Principles 등)를 토대로 가설을 세우고 가설을 테스트한다. 만약 가설이 틀렸다면 다시 가설을 세우고 맞을경우 가설을 증명하여 일반적인 법칙으로 받아들인다.
+&lt;br /&gt; &lt;br /&gt;
+앞서 살펴본 Butterfly model의 경우 나비의 움직임을 시뮬레이션 해볼 수는 있지만, corridors가 언제 어떻게 강하게 발현되는지에 대해서는 설명해주지 않는다. 이 경우 &#39;corridor를 어떻게 묘사해야할까&#39; 라는 의문이 든다. 그렇기 때문에 우리는 분석을 위한 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;Quantitative Output&lt;/b&gt;이 필요하다. 파라미터 &lt;i&gt;q&lt;/i&gt; (나비가 가장 높은 위치로 이동할 확률)를 바꾸거나 지형을 바꿈으로써 나비가 움직인 경로의 길이가 어떻게 변화하는지 수량화하는 것도 하나의 방법이다. 
+&lt;br /&gt;&lt;br /&gt;
+
+&lt;div style=&quot;border: 1px; float: right;margin-left: 1em; margin-right: 1em; &quot;&gt;
+&lt;img src=&quot;/images/post_img/butterfly4.gif&quot; width=&quot;290&quot; height=&quot;300&quot; /&gt;
+&lt;/div&gt;
+&lt;div style=&quot;border: 1px; margin-left: 2em; margin-right: 1em; &quot;&gt;
+&lt;img src=&quot;/images/post_img/butterfly3.gif&quot; width=&quot;290&quot; height=&quot;300&quot; /&gt;
+&lt;/div&gt;
+
+&lt;br /&gt;&lt;br /&gt;
+파라미터 &lt;i&gt;q&lt;/i&gt;에 따라 corridor width가 변하는 것을 볼 수 있다. &lt;i&gt;q&lt;/i&gt;가 1에 가까울수록 나비들의 이동에 대한 무작위성이 적기 때문에 움직임이 직선에 가까워지고 corridor width가 더 작아짐을 볼 수 있다. NetLogo의 plot을 활용하여 시간에 따른 corridor의 변화를 그려볼 수도 있다. 이러한 분석을 Time-series 분석이라고 한다. 
+
+&lt;/div&gt;
+</description>
+        <pubDate>Tue, 07 Apr 2020 18:00:08 +0000</pubDate>
+        <link>http://munjeongkang.github.io/ABM5%20%E1%84%87%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A1%E1%84%87%E1%85%A9%E1%86%AB/</link>
+        <guid isPermaLink="true">http://munjeongkang.github.io/ABM5%20%E1%84%87%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A1%E1%84%87%E1%85%A9%E1%86%AB/</guid>
+        
+        
+        <category>수업</category>
+        
+      </item>
     
       <item>
         <title>Agent Based Modeling - Butterfly Hilltopping Model</title>
@@ -45,11 +76,12 @@
       <item>
         <title>Agent Based Modeling - Getting Started with NetLogo</title>
         <description>&lt;hr /&gt;
-&lt;p&gt;&lt;span style=&quot;font-weight:700; font-size:1.3em; margin-left: 0.8em; margin-right: 1em;&quot;&gt;
+
+&lt;div style=&quot;font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; &quot;&gt;
+&lt;span style=&quot;font-weight:700; font-size:1.3em; margin-left: 0.8em; margin-right: 1em;&quot;&gt;
 기초 연습 (Elementary Exercises)
 &lt;/span&gt;
-&lt;br /&gt;&lt;/p&gt;
-&lt;div style=&quot;font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; &quot;&gt;
+&lt;br /&gt;
 &lt;ol&gt;
 &lt;li&gt;전체 view 화면을 파란색으로 바꾸기 : &lt;code&gt;ask patches [set pcolor blue]&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;특정 위치(0,0) patch를 빨간색으로 바꾸기 : &lt;code&gt;ask patch 0 0 [set pcolor red]&lt;/code&gt;&lt;/li&gt;
@@ -81,6 +113,23 @@
 &lt;div style=&quot;border: 1px; margin-left: 2em; margin-right: 1em; &quot;&gt;
 &lt;img src=&quot;/images/post_img/NL12.png&quot; width=&quot;270&quot; height=&quot;300&quot; /&gt;
 &lt;br /&gt;
+
+&lt;span style=&quot;font-weight:700; font-size:1.3em;&quot;&gt;
+Neighbors
+&lt;/span&gt;
+&lt;br /&gt;&lt;br /&gt;
+NetLogo에서 turtle이나 patch의 이웃은 다음과 같이 표현된다. neighbors를 사용하면 주변에 모든 patch가 선택되고 neighbors4를 사용하면 상하좌우 4개의 patch만 선택된다.&lt;br /&gt; &lt;br /&gt;
+&lt;p style=&quot;text-align:center; &quot;&gt;
+&lt;code&gt;ask turtle 0 [show count neighbors with [pcolor = green]]&lt;/code&gt;
+&lt;br /&gt; 
+&lt;code&gt;ask patch 0 0 [show count neighbors4 with [pcolor = green]]&lt;/code&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+&lt;img src=&quot;/images/post_img/NL14.png&quot; width=&quot;500&quot; height=&quot;300&quot; /&gt;
+&lt;/p&gt;
+
+
 &lt;/div&gt;
 </description>
         <pubDate>Tue, 07 Apr 2020 18:00:08 +0000</pubDate>
