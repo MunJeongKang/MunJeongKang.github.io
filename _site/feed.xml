@@ -5,9 +5,79 @@
     <description>github blog</description>
     <link>http://munjeongkang.github.io/</link>
     <atom:link href="http://munjeongkang.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 07 Apr 2020 21:19:51 +0900</pubDate>
-    <lastBuildDate>Tue, 07 Apr 2020 21:19:51 +0900</lastBuildDate>
+    <pubDate>Tue, 07 Apr 2020 23:00:48 +0900</pubDate>
+    <lastBuildDate>Tue, 07 Apr 2020 23:00:48 +0900</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Agent Based Modeling - Testing Your Program</title>
+        <description>&lt;hr /&gt;
+
+&lt;p&gt;&lt;span style=&quot;font-weight:700; font-size:1.3em; margin-left: 0.8em; margin-right: 1em;&quot;&gt;
+Overview of a Simulation Study
+&lt;/span&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;div style=&quot;font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; &quot;&gt;
+&lt;ol&gt;
+&lt;li&gt;시스템 이해하기 (시스템에 관한 사전지식 등)&lt;/li&gt;
+&lt;li&gt;목표를 분명히 하기&lt;/li&gt;
+&lt;li&gt;모델에 대한 묘사 공식화하기&lt;/li&gt;
+&lt;li&gt;모델링 소프트웨어로 변환하기&lt;/li&gt;
+&lt;li&gt;&lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;프로그램 확인하기(verify, debugging)&lt;/b&gt;&lt;/li&gt;
+&lt;li&gt;&lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;모델 확인하기(vaildate)&lt;/b&gt;&lt;/li&gt;
+&lt;li&gt;실험 디자인하기&lt;/li&gt;
+&lt;li&gt;모델 실행하기&lt;/li&gt;
+&lt;li&gt;결과에 대해 insight를 얻고 분석하여 문서화하기&lt;/li&gt;
+&lt;/ol&gt;
+
+모델을 테스트하는 3단계는 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;Vaildation&lt;/b&gt;, &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;Verification&lt;/b&gt;, &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;Debugging&lt;/b&gt;이다. Verification은 모델 formulation이 소프트웨어에서 정확하게 실행되는지 확인하는 것이다. 즉, 원하는대로 프로그램이 실행되는지 확실히 하는 것이다. 이 과정에서 실수를 찾고 고치는 노력이 요구되며 모델링의 효율을 높이기 위해 가능한 빨리 테스트를 시작하고 코드를 지속적으로 테스트해야한다. (디버깅도 verification의 한 부분이다.) Vaildation은 모델이 실제 상황을 충분히 잘 반영하고 있는지 확인하는 것이다. ABM에서는 특히 예측되지 않은 결과(Unexpected Result)에 대한 주의가 필요하다. 결과가 새롭고(novel) 중요한지, 모델 디자인은 의심스럽지 않은지, 프로그래밍 실수가 있는지 등을 확인해야한다.  
+&lt;br /&gt; &lt;br /&gt;
+&lt;span style=&quot;font-weight:700; font-size:1.3em; margin-right: 1em;&quot;&gt;
+Common Kinds of Errors
+&lt;/span&gt;
+&lt;br /&gt;&lt;br /&gt;
+흔히 발생하는 에러들은 다음과 같다. 
+&lt;br /&gt;&lt;br /&gt;
+&lt;li type=&quot;circle&quot;&gt;Typographical Errors (타이핑을 잘못한 경우)&lt;/li&gt;
+&lt;li type=&quot;circle&quot;&gt;Syntax Errors (잘못된 구문)&lt;/li&gt;
+&lt;li type=&quot;circle&quot;&gt;isunderstanding Primitives (원래 생각했던대로 정확하게 구현을 못한 경우)&lt;/li&gt; 
+&lt;li type=&quot;circle&quot;&gt;Wrong Display Setting&lt;/li&gt;
+&lt;li type=&quot;circle&quot;&gt;Run-Time Errors (프로그램을 실행할 때, 컴퓨터가 다룰 수 없는 무언가가 있는 경우)&lt;/li&gt;
+&lt;li type=&quot;circle&quot;&gt; &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;Logic Errors&lt;/b&gt; (잘못된 식, 부정확한 조건 등)&lt;/li&gt; 
+&lt;li type=&quot;circle&quot;&gt;Formulation Errors (가정, 알고리즘, 파라미터 값에 대한 에러, validation issues)&lt;/li&gt;
+&lt;br /&gt;
+&lt;span style=&quot;font-weight:700; font-size:1.3em; margin-right: 1em;&quot;&gt;
+Techniques for Debugging and Testing
+&lt;/span&gt;
+&lt;br /&gt;&lt;br /&gt;
+실수를 줄이기 위해서는 Debugging과 Testing 과정이 중요하며 다음과 같은 기법들이 있다.
+&lt;br /&gt;&lt;br /&gt;
+
+&lt;li type=&quot;circle&quot;&gt; Syntax Checking (코드 작성시 수시로 syntax를 확인하는 습관을 가지는 것)&lt;/li&gt;
+&lt;li type=&quot;circle&quot;&gt;Visual Testing (시각적으로 확인하는 것)&lt;/li&gt;
+&lt;li type=&quot;circle&quot;&gt;Print Statement (어떻게 작동하는지 프린트해서 확인하는 것)&lt;/li&gt;
+&lt;li type=&quot;circle&quot;&gt;Spot Tests with Agent Monitors (NetLogo View에 있는 Agent Monitor로 확인하는 것)&lt;/li&gt;
+&lt;li type=&quot;circle&quot;&gt;Stress Tests (extreme 값을 파라미터나 input으로 넣어 프로그램을 실행하는 것, 평범한 조건에서 숨겨진 에러를 발견할 수도 있다.), 
+&lt;li type=&quot;circle&quot;&gt;Test Procedure (중간 output을 만들어 테스트 해보는 것)&lt;/li&gt; 
+&lt;li type=&quot;circle&quot;&gt;Test Programs (특정한 프로그램 아이디어를 테스트하기 위해 짧은 프로그램으로 분리하여 실행하는 것)&lt;/li&gt; 
+&lt;li type=&quot;circle&quot;&gt;Code Reviews (동료들과 리뷰해보는 것, 다른 사람이 확인하면 실수가 발견될 수 있고 코드를 잘 정리하고 이해하기 쉽게 하기위해서)&lt;/li&gt; 
+&lt;li type=&quot;circle&quot;&gt;Statistical Analysis of File OutPut (예상했던대로 모델이 formulation 되었는지 확인하기 위해 모델의 핵심 부분을 file output으로 적어 분석해보는 것)&lt;/li&gt; 
+&lt;li type=&quot;circle&quot;&gt;Independent Reimplementation of Submodels (엑셀이나 R, Python 등 다른 플랫폼으로 확인해보는 것)&lt;/li&gt;
+&lt;li type=&quot;circle&quot;&gt;Documentation of Tests(사용된 test의 종류, 모델을 실행한 방법과 결과 등을 문서화하는 것)&lt;/li&gt;
+
+&lt;br /&gt;
+
+&lt;/li&gt;&lt;/div&gt;
+</description>
+        <pubDate>Tue, 07 Apr 2020 18:00:08 +0000</pubDate>
+        <link>http://munjeongkang.github.io/ABM7/</link>
+        <guid isPermaLink="true">http://munjeongkang.github.io/ABM7/</guid>
+        
+        
+        <category>수업</category>
+        
+      </item>
     
       <item>
         <title>Agent Based Modeling - From Animations to Science</title>
@@ -32,8 +102,8 @@
 &lt;/div&gt;
 </description>
         <pubDate>Tue, 07 Apr 2020 18:00:08 +0000</pubDate>
-        <link>http://munjeongkang.github.io/ABM5%20%E1%84%87%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A1%E1%84%87%E1%85%A9%E1%86%AB/</link>
-        <guid isPermaLink="true">http://munjeongkang.github.io/ABM5%20%E1%84%87%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A1%E1%84%87%E1%85%A9%E1%86%AB/</guid>
+        <link>http://munjeongkang.github.io/ABM6/</link>
+        <guid isPermaLink="true">http://munjeongkang.github.io/ABM6/</guid>
         
         
         <category>수업</category>
@@ -549,25 +619,6 @@ Righini, G., &amp;amp; Salani, M. (2006). Symmetry helps: Bounded bi-directional
         <pubDate>Sun, 29 Mar 2020 23:00:08 +0000</pubDate>
         <link>http://munjeongkang.github.io/Jekyll-error/</link>
         <guid isPermaLink="true">http://munjeongkang.github.io/Jekyll-error/</guid>
-        
-        
-        <category>메모</category>
-        
-      </item>
-    
-      <item>
-        <title>GitHub 블로그 시작</title>
-        <description>&lt;p&gt;코딩 새내기의 GitHub 블로그를 시작하려고 한다.&lt;/p&gt;
-
-&lt;p&gt;계정 생성부터 컴퓨터 세팅까지 쉬운게 없다..&lt;/p&gt;
-
-&lt;p&gt;이 블로그에는 여러가지 소소한 일상과 현재 공부하고 있는 분야에 대해 적으려 한다.&lt;/p&gt;
-
-&lt;p&gt;앞으로 배워야할게 더 많을 것 같다. ㅠ_ㅠ&lt;/p&gt;
-</description>
-        <pubDate>Sat, 28 Mar 2020 18:00:08 +0000</pubDate>
-        <link>http://munjeongkang.github.io/GitHub-blog-start/</link>
-        <guid isPermaLink="true">http://munjeongkang.github.io/GitHub-blog-start/</guid>
         
         
         <category>메모</category>
