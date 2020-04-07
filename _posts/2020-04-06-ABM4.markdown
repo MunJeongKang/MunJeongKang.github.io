@@ -1,0 +1,47 @@
+---
+layout: post
+title:  "Agent Based Modeling - Getting Started with NetLogo"
+date:   2020-04-07 18:00:08
+categories: 수업
+comments: true
+use_math: true
+---
+-----
+<span style = "font-weight:700; font-size:1.3em; margin-left: 0.8em; margin-right: 1em;">
+기초 연습 (Elementary Exercises)
+</span>
+<br>
+<div style = "font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; ">
+<ol>
+<li>전체 view 화면을 파란색으로 바꾸기 : <code>ask patches [set pcolor blue]</code></li>
+<li>특정 위치(0,0) patch를 빨간색으로 바꾸기 : <code>ask patch 0 0 [set pcolor red]</code></li>
+<li>특정 위치(0,5)에 turtle 1개 만들기 : <code>create-turtles 1 [ setxy 0 5 ]</code></li>
+<li>모든 turtle들을 1만큼 앞으로 움직이기 : <code>ask turtles [fd 1]</code></li>
+<li>모든 turtle들의 방향(heading) 우측으로 바꾸기 : <code>ask turtles [set heading 90]</code></li>
+<li>turtle 1의 색깔, 사이즈, 모양 바꾸기 : <code>ask turtle 1 [set size 5 set shape "cat" set color yellow]</code></li>
+<li>초기화하기 : <code>clear-all</code>또는 <code>ca</code></li>
+<li>turtle이 움직인 경로 나타내기 : <code>pen-down</code></li>
+<li>초기화하기 : <code></code></li>
+</ol>
+</div>
+
+<div style="border: 1px; float: right;margin-left: 1em; margin-right: 1em; " >
+<img src="/images/post_img/NL11.png" width="310" height="300" >
+</div>
+<div style="border: 1px; margin-left: 2em; margin-right: 1em; ">
+<img src="/images/post_img/NL10.png" width="270" height="300">
+<br>
+</div>
+
+<div style = "font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; ">
+이를 위와 같이 변수값은 global variable로 지정하여 interface에서 여러 값을 변환할 수 있게 할 수 있다. 또한 아래와 같이 위, 아래, 왼쪽, 오른쪽으로 turtle을 움직일 수 있고 주황색 부분은 통과할 수 없게 만들 수 있다. 
+<br> <br>
+</div>
+
+<div style="border: 1px; float: right;margin-left: 1em; margin-right: 1em; " >
+<img src="/images/post_img/NL13.png" width="310" height="300" >
+</div>
+<div style="border: 1px; margin-left: 2em; margin-right: 1em; ">
+<img src="/images/post_img/NL12.png" width="270" height="300">
+<br>
+</div>
