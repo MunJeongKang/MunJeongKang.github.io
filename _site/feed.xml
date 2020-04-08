@@ -5,9 +5,77 @@
     <description>github blog</description>
     <link>http://munjeongkang.github.io/</link>
     <atom:link href="http://munjeongkang.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 08 Apr 2020 15:28:58 +0900</pubDate>
-    <lastBuildDate>Wed, 08 Apr 2020 15:28:58 +0900</lastBuildDate>
+    <pubDate>Wed, 08 Apr 2020 21:10:04 +0900</pubDate>
+    <lastBuildDate>Wed, 08 Apr 2020 21:10:04 +0900</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Agent Based Modeling - Sensing</title>
+        <description>&lt;hr /&gt;
+
+&lt;div style=&quot;font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; &quot;&gt;
+&lt;span style=&quot;font-weight:700; font-size:1.3em;  margin-right: 1em;&quot;&gt;
+Sensing
+&lt;/span&gt;
+&lt;br /&gt;&lt;br /&gt;
+에이전트가 어떤 정보를 가지고 있는지, 어떻게 그것을 얻었는지에 대한 것이 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;Sensing&lt;/b&gt;이다. 에이전트는 주로 환경이나 다른 에이전트로 부터 정보를 얻고 그 정보에 의해 반응한다. 에이전트가 어떤 변수를 사용했는지, 무엇으로부터 정보를 얻었는지, 어떻게 정보를 얻었는지가 모델링 sensing의 핵심이다. 
+&lt;br /&gt;&lt;br /&gt;
+&lt;span style=&quot;font-weight:700; font-size:1.3em;  margin-right: 1em;&quot;&gt;
+Scope of Variables
+&lt;/span&gt;
+&lt;br /&gt;&lt;br /&gt;
+ABM에서 사용할 수 있는 변수들은 다음과 같다. 
+&lt;ul&gt;
+&lt;li type=&quot;circle&quot;&gt;Global Variables : 어떤 객체든지 항상 변할 수 있는 값이다. (Model-level, Environment parameters, Interface, Behavior space 등) &lt;/li&gt;
+&lt;li type=&quot;circle&quot;&gt;Patch Variables : &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;patches-own&lt;/b&gt; 사용가능, pcolor, pxcor 등 patch에 관련된 것을 사용한다. turtle은 그들이 위치한 patch의 변수에 직접적으로 접근가능하다.&lt;/li&gt;
+&lt;li type=&quot;circle&quot;&gt;Turtle and Link Variables : &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;turtles-own&lt;/b&gt;, &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;links-own&lt;/b&gt; 사용가능, 각각의 turtle 또는 link에만 한정된다.&lt;/li&gt;
+&lt;li type=&quot;circle&quot;&gt;Local Variables : &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;let&lt;/b&gt; 명렁어를 사용하여 만들고 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;set&lt;/b&gt;을 사용하여 값을 변환시킨다. 객체가 생성되는 장소에서만 생성할 수 있으며, 다른 객체는 접근할 수 없다. procedure(또는 [])가 종료되면 사라진다. &lt;/li&gt;
+&lt;/ul&gt;
+다른 객체의 변수를 사용하는 예시로 다음의 코드를 사용할 수 있으며 이를 응용해 다음과 같이 서로의 색을 바꾸는 코드를 짤 수 있다.
+&lt;br /&gt;
+&lt;ul&gt;
+&lt;code&gt;let max-neighbor-value max [value] of neighbors&lt;/code&gt; &lt;br /&gt;
+&lt;code&gt;ask neighbors [set value 99]&lt;/code&gt; &lt;br /&gt;
+&lt;code&gt;ask neighbors [set value ([value] of myself)]&lt;/code&gt;
+&lt;/ul&gt;
+&lt;div style=&quot;border: 1px; float: right;margin-left: 1em; margin-right: 1em; &quot;&gt;
+&lt;img src=&quot;/images/post_img/NL18.png&quot; width=&quot;290&quot; height=&quot;300&quot; /&gt;
+&lt;/div&gt;
+&lt;div style=&quot;border: 1px; margin-left: 1em; margin-right: 1em; &quot;&gt;
+&lt;img src=&quot;/images/post_img/switch.gif&quot; width=&quot;290&quot; height=&quot;300&quot; /&gt;
+&lt;/div&gt;
+&lt;br /&gt;
+&lt;span style=&quot;font-weight:700; font-size:1.3em;  margin-right: 1em;&quot;&gt;
+The Business Investor Model
+&lt;/span&gt;
+&lt;br /&gt;&lt;br /&gt;
+ &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;비즈니스 투자 모델&lt;/b&gt;은 수익과 위험정도가 다른 투자 후보들이 있을 때, 어떤 것에 투자할지에 대해 시뮬레이션하는 것이다. 모델의 목적은 주어진 정보를 사용하여 모델의 emergent output에 대한 sensing의 영향을 알아보는 것이다. 여기서 turtle이 투자자, patch가 투자 후보들이다. turtle의 변수로 location, current wealth(&lt;i&gt;W&lt;/i&gt;)가 있고, patch의 변수로 annual net profit(&lt;i&gt;P&lt;/i&gt;), annual risk-probability of losing all its wealth(&lt;i&gt;F&lt;/i&gt;)가 있다. 모델의 time step은 1년이고 25년까지 실행한다. time step마다 투자자는 어떤 곳에 투자할지 선택하고 자산이 업데이트된다. 
+&lt;br /&gt;&lt;br /&gt;
+이 모델에서는 수익은 높이고 위험은 줄이는 선택을 어떻게 할 것인지 정해야한다. time step마다 투자자의 평균 자산,평균 수익, 위험, 실패한 투자자의 수가 output으로 나오고 수익과 위험 사이의 trade-off를 통해 발현된다. 투자자인 turtle은 투자 후보들 중에서 목적함수의 값을 최대화하는 이웃의 patch로 이동한다. (현재 위치가 제일 좋은 선택이면 움직이지 않는다.) 여기서 목적함수는 마지막에 예측되는 효용 (미래의 자산)을 최대화 하는 것이다. 여기서 $T$는 time horizon을 뜻한다.
+&lt;br /&gt;&lt;br /&gt;
+&lt;p align=&quot;center&quot;&gt;
+$U = (W+TP)(1-F)^T$
+&lt;br /&gt;
+&lt;/p&gt;
+투자자들은 그들의 patch와 인접한 이웃 patch의 수익과 위험을 안다고 가정하고, 이미 다른 투자자가 차지한 patch로는 이동하지 않는다. &lt;i&gt;P&lt;/i&gt;, &lt;i&gt;F&lt;/i&gt;, &lt;i&gt;location&lt;/i&gt; 등 모델의 초기상태, 투자실패, 동률일 때 무작위로 움직이는 것 등은 확률적이며 에이전트의 위치, 평균 수익과 위험, 평균 투자자산, time step별 각 투자자의 상태를 관찰(observation)할 수 있다. 100명의 투자자가 랜덤으로 위치하고 &lt;i&gt;W&lt;/i&gt;의 초기값은 0이다. 
+&lt;br /&gt;&lt;br /&gt;
+&lt;p align=&quot;center&quot;&gt;
+&lt;img src=&quot;/images/post_img/invest.gif&quot; width=&quot;600&quot; height=&quot;300&quot; /&gt;
+&lt;br /&gt;
+&lt;/p&gt;
+여기서 만약 투자자들이 이웃만이 아닌 더 넓은 범위의 투자도 고려할 수 있다면 투자자의 자산을 더 증가시킬 수 있는지 의문이 든다. 실제로 Sensing range를 넓혀가면서 실험해보면 이웃만 살펴보는 것보다 더 넓은 범위를 고려하는게 더 좋다. 하지만 일정 범위를 지나서는 아무리 넓은 범위를 고려해도 투자 자산이 증가하지는 않는다. 
+&lt;br /&gt;&lt;br /&gt;
+ 
+&lt;/div&gt;
+</description>
+        <pubDate>Wed, 08 Apr 2020 18:00:08 +0000</pubDate>
+        <link>http://munjeongkang.github.io/ABM9/</link>
+        <guid isPermaLink="true">http://munjeongkang.github.io/ABM9/</guid>
+        
+        
+        <category>수업</category>
+        
+      </item>
     
       <item>
         <title>Agent Based Modeling - Emergence</title>
@@ -608,44 +676,6 @@ Righini, G., &amp;amp; Salani, M. (2006). Symmetry helps: Bounded bi-directional
         
         
         <category>논문리뷰</category>
-        
-      </item>
-    
-      <item>
-        <title>맥북 단축키 정리</title>
-        <description>&lt;p&gt;맥북을 사용할 때 유용한 단축키에 대해 정리하려고 한다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;창 숨기기 : &lt;code&gt;command + H&lt;/code&gt; &lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;창 불러오기 : &lt;code&gt;command + Tab&lt;/code&gt; &lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;현재 창 닫기 : &lt;code&gt;command + W&lt;/code&gt; &lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;새로운 창 열기 : &lt;code&gt;command + N&lt;/code&gt; &lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;새로운 탭 열기 : &lt;code&gt;command + T&lt;/code&gt; &lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;실수로 닫은 창 다시 열기 : &lt;code&gt;command + shift + T&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;프로그램 종료 :  &lt;code&gt;command + Q&lt;/code&gt; &lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;화면 맨 위로 이동 : &lt;code&gt;command + 화살표 위&lt;/code&gt; &lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;화면 맨 아래로 이동 : &lt;code&gt;command + 화살표 아래&lt;/code&gt; &lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;spotlight 불러오기 : &lt;code&gt;command + space&lt;/code&gt; &lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;이미지 자르기 : 이미지에서 자를 부분을 선택하고 &lt;code&gt;command + K&lt;/code&gt; &lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;부분 캡쳐하기 : &lt;code&gt;command + shift + $4&lt;/code&gt; &lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;사용하는 창 전체를 캡쳐하기 : &lt;code&gt;command + shift + $4&lt;/code&gt; 를 누른 후 &lt;code&gt;space&lt;/code&gt; &lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;이모지 입력하기 : &lt;code&gt;control + command + space&lt;/code&gt; &lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;강제 종료하기 : &lt;code&gt;option + command + ESC&lt;/code&gt; &lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;화면 확대하기 : &lt;code&gt;control + 트랙패드를 위로 쓸기&lt;/code&gt; (설정필요) &lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;화면 축소하기 : &lt;code&gt;control + 트랙패드를 아래로 쓸기&lt;/code&gt; (설정필요)&lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;fn : Desktop 화면으로 전환 (설정필요)&lt;br /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;유튜브 볼 때 두 손가락으로 한번 트랙패드를 누르고 한번 더 누르고 화면속화면 (PIP모드)를 클릭하면 팝업창처럼 유튜브를 볼 수 있다.&lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Sun, 29 Mar 2020 23:00:08 +0000</pubDate>
-        <link>http://munjeongkang.github.io/mac-command/</link>
-        <guid isPermaLink="true">http://munjeongkang.github.io/mac-command/</guid>
-        
-        
-        <category>메모</category>
         
       </item>
     
