@@ -30,7 +30,7 @@ use_math: true
 <img src="/images/post_img/NL8.jpg" width="310" height="300" >
 </div>
 <div style="border: 1px; margin-left: 2em; margin-right: 1em; ">
-<img src="/images/post_img/NL9.jpg" width="280" height="300">
+<img src="/images/post_img/NL9.png" width="280" height="300">
 </div>
 
 <div style = "font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; ">
