@@ -5,9 +5,75 @@
     <description>github blog</description>
     <link>http://munjeongkang.github.io/</link>
     <atom:link href="http://munjeongkang.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 07 Apr 2020 23:03:01 +0900</pubDate>
-    <lastBuildDate>Tue, 07 Apr 2020 23:03:01 +0900</lastBuildDate>
+    <pubDate>Wed, 08 Apr 2020 10:44:28 +0900</pubDate>
+    <lastBuildDate>Wed, 08 Apr 2020 10:44:28 +0900</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Agent Based Modeling - Emergence</title>
+        <description>&lt;hr /&gt;
+
+&lt;div style=&quot;font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; &quot;&gt;
+&lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;Emergence&lt;/b&gt;는 ABM의 가장 중요하고 독특한 특징으로 
+&lt;ol&gt;
+&lt;li&gt;시스템 이해하기 (시스템에 관한 사전지식 등)&lt;/li&gt;
+&lt;li&gt;목표를 분명히 하기&lt;/li&gt;
+&lt;li&gt;모델에 대한 묘사 공식화하기&lt;/li&gt;
+&lt;li&gt;모델링 소프트웨어로 변환하기&lt;/li&gt;
+&lt;li&gt;&lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;프로그램 확인하기(verify, debugging)&lt;/b&gt;&lt;/li&gt;
+&lt;li&gt;&lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;모델 확인하기(vaildate)&lt;/b&gt;&lt;/li&gt;
+&lt;li&gt;실험 디자인하기&lt;/li&gt;
+&lt;li&gt;모델 실행하기&lt;/li&gt;
+&lt;li&gt;결과에 대해 insight를 얻고 분석하여 문서화하기&lt;/li&gt;
+&lt;/ol&gt;
+
+모델을 테스트하는 3단계는 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;Vaildation&lt;/b&gt;, &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;Verification&lt;/b&gt;, &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;Debugging&lt;/b&gt;이다. Verification은 모델 formulation이 소프트웨어에서 정확하게 실행되는지 확인하는 것이다. 즉, 원하는대로 프로그램이 실행되는지 확실히 하는 것이다. 이 과정에서 실수를 찾고 고치는 노력이 요구되며 모델링의 효율을 높이기 위해 가능한 빨리 테스트를 시작하고 코드를 지속적으로 테스트해야한다. (디버깅도 verification의 한 부분이다.) Vaildation은 모델이 실제 상황을 충분히 잘 반영하고 있는지 확인하는 것이다. ABM에서는 특히 예측되지 않은 결과(Unexpected Result)에 대한 주의가 필요하다. 결과가 새롭고(novel) 중요한지, 모델 디자인은 의심스럽지 않은지, 프로그래밍 실수가 있는지 등을 확인해야한다.  
+&lt;br /&gt; &lt;br /&gt;
+&lt;span style=&quot;font-weight:700; font-size:1.3em; margin-right: 1em;&quot;&gt;
+Common Kinds of Errors
+&lt;/span&gt;
+&lt;br /&gt;&lt;br /&gt;
+흔히 발생하는 에러들은 다음과 같다. 
+&lt;br /&gt;&lt;br /&gt;
+&lt;li type=&quot;circle&quot;&gt;Typographical Errors (타이핑을 잘못한 경우)&lt;/li&gt;
+&lt;li type=&quot;circle&quot;&gt;Syntax Errors (잘못된 구문)&lt;/li&gt;
+&lt;li type=&quot;circle&quot;&gt;isunderstanding Primitives (원래 생각했던대로 정확하게 구현을 못한 경우)&lt;/li&gt; 
+&lt;li type=&quot;circle&quot;&gt;Wrong Display Setting&lt;/li&gt;
+&lt;li type=&quot;circle&quot;&gt;Run-Time Errors (프로그램을 실행할 때, 컴퓨터가 다룰 수 없는 무언가가 있는 경우)&lt;/li&gt;
+&lt;li type=&quot;circle&quot;&gt; &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;Logic Errors&lt;/b&gt; (잘못된 식, 부정확한 조건 등)&lt;/li&gt; 
+&lt;li type=&quot;circle&quot;&gt;Formulation Errors (가정, 알고리즘, 파라미터 값에 대한 에러, validation issues)&lt;/li&gt;
+&lt;br /&gt;
+&lt;span style=&quot;font-weight:700; font-size:1.3em; margin-right: 1em;&quot;&gt;
+Techniques for Debugging and Testing
+&lt;/span&gt;
+&lt;br /&gt;&lt;br /&gt;
+실수를 줄이기 위해서는 Debugging과 Testing 과정이 중요하며 다음과 같은 기법들이 있다.
+&lt;br /&gt;&lt;br /&gt;
+
+&lt;li type=&quot;circle&quot;&gt; Syntax Checking (코드 작성시 수시로 syntax를 확인하는 습관을 가지는 것)&lt;/li&gt;
+&lt;li type=&quot;circle&quot;&gt;Visual Testing (시각적으로 확인하는 것)&lt;/li&gt;
+&lt;li type=&quot;circle&quot;&gt;Print Statement (어떻게 작동하는지 프린트해서 확인하는 것)&lt;/li&gt;
+&lt;li type=&quot;circle&quot;&gt;Spot Tests with Agent Monitors (NetLogo View에 있는 Agent Monitor로 확인하는 것)&lt;/li&gt;
+&lt;li type=&quot;circle&quot;&gt;Stress Tests (extreme 값을 파라미터나 input으로 넣어 프로그램을 실행하는 것, 평범한 조건에서 숨겨진 에러를 발견할 수도 있다.), 
+&lt;li type=&quot;circle&quot;&gt;Test Procedure (중간 output을 만들어 테스트 해보는 것)&lt;/li&gt; 
+&lt;li type=&quot;circle&quot;&gt;Test Programs (특정한 프로그램 아이디어를 테스트하기 위해 짧은 프로그램으로 분리하여 실행하는 것)&lt;/li&gt; 
+&lt;li type=&quot;circle&quot;&gt;Code Reviews (동료들과 리뷰해보는 것, 다른 사람이 확인하면 실수가 발견될 수 있고 코드를 잘 정리하고 이해하기 쉽게 하기위해서)&lt;/li&gt; 
+&lt;li type=&quot;circle&quot;&gt;Statistical Analysis of File OutPut (예상했던대로 모델이 formulation 되었는지 확인하기 위해 모델의 핵심 부분을 file output으로 적어 분석해보는 것)&lt;/li&gt; 
+&lt;li type=&quot;circle&quot;&gt;Independent Reimplementation of Submodels (엑셀이나 R, Python 등 다른 플랫폼으로 확인해보는 것)&lt;/li&gt;
+&lt;li type=&quot;circle&quot;&gt;Documentation of Tests(사용된 test의 종류, 모델을 실행한 방법과 결과 등을 문서화하는 것)&lt;/li&gt;
+
+&lt;br /&gt;
+
+&lt;/li&gt;&lt;/div&gt;
+</description>
+        <pubDate>Tue, 07 Apr 2020 18:00:08 +0000</pubDate>
+        <link>http://munjeongkang.github.io/ABM8/</link>
+        <guid isPermaLink="true">http://munjeongkang.github.io/ABM8/</guid>
+        
+        
+        <category>수업</category>
+        
+      </item>
     
       <item>
         <title>Agent Based Modeling - Testing Your Program</title>
@@ -237,7 +303,90 @@ NetLogo에서 turtle이나 patch의 이웃은 다음과 같이 표현된다. nei
 &lt;img src=&quot;/images/post_img/NL8.jpg&quot; width=&quot;310&quot; height=&quot;300&quot; /&gt;
 &lt;/div&gt;
 &lt;div style=&quot;border: 1px; margin-left: 2em; margin-right: 1em; &quot;&gt;
-&lt;img src=&quot;/images/post_img/NL9.jpg&quot; width=&quot;270&quot; height=&quot;300&quot; /&gt;
+&lt;img src=&quot;/images/post_img/NL9.jpg&quot; width=&quot;280&quot; height=&quot;300&quot; /&gt;
+&lt;/div&gt;
+
+&lt;div style=&quot;font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; &quot;&gt;
+채찍효과란 고객주문 정보가 상류로 전달되는 과정에서 정보가 왜곡되고 확대되는 현상을 말한다. 말그대로 채찍질하는 사람을 생각하면 이해하기 쉽다. 처음에는 채찍의 폭이 좁지만 갈수록 커지는 것과 같아 붙여진 이름이다. Complex systems에서는 초기 조건의 작은 차이(반올림에 따른 값의 차이 등)가 완전히 다른 결과를 초래할 수 있다. 마치 나비효과처럼 말이다. 
+&lt;br /&gt;&lt;br /&gt;
+
+Complex systems는 5가지 특성을 가지는데 각각은 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;Non-linearity&lt;/b&gt;, &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;Interconnectedness&lt;/b&gt;, &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;Feedbacks&lt;/b&gt;, &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;Delays&lt;/b&gt;, &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;Heterogeneity&lt;/b&gt;이다. Input은 선형적인 방식으로 output에 영향을 미치는 것은 아니며 각각은 연결되어 있고 다른 결정에 영향을 미친다. 그러므로 각각을 하나씩 분리함으로써 문제를 풀 수는 없다. 또한, 시스템의 output에 따라 행동이 변할 수 있고, output이 input에 영향을 끼치기 위해 지연될 수 있으며, 각각은 여러가지 다양한 종류들로 이루어진다. Agent Based Model, System Dynamics, Network theory(complex networks) 모두 complex systems modeling이다.
+
+&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;span style=&quot;font-weight:700; font-size:1.3em; margin-left: 0.8em; margin-right: 1em;&quot;&gt;
+에이전트 기반 모델 (ABM)
+&lt;/span&gt;
+&lt;br /&gt;&lt;/p&gt;
+&lt;div style=&quot;font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; &quot;&gt;
+
+Complex systems에서 발생한 문제에 대한 답으로 단순한 모델은 더이상 충분하지 않다. &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;ABM&lt;/b&gt; (Agent Based Modeling)은 그에 대한 해답을 주는 주된 방법 중 하나이며, 시스템 전체에 미치는 영향을 평가하기 위한 목적으로 자율적인 에이전트의 행동과 상호작용을 시뮬레이션하는 계산 모델의 일종이다. 또한, 복잡한 현상의 출현을 re-create하고 예측하면서 동시다발적인 현상과 다수의 agent들의 상호작용을 시뮬레이션하는 microscale 모델의 일종이다. 
+&lt;br /&gt;&lt;br /&gt;
+여기서 Agent는 특정한 성질(property)이나 상태(state) 또는 행동(action)을 지닌 자율적이고 계산적인 객체를 의미하며 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;Emergence&lt;/b&gt;는 다수의 분포된 element들의 상호작용을 통해 발생한 새롭고 일관적인 구조, 패턴, 성질을 의미한다. Emergent 구조는 element의 성질로 부터 단독으로 추론될 수 없고 element의 상호작용을 통해 생긴다. 또한, 어떠한 제어 요소없이 자발적으로 발생되기 때문에 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;self-organizes&lt;/b&gt;라고 할 수 있다. 에이전트 기반 모델링의 핵심은 어떤 현상에 대한 간단한 규칙을 찾아 emergence를 활용하는 것이다. 
+&lt;br /&gt;&lt;br /&gt;
+&lt;/div&gt;
+&lt;div style=&quot;border: 1px; float: right;margin-left: 1em; margin-right: 1em; &quot;&gt;
+&lt;img src=&quot;/images/post_img/v_shape.jpg&quot; width=&quot;310&quot; height=&quot;300&quot; /&gt;
+&lt;/div&gt;
+&lt;div style=&quot;border: 1px; margin-left: 1em; margin-right: 1em; &quot;&gt;
+&lt;img src=&quot;/images/post_img/fish-flocking.jpg&quot; width=&quot;310&quot; height=&quot;300&quot; /&gt;
+&lt;/div&gt;
+
+&lt;div style=&quot;font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; &quot;&gt;
+Emergence의 예시로 자연현상에서 모티브를 받은 건축물, Fish Flocking (물고기들이 떼지어 헤엄치는 것), Bird Flocking (새들이 떼지어 날아다니는 것), 기러기떼가 V자 형태로 날아가는 것 등을 들 수 있다. NetLogo 모델의 example로 Flocking.nlogo 파일이 있으므로 참고해도 좋다. 이 모델은 새들이 떼지어 다니는 행동을 시뮬레이션하기 위해 Craig Reynolds가 1986년에 고안해낸 모델이다.
+&lt;br /&gt;&lt;br /&gt;
+&lt;p align=&quot;center&quot;&gt;
+&lt;img src=&quot;/images/post_img/flocking.gif&quot; width=&quot;250&quot; height=&quot;250&quot; /&gt;
+&lt;/p&gt;
+
+이 모델에서는 새들의 움직임을 시뮬레이션하기 위해 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;Separate&lt;/b&gt;, &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;Cohere&lt;/b&gt;, &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;Align&lt;/b&gt;의 특징을 가진다고 가정한다. Separate는 다른 모든 객체들과 최소 거리를 유지해야함을 뜻하고 Cohere는 flockmate를 향해 움직여야함을, Align은 flockmate와 같은 방향으로 움직여야함을 뜻한다. 
+&lt;br /&gt;&lt;br /&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;span style=&quot;font-weight:700; font-size:1.3em; margin-left: 0.8em; margin-right: 1em;&quot;&gt;
+ABM 장점 및 단점 
+&lt;/span&gt;&lt;/p&gt;
+&lt;div style=&quot;font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; &quot;&gt;
+ABM은 복잡한 현상을 이해하기 쉽게 시각적으로 표현해주고 상호작용하는 요소들 사이의 연결을 잘 나태내어주는 장점을 가진다. 또한 귀납적(induction), 연역적(deduction)방법을 통합한 방법을 사용하여 알려진 전제들로 일반적인 이론을 만들기 위한 특정한 데이터 집합을 만들 수 있다. 우리가 알려진 하나의 전제를 알고 있을 경우 통합적인 패턴을 결정하는 것은 어렵지만 ABM은 이를 이해하기 쉽게 해주고, 반대로 통합적인 패턴을 알고 있을 경우에는 규칙을 제안하여 그 현상이 만들어지는지 확인함으로써 각각의 전제를 알 수 있도록 해준다. 
+&lt;br /&gt;&lt;br /&gt;
+그러나 ABM의 계산적인 모델은 예측가능한 결과를 주로 만들고 구체적인 상황에 근사적으로 맞춰져있으며 확실하지 않다. 또한, 계산 모델을 수정하고 이해하기가 쉽지 않다는 단점이 있다.
+&lt;/div&gt;
+</description>
+        <pubDate>Mon, 06 Apr 2020 18:00:08 +0000</pubDate>
+        <link>http://munjeongkang.github.io/ABM3%20%E1%84%87%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A1%E1%84%87%E1%85%A9%E1%86%AB/</link>
+        <guid isPermaLink="true">http://munjeongkang.github.io/ABM3%20%E1%84%87%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A1%E1%84%87%E1%85%A9%E1%86%AB/</guid>
+        
+        
+        <category>수업</category>
+        
+      </item>
+    
+      <item>
+        <title>Agent Based Modeling - Compelx Systems and Agent Based Modeling</title>
+        <description>&lt;hr /&gt;
+&lt;p&gt;&lt;span style=&quot;font-weight:700; font-size:1.3em; margin-left: 0.8em; margin-right: 1em;&quot;&gt;
+시스템 (SYSTEM)
+&lt;/span&gt;
+&lt;br /&gt;&lt;/p&gt;
+&lt;div style=&quot;font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; &quot;&gt;
+
+&lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;시스템&lt;/b&gt;은 어떤 목적을 이루기 위해 함께 상호작용하고 행동하는 요소들의 집합이다. 시스템을 모델링하는 두 가지 측면이 있는데 각각은 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;Aggregate View&lt;/b&gt; (Top-down approach)와 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;Constituent View&lt;/b&gt; (Bottom-up approach)이다. Aggregate View는 target system의 프로세스, 내부 관계, 파라미터 등을 안다고 가정하는 것이고, 개인의 자유도는 보통 무시되며 (homogeneity) pre-determinded 구조를 가진다. Constituent View는 통합적인 것보다 각 요소의 성질이나 행동 (action, decision pattern 등)에 초점을 맞추며 진화하는 (evolving) 구조를 가진다.  
+&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;span style=&quot;font-weight:700; font-size:1.3em; margin-left: 0.8em; margin-right: 1em;&quot;&gt;
+복잡한 시스템 (COMPLEX SYSTEMS)
+&lt;/span&gt;
+&lt;br /&gt;&lt;/p&gt;
+&lt;div style=&quot;font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; &quot;&gt;
+&lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;Complex systems&lt;/b&gt;은 다양한 분야의 문제에 대한 접근방법을 포괄하는 광범위한 용어로 사용되므로 어느 한 가지로 정의하기 힘들다. 어떤 요소의 행동으로 단순히 complex systems의 행동을 예측하기는 힘들고 전체 시스템을 부분으로 나누어 각각을 이해하는 것도 옳지 않다. 즉, 단순하게 1+1은 2가 아니라고 생각하면 쉽게 연상할 수 있다. Complex systems는 중심적인 제어장치와 단순한 운영 규칙이 없는 거대한 네트워크이며 복잡한 집단 행동, 정교한 정보처리, 학습을 통한 적응이 이루어진다. 또한, nontrivial emergent 또는 자기 조직적 행동을 나타낼 수도 있다. 예를 들어 각 개인의 거래자가 시스템이라면 그 거래자들이 모인 마켓의 수요와 공급을 complex systems로 볼 수 있다. 또는 뉴런이 모인 뇌를 complex systems로도 볼 수 있으며 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;채찍효과(Bullwhip Effect)&lt;/b&gt;도 예시로 들 수 있다. 
+&lt;br /&gt;&lt;br /&gt;
+
+&lt;/div&gt;
+
+&lt;div style=&quot;border: 1px; float: right;margin-left: 1em; margin-right: 1em; &quot;&gt;
+&lt;img src=&quot;/images/post_img/NL8.jpg&quot; width=&quot;310&quot; height=&quot;300&quot; /&gt;
+&lt;/div&gt;
+&lt;div style=&quot;border: 1px; margin-left: 2em; margin-right: 1em; &quot;&gt;
+&lt;img src=&quot;/images/post_img/NL9.jpg&quot; width=&quot;280&quot; height=&quot;300&quot; /&gt;
 &lt;/div&gt;
 
 &lt;div style=&quot;font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; &quot;&gt;
@@ -553,75 +702,6 @@ Righini, G., &amp;amp; Salani, M. (2006). Symmetry helps: Bounded bi-directional
         
         
         <category>논문리뷰</category>
-        
-      </item>
-    
-      <item>
-        <title>맥북 단축키 정리</title>
-        <description>&lt;p&gt;맥북을 사용할 때 유용한 단축키에 대해 정리하려고 한다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;창 숨기기 : &lt;code&gt;command + H&lt;/code&gt; &lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;창 불러오기 : &lt;code&gt;command + Tab&lt;/code&gt; &lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;현재 창 닫기 : &lt;code&gt;command + W&lt;/code&gt; &lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;새로운 창 열기 : &lt;code&gt;command + N&lt;/code&gt; &lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;새로운 탭 열기 : &lt;code&gt;command + T&lt;/code&gt; &lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;실수로 닫은 창 다시 열기 : &lt;code&gt;command + shift + T&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;프로그램 종료 :  &lt;code&gt;command + Q&lt;/code&gt; &lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;화면 맨 위로 이동 : &lt;code&gt;command + 화살표 위&lt;/code&gt; &lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;화면 맨 아래로 이동 : &lt;code&gt;command + 화살표 아래&lt;/code&gt; &lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;spotlight 불러오기 : &lt;code&gt;command + space&lt;/code&gt; &lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;이미지 자르기 : 이미지에서 자를 부분을 선택하고 &lt;code&gt;command + K&lt;/code&gt; &lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;부분 캡쳐하기 : &lt;code&gt;command + shift + $4&lt;/code&gt; &lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;사용하는 창 전체를 캡쳐하기 : &lt;code&gt;command + shift + $4&lt;/code&gt; 를 누른 후 &lt;code&gt;space&lt;/code&gt; &lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;이모지 입력하기 : &lt;code&gt;control + command + space&lt;/code&gt; &lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;강제 종료하기 : &lt;code&gt;option + command + ESC&lt;/code&gt; &lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;화면 확대하기 : &lt;code&gt;control + 트랙패드를 위로 쓸기&lt;/code&gt; (설정필요) &lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;화면 축소하기 : &lt;code&gt;control + 트랙패드를 아래로 쓸기&lt;/code&gt; (설정필요)&lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;fn : Desktop 화면으로 전환 (설정필요)&lt;br /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;유튜브 볼 때 두 손가락으로 한번 트랙패드를 누르고 한번 더 누르고 화면속화면 (PIP모드)를 클릭하면 팝업창처럼 유튜브를 볼 수 있다.&lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Sun, 29 Mar 2020 23:00:08 +0000</pubDate>
-        <link>http://munjeongkang.github.io/mac-command/</link>
-        <guid isPermaLink="true">http://munjeongkang.github.io/mac-command/</guid>
-        
-        
-        <category>메모</category>
-        
-      </item>
-    
-      <item>
-        <title>macOS 업그레이드 후 에러</title>
-        <description>&lt;p&gt;macOS로 모하비를 사용하고 있었는데 이 때는 모든 명령어가 잘 작동했었다. (지킬이나 깃 등)&lt;/p&gt;
-
-&lt;p&gt;그러나 카탈리나로 버전을 업데이트 했더니 홈페이지를 실시간으로 확인하는 명령어가 작동하지 않았다..&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;bundle&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jekyll&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;serve&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;bundel을 install 하라는 명령이 나오는데 이 또한 에러가 뜬다. ㅜ&lt;/p&gt;
-
-&lt;p&gt;git 명령어 또한 작동하지 않고 다음과 같은 에러가 뜬다.&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;ss&quot;&gt;xcrun&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;invalid&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;active&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;developer&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;path&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/Library/&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Developer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;CommandLineTools&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;missing&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;xcrun&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;at&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;/Library/&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Developer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;CommandLineTools&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;usr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bin&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xcrun&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;에러를 고치기 위해 구글링 해보니 맥 OS 업데이트 후 이와 같은 에러가 많이 발생하는 것 같다.&lt;/p&gt;
-
-&lt;p&gt;이 경우 다음과 같이 XCode를 재설치하면 보통 해결된다고 한다.&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;xcode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;install&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;XCode 재설치 후 bundle install을 하니 잘 작동한다.&lt;/p&gt;
-</description>
-        <pubDate>Sun, 29 Mar 2020 23:00:08 +0000</pubDate>
-        <link>http://munjeongkang.github.io/Jekyll-error/</link>
-        <guid isPermaLink="true">http://munjeongkang.github.io/Jekyll-error/</guid>
-        
-        
-        <category>메모</category>
         
       </item>
     
