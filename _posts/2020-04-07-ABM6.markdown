@@ -17,11 +17,12 @@ use_math: true
 <div style="border: 1px; float: right;margin-left: 1em; margin-right: 1em; " >
 <img src="/images/post_img/butterfly4.gif" width="290" height="300" >
 </div>
-<div style="border: 1px; margin-left: 2em; margin-right: 1em; ">
+<div style="border: 1px; margin-left: 1em; margin-right: 1em; ">
 <img src="/images/post_img/butterfly3.gif" width="290" height="300">
 </div>
 
 <br><br>
 파라미터 <i>q</i>에 따라 corridor width가 변하는 것을 볼 수 있다. <i>q</i>가 1에 가까울수록 나비들의 이동에 대한 무작위성이 적기 때문에 움직임이 직선에 가까워지고 corridor width가 더 작아짐을 볼 수 있다. NetLogo의 plot을 활용하여 시간에 따른 corridor의 변화를 그려볼 수도 있다. 이러한 분석을 Time-series 분석이라고 한다. 
+<br><br>
 
 </div>
