@@ -5,41 +5,134 @@
     <description>github blog</description>
     <link>http://munjeongkang.github.io/</link>
     <atom:link href="http://munjeongkang.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 11 Apr 2020 13:08:21 +0900</pubDate>
-    <lastBuildDate>Sat, 11 Apr 2020 13:08:21 +0900</lastBuildDate>
+    <pubDate>Sat, 11 Apr 2020 17:10:47 +0900</pubDate>
+    <lastBuildDate>Sat, 11 Apr 2020 17:10:47 +0900</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>인공신경망 - Parameter Norm Penalties</title>
+        <description>&lt;hr /&gt;
+
+&lt;div style=&quot;font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; &quot;&gt;
+&lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;정규화&lt;/b&gt;는 딥러닝의 출현 이전에도 수십년 동안 사용되어 왔다. 선형 회귀모형이나 로지스틱 회귀모형 같은 선형 모델은 간단하고 효과적인 정규화가 가능하다. 많은 정규화 방법은 목적함수 $J$에 파라미터 norm penalty $\Omega(\theta)$를 추가하여 모델의 capacity를 제한하는 것에 기초한다. 정규화된 목적함수는 다음과 같다. 
+&lt;p align=&quot;center&quot;&gt;
+$$
+\tilde{J}(\boldsymbol{\theta} ; \boldsymbol{X}, \boldsymbol{y})=J(\boldsymbol{\theta} ; \boldsymbol{X}, \boldsymbol{y})+\alpha \Omega(\boldsymbol{\theta}), \quad \text { where } \alpha \in[0, \infty)
+$$
+&lt;/p&gt;
+$\alpha$를 0으로 설정하면 정규화가 되지 않고 $\alpha$의 값이 클수록 더 정규화된다. &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;parameter norm&lt;/b&gt; $\Omega$에 대해 다른 솔루션이 더 선호될 수 있다. 일반적으로 각 계층에서 affine 변환의 가중치에 대해서만 패널티를 주고 편차(bias)를 정규화하지 않는 파라미터 norm penalty $\Omega$를 사용한다. 편차를 정확하게 fit하기 위해 가중치보다 더 적은 데이터가 필요하고 편차 파라미터 정규화는 상당한 underfitting 양을 도입할 수 있다. 
+&lt;br /&gt;&lt;br /&gt;
+&lt;span style=&quot;font-weight:700; font-size:1.3em;  margin-right: 1em;&quot;&gt;
+$L^2$ Parameter Regularization
+&lt;/span&gt;
+&lt;br /&gt;&lt;br /&gt;
+$L^2$ parameter norm penalty는 흔히 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;weight decay&lt;/b&gt;로 알려져 있다. 
+$$
+\begin{array}{c}\Omega(\boldsymbol{\theta})=\frac{1}{2}\|\boldsymbol{w}\|_{2}^{2} \\ \tilde{J}(\boldsymbol{w} ; \boldsymbol{X}, \boldsymbol{y})=\frac{\alpha}{2} \boldsymbol{w}^{\top} \boldsymbol{w}+J(\boldsymbol{w} ; \boldsymbol{X}, \boldsymbol{y}) \\ \nabla_{\boldsymbol{w}} \tilde{J}(\boldsymbol{w} ; \boldsymbol{X}, \boldsymbol{y})=\alpha \boldsymbol{w}+\nabla_{\boldsymbol{w}} J(\boldsymbol{w} ; \boldsymbol{X}, \boldsymbol{y})\end{array}
+$$
+single gradient step을 수행하여 가중치를 업데이트 하는 방법은 다음과 같다. 
+$$
+
+\begin{array}{l}\boldsymbol{w} \leftarrow \boldsymbol{w}-\epsilon\left(\alpha \boldsymbol{w}+\nabla_{\boldsymbol{w}} J(\boldsymbol{w} ; \boldsymbol{X}, \boldsymbol{y})\right) \\ \boldsymbol{w} \leftarrow(1-\epsilon \alpha) \boldsymbol{w}-\epsilon \nabla_{\boldsymbol{w}} J(\boldsymbol{w} ; \boldsymbol{X}, \boldsymbol{y})\end{array}
+$$
+
+정규화되지 않은 트레이닝 비용을 최소화하는 가중치 값과 인접한 목적 함수에 대한 2차(quadratic) 근사를 만들어 분석을 단순하게 할 수 있다. 여기서 $H$는 $w^*$에서 평가된 $w$에 관한 $J$의 헤시안(Hessian) 행렬이다. 
+$$
+\begin{aligned} 
+&amp;amp;\boldsymbol{w}^{*}=\arg \min _{\boldsymbol{w}} J(\boldsymbol{w}) \\
+&amp;amp;\hat{J}(\boldsymbol{\theta}) =J\left(\boldsymbol{w}^{*}\right)+\frac{1}{2}\left(\boldsymbol{w}-\boldsymbol{w}^{*}\right)^{\top} \boldsymbol{H}\left(\boldsymbol{w}-\boldsymbol{w}^{*}\right) 
+\end{aligned}
+$$
+gradient가 0일 때 $\hat{J}$가 최소가 된다. 
+$$
+\nabla_{\boldsymbol{w}} \hat{J}(\boldsymbol{w})=\boldsymbol{H}\left(\boldsymbol{w}-\boldsymbol{w}^{*}\right)
+$$
+이제 정규화된 $\hat{J}$의 최소값을 다음과 같이 구할 수 있게 된다. 
+$$
+\begin{array}{c}\alpha \tilde{\boldsymbol{w}}+\boldsymbol{H}\left(\tilde{\boldsymbol{w}}-\boldsymbol{w}^{*}\right)=0 \\ (\boldsymbol{H}+\alpha \boldsymbol{I}) \tilde{\boldsymbol{w}}=\boldsymbol{H} \boldsymbol{w}^{*} \\ \tilde{\boldsymbol{w}}=(\boldsymbol{H}+\alpha \boldsymbol{I})^{-1} \boldsymbol{H} \boldsymbol{w}^{*}\end{array}
+$$
+$\boldsymbol{H}=Q \Lambda Q^{\top}$로 분해(decompose) 할 수 있다. 
+$$
+\begin{aligned} \tilde{w} &amp;amp;=\left(Q \Lambda Q^{\top}+\alpha I\right)^{-1} Q \Lambda Q^{\top} w^{*} \\ &amp;amp;=\left[Q(\Lambda+\alpha I) Q^{\top}\right]^{-1} Q \Lambda Q^{\top} w^{*} \\ &amp;amp;=Q(\Lambda+\alpha I)^{-1} \Lambda Q^{\top} w^{*} \end{aligned}
+$$
+weight decay의 효과는 $\boldsymbol{H}$의 고유벡터(eigenvector)로 정의된 축을 따라서 $w^{*}$를 rescale하는 것이다. $\boldsymbol{H}$의 i번째 고유벡터로 정렬된 $w^*$의 성분은 $\lambda_i / (\lambda_i+\alpha)$ 의 인수로 재조정된다. $\boldsymbol{H}$의 고유값(eigenvalue)이 상대적으로 큰 방향을 따르면 (ex. $\lambda_i &amp;gt;&amp;gt; \alpha$) 정규화의 효과는 상대적으로 작아진다. 그러나 $\lambda_i &amp;lt;&amp;lt; \alpha$인 성분의 크기는 거의 0에 가까울 정도로 줄어들 것이다. 
+&lt;br /&gt;&lt;br /&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+&lt;img src=&quot;/images/post_img/AN7.png&quot; width=&quot;400&quot; height=&quot;300&quot; /&gt;
+&lt;/p&gt;
+
+&lt;span style=&quot;font-weight:700; font-size:1.3em;  margin-right: 1em;&quot;&gt;
+$L^1$ Regularization
+&lt;/span&gt;
+&lt;br /&gt;&lt;br /&gt;
+$L^2$ weight decay가 weight decay의 가장 흔한 형식인 반면에, 모델 파라미터의 사이즈를 패널라이즈(penalize)하는 다른 방법도 있다. 그것은 바로 다음과 같이 $L^1$ 정규화를 사용하는 것이다. 
+$$
+\begin{array}{c}\Omega(\boldsymbol{\theta})=\|\boldsymbol{w}\|_{1}=\sum\left|w_{i}\right| \\ \tilde{J}(\boldsymbol{w} ; \boldsymbol{X}, \boldsymbol{y})=\alpha\|\boldsymbol{w}\|_{1}+J(\boldsymbol{w} ; \boldsymbol{X}, \boldsymbol{y}) \\ \nabla_{w} \tilde{J}(\boldsymbol{w} ; \boldsymbol{X}, \boldsymbol{y})=\alpha \operatorname{sign}(\boldsymbol{w})+\nabla_{w} J(\boldsymbol{X}, y ; \boldsymbol{w})\end{array}
+$$
+$H=\operatorname{diag}\left(\left[H_{1,1}, \ldots, H_{n, n}\right]\right)$와 같이 헤시안이 대각(diagonal)이라는 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;더욱 간단한 가정&lt;/b&gt;을 한다. 이 가정은 입력 특징들 사이의 모든 상관관계(correlation)를 제거하기 위해 선형회귀 문제에 대한 데이터가 전처리된 경우에 적용된다.
+&lt;br /&gt;&lt;br /&gt;
+$L^1$ 정규화된 목적 함수의 2차 근사는 다음과 같이 파라미터에 걸쳐 합(sum)으로 분해된다. 
+$$
+\hat{J}(\boldsymbol{w} ; \boldsymbol{X}, \boldsymbol{y})=J\left(\boldsymbol{w}^{*} ; \boldsymbol{X}, \boldsymbol{y}\right)+\sum_{i}\left[\frac{1}{2} H_{i, i}\left(\boldsymbol{w}_{i}-\boldsymbol{w}_{i}^{*}\right)^{2}+\alpha\left|w_{i}\right|\right]
+$$
+비용함수의 근사를 최소화하는 문제는 다음과 같은 형태로 각 차원 $i$에 대한 분석적인 솔루션을 가진다. 
+$$
+w_{i}=\operatorname{sign}\left(w_{i}^{*}\right) \max \left\{\left|w_{i}^{*}\right|-\frac{\alpha}{H_{i, i}}, 0\right\}
+$$
+
+모든 $i$에 대해 $w^*_i &amp;gt; 0$인 상황을 고려해보자.
+
+&lt;ol&gt;
+&lt;li&gt;$w^*_i \le \alpha / H_{i,i}$인 경우 &lt;br /&gt;
+여기서 $w_i = 0$ 이다. 정규화된 목적합수에 대한 $J(w;X,y)$의 contribution이 $L^1$ 정규화에 의해 $i$ 방향으로 overwhelmed 되기 때문에 발생한다.  &lt;/li&gt;
+&lt;li&gt;$w^*_i &amp;gt; \alpha / H_{i,i}$인 경우 &lt;br /&gt;
+이 경우는 정규화가 $w_i$의 최적값을 0으로 이동시키는 것이 아니라 $\alpha H_{i,i}$와 같은 거리만큼 그 방향으로만 이동시킨다.&lt;/li&gt;
+&lt;/ol&gt;
+
+$L^2$ 정규화와 비교하여 $L^1$ 정규화는 더 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;희소한(sparse)&lt;/b&gt;한 솔루션을 준다. $L^1$ 정규화에 의해 유도된 희소성질 (sparsity property)는 특징 선택 (feature selection) 매커니즘으로 광범위하게 사용되어왔다. 
+&lt;/div&gt;
+</description>
+        <pubDate>Sat, 11 Apr 2020 18:00:08 +0000</pubDate>
+        <link>http://munjeongkang.github.io/ANN4/</link>
+        <guid isPermaLink="true">http://munjeongkang.github.io/ANN4/</guid>
+        
+        
+        <category>수업</category>
+        
+      </item>
     
       <item>
         <title>인공신경망 - Output Units</title>
         <description>&lt;hr /&gt;
 
 &lt;div style=&quot;font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; &quot;&gt;
-비용 함수의 선택은 출력 단위(output unit)의 선택과 밀접하게 연결된다. 대부분의 경우, 단순하게 데이터 분포와 모델 분포 사이의 cross-entropy를 사용한다. 우리는 feedforward 네트워크가 $h=f(x;\theta)$로 정의된 숨겨진 특징(hidden features)을 제공한다고 가정한다. 출력 계층(output layer)의 역할은 네트워크가 수행해야 하는 task를 완료하기 위하여 특징에 추가적인 변환을 제공하는 것이다.
+비용 함수의 선택은 출력 단위(output unit)의 선택과 밀접하게 연결된다. 대부분의 경우, 단순하게 데이터 분포와 모델 분포 사이의 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;cross-entropy&lt;/b&gt;를 사용한다. 우리는 feedforward 네트워크가 $h=f(x;\theta)$로 정의된 숨겨진 특징(hidden features)을 제공한다고 가정한다. 출력 계층(output layer)의 역할은 네트워크가 수행해야 하는 task를 완료하기 위하여 특징에 추가적인 변환을 제공하는 것이다.
 &lt;br /&gt;&lt;br /&gt;
 &lt;span style=&quot;font-weight:700; font-size:1.3em;  margin-right: 1em;&quot;&gt;
 Linear Units for Gaussian Output Distributions
 &lt;/span&gt;
 &lt;br /&gt;&lt;br /&gt;
-간단한 출력 단위 중 하나는 비선형성(nonlinearity)이 없는 affine 변환에 기초한 것이다. 이것들은 주로 선형 단위로 불리며 특징 $h$가 주어질 때, 선형 출력 단위의 계층은 벡터 $\hat{y}=W^{\top} h+b$를 생성한다. 선형 출력 계층들은 조건부 가우시안 분포인 $p(\boldsymbol{y} | \boldsymbol{x})=\mathcal{N}(\boldsymbol{y} ; \hat{\boldsymbol{y}}, \boldsymbol{I})$의 평균을 생성하는데 사용된다. 선형 단위는 포화 상태(saturate)가 아니기 때문에 기울기(gradient) 기반 최적화 알고리즘에는 별다른 어려움이 없으며 다양한 최적화 알고리즘과 함께 사용될 수 있다. 
+간단한 출력 단위 중 하나는 비선형성(nonlinearity)이 없는 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;affine 변환&lt;/b&gt;에 기초한 것이다. 이것들은 주로 선형 단위로 불리며 특징 $h$가 주어질 때, 선형 출력 단위의 계층은 벡터 $\hat{y}=W^{\top} h+b$를 생성한다. 선형 출력 계층들은 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;조건부 가우시안 분포&lt;/b&gt;인 $p(\boldsymbol{y} | \boldsymbol{x})=\mathcal{N}(\boldsymbol{y} ; \hat{\boldsymbol{y}}, \boldsymbol{I})$의 평균을 생성하는데 사용된다. 선형 단위는 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;포화 상태(saturate)가 아니기&lt;/b&gt; 때문에 기울기(gradient) 기반 최적화 알고리즘에는 별다른 어려움이 없으며 다양한 최적화 알고리즘과 함께 사용될 수 있다. 
 &lt;br /&gt;&lt;br /&gt;
 
 &lt;span style=&quot;font-weight:700; font-size:1.3em;  margin-right: 1em;&quot;&gt;
 Sigmoid Units for Bernoulli Output Distributions
 &lt;/span&gt;
 &lt;br /&gt;&lt;br /&gt;
-많은 작업에서 이진 변수(binary variable)인 $y$값을 예측해야 한다. 베르누이 분포는 단 하나의 수로 정의되므로 신경망(neural net)은 $P(y=1|x)$만 예측하면 된다. 이 숫자가 유효한 확률이 되려면 [0,1]간격에 있어야 하고 이 제약을 만족하려면 신중하게 디자인 할 필요가 있다. 유효한 확률을 얻기 위해 선형 단위를 사용하고 그 값을 한계점(threshold)으로 사용한다고 다음과 같이 가정한다.&lt;br /&gt;
+많은 작업에서 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;이진 변수&lt;/b&gt;(binary variable)인 $y$값을 예측해야 한다. 베르누이 분포는 단 하나의 수로 정의되므로 신경망(neural net)은 $P(y=1|x)$만 예측하면 된다. 이 숫자가 유효한 확률이 되려면 [0,1]간격에 있어야 하고 이 제약을 만족하려면 신중하게 디자인 할 필요가 있다. 유효한 확률을 얻기 위해 선형 단위를 사용하고 그 값을 한계점(threshold)으로 사용한다고 다음과 같이 가정한다.&lt;br /&gt;
 &lt;p align=&quot;center&quot;&gt;
 &lt;br /&gt;
  $P(y=1 | \boldsymbol{x})=\max \left\{0, \min \left\{1, \boldsymbol{w}^{\top} \boldsymbol{h}+b\right\}\right\}$
  &lt;/p&gt;
-경사하강법(gradient decent)으로는 이를 매우 효과적으로 훈련시킬 수 없다. $w^{\top} h+b$가 단위 구간을 벗어나면 파라미터에 대한 모델의 아웃풋 기울기가 0이 되기 때문이다. 대신 모델이 잘못된 답을 줄 때마다 항상 강한(strong) 기울기를 보장하는 다른 접근법을 사용하는 것이 좋다. 시그모이드 출력 단위는 $\hat{y}=\sigma\left(\boldsymbol{w}^{\top} \boldsymbol{h}+b\right)$로 정의되며 $\sigma$는 로지스틱 시그모이드 함수이다. 
+경사하강법(gradient decent)으로는 이를 매우 효과적으로 훈련시킬 수 없다. $w^{\top} h+b$가 단위 구간을 벗어나면 파라미터에 대한 모델의 아웃풋 기울기가 0이 되기 때문이다. 대신 모델이 잘못된 답을 줄 때마다 항상 강한(strong) 기울기를 보장하는 다른 접근법을 사용하는 것이 좋다. &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;시그모이드 출력 단위&lt;/b&gt;는 $\hat{y}=\sigma\left(\boldsymbol{w}^{\top} \boldsymbol{h}+b\right)$로 정의되며 $\sigma$는 로지스틱 시그모이드 함수이다. 
 &lt;br /&gt;&lt;br /&gt;
 시그모이드 출력 단위는 두 개의 구성 요소를 가지고 있다고 생각할 수 있다. 
 &lt;ol&gt;
-&lt;li&gt;$z=w^{\top} h+b$를 계산하기 위해 선형 레이어를 사용하는 것&lt;/li&gt;
-&lt;li&gt;$z$를 확률로 변환하기 위해 시그모이드 활성화(activation) 함수를 사용하는 것&lt;/li&gt;
+&lt;li&gt;$z=w^{\top} h+b$를 계산하기 위해 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;선형 레이어&lt;/b&gt;를 사용하는 것&lt;/li&gt;
+&lt;li&gt;$z$를 확률로 변환하기 위해 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;시그모이드 활성화(activation) 함수&lt;/b&gt;를 사용하는 것&lt;/li&gt;
 &lt;/ol&gt;
-만약 비정규화된(unnormalized) 로그 확률이 $y$와 $z$에서 선형이라고 가정한다면 비정규화된 확률을 얻기 위해 지수화(exponentiate)할 수 있다. $z$의 시그모이드 변환에 의해 베르누이 분포 산출을 위한 정규화 과정은 다음과 같다. 
+만약 비정규화된(unnormalized) 로그 확률이 $y$와 $z$에서 선형이라고 가정한다면 비정규화된 확률을 얻기 위해 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;지수화(exponentiate)&lt;/b&gt;할 수 있다. $z$의 시그모이드 변환에 의해 베르누이 분포 산출을 위한 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;정규화&lt;/b&gt; 과정은 다음과 같다. 
 &lt;br /&gt;&lt;br /&gt;
 &lt;p align=&quot;center&quot;&gt;
 $\begin{aligned} 
@@ -49,7 +142,7 @@ P(y) &amp;amp;=\frac{\exp (y z)}{\sum_{y^{\prime}=0}^{1} \exp \left(y^{\prime} z
 P(y) &amp;amp;=\sigma((2 y-1) z) 
 \end{aligned}$
 &lt;/p&gt;
-로그 공간에서 확률을 예측하는 이 접근법은 최대 우도(maximum likelihood) 학습에 사용하는 것이 보통이다. 왜냐하면 최대 우도에 사용되는 비용 함수가 $ \log P(y|x)$이기 때문에, 비용함수에서 로그는 시그모이드의 exp를 없애준다. 이러한 효과가 없다면, 시그모이드의 포화상태는 gradient 기반 학습의 진전을 막았을 것이다. 
+로그 공간에서 확률을 예측하는 이 접근법은 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;최대 우도(maximum likelihood)&lt;/b&gt; 학습에 사용하는 것이 보통이다. 왜냐하면 최대 우도에 사용되는 비용 함수가 $ \log P(y|x)$이기 때문에, 비용함수에서 로그는 시그모이드의 exp를 없애준다. 이러한 효과가 없다면, 시그모이드의 포화상태는 gradient 기반 학습의 진전을 막았을 것이다. 
 &lt;br /&gt;&lt;br /&gt;
 시그모이드에 의해 파라미터화되는 베르누이의 최대 우도 학습에 대한 손실 함수(loss function)는 다음과 같다. $\zeta$ 는 softplus 함수이다.
 &lt;br /&gt;&lt;br /&gt;
@@ -71,12 +164,12 @@ $n$개의 값을 가지는 이산 변수의 경우로 일반화하기 위해 $\h
 &lt;br /&gt;
  $z=W^{\top}h+b \quad $ where $z_{i}=\log \tilde{P}(y=i | \boldsymbol{x})$
  &lt;/p&gt;
-소프트맥스 함수는 원하는 $\hat{y}$를 얻기 위해 $z$를 지수화하고 정규화할 수 있다. 
+소프트맥스 함수는 원하는 $\hat{y}$를 얻기 위해 $z$를 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;지수화&lt;/b&gt;하고 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;정규화&lt;/b&gt;할 수 있다. 
 &lt;p align=&quot;center&quot;&gt;
 &lt;br /&gt;
  $\operatorname{softmax}(\boldsymbol{z})_{i}=\frac{\exp \left(z_{i}\right)}{\sum_{j} \exp \left(z_{j}\right)}$
  &lt;/p&gt;
-이를 다음과 같이 최대화 하길 원한다. 
+이를 다음과 같이 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;최대화&lt;/b&gt; 하길 원한다. 
 &lt;p align=&quot;center&quot;&gt;
 &lt;br /&gt;
  $ \begin{aligned} 
@@ -89,23 +182,23 @@ $n$개의 값을 가지는 이산 변수의 경우로 일반화하기 위해 $\h
  &lt;br /&gt;&lt;br /&gt;
 
 신경과학적인(neuroscientific) 관점에서 소프트 맥스를 단위들 사이의 경쟁의 형태로 만든다는 생각은 흥미롭다. 
-소프트맥스 아웃풋의 합은 항상 1이기 때문에 한 단위 값이 증가하면 다른 단위 값은 감소한다. 이는 피질(cortex) 안에 있는 근처 뉴런사이에 존재하는 것으로 여겨지는 측면 억제(lateral inhibition)와 유사하다. &quot;소프트(soft)&quot;라는 용어는 소프트맥스가 연속이고 미분가능하다는 사실에서 유래하였으며, 소프트맥스 함수는 argmax의 softened 버전을 제공한다. 
+&lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;소프트맥스 아웃풋의 합은 항상 1&lt;/b&gt;이기 때문에 한 단위 값이 증가하면 다른 단위 값은 감소한다. 이는 피질(cortex) 안에 있는 근처 뉴런사이에 존재하는 것으로 여겨지는 측면 억제(lateral inhibition)와 유사하다. &quot;소프트(soft)&quot;라는 용어는 소프트맥스가 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;연속&lt;/b&gt;이고 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;미분가능하다&lt;/b&gt;는 사실에서 유래하였으며, 소프트맥스 함수는 argmax의 softened 버전을 제공한다. 
 &lt;br /&gt;&lt;br /&gt;
 
 &lt;span style=&quot;font-weight:700; font-size:1.3em;  margin-right: 1em;&quot;&gt;
 Other Output Types
 &lt;/span&gt;
 &lt;br /&gt;&lt;br /&gt;
-신경망(neural network)은 우리가 원하는 거의 모든 종류의 출력계층을 일반화할 수 있다. 최대 우도 원리(principle)는 출력 계층에 대해 비용 함수를 좋게 설계하는 방법에 대한 가이드를 준다. 조건부 분포 $p(y|x;\theta)$를 정의한다면 최대우도원리는 비용 함수를 $\log p(y|x;\theta)$로 사용하도록 한다. 
+신경망(neural network)은 우리가 원하는 거의 모든 종류의 출력계층을 일반화할 수 있다. &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;최대 우도 원리(principle)&lt;/b&gt;는 출력 계층에 대해 비용 함수를 좋게 설계하는 방법에 대한 가이드를 준다. 조건부 분포 $p(y|x;\theta)$를 정의한다면 최대우도원리는 비용 함수를 $\log p(y|x;\theta)$로 사용하도록 한다. 
 &lt;br /&gt;&lt;br /&gt;
 일반적으로 신경망은 함수 $f(x;\theta)$를 표현하는 것으로 생각할 수 있다. 이 함수의 아웃풋은 $y$ 값을 직접 예측하는 것은 아니다. 대신 $f(x;\theta)=\omega$가 $y$ 에 대한 분포의 파라미터를 제공한다. 손실함수는 $-\log p(y;\omega(x))$로 해석될 수 있다. 
 &lt;br /&gt;&lt;br /&gt;
-우리는 가끔 multimodal regression을 수행할 수도 있다. 이는 동일한 $x$값에 대해 y 스페이스에 여러개의 다른 peak들을 가질 수 있는 조건부 분포 $p(y|x)$에서 실제 값을 예측하는 것이다. 이 경우에는 Gaussian mixture를 아웃풋으로 하고 이런 신경망을 흔히 mixture density networks라고 한다. 
+우리는 가끔 multimodal regression을 수행할 수도 있다. 이는 동일한 $x$값에 대해 y 스페이스에 여러개의 다른 peak들을 가질 수 있는 조건부 분포 $p(y|x)$에서 실제 값을 예측하는 것이다. 이 경우에는 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;Gaussian mixture&lt;/b&gt;를 아웃풋으로 하고 이런 신경망을 흔히 mixture density networks라고 한다. 
 &lt;p align=&quot;center&quot;&gt;
 $$
 p(\boldsymbol{y} | \boldsymbol{x})=\sum_{i=1}^{n} p(\mathrm{c}=i | \boldsymbol{x}) \mathcal{N}\left(\boldsymbol{y} ; \boldsymbol{\mu}^{(i)}(\boldsymbol{x}), \boldsymbol{\Sigma}^{(i)}(\boldsymbol{x})\right)$$
 &lt;/p&gt;
-그러나 조건부 가우시안 혼합의 gradient 기반 최적화는 신뢰할 수 없다. 왜냐하면 수치적으로 불안정한 분산에 의한 division을 얻을 수 있기 때문이다. 특정한 예시에서 일부 분산이 작은 경우 매우 큰 gradient를 산출한다. 가우시안 혼합 아웃풋은 특히 물리적인 객체의 음성과 움직임의 생성 모델에 효과적이다. 아래 그림은 mixture density의 아웃풋이다. 
+그러나 조건부 가우시안 혼합의 gradient 기반 최적화는 신뢰할 수 없다. 왜냐하면 수치적으로 불안정한 분산에 의한 division을 얻을 수 있기 때문이다. 특정한 예시에서 일부 분산이 작은 경우 매우 큰 gradient를 산출한다. 가우시안 혼합 아웃풋은 특히 물리적인 객체의 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;음성&lt;/b&gt;과 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;움직임&lt;/b&gt;의 생성 모델에 효과적이다. 아래 그림은 mixture density의 아웃풋이다. 
 &lt;br /&gt;&lt;br /&gt;
 
 &lt;p align=&quot;center&quot;&gt;
@@ -113,7 +206,7 @@ p(\boldsymbol{y} | \boldsymbol{x})=\sum_{i=1}^{n} p(\mathrm{c}=i | \boldsymbol{x
 &lt;/p&gt;
 &lt;/div&gt;
 </description>
-        <pubDate>Fri, 10 Apr 2020 18:00:08 +0000</pubDate>
+        <pubDate>Sat, 11 Apr 2020 18:00:08 +0000</pubDate>
         <link>http://munjeongkang.github.io/ANN3/</link>
         <guid isPermaLink="true">http://munjeongkang.github.io/ANN3/</guid>
         
@@ -639,39 +732,6 @@ Techniques for Debugging and Testing
         <pubDate>Tue, 07 Apr 2020 18:00:08 +0000</pubDate>
         <link>http://munjeongkang.github.io/ABM6/</link>
         <guid isPermaLink="true">http://munjeongkang.github.io/ABM6/</guid>
-        
-        
-        <category>수업</category>
-        
-      </item>
-    
-      <item>
-        <title>Agent Based Modeling - Butterfly Hilltopping Model</title>
-        <description>&lt;hr /&gt;
-&lt;p&gt;&lt;span style=&quot;font-weight:700; font-size:1.3em; margin-left: 0.8em; margin-right: 1em;&quot;&gt;
-모델 설명
-&lt;/span&gt;
-&lt;br /&gt;&lt;/p&gt;
-&lt;div style=&quot;font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; &quot;&gt;
-이번에는 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;Butterfly Hilltopping Model&lt;/b&gt;의 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;ODD&lt;/b&gt;를 설명하고자 한다. 일단 ODD란 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;O&lt;/b&gt;verview, &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;D&lt;/b&gt;esign Concepts, &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;D&lt;/b&gt;etails의 약어이다. Overview는 이 모델이 무엇인지, 어떻게 디자인 되었는지 설명한다. (Purpose, Entities, State Variables, Scales, Process Overview, Scheduling 등) Design Concepts는 ABM의 필수적인 특징을 묘사하고 디자인 컨셉을 설명한다. Details는 완전한 묘사를 위해 필요한 세부 사항을 포함한다. (Initialization, Input Data, Submodels 등)
-&lt;br /&gt;&lt;br /&gt;
-많은 동물들이 여러 목적(mating 등)을 위해 home location을 떠나 다른 곳으로 이동한다. 특히 나비들은 landscape에 반응하여 움직이는데 이러한 움직임을 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;Corridors&lt;/b&gt; 라고 불리는 경로로 연결시킬 수 있다. 이는 나비 떼가 짝을 만나기 위해 hilltop을 향해 이동하는 모양이 통로처럼 보여 붙여진 이름이다. Butterfly Hilltopping 모델은 가상의 corridors에 대해 설명하기 위해 디자인되었다. 즉, 나비들이 hilltop을 향해 움직이는 행동이 조건으로 주어졌을 때, landscape의 지형이 가상의 corridors의 발현(emergence)을 이끄는지 시뮬레이션 해보는 것이다. 
-&lt;br /&gt;&lt;br /&gt;
-
-&lt;div style=&quot;border: 1px; float: right;margin-left: 1em; margin-right: 1em; &quot;&gt;
-&lt;img src=&quot;/images/post_img/butterfly2.gif&quot; width=&quot;290&quot; height=&quot;300&quot; /&gt;
-&lt;/div&gt;
-&lt;div style=&quot;border: 1px; margin-left: 2em; margin-right: 1em; &quot;&gt;
-&lt;img src=&quot;/images/post_img/butterfly.gif&quot; width=&quot;290&quot; height=&quot;300&quot; /&gt;
-&lt;/div&gt;
-&lt;br /&gt;
-이 모델은 나비와 지형 두 가지 개체(entity)를 가지고 지형마다 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;고도(elevation)&lt;/b&gt;라는 상태 변수(state variable)를 가진다. 나비들은 각자의 위치에 의해 특정되고 시뮬레이션은 1000번째 스텝까지만 지속한다. 이 모델의 프로세스는 나비들의 움직임이고 스텝 한번에 한번 움직이며 나비끼리 상호작용은 없기 때문에 움직임의 순서는 중요하지 않다. 그러나 나비들이 위를 향해 움직일 때 항상 직진으로 움직이지 않기 때문에 나비가 움직이는 방향에 대한 randomness를 추가해준다. 여기서는 파라미터 &lt;i&gt;q&lt;/i&gt;로 이를 조절한다. 그리고 가상의 corridors를 관찰하기 위해 구체적인 corridor width(시작점부터 꼭대기까지 나비가 날아간 경로의 길이)를 정의한다. 지형의 고도는 인공적으로 만들어서 적용할 수도 있고(왼쪽 그림), 실제 연구 자료의 데이터를 사용(오른쪽 그림)할 수도 있다. 
-
-&lt;/div&gt;
-</description>
-        <pubDate>Tue, 07 Apr 2020 18:00:08 +0000</pubDate>
-        <link>http://munjeongkang.github.io/ABM5/</link>
-        <guid isPermaLink="true">http://munjeongkang.github.io/ABM5/</guid>
         
         
         <category>수업</category>
