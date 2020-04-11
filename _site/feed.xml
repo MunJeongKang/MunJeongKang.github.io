@@ -5,9 +5,47 @@
     <description>github blog</description>
     <link>http://munjeongkang.github.io/</link>
     <atom:link href="http://munjeongkang.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 11 Apr 2020 23:32:19 +0900</pubDate>
-    <lastBuildDate>Sat, 11 Apr 2020 23:32:19 +0900</lastBuildDate>
+    <pubDate>Sun, 12 Apr 2020 01:00:03 +0900</pubDate>
+    <lastBuildDate>Sun, 12 Apr 2020 01:00:03 +0900</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>인공신경망 - Batch and Minibatch Algorithms</title>
+        <description>&lt;hr /&gt;
+
+&lt;div style=&quot;font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; &quot;&gt;
+머신러닝을 위한 최적화 알고리즘은 일반적으로 전체 비용 함수의 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;일부&lt;/b&gt;만 사용하여 추정된 비용 함수의 기대값에 기초하여 파라미터에 대한 각각의 업데이트를 계산한다. 최적화 알고리즘의 대부분에서 사용되는 목적함수 $J$의 성질도 트레이닝셋에 대한 기대(expextations)이다. 가장 일반적으로 사용되는 성질은 gradient이다. 
+$$
+\nabla_{\boldsymbol{\theta}} J(\boldsymbol{\theta})=\mathbb{E}_{\mathbf{x}, y \sim \hat{p}_{\mathrm{data}}} \nabla_{\boldsymbol{\theta}} \log p_{\mathrm{model}}(\boldsymbol{x}, y ; \boldsymbol{\theta})
+$$
+실제로 데이터셋에서 작은 수의 예제를 랜덤하게 샘플링하고 그 예제에 대한 평균을 구해 이러한 기대치를 계산할 수 있다. 대부분의 최적화 알고리즘은 정확한 기울기를 천천히 계산하는 것보다 기울기의 근사된 추정치를 빠르게 계산할 수 있는 경우가 총 계산 관점에서 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;훨씬 더 빨리 수렴(converge)&lt;/b&gt;한다. 작은 샘플에서 기울기의 통계적인 추청에 동기를 부여하는 또 다른 고려사항은 트레이닝셋의 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;불필요한 중복(redundancy)&lt;/b&gt;이다. 기울기에 매우 유사한 기여를 하는 많은 예시를 찾을 수 있을 것이다. 
+&lt;br /&gt;&lt;br /&gt;
+전체 트레이닝셋을 사용하는 최적화 알고리즘을 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;batch &lt;/b&gt;또는 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;deterministic gradient method&lt;/b&gt;라 부른다. 한번에 하나의 예시만 사용하는 최적화 알고리즘은 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;stochastic&lt;/b&gt; 또는 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;online methods&lt;/b&gt;라 부른다. online이라는 용어는 주로 연속적으로 생성된 예제에서 추출할 때 사용된다. 딥러닝에 사용되는 알고리즘은 이 사이 어딘가 있지만, 모든 트레이닝 예제보다는 적게 사용한다. 이를 전통적으로 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;minibatch&lt;/b&gt; 또는 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;minibatch stochastic methods&lt;/b&gt;라 부른다. 이제는 simply stochastic methods로 흔히 부른다. 
+&lt;br /&gt;&lt;br /&gt;
+미니배치 크기는 일반적으로 다음과 같은 요인에 의해 나타난다.
+&lt;ul&gt;
+&lt;li&gt;배치 크기가 클수록 기울기에 대한 정확한 추정치를 제공하지만 linear returns 보단 아니다.&lt;/li&gt;
+&lt;li&gt;Multicore architectures는 극도로 작은 배치에 의해 주로 이용되지 않는다. &lt;/li&gt;
+&lt;li&gt;만약 배치의 모든 예시를 동시에(in parallel) 처리하려면 배치 사이즈에 따라 메모리 양을 조정해야한다.&lt;/li&gt;
+&lt;li&gt;어떤 하드웨어는 특정한 크기의 array로 더 나은 실행시간(runtime)을 얻는다.&lt;/li&gt;
+&lt;li&gt;작은 배치는 정규화 효과를 제공할 수 있다.&lt;/li&gt;
+&lt;/ul&gt;
+기울기 $\boldsymbol{g}$에만 기초하여 업데이트를 계산하는 방법은 주로 상대적으로 robust하고 100과 같이 더 작은 배치 크기를 처리할 수 있다. 또한, 헤시안 행렬 $\boldsymbol{H}$와 $\boldsymbol{H}^{-1}\boldsymbol{g}$와 같은 계산 업데이트를 사용하는 second-order methods는 일반적으로 10,000과 같은 훨씬 큰 배치 사이즈가 요구된다. 
+&lt;br /&gt;&lt;br /&gt;
+샘플 집합에서 기대되는 기울기의 unbiased estimate를 계산하려면 샘플이 독립이어야 한다. 또한, 두 개의 subsequent 미니배치 예제도 서로 독립이어야 한다. 많은 데이터셋은 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;연속적인(successive) 예시들이 높은 상관관계를 갖는 방식&lt;/b&gt;으로 가장 자연스럽게 배열된다. 이러한 경우, 데이터셋의 순서가 어느 정도 유의하면 미니배치를 선택하기 전에 예시를 섞을 필요가 있다. 
+&lt;br /&gt;&lt;br /&gt;
+minibatch stochastic gradient descent의 흥미로운 동기는 어떤 예제가 반복되지 않는 한 true 일반화 에러의 기울기를 따른다는 것이다. stochastic gradient descent가 일반화 오류를 최소화하는 사실은 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;online learning&lt;/b&gt;에서 가장 쉽게 볼 수 있으며 예시나 미니배치는 데이터 흐름으로 부터 나온다. 이 시나리오에서 예시는 절대 반복되지 않는다. 모든 experience는 $p_{\text{data}}$의 공정한 샘플이다.
+&lt;br /&gt;&lt;br /&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Sun, 12 Apr 2020 18:00:08 +0000</pubDate>
+        <link>http://munjeongkang.github.io/ANN6/</link>
+        <guid isPermaLink="true">http://munjeongkang.github.io/ANN6/</guid>
+        
+        
+        <category>수업</category>
+        
+      </item>
     
       <item>
         <title>인공신경망 - Dropout</title>
@@ -730,76 +768,6 @@ $U = (W+TP)(1-F)^T$
         <pubDate>Wed, 08 Apr 2020 18:00:08 +0000</pubDate>
         <link>http://munjeongkang.github.io/ABM8/</link>
         <guid isPermaLink="true">http://munjeongkang.github.io/ABM8/</guid>
-        
-        
-        <category>수업</category>
-        
-      </item>
-    
-      <item>
-        <title>Agent Based Modeling - Testing Your Program</title>
-        <description>&lt;hr /&gt;
-
-&lt;p&gt;&lt;span style=&quot;font-weight:700; font-size:1.3em; margin-left: 0.8em; margin-right: 1em;&quot;&gt;
-Overview of a Simulation Study
-&lt;/span&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;div style=&quot;font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; &quot;&gt;
-&lt;ol&gt;
-&lt;li&gt;시스템 이해하기 (시스템에 관한 사전지식 등)&lt;/li&gt;
-&lt;li&gt;목표를 분명히 하기&lt;/li&gt;
-&lt;li&gt;모델에 대한 묘사 공식화하기&lt;/li&gt;
-&lt;li&gt;모델링 소프트웨어로 변환하기&lt;/li&gt;
-&lt;li&gt;&lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;프로그램 확인하기(verify, debugging)&lt;/b&gt;&lt;/li&gt;
-&lt;li&gt;&lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;모델 확인하기(vaildate)&lt;/b&gt;&lt;/li&gt;
-&lt;li&gt;실험 디자인하기&lt;/li&gt;
-&lt;li&gt;모델 실행하기&lt;/li&gt;
-&lt;li&gt;결과에 대해 insight를 얻고 분석하여 문서화하기&lt;/li&gt;
-&lt;/ol&gt;
-
-모델을 테스트하는 3단계는 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;Vaildation&lt;/b&gt;, &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;Verification&lt;/b&gt;, &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;Debugging&lt;/b&gt;이다. Verification은 모델 formulation이 소프트웨어에서 정확하게 실행되는지 확인하는 것이다. 즉, 원하는대로 프로그램이 실행되는지 확실히 하는 것이다. 이 과정에서 실수를 찾고 고치는 노력이 요구되며 모델링의 효율을 높이기 위해 가능한 빨리 테스트를 시작하고 코드를 지속적으로 테스트해야한다. (디버깅도 verification의 한 부분이다.) Vaildation은 모델이 실제 상황을 충분히 잘 반영하고 있는지 확인하는 것이다. ABM에서는 특히 예측되지 않은 결과(Unexpected Result)에 대한 주의가 필요하다. 결과가 새롭고(novel) 중요한지, 모델 디자인은 의심스럽지 않은지, 프로그래밍 실수가 있는지 등을 확인해야한다.  
-&lt;br /&gt; &lt;br /&gt;
-&lt;span style=&quot;font-weight:700; font-size:1.3em; margin-right: 1em;&quot;&gt;
-Common Kinds of Errors
-&lt;/span&gt;
-&lt;br /&gt;&lt;br /&gt;
-흔히 발생하는 에러들은 다음과 같다. 
-&lt;br /&gt;&lt;br /&gt;
-&lt;li type=&quot;circle&quot;&gt;Typographical Errors (타이핑을 잘못한 경우)&lt;/li&gt;
-&lt;li type=&quot;circle&quot;&gt;Syntax Errors (잘못된 구문)&lt;/li&gt;
-&lt;li type=&quot;circle&quot;&gt;isunderstanding Primitives (원래 생각했던대로 정확하게 구현을 못한 경우)&lt;/li&gt; 
-&lt;li type=&quot;circle&quot;&gt;Wrong Display Setting&lt;/li&gt;
-&lt;li type=&quot;circle&quot;&gt;Run-Time Errors (프로그램을 실행할 때, 컴퓨터가 다룰 수 없는 무언가가 있는 경우)&lt;/li&gt;
-&lt;li type=&quot;circle&quot;&gt; &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;Logic Errors&lt;/b&gt; (잘못된 식, 부정확한 조건 등)&lt;/li&gt; 
-&lt;li type=&quot;circle&quot;&gt;Formulation Errors (가정, 알고리즘, 파라미터 값에 대한 에러, validation issues)&lt;/li&gt;
-&lt;br /&gt;
-&lt;span style=&quot;font-weight:700; font-size:1.3em; margin-right: 1em;&quot;&gt;
-Techniques for Debugging and Testing
-&lt;/span&gt;
-&lt;br /&gt;&lt;br /&gt;
-실수를 줄이기 위해서는 Debugging과 Testing 과정이 중요하며 다음과 같은 기법들이 있다.
-&lt;br /&gt;&lt;br /&gt;
-
-&lt;li type=&quot;circle&quot;&gt; Syntax Checking (코드 작성시 수시로 syntax를 확인하는 습관을 가지는 것)&lt;/li&gt;
-&lt;li type=&quot;circle&quot;&gt;Visual Testing (시각적으로 확인하는 것)&lt;/li&gt;
-&lt;li type=&quot;circle&quot;&gt;Print Statement (어떻게 작동하는지 프린트해서 확인하는 것)&lt;/li&gt;
-&lt;li type=&quot;circle&quot;&gt;Spot Tests with Agent Monitors (NetLogo View에 있는 Agent Monitor로 확인하는 것)&lt;/li&gt;
-&lt;li type=&quot;circle&quot;&gt;Stress Tests (extreme 값을 파라미터나 input으로 넣어 프로그램을 실행하는 것, 평범한 조건에서 숨겨진 에러를 발견할 수도 있다.), 
-&lt;li type=&quot;circle&quot;&gt;Test Procedure (중간 output을 만들어 테스트 해보는 것)&lt;/li&gt; 
-&lt;li type=&quot;circle&quot;&gt;Test Programs (특정한 프로그램 아이디어를 테스트하기 위해 짧은 프로그램으로 분리하여 실행하는 것)&lt;/li&gt; 
-&lt;li type=&quot;circle&quot;&gt;Code Reviews (동료들과 리뷰해보는 것, 다른 사람이 확인하면 실수가 발견될 수 있고 코드를 잘 정리하고 이해하기 쉽게 하기위해서)&lt;/li&gt; 
-&lt;li type=&quot;circle&quot;&gt;Statistical Analysis of File OutPut (예상했던대로 모델이 formulation 되었는지 확인하기 위해 모델의 핵심 부분을 file output으로 적어 분석해보는 것)&lt;/li&gt; 
-&lt;li type=&quot;circle&quot;&gt;Independent Reimplementation of Submodels (엑셀이나 R, Python 등 다른 플랫폼으로 확인해보는 것)&lt;/li&gt;
-&lt;li type=&quot;circle&quot;&gt;Documentation of Tests(사용된 test의 종류, 모델을 실행한 방법과 결과 등을 문서화하는 것)&lt;/li&gt;
-
-&lt;br /&gt;
-
-&lt;/li&gt;&lt;/div&gt;
-</description>
-        <pubDate>Tue, 07 Apr 2020 18:00:08 +0000</pubDate>
-        <link>http://munjeongkang.github.io/ABM7/</link>
-        <guid isPermaLink="true">http://munjeongkang.github.io/ABM7/</guid>
         
         
         <category>수업</category>
