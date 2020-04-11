@@ -85,4 +85,4 @@ $$
 이 경우는 정규화가 $w_i$의 최적값을 0으로 이동시키는 것이 아니라 $\alpha H_{i,i}$와 같은 거리만큼 그 방향으로만 이동시킨다.</li>
 </ol>
 
-$L^2$ 정규화와 비교하여 $L^1$ 정규화는 더 <b style = "color:#d7385e;font-size:1.2">희소한(sparse)</b>한 솔루션을 준다. $L^1$ 정규화에 의해 유도된 희소성질 (sparsity property)는 특징 선택 (feature selection) 매커니즘으로 광범위하게 사용되어왔다. 
+$L^2$ 정규화와 비교하여 $L^1$ 정규화는 더 <b style = "color:#d7385e;font-size:1.2">희소한(sparse)</b>한 솔루션을 준다. $L^1$ 정규화에 의해 유도된 희소성질 (sparsity property)은 특징 선택 (feature selection) 매커니즘으로 광범위하게 사용되어왔다. 
