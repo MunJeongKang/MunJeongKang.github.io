@@ -5,9 +5,51 @@
     <description>github blog</description>
     <link>http://munjeongkang.github.io/</link>
     <atom:link href="http://munjeongkang.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 12 Apr 2020 16:23:19 +0900</pubDate>
-    <lastBuildDate>Sun, 12 Apr 2020 16:23:19 +0900</lastBuildDate>
+    <pubDate>Sun, 12 Apr 2020 19:04:33 +0900</pubDate>
+    <lastBuildDate>Sun, 12 Apr 2020 19:04:33 +0900</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>인공신경망 - Challenge of Long-Term Dependencies</title>
+        <description>&lt;hr /&gt;
+&lt;div style=&quot;font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; &quot;&gt;
+
+순환(recurrent) 네트워크에서 long-term dependencies를 학습하는 기본적인 문제는 여러 단계에 걸쳐 전파되는 기울기가 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;사라지거나(vanish)) 폭발하는(explode)&lt;/b&gt; 경향이 있다는 것이다. 대부분의 경우 vanish 문제이고 explode 문제는 드물지만 최적화에 더 어려움을 준다. 순환 관계를 다음과 같이 비선형 활성화 함수와 인풋 $x$가 없는 매우 단순한 순환 신경망으로 생각할 수 있다. 
+
+$$
+\boldsymbol{h}^{(t)}=\boldsymbol{W}^{\top} \boldsymbol{h}^{(t-1)}
+$$
+
+이를 다음과 같이 단순화할 수 있다. 
+
+$$
+\boldsymbol{h}^{(t)}=\boldsymbol{(W^t)}^{\top} \boldsymbol{h}^{(0)}
+$$
+
+만약 $\boldsymbol{W}$가 eigendecomposition이면 순환성(recurrence)은 더 단순화될 수 있다.
+
+$$
+\boldsymbol{h}^{(t)}=\boldsymbol{Q}^{\top} \Lambda^t \boldsymbol{Q} \boldsymbol{h}^{(0)}
+$$
+
+고유값이 $t$승으로 상승하는 것은 크기(magnitude)가 1보다 작은 고유값은 0으로 감소하고 1보다 큰 고유값은 explode되도록 유발한다. 가장 큰 고유벡터로 정렬되지 않은 $\boldsymbol{h}^{(0)}$의 성분은 결국에는 버려질 것이다. 
+&lt;br /&gt;&lt;br /&gt;
+
+만약 각 time step마다 가중치가 다른 $w^{(t)}$를 가지는 비순환적 네트워크를 만들면 상황이 달라진다. 초기 상태가 1로 주어진다면, 시간 $t$에서 상태는 $\prod_{t}w^{(t)}$로 주어진다. 평균이 0이고 분산이 $v$값을 가지는 서로 독립인 $w^{(t)}$값이 랜덤하게 생성된다고 가정하면 산출물(product)의 분산은 $O(v^n)$이다. 원하는 분산 $v^*$를 얻기 위해 분산 $v=\sqrt[n]{v^*}$를 가지는 개별적인 가중치를 선택할 수 있다. 따라서 신중하게 선택한 스케일링을 가지는 매우 깊은 feedforward networks는 vanishing 과 exploding gradient problem을 피할 수 있다. 
+&lt;br /&gt;&lt;br /&gt;
+모델이 long-term dependencies가 나타날 수 있을 때마다 long-term interaction의 기울기는 short-term interaction의 기울기보다 기하급수적으로 더 작은 크기를 가진다. 이러한 의존성 대한 신호는 short-term dependencies에서 발생하는 가장 작은 변동(fluctuations)에 의해 숨겨지는 경향이 있기 때문에 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;long-term dependencies를 학습하는데 오랜 시간이 걸릴 수 있다.&lt;/b&gt; 
+&lt;br /&gt;&lt;br /&gt;
+포착해야하는 의존성의 범위가 증가함에 따라 gradient-based optimization은 점점 어려워진다. SGD를 통한 전통적인 RNN의 성공적인 트레이닝 확률이 연속적인 길이가 길어지면 (10 또는 20 등) 0에 빠르게 도달하기 때문이다. 
+&lt;/div&gt;
+</description>
+        <pubDate>Sun, 12 Apr 2020 18:00:08 +0000</pubDate>
+        <link>http://munjeongkang.github.io/ANN9/</link>
+        <guid isPermaLink="true">http://munjeongkang.github.io/ANN9/</guid>
+        
+        
+        <category>수업</category>
+        
+      </item>
     
       <item>
         <title>인공신경망 - Motivation</title>
@@ -703,57 +745,6 @@ Current investor wealth = 100000, Time horizon = 25인 경우&lt;br /&gt;
         <pubDate>Thu, 09 Apr 2020 18:00:08 +0000</pubDate>
         <link>http://munjeongkang.github.io/ABM11/</link>
         <guid isPermaLink="true">http://munjeongkang.github.io/ABM11/</guid>
-        
-        
-        <category>수업</category>
-        
-      </item>
-    
-      <item>
-        <title>Agent Based Modeling - Adaptive Behavior and Objectives</title>
-        <description>&lt;hr /&gt;
-
-&lt;div style=&quot;font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; &quot;&gt;
-
-&lt;span style=&quot;font-weight:700; font-size:1.3em;  margin-right: 1em;&quot;&gt;
-Adaptive Behavior 
-&lt;/span&gt;
-&lt;br /&gt;&lt;br /&gt;
-
-&lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;Adaptive Traits&lt;/b&gt;를 최적화하는 과정은 다음과 같다. 
-&lt;ol&gt;
-&lt;li&gt;대체할 수 있는것(alternatives)이 확인한다.&lt;/li&gt;
-&lt;li&gt;유효하지 않은 것은 제거한다.&lt;/li&gt;
-&lt;li&gt;각각의 alternatives가 목적 함수를 얼마나 충족하는지에 따라 유효한 것을 평가한다.&lt;/li&gt;
-&lt;li&gt;가장 좋은 목적함수 값을 주는 최적의 alternative를 선택한다.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
-&lt;li type=&quot;circle&quot;&gt;Agentset (대체할 수 있는 후보) : turtles, links, turtles-at, turtles-on, turtle-here, link-neighbors, in-link-neighbors, out-link-neighbors 등 &lt;/li&gt;
-&lt;li type=&quot;circle&quot;&gt;Agentset의 부분집합 만들기 : other, in-radius, in-cone, with, with-max, max-n-of, with-min, and, or, patch-set, turtle-set, link-set 등&lt;/li&gt;
-&lt;/ul&gt;
-max-one-of, min-one-of, with-max, with-min 등을 사용하여 목적함수에 대해 가장 좋은 alternative를 확인한다. 비즈니스 투자 모델의 경우 매년 투자자는 유효한(feasible) 투자의 효용을 계산하고 가장 좋은 투자를 선택한다. 이 모델의 목적은 최대 효용을 가지는 항목에 투자를 함으로써 자산을 최대화 하는 것이다. 이 때, 투자자들은 유효한 투자의 수익에 대한 정보는 가지고 있다고 가정한다.
-&lt;br /&gt;&lt;br /&gt;
- 이 모델에 대한 새로운 파라미터로 profit-mulriplier(0.5~1.0)와 risk-multiplier(1.0~2.0)를 추가해서 분석해 보면 다음과 같은 결과를 얻을 수 있다. 어느 한 가지는 고정하고 값을 변화시켰을 때 위험과 이익이 변하는 양상을 볼 수 있다. 
-&lt;br /&gt;&lt;br /&gt;
-&lt;div style=&quot;border: 1px; float: right;margin-left: 1em; margin-right: 1em; &quot;&gt;
-&lt;img src=&quot;/images/post_img/NL20.png&quot; width=&quot;290&quot; height=&quot;300&quot; /&gt;
-&lt;/div&gt;
-&lt;div style=&quot;border: 1px; margin-left: 1em; margin-right: 1em; &quot;&gt;
-&lt;img src=&quot;/images/post_img/NL19.png&quot; width=&quot;290&quot; height=&quot;300&quot; /&gt;
-&lt;/div&gt;
-
-&lt;span style=&quot;font-weight:700; font-size:1.3em;  margin-right: 1em;&quot;&gt;
-Satisficing decision
-&lt;/span&gt;
-&lt;br /&gt;&lt;br /&gt;
-
-Alternative를 찾을 때 꼭 최적의 값을 찾지 않아도 되는 경우가 있다. 이 때는 적당히 좋은 값(good enough)을 찾는다. 비즈니스 투자 모델의 경우 투자자들은 그들이 소유한 종목 이외의 이익이나 실패 위험을 알 수 없다. 그렇기 때문에 적당한 한계점(threshold)을 기준으로 잡아 종목을 선택할지 말지 결정한다. 
-&lt;br /&gt;&lt;br /&gt;
-&lt;/div&gt;
-</description>
-        <pubDate>Thu, 09 Apr 2020 18:00:08 +0000</pubDate>
-        <link>http://munjeongkang.github.io/ABM10/</link>
-        <guid isPermaLink="true">http://munjeongkang.github.io/ABM10/</guid>
         
         
         <category>수업</category>
