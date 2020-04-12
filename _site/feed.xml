@@ -5,9 +5,44 @@
     <description>github blog</description>
     <link>http://munjeongkang.github.io/</link>
     <atom:link href="http://munjeongkang.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 12 Apr 2020 13:18:32 +0900</pubDate>
-    <lastBuildDate>Sun, 12 Apr 2020 13:18:32 +0900</lastBuildDate>
+    <pubDate>Sun, 12 Apr 2020 16:23:19 +0900</pubDate>
+    <lastBuildDate>Sun, 12 Apr 2020 16:23:19 +0900</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>인공신경망 - Motivation</title>
+        <description>&lt;hr /&gt;
+
+&lt;div style=&quot;font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; &quot;&gt;
+
+Convolution은 머신러닝 시스템을 향상시킬 수 있는 세 가지 중요한 아이디어를 활용한다. 각각은 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;sparse interactions&lt;/b&gt;, &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;parameter sharing&lt;/b&gt;, &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;equivariant representations&lt;/b&gt; 이다. 컨볼루션 네트워크는 주로 sparse interaction을 가진다. sparse interaction은 sparse connectivity 또는 sparse weights라고도 한다. 이것은 커널(kernel)을 인풋보다 작게 함으로써 이루어진다. 즉, 더 적은 파라미터를 저장해야한다는 의미이다. 또한, 아웃풋을 계산하기위해 더 적은 작업(operations)이 요구된다는 것이다. 
+&lt;br /&gt;&lt;br /&gt;
+
+&lt;div style=&quot;border: 1px; float: right;margin-left: 1em; margin-right: 1em; &quot;&gt;
+&lt;img src=&quot;/images/post_img/AN13.png&quot; width=&quot;290&quot; height=&quot;300&quot; /&gt;
+&lt;/div&gt;
+&lt;div style=&quot;border: 1px; margin-left: 1em; margin-right: 1em; &quot;&gt;
+&lt;img src=&quot;/images/post_img/AN12.png&quot; width=&quot;290&quot; height=&quot;300&quot; /&gt;
+&lt;/div&gt;
+&lt;br /&gt;
+아래 오른쪽의 이미지는 원본 사진의 각 픽셀을 취해 왼쪽의 인접 픽셀의 값을 빼면서 만들어졌다. 두 이미지 모두 280 픽셀이며 입력 이미지는 320 픽셀인 반면 출력 이미지는 319 픽셀이다. 이 변환은 두 개의 요소를 포함하는 컨볼루션 커널로 설명될 수 있고 319*280*3 = 267,960의 floating-point(부동 소수점, CPU의 성능을 수치로 나타낼 때 사용되는 단위) 연산이 요구된다. 행렬곱으로 동일한 변환을 설명하려면 320*280*319*280 또는 80억 이상의 entries가 필요하다. 
+&lt;br /&gt;&lt;br /&gt;
+&lt;div align=&quot;center&quot;&gt;
+&lt;img src=&quot;/images/post_img/AN14.png&quot; width=&quot;450&quot; height=&quot;280&quot; /&gt;
+&lt;/div&gt;
+&lt;br /&gt;
+parameter sharing의 특정한 형태는 레이어가 해석(translation)에 동일성(equivariance)이라 불리는 특성을 갖도록 한다. 함수가 동일하다고 말하는 것은 입력이 바뀌면 출력이 같은 방식으로 바뀐다는 것을 의미한다. 구체적으로 함수 $f(x)$는 $f(g(x)) = g(f(x))$이라면 함수 $g$와 동일하다. convolution의 경우 만약 $g$가 인풋을 해석하는 어떤 함수라면 convolution 함수는 $g$와 동일해진다. 만약 인풋에 있는 객체를 움직이면, 인풋의 representation은 아웃풋에서 같은 양만큼 움직일 것이다. 그러나 Convolution은 이미지의 크기(scale) 변화나 회전 등의 변형과는 동일시 되지 않는다. 
+
+&lt;/div&gt;
+</description>
+        <pubDate>Sun, 12 Apr 2020 18:00:08 +0000</pubDate>
+        <link>http://munjeongkang.github.io/ANN8/</link>
+        <guid isPermaLink="true">http://munjeongkang.github.io/ANN8/</guid>
+        
+        
+        <category>수업</category>
+        
+      </item>
     
       <item>
         <title>인공신경망 - Basic Algorithms</title>
@@ -719,74 +754,6 @@ Alternative를 찾을 때 꼭 최적의 값을 찾지 않아도 되는 경우가
         <pubDate>Thu, 09 Apr 2020 18:00:08 +0000</pubDate>
         <link>http://munjeongkang.github.io/ABM10/</link>
         <guid isPermaLink="true">http://munjeongkang.github.io/ABM10/</guid>
-        
-        
-        <category>수업</category>
-        
-      </item>
-    
-      <item>
-        <title>Agent Based Modeling - Sensing</title>
-        <description>&lt;hr /&gt;
-
-&lt;div style=&quot;font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; &quot;&gt;
-&lt;span style=&quot;font-weight:700; font-size:1.3em;  margin-right: 1em;&quot;&gt;
-Sensing
-&lt;/span&gt;
-&lt;br /&gt;&lt;br /&gt;
-에이전트가 어떤 정보를 가지고 있는지, 어떻게 그것을 얻었는지에 대한 것이 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;Sensing&lt;/b&gt;이다. 에이전트는 주로 환경이나 다른 에이전트로 부터 정보를 얻고 그 정보에 의해 반응한다. 에이전트가 어떤 변수를 사용했는지, 무엇으로부터 정보를 얻었는지, 어떻게 정보를 얻었는지가 모델링 sensing의 핵심이다. 
-&lt;br /&gt;&lt;br /&gt;
-&lt;span style=&quot;font-weight:700; font-size:1.3em;  margin-right: 1em;&quot;&gt;
-Scope of Variables
-&lt;/span&gt;
-&lt;br /&gt;&lt;br /&gt;
-ABM에서 사용할 수 있는 변수들은 다음과 같다. 
-&lt;ul&gt;
-&lt;li type=&quot;circle&quot;&gt;Global Variables : 어떤 객체든지 항상 변할 수 있는 값이다. (Model-level, Environment parameters, Interface, Behavior space 등) &lt;/li&gt;
-&lt;li type=&quot;circle&quot;&gt;Patch Variables : &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;patches-own&lt;/b&gt; 사용가능, pcolor, pxcor 등 patch에 관련된 것을 사용한다. turtle은 그들이 위치한 patch의 변수에 직접적으로 접근가능하다.&lt;/li&gt;
-&lt;li type=&quot;circle&quot;&gt;Turtle and Link Variables : &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;turtles-own&lt;/b&gt;, &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;links-own&lt;/b&gt; 사용가능, 각각의 turtle 또는 link에만 한정된다.&lt;/li&gt;
-&lt;li type=&quot;circle&quot;&gt;Local Variables : &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;let&lt;/b&gt; 명렁어를 사용하여 만들고 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;set&lt;/b&gt;을 사용하여 값을 변환시킨다. 객체가 생성되는 장소에서만 생성할 수 있으며, 다른 객체는 접근할 수 없다. procedure(또는 [])가 종료되면 사라진다. &lt;/li&gt;
-&lt;/ul&gt;
-다른 객체의 변수를 사용하는 예시로 다음의 코드를 사용할 수 있으며 이를 응용해 다음과 같이 서로의 색을 바꾸는 코드를 짤 수 있다.
-&lt;br /&gt;
-&lt;ul&gt;
-&lt;code&gt;let max-neighbor-value max [value] of neighbors&lt;/code&gt; &lt;br /&gt;
-&lt;code&gt;ask neighbors [set value 99]&lt;/code&gt; &lt;br /&gt;
-&lt;code&gt;ask neighbors [set value ([value] of myself)]&lt;/code&gt;
-&lt;/ul&gt;
-&lt;div style=&quot;border: 1px; float: right;margin-left: 1em; margin-right: 1em; &quot;&gt;
-&lt;img src=&quot;/images/post_img/NL18.png&quot; width=&quot;290&quot; height=&quot;300&quot; /&gt;
-&lt;/div&gt;
-&lt;div style=&quot;border: 1px; margin-left: 1em; margin-right: 1em; &quot;&gt;
-&lt;img src=&quot;/images/post_img/switch.gif&quot; width=&quot;290&quot; height=&quot;300&quot; /&gt;
-&lt;/div&gt;
-&lt;br /&gt;
-&lt;span style=&quot;font-weight:700; font-size:1.3em;  margin-right: 1em;&quot;&gt;
-The Business Investor Model
-&lt;/span&gt;
-&lt;br /&gt;&lt;br /&gt;
- &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;비즈니스 투자 모델&lt;/b&gt;은 수익과 위험정도가 다른 투자 후보들이 있을 때, 어떤 것에 투자할지에 대해 시뮬레이션하는 것이다. 모델의 목적은 주어진 정보를 사용하여 모델의 emergent output에 대한 sensing의 영향을 알아보는 것이다. 여기서 turtle이 투자자, patch가 투자 후보들이다. turtle의 변수로 location, current wealth(&lt;i&gt;W&lt;/i&gt;)가 있고, patch의 변수로 annual net profit(&lt;i&gt;P&lt;/i&gt;), annual risk-probability of losing all its wealth(&lt;i&gt;F&lt;/i&gt;)가 있다. 모델의 time step은 1년이고 25년까지 실행한다. time step마다 투자자는 어떤 곳에 투자할지 선택하고 자산이 업데이트된다. 
-&lt;br /&gt;&lt;br /&gt;
-이 모델에서는 수익은 높이고 위험은 줄이는 선택을 어떻게 할 것인지 정해야한다. time step마다 투자자의 평균 자산,평균 수익, 위험, 실패한 투자자의 수가 output으로 나오고 수익과 위험 사이의 trade-off를 통해 발현된다. 투자자인 turtle은 투자 후보들 중에서 목적함수의 값을 최대화하는 이웃의 patch로 이동한다. (현재 위치가 제일 좋은 선택이면 움직이지 않는다.) 여기서 목적함수는 마지막에 예측되는 효용 (미래의 자산)을 최대화 하는 것이다. 여기서 $T$는 time horizon을 뜻한다.
-&lt;br /&gt;&lt;br /&gt;
-&lt;p align=&quot;center&quot;&gt;
-$U = (W+TP)(1-F)^T$
-&lt;br /&gt;
-&lt;/p&gt;
-투자자들은 그들의 patch와 인접한 이웃 patch의 수익과 위험을 안다고 가정하고, 이미 다른 투자자가 차지한 patch로는 이동하지 않는다. &lt;i&gt;P&lt;/i&gt;, &lt;i&gt;F&lt;/i&gt;, &lt;i&gt;location&lt;/i&gt; 등 모델의 초기상태, 투자실패, 동률일 때 무작위로 움직이는 것 등은 확률적이며 에이전트의 위치, 평균 수익과 위험, 평균 투자자산, time step별 각 투자자의 상태를 관찰(observation)할 수 있다. 100명의 투자자가 랜덤으로 위치하고 &lt;i&gt;W&lt;/i&gt;의 초기값은 0이다. 
-&lt;br /&gt;&lt;br /&gt;
-&lt;p align=&quot;center&quot;&gt;
-&lt;img src=&quot;/images/post_img/invest.gif&quot; width=&quot;600&quot; height=&quot;300&quot; /&gt;
-&lt;br /&gt;
-&lt;/p&gt;
-여기서 만약 투자자들이 이웃만이 아닌 더 넓은 범위의 투자도 고려할 수 있다면 투자자의 자산을 더 증가시킬 수 있는지 의문이 든다. 실제로 Sensing range를 넓혀가면서 실험해보면 이웃만 살펴보는 것보다 더 넓은 범위를 고려하는게 더 좋다. 하지만 일정 범위를 지나서는 아무리 넓은 범위를 고려해도 투자 자산이 증가하지는 않는다. 
-&lt;br /&gt;&lt;br /&gt;
- 
-&lt;/div&gt;
-</description>
-        <pubDate>Wed, 08 Apr 2020 18:00:08 +0000</pubDate>
-        <link>http://munjeongkang.github.io/ABM9/</link>
-        <guid isPermaLink="true">http://munjeongkang.github.io/ABM9/</guid>
         
         
         <category>수업</category>
