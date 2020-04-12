@@ -5,9 +5,173 @@
     <description>github blog</description>
     <link>http://munjeongkang.github.io/</link>
     <atom:link href="http://munjeongkang.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 12 Apr 2020 19:57:39 +0900</pubDate>
-    <lastBuildDate>Sun, 12 Apr 2020 19:57:39 +0900</lastBuildDate>
+    <pubDate>Mon, 13 Apr 2020 00:57:39 +0900</pubDate>
+    <lastBuildDate>Mon, 13 Apr 2020 00:57:39 +0900</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>논문리뷰 - Coordinated logistics with a truck and a drone</title>
+        <description>&lt;hr /&gt;
+
+&lt;div style=&quot;font-weight:700; font-size:1.3em; text-align:center;&quot;&gt;Abstract &lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;div style=&quot;font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; &quot;&gt;
+We determine the efficiency of a delivery system in which an unmanned aerial vehicle (UAV), or a fleet of UAVs, provides service to customers while making return trips to a truck that is itself moving. In other words, a UAV picks up a package from the truck (which continues on its route), and after delivering the package, the UAV returns to the truck to pick up the next package. Although the hardware for such systems already exists, it is not yet understood to what extent such an approach can actually provide a significantly improved quality of service. By combining a theoretical analysis in the Euclidean plane with real-time numerical simulations on a road network, we conclude that the improvement in efficiency due to introducing a UAV is proportional to the square root of the ratio of the speeds of the truck and the UAV.&lt;br /&gt;&lt;br /&gt;
+
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;div style=&quot;font-weight:700; font-size:1.3em; text-align:center;&quot;&gt;Summary
+&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;div style=&quot;font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; &quot;&gt;
+
+이 논문은 드론과 같은 무인항공기와 트럭을 함께 사용하는 배달 시스템의 효율성을 판단한다. 유클리드 평면의 이론적 분석과 도로망에서의 실시간 시뮬레이션을 결합하여 무인항공기 도입에 따른 효율 향상은 트럭과 무인항공기의 속도 비율의 제곱근에 비례한다는 것이 결론이다. 
+
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;div style=&quot;font-weight:700; font-size:1.3em; text-align:center;&quot;&gt;본문 내용
+&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;div style=&quot;font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify;  &quot;&gt;
+
+최근 교통과 물류에서 가장 많이 언급되는 것 중 하나가 &lt;b style=&quot;color:#d7385e; font-size:1.2&quot;&gt;드론의 잠재적인 사용&lt;/b&gt;에 관한 것이다. 특히 배송 시스템에 드론을 많이 활용하고자 하는데 아마존의 Amazon Prime Air, 구글의 Project Wing, DHL의 Parcelcopter 등을 예시로 들 수 있다. 
+&lt;br /&gt;&lt;br /&gt;
+
+&lt;/div&gt;
+
+&lt;div style=&quot;border:0px solid red; float: left; width:30%; box-sizing : border-box;  margin-left: 1em;&quot;&gt; &lt;img src=&quot;/images/post_img/amazon_prime_air.jpg&quot; width=&quot;250&quot; height=&quot;150&quot; /&gt; &lt;p align=&quot;center&quot;&gt;Amazon Prime Air&lt;/p&gt;
+&lt;/div&gt;
+&lt;div style=&quot;border:0px solid green; float: left; margin-left:2.5%; margin-right: 2%; width:30%; box-sizing : border-box&quot;&gt; &lt;img src=&quot;/images/post_img/Google-Project-Wing.jpg&quot; width=&quot;250&quot; height=&quot;150&quot; /&gt;&lt;p align=&quot;center&quot;&gt;Project Wing&lt;/p&gt;
+&lt;/div&gt;
+&lt;div style=&quot;border:0px solid blue; float: right; width:30%; box-sizing : border-box; margin-right: 1em;&quot;&gt; &lt;img src=&quot;/images/post_img/parcel.jpg&quot; width=&quot;250&quot; height=&quot;150&quot; /&gt;&lt;p align=&quot;center&quot;&gt;Parcelcopter&lt;/p&gt;
+&lt;/div&gt;
+&lt;div&gt;
+
+&lt;div style=&quot;font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; text-indent:0%; &quot;&gt;
+
+여기서 last-mile delivery의 수요가 증가할 것이라는 언급이 있다. 라스트 마일이란 상품이 최종 목적지까지 배송되기 위한 과정으로 상품을 개인 소비자에게 직접 전달하기 위한 배송 마지막 구간을 의미한다. 즉, 무인정찰기를 배송시스템에 도입하여 하늘과 도로를 통해 배송함으로써 차세대 물류 시스템을 수행할 것이라는 전망이다. 무인항공기 기반 배송 시스템은 장단점이 명백하게 있는데 일단 드론은 운송 비용이 낮고 사람의 개입없이 운행할 수 있으며 도로 교통에 영향을 받지 않기 때문에 빠르게 운행할 수 있다. 그러나 운반 용량이 매우 작고 이동 반경이 짧으며 충전을 자주 해야한다. 
+
+&lt;br /&gt;&lt;br /&gt;
+&lt;p align=&quot;center&quot;&gt;
+&lt;img src=&quot;/images/post_img/fig1.png&quot; width=&quot;600&quot; height=&quot;300&quot; /&gt;
+&lt;/p&gt;
+위의 그림은 트럭으로만 배달한 경우, 드론으로만 배달한 경우, 트럭과 드론으로 배달한 경우의 배송경로를 나타낸다. 드론은 트럭의 속도보다 약 4배 정도 빠르다고 가정하였고 (c)에서 볼 수 있듯이 어느 한 가지로 배송하는 것과는 배송 경로의 차이가 있음을 알 수 있다. 
+&lt;br /&gt;&lt;br /&gt;
+
+이 논문의 목적은 &lt;b style=&quot;color:#d7385e; font-size:1.2&quot;&gt;드론과 트럭을 함께 사용하여 배송하는 것의 효율성을 판단&lt;/b&gt;하는 것이다. 이러한 실제 시스템 중 하나가 HorseFly이다. 실제로 어느 정도까지 서비스 품질을 향상시킬 수 있는지 파악되지 않았기 때문에 수학적으로 얼마나 개선을 실현시킬 수 있는지 언급한다. 
+&lt;br /&gt;&lt;br /&gt;
+&lt;p align=&quot;center&quot;&gt;
+&lt;img src=&quot;/images/post_img/horsefly.png&quot; width=&quot;450&quot; height=&quot;280&quot; /&gt;
+&lt;/p&gt;
+이는 TSP의 일반적인 경우이므로 최적으로 풀기 매우 어렵다. 그러므로 문제를 작은 파라미터 집합으로 줄이고 이러한 파라미터가 문제의 결과에 어떻게 영향을 미치는지 결정한다. 고객은 유클리드 평면에서 확률 밀도에 따라 분포한다고 가정한다. 이 논문은 특정 문제 사례에 대한 것보다는 인구 밀도에 따라 한 지역에서 많은 고객이 서비스를 받을 때 장기적인 행동에 대해 신경을 쓴다. 본질적으로 VRP 모델의 사례로 생각할 수 있다. &lt;b style=&quot;color:#d7385e; font-size:1.2&quot;&gt;서로 정반대되는 장단점을 가진 두 종류의 차량을 최적으로 조정하는 문제&lt;/b&gt;로 생각할 수 있다. 
+&lt;br /&gt;&lt;br /&gt;
+$n$개의 고객이 있다고 가정하며 트럭의 속도는 $\phi_0$, 드론의 속도는 $\phi_1$로 나타낸다. ($\phi_0&amp;lt;\phi_1$) compact planar region을 $\mathcal{R}$, $\mathcal{R}$에서의 loop를 $\mathcal{L}$, 모든 loop $\mathcal{L}$의 집합을 Loop($\mathcal{R}$)이라 하면 $d(x, \mathcal{L})$를 다음과 같이 $x$와 loop $\mathcal{L}$ 사이의 거리로 나타낼 수 있다. 
+$$
+d(x, \mathcal{L})=\min _{x^{\prime} \in \mathcal{L}}\left\|x-x^{\prime}\right\|
+$$
+이는 일반적인 유클리드 거리를 나타내고 {1,...$n$}의 순열 집합을 $S_n (\sigma \in S_n)$이라 하면 항공기에서 집합 $S$의 $\epsilon$-neighborhood는 다음과 같이 $N_{\epsilon}(\mathcal{S})$로 쓰인다. 
+$$
+N_{\epsilon}(\mathcal{S})=\left\{x \in \mathbb{R}^{2}: \min _{x^{\prime} \in \mathcal{S}}\left\|x-x^{\prime}\right\| \leq \epsilon\right\}
+$$
+먼저 앞서 언급한 &lt;i&gt;horsefly routing problem&lt;/i&gt;을 공식적으로 정의한다. 트럭 1대와 드론 1대에 대해 $p_1,...,p_n$을 포인트의 집합이라 한다면 다음을 만족하는 최적 솔루션이 $p_1,...,p_n$의 최적 &lt;i&gt;horsefly tour&lt;/i&gt;이다. 
+
+&lt;p align=&quot;right&quot;&gt;
+&lt;img src=&quot;/images/post_img/eq1.png&quot; width=&quot;600&quot; height=&quot;80&quot; /&gt;
+&lt;/p&gt;
+
+아래 그림은 $p_1,...p_6$의 지점에 대해 $\phi_1/\phi_2=3/2$ 인 문제와 $\phi_1/\phi_2=3$인 문제의 horsefly 경로 문제의 솔루션이다. $x_1$을 임의의 출발점으로 정의하면, 두 경로 모두 $\sigma = {1,3,5,2,6,4}$이다. 
+&lt;p align=&quot;center&quot;&gt;
+&lt;img src=&quot;/images/post_img/fig2.png&quot; width=&quot;550&quot; height=&quot;260&quot; /&gt;
+&lt;/p&gt;
+$\mathcal{L}$의 $\epsilon$-neighborhood는 Route의 내부(inner) 부분인 $R_{\text{in}}$와  외부(outer) 부분인 $R_{\text{out}}$을 가진다. 아래 그림의 (a)는 $R_{\text{in}}$과 $R_{\text{out}}$을 나타낸다. 색칠된 부분과 빗금친 부분이 모두 $R_{\text{out}}$이므로 면적 Area($R_{\text{out}}$) = $\pi \epsilon^{2}+\epsilon \ell$, 둘레  perimeter($R_{\text{out}}$) = $\ell + 2\pi\epsilon$이다. (b)는 내부 loop $\mathcal{L}_\epsilon^{\prime}$ 과 모든 $\epsilon^{\prime}$에 대해 $R_{\mathrm{out}}^{\prime} \subseteq R_{\mathrm{in}}$ 임을 보여준다. 
+&lt;br /&gt;&lt;br /&gt;
+&lt;p align=&quot;center&quot;&gt;
+&lt;img src=&quot;/images/post_img/fig3.png&quot; width=&quot;550&quot; height=&quot;260&quot; /&gt;
+&lt;/p&gt;
+아래 그림의 (a)와 (b)는 loop $\mathcal{L}$을 가지는 지역 $\mathcal{R}$을 통과하는 지그재그(zig-zagging) 모양과 나선형(spiralling)모양의 투어를 나타낸다. 수요 밀도가 불균등(non-uniform)일 때, (c)와 (d)에서 같이 최적 loop는 밀도가 더 높은 지역에 집중되어야 한다.  
+&lt;br /&gt;&lt;br /&gt;
+&lt;p align=&quot;center&quot;&gt;
+&lt;img src=&quot;/images/post_img/fig4.png&quot; width=&quot;650&quot; height=&quot;200&quot; /&gt;
+&lt;/p&gt;
+아래 그림에는 $N$=16인 사각형 패치 $\mathcal{P}_i$가 있다. (a)와 (b)는 하나의 loop를 패치의 모양에만 의존하는 방식으로 항상 다수의 loop로 분해할 수 있음을 보여준다. (c)와 (d) 또한, 패치의 모양에만 의존하는 방식으로 하나의 loop로 loop들의 집합을 항상 결합할 수 있음을 보여준다.
+
+&lt;br /&gt;&lt;br /&gt;
+&lt;p align=&quot;center&quot;&gt;
+&lt;img src=&quot;/images/post_img/fig5.png&quot; width=&quot;650&quot; height=&quot;200&quot; /&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+[참고] &lt;i&gt;Claim&lt;/i&gt;9. 위의 식 (1)의 lower bound가 문제의 최적 목적 값이다. 
+&lt;img src=&quot;/images/post_img/eq2.png&quot; width=&quot;500&quot; height=&quot;60&quot; /&gt;
+&lt;/p&gt;
+아래 그림은 &lt;i&gt;Claim&lt;/i&gt;9의 스케치이다. (a)와 같이 문제(1)의 솔루션에서 시작하고 (b)와 같이 $x_i^{\prime}$이 구성된다. 그리고 나서 (c)처럼 $x_i^{\prime}$들을 통해 투어를 얻는다. 
+&lt;br /&gt;&lt;br /&gt;
+&lt;p align=&quot;center&quot;&gt;
+&lt;img src=&quot;/images/post_img/fig6.png&quot; width=&quot;650&quot; height=&quot;200&quot; /&gt;
+&lt;/p&gt;
+이 논문에서는 2가지 계산 실험을 하는데 첫 번째 실험은 계수 $\alpha$(논문의 (12)와 (???)에서 사용됨)를 추정하기 위해 사용하는 균일하게 분포된 수요를 가지는 unit square에서 이루어진다. 두 번째 실험에서는 $\alpha$의 추정치를 사용하여 균일하지 않은 분포에 따른 수요와 도로망에서의 실시간 주행 정보가 사용될 때의 효율성 향상에 대해 예측을 한다. 아래 그림은 두 개의 다른 horsefly 투어를 나타낸다. (a)는 $k$=1, $\phi_1$=1.5이고 (b)는 $k$=3, $\phi_1$=3이다. (여기서 $k$는 무인항공기의 개수이다.) $p_i$의 다른 색깔 (검정, 회색, 흰색)은 3개의 무인항공기 중 어느 것이 해당 지역을 방문하는지를 나타낸다. 
+&lt;br /&gt;&lt;br /&gt;
+&lt;p align=&quot;center&quot;&gt;
+&lt;img src=&quot;/images/post_img/fig7.png&quot; width=&quot;550&quot; height=&quot;280&quot; /&gt;
+&lt;/p&gt;
+아래 그림에서 (a)는 캘리포니아(California) 주 패서디나(Pasadena)의 지도를 보여주고 (b)는 패서디나에 위치한 모든 1734 인구조사(census) 블록의 중심으로 구성된 초기 데이터 집합을 보여준다. (c)는 그 중심에서 샘플링한 $n$=25인 지점의 도로망에 대한 TSP 투어를 나타내고 (d)는 2단계 휴리스틱(논문 4.1참고)을 사용하여 계산한 horsefly tour를 보여준다. 
+&lt;br /&gt;&lt;br /&gt;
+&lt;p align=&quot;center&quot;&gt;
+&lt;img src=&quot;/images/post_img/fig8.png&quot; width=&quot;750&quot; height=&quot;400&quot; /&gt;
+&lt;/p&gt;
+아래 12개 차트는 각각 특정한 수의 고객 $n$과 무인항공기 속도 $\phi_1$에 대해 수행한 실험이다. 
+검은색 막대는 트럭 한 대가 $n$개의 고객을 방문하는 데 걸리는 시간(시간)을 나타낸다. 회색 막대는 트럭과 무인항공기가 horsefly 투어를 할 것으로 예상되는 시간을 나타낸다. 흰색 바는 트럭과 무인정찰기가 horsefly 투어를 수행하는 데 소요되는 실제 시간을 나타낸다.
+
+&lt;br /&gt;&lt;br /&gt;
+&lt;p align=&quot;center&quot;&gt;
+&lt;img src=&quot;/images/post_img/fig9.png&quot; width=&quot;750&quot; height=&quot;400&quot; /&gt;
+&lt;/p&gt;
+아래 차트는 무인항공기 개수 $k$와 속도 $\phi_1$에 대해 수행한 실험이다. 
+&lt;br /&gt;&lt;br /&gt;
+&lt;p align=&quot;center&quot;&gt;
+&lt;img src=&quot;/images/post_img/fig10.png&quot; width=&quot;750&quot; height=&quot;400&quot; /&gt;
+&lt;/p&gt;
+실험 결과 트럭만 사용하는 것보다 &lt;b style=&quot;color:#d7385e; font-size:1.2&quot;&gt;트럭과 무인항공기를 동시에 사용했을 때 시간이 더 적게 걸리는 것&lt;/b&gt;을 확인할 수 있다. 
+&lt;br /&gt;&lt;br /&gt;
+논문 결과는 다음과 같이 정리할 수 있다. 
+&lt;ul&gt;
+
+&lt;li&gt;무인항공기와 트럭 배달의 효율성은 각각의 &lt;b style=&quot;color:#d7385e; font-size:1.2&quot;&gt;속도 비율의 제곱근에 비례&lt;/b&gt;한다.&lt;/li&gt;
+&lt;li&gt;True globally 최적 솔루션이 아니라 트럭과 무인항공기 사이의 조정된 경로를 계산하기 위해 &lt;b style=&quot;color:#d7385e; font-size:1.2&quot;&gt;휴리스틱한 방법&lt;/b&gt;을 사용함.(분석의 weak point 중 하나)&lt;/li&gt;
+&lt;li&gt;이 논문에서 제시된 문제에 대한 솔루션을 찾는 테크닉을 현재까지 알지 못하지만, 물류에 대한 무인항공기의 관심이 증가함에 따라 향후 몇 년 내에 그러한 기술들이 가능할 것으로 예상함.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+&lt;hr /&gt;
+
+
+&lt;div style=&quot;font-weight:700; font-size:1.3em; text-align:center;&quot;&gt;Cite
+&lt;/div&gt;
+&lt;br /&gt;
+&lt;span style=&quot;font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; text-indent:0%; font-family: Times New Roman; &quot;&gt;
+Carlsson, J. G., &amp;amp; Song, S. (2018). Coordinated logistics with a truck and a drone. &lt;i&gt;Management Science, 64&lt;/i&gt;(9), 4052-4069.
+&lt;/span&gt;
+&lt;span style=&quot;font-weight:400; font-size:1.0em;&quot;&gt;
+&lt;a href=&quot;https://pdfs.semanticscholar.org/23a4/3524fd5168acfd589e919c143f49a6eeeac3.pdf&quot;&gt; 논문 링크 &lt;/a&gt;
+&lt;/span&gt;
+
+&lt;!-- &lt;span style=&quot;background-color: #f3c623&quot;&gt; --&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Mon, 13 Apr 2020 18:00:08 +0000</pubDate>
+        <link>http://munjeongkang.github.io/%E1%84%82%E1%85%A9%E1%86%AB%E1%84%86%E1%85%AE%E1%86%AB%20%E1%84%85%E1%85%B5%E1%84%87%E1%85%B22/</link>
+        <guid isPermaLink="true">http://munjeongkang.github.io/%E1%84%82%E1%85%A9%E1%86%AB%E1%84%86%E1%85%AE%E1%86%AB%20%E1%84%85%E1%85%B5%E1%84%87%E1%85%B22/</guid>
+        
+        
+        <category>논문리뷰</category>
+        
+      </item>
     
       <item>
         <title>인공신경망 - Recommender Systems</title>
@@ -621,93 +785,6 @@ No Free Lunch Theorem은 머신러닝 알고리즘이 구체적인 task를 잘 �
         <pubDate>Fri, 10 Apr 2020 18:00:08 +0000</pubDate>
         <link>http://munjeongkang.github.io/ANN2/</link>
         <guid isPermaLink="true">http://munjeongkang.github.io/ANN2/</guid>
-        
-        
-        <category>수업</category>
-        
-      </item>
-    
-      <item>
-        <title>인공신경망 - Learning Algorithms. The Task, T</title>
-        <description>&lt;hr /&gt;
-
-&lt;div style=&quot;font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; &quot;&gt;
-
-&lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;머신러닝(machine learning)&lt;/b&gt;은 사람에 의해 디자인된 프로그램(fixed programs)으로 풀기 너무 어려운 일(task)을 다룰 수 있도록 해준다. 스스로 배우는 과정은 task가 아니며 머신러닝 task는 일반적으로 머신러닝 시스템이 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;예시&lt;/b&gt;(example)를 어떻게 처리해야하는지에 관한 것이다. 하나의 예시로 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;특징&lt;/b&gt;(features) $x_i$를 모으는 것이 있다. 이를 특징 추출(feature collection)이라고 하며 이미지의 특징은 주로 픽셀(pixel)의 값이다.
-&lt;br /&gt;&lt;br /&gt;
-&lt;span style=&quot;font-weight:700; font-size:1.3em;  margin-right: 1em;&quot;&gt;
-분류 (Classification)
-&lt;/span&gt;
-&lt;br /&gt;&lt;br /&gt;
-입력값을 $k$개의 카테고리로 구체화하기 위한 방법이다. 분류의 예시로 객체인식 (object recognition)이 있으며 이는 이미지가 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;input&lt;/b&gt;으로 주어졌을 때 이미지 속 객체를 인식하는 수치적인(numeric) 코드가 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;output&lt;/b&gt;으로 나오는 것이다. 알고리즘을 학습하는 것은 $f : \mathbb{R}^{n} \rightarrow\{1, \ldots, k\}$와 같이 함수를 만드는 것이고, $y=f(x)$일 때 input인 vector $x$에 의해 나온 output $y$에 따라 카테고리가 할당된다. 
-&lt;br /&gt;&lt;br /&gt;
-&lt;span style=&quot;font-weight:700; font-size:1.3em;  margin-right: 1em;&quot;&gt;
-누락된 입력이 있는 분류 (Classification with Missing Inputs)
-&lt;/span&gt;
-&lt;br /&gt;&lt;br /&gt;
-누락된 입력이 있는 경우, 하나의 분류 함수만 사용하지 말고 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;함수 집합&lt;/b&gt; (Set of Functions)으로 알고리즘을 학습시켜야 한다. 함수 집합은 누락된 입력에 대해 각각 다른 부분집합을 가지는 $x$에 대한 함수들이다. 만약 함수 집합의 크기가 크다면 관련된 모든 변수를 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;확률 분포&lt;/b&gt;로 학습시키는 것이 누락된 변수를 무시할 수 있어 더 좋다. $n$개의 입력변수에 대해 $2^n$개의 분류 함수를 모두 포함할 수도 있지만 알고리즘을 학습시키기 위해 확률 분포가 결합된 단일 함수가 필요하다. 
-&lt;br /&gt;&lt;br /&gt;
-&lt;span style=&quot;font-weight:700; font-size:1.3em;  margin-right: 1em;&quot;&gt;
-회귀분석 (Regression)
-&lt;/span&gt;
-&lt;br /&gt;&lt;br /&gt;
-주어진 입력값의 수치적인 값을 예측하기 위한 방법이다 ($f : \mathbb{R}^{n} \rightarrow \mathbb{R}$). &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;Output의 포멧이 다르다는 점&lt;/b&gt;을 제외하고 분류(classification)와 비슷하다. 예를 들어 피보험자가 부담하게 될 예상 청구 금액 등을 예측하는데 사용할 수 있다. 
-&lt;br /&gt;&lt;br /&gt;
-&lt;span style=&quot;font-weight:700; font-size:1.3em;  margin-right: 1em;&quot;&gt;
-전사 (Transcription)
-&lt;/span&gt;
-&lt;br /&gt;&lt;br /&gt;
-상대적으로 구조적이지 않은 종류의 데이터를 개별적인 원문(textual) 형식으로 바꾸는 것이다. 예시로는 광학적 문자 인식 (optical character recognition), 음성 인식 (speech recognition) 등이 있다.  
-&lt;br /&gt;&lt;br /&gt;
-&lt;span style=&quot;font-weight:700; font-size:1.3em;  margin-right: 1em;&quot;&gt;
-기계번역 (Machine Translation)
-&lt;/span&gt;
-&lt;br /&gt;&lt;br /&gt;
-입력값은 이미 어떤 언어 규칙 순서로 구성되어 있고 컴퓨터 프로그램은 이를 다른 언어 규칙 순서로 변환해야한다. 
-&lt;br /&gt;&lt;br /&gt;
-&lt;span style=&quot;font-weight:700; font-size:1.3em;  margin-right: 1em;&quot;&gt;
-구조적 출력 (Structured Output)
-&lt;/span&gt;
-&lt;br /&gt;&lt;br /&gt;
-Structured Ouput은 각 요소들 사이의 중요한 관계를 가지는 벡터나 다수의 값을 포함하는 또 다른 데이터 구조이다. 이것은 넓은 범주로 전사(transcription)와 번역(translation) 작업을 포함한다. 예를 들어 구문 분석이나, 픽셀별로 이미지를 분할하는 것 등이 있다.   
-&lt;br /&gt;&lt;br /&gt;
-&lt;span style=&quot;font-weight:700; font-size:1.3em;  margin-right: 1em;&quot;&gt;
-이상 감지 (Anonmaly Detection)
-&lt;/span&gt;
-&lt;br /&gt;&lt;br /&gt;
-컴퓨터 프로그램은 일련의 사건이나 객체에 대해 살피면서 비정상적이거나 이례적인 것을 찾아 표시한다. 예를 들어 신용카드 사기를 감지하는 것이 있다. 
-&lt;br /&gt;&lt;br /&gt;
-&lt;span style=&quot;font-weight:700; font-size:1.3em;  margin-right: 1em;&quot;&gt;
-합성 및 샘플링 (Synthesis and Sampling)
-&lt;/span&gt;
-&lt;br /&gt;&lt;br /&gt;
-트레이닝 데이터와 유사한 새로운 예제를 생성하는 방법이다. 예를 들어 음성 합성 (speech synthesis) 등이 있고 구조적 출력 작업의 일종이지만 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;추가적인 조건(qualification)&lt;/b&gt;이 있다. 각 인풋에 대해 유일한 아웃풋은 없고 아웃풋이 더 자연스럽고 사실적으로 보이도록 많은 양의 변화를 준다.   
-&lt;br /&gt;&lt;br /&gt;
-&lt;span style=&quot;font-weight:700; font-size:1.3em;  margin-right: 1em;&quot;&gt;
-누락값 대체 (Imputation of Missing Values)
-&lt;/span&gt;
-&lt;br /&gt;&lt;br /&gt;
-&lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;새로운 예시 &lt;/b&gt;$x \in \mathbb{R}^n$가 주어지지만 $x$의 일부 항목 $x_i$가 누락되어 있다. 알고리즘은 누락된 항목값에 대한 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;예측을 포함&lt;/b&gt;해야한다. 
-&lt;br /&gt;&lt;br /&gt;
-&lt;span style=&quot;font-weight:700; font-size:1.3em;  margin-right: 1em;&quot;&gt;
-노이즈 제거 (Denoising)
-&lt;/span&gt;
-&lt;br /&gt;&lt;br /&gt;
-노이즈가 없는 clean example $x \in \mathbb{R}^n$에 알 수 없는 변형이 생겨 입력값에 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;변질된 example&lt;/b&gt; $\tilde{x} \in \mathbb{R}^{n}$이 포함되어 주어지는 경우가 있다. 따라서 변질된 $\tilde{x}$로 부터 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;clean&lt;/b&gt; $x$를 예측하거나 좀더 일반적으로 조건부 확률 $p(x|\tilde{x})$을 예측한다.
-&lt;br /&gt;&lt;br /&gt;
-&lt;span style=&quot;font-weight:700; font-size:1.3em;  margin-right: 1em;&quot;&gt;
-
-Density Estimation or Probability Mass Function Estimation
-&lt;/span&gt;
-&lt;br /&gt;&lt;br /&gt;
-함수 $ p_{model} : \mathbb{R}^n \rightarrow \mathbb{R}$에서 $p_{model}$은 $x$가 연속(continuous)일 경우 확률밀도함수(pdf), $x$가 이산(discrete)일 경우 확률질량함수(pmf)로 해석된다. example들이 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;어디에서 타이트하게 군집화되는지&lt;/b&gt;와 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;어디서 발생할 가능성이 낮은지&lt;/b&gt; 알아야 한다. 그러면 다른 task들도 해결할 수 있는 분포에 대한 계산을 수행할 수 있다.
-&lt;br /&gt;&lt;br /&gt;
-
-&lt;/div&gt;
-</description>
-        <pubDate>Fri, 10 Apr 2020 18:00:08 +0000</pubDate>
-        <link>http://munjeongkang.github.io/ANN1/</link>
-        <guid isPermaLink="true">http://munjeongkang.github.io/ANN1/</guid>
         
         
         <category>수업</category>
