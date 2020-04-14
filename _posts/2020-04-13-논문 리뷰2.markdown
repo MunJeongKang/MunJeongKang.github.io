@@ -80,7 +80,7 @@ $$
 <img src="/images/post_img/eq1.png" width="600" height="80">
 </p>
 
-아래 그림은 $p_1,...p_6$의 지점에 대해 $\phi_1/\phi_2=3/2$ 인 문제와 $\phi_1/\phi_2=3$인 문제의 horsefly 경로 문제의 솔루션이다. $x_1$을 임의의 출발점으로 정의하면, 두 경로 모두 $\sigma = {1,3,5,2,6,4}$이다. 
+아래 그림은 $p_1,...p_6$의 지점에 대해 $\phi_1/\phi_0=3/2$ 인 문제와 $\phi_1/\phi_0=3$인 문제의 horsefly 경로 문제의 솔루션이다. $x_1$을 임의의 출발점으로 정의하면, 두 경로 모두 $\sigma = {1,3,5,2,6,4}$이다. 
 <p align="center">
 <img src="/images/post_img/fig2.png" width="550" height="260">
 </p>
