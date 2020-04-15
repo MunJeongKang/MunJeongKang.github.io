@@ -5,9 +5,153 @@
     <description>github blog</description>
     <link>http://munjeongkang.github.io/</link>
     <atom:link href="http://munjeongkang.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 13 Apr 2020 00:57:39 +0900</pubDate>
-    <lastBuildDate>Mon, 13 Apr 2020 00:57:39 +0900</lastBuildDate>
+    <pubDate>Wed, 15 Apr 2020 20:01:58 +0900</pubDate>
+    <lastBuildDate>Wed, 15 Apr 2020 20:01:58 +0900</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>IP - Lagrangian Duality</title>
+        <description>&lt;hr /&gt;
+&lt;div style=&quot;font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; &quot;&gt;
+
+&lt;span style=&quot;font-weight:700; font-size:1.3em;  margin-right: 1em;&quot;&gt;
+Lagrangian Relaxation
+&lt;/span&gt;
+&lt;br /&gt;&lt;br /&gt;
+다음과 같은 IP(Integer program)를 생각해보자. 
+
+$$
+\begin{aligned}
+    \text{(IP)} \quad &amp;amp;z=\max cx \\
+    &amp;amp;Ax \le b \\
+    &amp;amp;Dx \le d  \\
+    &amp;amp;x \in Z^n_+
+\end{aligned}
+$$
+
+어떤 제약조건만 있는 IP는 쉽게 풀린다는 관점에서 $Ax \le b$ 식을 &quot;nice&quot;하다고 가정해보자. 그러면 복잡한(complicating) 제약식 $Dx \le d$만 없다면 원래 IP 문제를 푸는 것 보다 relaxation이 더 쉬워진다. 많은 문제들이 이처럼 나이스한 제약과 복잡한 제약을 동시에 갖고 있는데, &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;복잡한 제약을 없앨 수 있다면 쉽게 문제를 풀 수도 있을 것&lt;/b&gt;이다. 예를 들어 TSP (traveling salesman problem)의 connectivity 제약식, UFL(uncapacitated facility location)의 client demand 제약식 등 복잡한 제약을 없앨 수 있다면 말이다. 그러나 그냥 없애버리면 중요한 제약식이 전부 무시되기 때문에 relaxation의 bound가 매우 좋지 않으므로 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;Lagrangian relaxation&lt;/b&gt;을 사용하고자 한다. 
+
+&lt;br /&gt;&lt;br /&gt;
+IP 문제를 좀더 간단하게 일반적인 폼 (general form)으로 바꿔보자. 
+
+$$
+\begin{aligned}
+    &amp;amp;z=\max cx \\
+    &amp;amp;Dx \le d  \\
+    &amp;amp;x \in X
+\end{aligned}
+$$
+
+여기서 $Dx \le d $는 $m$개의 복잡한 제약식이다. 
+
+&lt;br /&gt;&lt;br /&gt;
+
+어떤 값 $u = (u_1, ... , u_m) \ge 0$ 에 대해 다음과 같이 IP의 relaxation을 정의하자. 
+
+$$
+\begin{aligned}
+    \text{(IP(u))} \quad &amp;amp;z(u)=\max cx + u(d-Dx)\\
+    &amp;amp;x \in X
+\end{aligned}
+$$
+
+IP($u$)는 $\{x : Dx \le d, x \in X\} \subseteq X $ 이므로 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;feasibel region&lt;/b&gt;은 같거나 크고, $u \ge 0$ 이고 모든 $x \in X$에 대해 $(d-Dx) \ge 0$이므로 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;목적값(objective value)&lt;/b&gt; 또한 원래 IP 문제보다 같거나 크다. 
+
+&lt;br /&gt;&lt;br /&gt;
+
+IP($u$)에서 복잡한 제약식이 목적함수의 penalty term인 $u(d-Dx)$으로 추가됨으로써 다루어지는 것을 볼 수 있다. 이 때 $u$ 를 $Dx \le d$ 제약에 대한 &lt;i&gt;&lt;b style=&quot;color:#d7385e; &quot;&gt;Lagrange multiplier&lt;/b&gt;&lt;/i&gt; (&lt;i&gt;price&lt;/i&gt;, &lt;i&gt;dual variable&lt;/i&gt;) 라고 한다. 
+&lt;br /&gt;&lt;br /&gt;
+
+따라서 IP($u$)를 파라미터 $u$를 가진 IP의 &lt;i&gt;Lagrangian relaxation (subproblem)&lt;/i&gt;이라 부른다. IP($u$)는 IP의 relaxation이기 때문에 $z(u) \ge z$이고 IP의 최적값(opmial value)의 upper bound를 얻을 수 있다. 가장 좋은 upper bound를 찾기 위해 &lt;i&gt;&lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;Lagrangian Dual Problem&lt;/b&gt;&lt;/i&gt;을 푼다. 
+&lt;br /&gt;&lt;br /&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+&lt;img src=&quot;/images/post_img/max_relaxation_bound.png&quot; width=&quot;350&quot; height=&quot;170&quot; /&gt;
+&lt;/p&gt;
+Lagrangian Dual Problem은 다음과 같이 정의한다. 
+
+$$
+\begin{aligned}
+    \text{(LD)} \quad &amp;amp;w_{LD}=\min \{z(u) : u \ge 0 \} 
+\end{aligned}
+$$
+
+Lagrangian relaxation을 풀어 IP의 최적 솔루션을 찾을 수도 있다.
+&lt;br /&gt;&lt;br /&gt;
+
+&lt;div style=&quot;border: 0px solid red; text-align: left; margin: 0 auto; width:45% &quot;&gt;
+ IF $u \ge 0$, &lt;br /&gt;
+1. $x(u)$는 IP($u$)의 &lt;i&gt;optimal solution&lt;/i&gt;이고 &lt;br /&gt;
+2. $D(x) \le d$ 이고 &lt;br /&gt;  
+3. $u_i &amp;gt; 0$일 경우, $(Dx(u))_i = d_i$&lt;br /&gt;
+THEN $x(u)$는 IP의 optimal이다.
+&lt;/div&gt;
+&lt;br /&gt;
+1에 의해 $w_{LD} \le z(u)$이고, 3에 의해 $cx(u)+u(d-Dx(u)) = cx(u)$이다. 2에 의해 $x(u)$는 IP에서 feasible이고 따라서 $cx(u) \le z$ 이다. 그러므로 $w_{LD} \le z(u) = cx(u) \le z$이고 equality 제약으로 인해 $w_{LD} \ge z$이므로 $x(u)$는 IP에서 optimal이다. 
+&lt;br /&gt;&lt;br /&gt;
+&lt;span style=&quot;font-weight:700; font-size:1.3em;  margin-right: 1em;&quot;&gt;
+Application - UFL
+&lt;/span&gt;
+&lt;br /&gt;&lt;br /&gt;
+UFL 문제에 이를 적용해 보자. 먼저, strong formulation으로 시작한다. 
+$$
+\begin{aligned}
+    \text{(IP)} \quad z=\max &amp;amp;\sum_{i \in M} \sum_{j \in N} c_{ij}x_{ij} - \sum_{j \in N} f_j y_j \\
+    &amp;amp;\sum_{j \in N} x_{ij} = 1 \quad \forall i \in M  \\
+    &amp;amp;x_{ij}-y_j \le 0 \quad \forall i \in M, j \in N \\ 
+    &amp;amp;x \in R^{|M|\times|N|}, y \in B^{|N|}
+\end{aligned}
+$$
+
+demand 제약식을 dualizing한다.
+$$
+\begin{aligned}
+    \text{(IP($u$))} \quad z=\max &amp;amp;\sum_{i \in M} \sum_{j \in N} (c_{ij}-u_i)x_{ij} - \sum_{j \in N} f_j y_j + \sum_{i \in M}u_i \\
+    &amp;amp;x_{ij}-y_j \le 0 \quad \forall i \in M, j \in N \\ 
+    &amp;amp;x \in R^{|M|\times|N|}, y \in B^{|N|}
+\end{aligned}
+$$
+이는 각 location에 대한 subproblem으로 갈라진다. 
+$$
+\begin{aligned}
+    \text{(IP}_j(u)) \quad z_j(u)=\max &amp;amp;\sum_{i \in M} (c_{ij}-u_i)x_{ij} - f_j y_j \\
+    &amp;amp;x_{ij}-y_j \le 0 \quad \forall i \in M \\ 
+    &amp;amp;x_{ij} \ge 0 \quad \forall i \in M, y_i \in B^1
+\end{aligned}
+$$
+
+따라서 $IP_j(u)$이면 $z(u) = \sum_{j \in N} z_j(u) + \sum_{i \in M} u_i$이다. 
+만약 $y_j = 0$이면 모든 $i$에 대해 $x_{ij} = 0$이고 목적값은 0이 된다. 만약 $y_j=1$이면 profitable한 모든 고객은 서비스를 받으므로 $c_{ij}-u_i &amp;gt;0$이다. 따라서 $z_j(u) = \max \{0, \sum_{i \in M} \max [c_{ij}-u_i, 0]-f_j\}$이다.
+&lt;br /&gt;&lt;br /&gt;
+&lt;span style=&quot;font-weight:700; font-size:1.3em;  margin-right: 1em;&quot;&gt;
+UFL Example
+&lt;/span&gt;
+
+&lt;br /&gt;&lt;br /&gt;
+이와 관련된 간단한 예시를 들어보자. $m = 6$인 clients와 $n=5$인 potential locations가 있고 fixed location cost $f = (2,4,5,3,3)$이고 client-location profit matrix($c_{ij}$)는 왼쪽과 같다고 하자. $u=(5,6,3,2,5,4)$라 하면 ($c_{ij}-u_i$)를 오른쪽과 같이 나타낼 수 있다. 
+&lt;br /&gt;&lt;br /&gt;
+
+&lt;div style=&quot;display: inline-block; margin-left: 0.5em; margin-right: 0.5em; &quot;&gt;
+&lt;img src=&quot;/images/post_img/ex1.png&quot; width=&quot;250&quot; height=&quot;150&quot; /&gt;
+&lt;/div&gt;
+&lt;div style=&quot;display: inline-block; margin-right: 0.5em; &quot;&gt;
+&lt;img src=&quot;/images/post_img/ex2.png&quot; width=&quot;300&quot; height=&quot;150&quot; /&gt;
+&lt;/div&gt;
+&lt;br /&gt;
+모든 $j = 2$에 대해 $y_2=0$이면 0의 값을 얻고 $y_2=1$이면 $x_{22}=1$, $x_{52}=1$로 설정하여 $y_2=1$인 net profit이 7-4 = 3이 된다. 그러므로 $z_2(u)=3$을 주는 $y_2=1$로 설정하는 것이 optimal 이다. 각 depot에 대해 비슷한 계산을 수행하면 IP($u$)의 optimal solution은 $y_1=y_3=y_5=0$, $y_2=x_{22}=x_{52}=1, y_4 = x_{64}=1$로 세팅하면 $z(u) = 3+1+\sum_{i \in M} u_i = 29$ 이다. 
+
+&lt;br /&gt;&lt;br /&gt;
+&lt;!-- &lt;span style=&quot;background-color: #f3c623&quot;&gt; --&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Wed, 15 Apr 2020 18:00:08 +0000</pubDate>
+        <link>http://munjeongkang.github.io/IP/</link>
+        <guid isPermaLink="true">http://munjeongkang.github.io/IP/</guid>
+        
+        
+        <category>최적화</category>
+        
+      </item>
     
       <item>
         <title>논문리뷰 - Coordinated logistics with a truck and a drone</title>
@@ -85,7 +229,7 @@ $$
 &lt;img src=&quot;/images/post_img/eq1.png&quot; width=&quot;600&quot; height=&quot;80&quot; /&gt;
 &lt;/p&gt;
 
-아래 그림은 $p_1,...p_6$의 지점에 대해 $\phi_1/\phi_2=3/2$ 인 문제와 $\phi_1/\phi_2=3$인 문제의 horsefly 경로 문제의 솔루션이다. $x_1$을 임의의 출발점으로 정의하면, 두 경로 모두 $\sigma = {1,3,5,2,6,4}$이다. 
+아래 그림은 $p_1,...p_6$의 지점에 대해 $\phi_1/\phi_0=3/2$ 인 문제와 $\phi_1/\phi_0=3$인 문제의 horsefly 경로 문제의 솔루션이다. $x_1$을 임의의 출발점으로 정의하면, 두 경로 모두 $\sigma = {1,3,5,2,6,4}$이다. 
 &lt;p align=&quot;center&quot;&gt;
 &lt;img src=&quot;/images/post_img/fig2.png&quot; width=&quot;550&quot; height=&quot;260&quot; /&gt;
 &lt;/p&gt;
@@ -688,103 +832,6 @@ p(\boldsymbol{y} | \boldsymbol{x})=\sum_{i=1}^{n} p(\mathrm{c}=i | \boldsymbol{x
         <pubDate>Sat, 11 Apr 2020 18:00:08 +0000</pubDate>
         <link>http://munjeongkang.github.io/ANN3/</link>
         <guid isPermaLink="true">http://munjeongkang.github.io/ANN3/</guid>
-        
-        
-        <category>수업</category>
-        
-      </item>
-    
-      <item>
-        <title>인공신경망 - Capacity, Overfitting and Underfitting</title>
-        <description>&lt;hr /&gt;
-
-&lt;div style=&quot;font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; &quot;&gt;
-&lt;span style=&quot;font-weight:700; font-size:1.3em;  margin-right: 1em;&quot;&gt;
-일반화 (Generalization)
-&lt;/span&gt;
-&lt;br /&gt;&lt;br /&gt;
-머신러닝에서는 이미 훈련된 모델에 사용된 입력값 뿐만 아니라 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;새로운 입력값&lt;/b&gt;에 대해서도 모델이 잘 작동하도록 하는 것이 중요하다. 새로운 입력값에도 모델이 잘 작동하는 능력을 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;일반화&lt;/b&gt;라고 한다. 최적화와 구분하여 머신 러닝에서는 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;test error&lt;/b&gt;라고도 불리는 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;generalization error(일반화 오류)&lt;/b&gt;가 낮기를 원한다. 따라서 트레이닝 에러뿐만 아니라 테스트 에러에 대한 주의도 필요하다. 
-&lt;br /&gt;&lt;br /&gt;
-훈련 데이터와 테스트 데이터는 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;data generating process&lt;/b&gt;(데이터 생성 과정)라 불리는 데이터셋에 대한 확률분포에 의해 생성된다. 일반적으로 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;i.i.d 가정&lt;/b&gt;을 사용한다. i.i.d 가정이란 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;independent&lt;/b&gt;(독립), &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;identically distributed&lt;/b&gt;(동일한 분포)를 뜻한다. 즉, 각각의 데이터셋은 독립이고 훈련 집합과 테스트 집합은 같은 확률 분포에서 나와 동일한 분포를 가진다는 것이다. 이 가정은 확률 분포로 데이터 생성 과정을 설명할 수 있게 해주며 모든 훈련 예제와 테스트 예제를 생성하기 위해 동일한 분포가 사용된다. &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;데이터 생성 분포&lt;/b&gt;를 공유한 것을 $p_{data}$라 부르고 이러한 확률적 체계와 i.i.d 가정은 트레이닝 에러와 테스트 에러 사이의 관계를 수학적으로 연구할 수 있게 해준다. 
-&lt;br /&gt;&lt;br /&gt;
-
-&lt;span style=&quot;font-weight:700; font-size:1.3em;  margin-right: 1em;&quot;&gt;
-저적합 및 과적합 (Underfitting and Overfitting)
-&lt;/span&gt;
-&lt;br /&gt;&lt;br /&gt;
-머신러닝 알고리즘이 얼마나 잘 작동하는지 결정하는 요소는 다음과 같다.  
-&lt;ol&gt;
-&lt;li&gt;트레이닝 에러가 작은가&lt;/li&gt;
-&lt;li&gt;트레이닝 에러와 테스트 에러 사이의 차이가 작은가&lt;/li&gt;
-&lt;/ol&gt;
-이 두 가지 요소는 머신러닝의 두 가지 핵심 과제인 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;underfitting&lt;/b&gt;과 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;overfitting&lt;/b&gt;에 해당한다. 저적합은 모델이 트레이닝 셋에서 충분히 낮은 에러 값을 얻지 못할 때 발생하고 과적합은 트레이닝 에러와 테스트 에러 사이의 차이가 너무 클 때 발생한다. 즉, 저적합은 트레이닝이 부족한 경우에 발생하고 과적합은 트레이닝이 과하게 된 경우 발생한다. 
-&lt;br /&gt;&lt;br /&gt;
-
-&lt;span style=&quot;font-weight:700; font-size:1.3em;  margin-right: 1em;&quot;&gt;
-용량 (Capacity)
-&lt;/span&gt;
-&lt;br /&gt;&lt;br /&gt;
-머신러닝에서 모델에 있는 학습 파라미터의 수를 모델의 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;capacity&lt;/b&gt;라고 한다. capacity를 변경함으로써 모델의 적합 정도를 조절할 수 있고 capacity가 높아질수록 트레이닝 셋에 점점 맞춰지기 때문에 과적합될 가능성이 높아진다. 학습 알고리즘의 capacity는 솔루션으로 선택할 수 있는 함수의 집합인 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;가설 공간(hypothesis space)&lt;/b&gt;을 선택함으로써 제어할 수도 있다. 예를 들어 선형 함수가 아닌 다항식(polynomials)을 가설공간에 포함하여 선형 회귀를 일반화 할 수 있다. 이 경우에는 모델의 capacity가 증가한다.
-&lt;br /&gt;&lt;br /&gt;
-머신러닝 알고리즘은 일반적으로 task의 복잡성과 제공된 트레이닝 데이터의 양에 대한 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;capacity가 적절할 때 가장 잘 수행된다.&lt;/b&gt; capacity가 충분하지 않은 모델은 복잡한 task를 풀 수 없다. capacity가 높은 모델은 복잡한 task는 풀지만 필요 이상으로 capacity가 많아지면 과적합된다. 
-&lt;br /&gt;&lt;br /&gt;
-&lt;p align=&quot;center&quot;&gt;
-&lt;img src=&quot;/images/post_img/AN.png&quot; width=&quot;650&quot; height=&quot;300&quot; /&gt;
-&lt;/p&gt;
-사실상 모델의 capacity를 바꿀 수 있는 방법은 많이 있다. 모델이 training objective를 줄이기 위해 파라미터를 변경할 때, &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;학습 알고리즘이 선택할 수 있는 함수의 family&lt;/b&gt;를 정한다. 이를 모델의 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;표현 용량(representational capacity)&lt;/b&gt;이라고 부른다. 많은 경우, 함수의 family에서 가장 좋은 함수를 찾는 것은 매우 어려운 최적화 문제이다. 사실상 학습 알고리즘은 가장 좋은 함수를 찾지 않지만 트레이닝 에러는 상당히 줄인다. 이러한 추가적인 제한은 학습 알고리즘의 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;유효 용량(effective capacity)&lt;/b&gt;이 모델 family의 표현 용량 보다 작을 수 있음을 의미한다. 
-&lt;br /&gt;&lt;br /&gt;
-
-&lt;span style=&quot;font-weight:700; font-size:1.3em;  margin-right: 1em;&quot;&gt;
-일반화와 용량 (Generalization and Capacity)
-&lt;/span&gt;
-&lt;br /&gt;&lt;br /&gt;
-단순한 함수들은 일반화될 가능성이 더 높지만 낮은 트레이닝 에러를 얻기 위해서는 충분히 복잡한 가설을 선택해야 한다. 
-일반적으로 트레이닝 에러는 모델 capacity가 증가함에 따라 가능한 최소 에러에 근접할 때까지 줄어든다. 일반화 에러는 모델 capacity의 함수로써 U자형 커브 모양을 가진다. 
-&lt;br /&gt;&lt;br /&gt;
-&lt;p align=&quot;center&quot;&gt;
-&lt;img src=&quot;/images/post_img/AN2.png&quot; width=&quot;650&quot; height=&quot;300&quot; /&gt;
-&lt;/p&gt;
-임의의 high capacity의 가장 극단적인 경우에 도달하기 위해 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;비모수적(non-parametric)&lt;/b&gt; 모델의 개념을 소개한다. 모수적(parametric) 모델은 어떤 데이터가 발견되기 전까지 유한하고 고정된 사이즈의 파라미터 벡터로 표현된 함수를 학습한다. 비모수적 모델은 이러한 제한이 없으며 최근접회귀(nearest neighbor regression)를 예로 들 수 있다. 이상적인 모델은 데이터를 생성하는 실제 확률 분포를 간단히 아는 oracle이다. 그러나 분포에 노이즈가 있기 때문에 약간의 에러가 발생할 수 있다. 실제 분포로 부터 예측하는 oracle에 의해 발생한 에러를 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;베이즈 에러(Bayes error)&lt;/b&gt;라고 한다. 
-&lt;br /&gt;&lt;br /&gt;
-
-트레이닝 에러와 일반화 에러는 트레이닝셋의 크기에 따라 달라진다. 기대되는(expected) &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;일반화 에러는 트레이닝 example의 수가 증가한다고 증가할 수 없다.&lt;/b&gt; 비모수적 모델에서는 데이터가 많을수록 가능한 가장 좋은 에러를 얻을 때까지 더 좋은 일반화를 만든다. 최적 capacity보다 작은 어떤 고정된 모수 모델은 베이즈 에러를 초과하는 에러값에 근접할 것이다. 모델은 최적의 capacity를 가질 수 있지만 여전히 트레이닝 에러와 일반화 에러 사이의 큰 차이를 가진다. 
-&lt;br /&gt;&lt;br /&gt;
-&lt;div style=&quot;border: 1px; float: right;margin-left: 1em; margin-right: 1em; &quot;&gt;
-&lt;img src=&quot;/images/post_img/AN4.png&quot; width=&quot;290&quot; height=&quot;250&quot; /&gt;
-&lt;/div&gt;
-&lt;div style=&quot;border: 1px; margin-left: 2em; margin-right: 1em; &quot;&gt;
-&lt;img src=&quot;/images/post_img/AN3.png&quot; width=&quot;290&quot; height=&quot;250&quot; /&gt;
-&lt;/div&gt;
-&lt;br /&gt;&lt;br /&gt;
-
-&lt;span style=&quot;font-weight:700; font-size:1.3em;  margin-right: 1em;&quot;&gt;
-No Free Lunch Theorem
-&lt;/span&gt;
-&lt;br /&gt;&lt;br /&gt;
-&#39;공짜 점심은 없다&#39; 라는 이론은 머신러닝 알고리즘이 다른 어떤 것보다 일반적으로 낫지 않음을 뜻한다. 즉, 머신러닝이 만능은 아니라는 것이다. 모든 분류 알고리즘은 이전에 관찰되지 않은 point를 분류할 때, 가능한 모든 데이터 생성 분포에 대한 평균으로써 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;동일한 오류 비율&lt;/b&gt;을 가진다. 다행히도 이런 결과는 가능한 모든 데이터 생성 분포에 대해 평균을 낼 때만 유지되므로 실제 응용사례에서 접하는 확률 분포의 종류에 대한 가정을 만들면, 이러한 분포에서 잘 수행되는 학습 알고리즘을 설계할 수 있다. 
-&lt;br /&gt;&lt;br /&gt;
-머신러닝 연구의 목표는 일반적인 학습 알고리즘이나 절대적으로 가장 좋은 학습 알고리즘을 찾는 것이 아니다. 대신, AI 에이전트가 경험하는 실제 세계와 어떤 분포가 관련되는지 이해하고 우리가 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;관심을 갖는 분포&lt;/b&gt;에서 도출된 데이터로부터 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;어떤 종류의 머신러닝 알고리즘이 잘 수행되는지 파악하는 것&lt;/b&gt;이다. 
-&lt;br /&gt;&lt;br /&gt;
-
-&lt;span style=&quot;font-weight:700; font-size:1.3em;  margin-right: 1em;&quot;&gt;
-정규화 (Regularization)
-&lt;/span&gt;
-&lt;br /&gt;&lt;br /&gt;
-No Free Lunch Theorem은 머신러닝 알고리즘이 구체적인 task를 잘 수행하도록 디자인 해야함을 시사한다. 지금까지 학습 알고리즘을 수정하는 유일한 방법은 솔루션의 가설 공간에 참수를 추가하거나 제거함으로써 모델의 표현 용량을 증가시키거나 감소시키는 것이었다. 어떤 종류의 함수에서 솔루션을 도출할 수 있게 선택하고 이러한 함수의 양을 조절함으로써 알고리즘의 성능을 제어할 수 있다. 
-&lt;br /&gt;&lt;br /&gt;
-
-또한 가설 공간에서 다른곳으로 하나의 솔루션에 대한 선호도(preference)를 줄 수 있다. 예를 들어 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;weight decay&lt;/b&gt; ($J(w)=MSE_{trin} + \lambda w^Tw$) 가 있다. 트레이닝 데이터 적합에 대한 가중치를 선택할 수 있는 것인데 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;weight decay의 값이 커질수록&lt;/b&gt; 가중치 값이 작아져 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;과적합 현상을 해소&lt;/b&gt;할 수 있지만, weight decay 값을 너무 크게 하면 저적합 현상이 발생하므로 적당한 값을 사용해야 한다. 좀더 일반적으로 함수 $f(x;\theta)$ 를 비용함수에 정규화(regularizer)라 불리는 패널티로 추가해줌으로써 모델을 정규화할 수 있다. weight decay의 경우 regularizer는 $\Omega (w) = w^Tw$ 이다. 
-&lt;br /&gt;&lt;br /&gt;
-&lt;p align=&quot;center&quot;&gt;
-&lt;img src=&quot;/images/post_img/AN5.png&quot; width=&quot;650&quot; height=&quot;300&quot; /&gt;
-&lt;/p&gt;
-
-다른 솔루션에 대한 선호도를 표현하는 방법은 암시적으로(implicily)나 명백하게(explicitly) 많이 있다. 이와 같이 다른 접근방법들은 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;정규화(regularization)&lt;/b&gt;로 알려져 있다. 정규화는 트레이닝 에러가 아닌 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;일반화 에러를 줄이기 위한 학습 알고리즘&lt;/b&gt;이며 머신러닝의 핵심 관심사 중 하나이다. 앞서 살펴본 공짜 점심은 없다는 이론은 최고의(best) 머신러닝 알고리즘은 없으며, 특히 가장 좋은 형태의 정규화는 없다는 것을 확실하게 보여준다. 
-&lt;/div&gt;
-</description>
-        <pubDate>Fri, 10 Apr 2020 18:00:08 +0000</pubDate>
-        <link>http://munjeongkang.github.io/ANN2/</link>
-        <guid isPermaLink="true">http://munjeongkang.github.io/ANN2/</guid>
         
         
         <category>수업</category>
