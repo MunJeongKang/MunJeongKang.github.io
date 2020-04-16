@@ -26,12 +26,13 @@ use_math: true
 
 </div>
 
-<div style="border: 1px; float: right;margin-left: 1em; margin-right: 1em; " >
-<img src="/images/post_img/NL8.jpg" width="310" height="300" >
+<div style="display: inline-block; margin-left: 2em; margin-right: 0.5em; ">
+<img src="/images/post_img/NL9.png" width="300" height="300"  >
 </div>
-<div style="border: 1px; margin-left: 2em; margin-right: 1em; ">
-<img src="/images/post_img/NL9.png" width="280" height="300">
+<div style="display: inline-block; margin-right: 2 em; ">
+<img src="/images/post_img/NL8.jpg" width="300" height="300" >
 </div>
+
 
 <div style = "font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; ">
 채찍효과란 고객주문 정보가 상류로 전달되는 과정에서 정보가 왜곡되고 확대되는 현상을 말한다. 말그대로 채찍질하는 사람을 생각하면 이해하기 쉽다. 처음에는 채찍의 폭이 좁지만 갈수록 커지는 것과 같아 붙여진 이름이다. Complex systems에서는 초기 조건의 작은 차이(반올림에 따른 값의 차이 등)가 완전히 다른 결과를 초래할 수 있다. 마치 나비효과처럼 말이다. 
@@ -51,12 +52,12 @@ Complex systems에서 발생한 문제에 대한 답으로 단순한 모델은 �
 <br><br>
 여기서 Agent는 특정한 성질(property)이나 상태(state) 또는 행동(action)을 지닌 자율적이고 계산적인 객체를 의미하며 <b style = "color:#d7385e;font-size:1.2">Emergence</b>는 다수의 분포된 element들의 상호작용을 통해 발생한 새롭고 일관적인 구조, 패턴, 성질을 의미한다. Emergent 구조는 element의 성질로 부터 단독으로 추론될 수 없고 element의 상호작용을 통해 생긴다. 또한, 어떠한 제어 요소없이 자발적으로 발생되기 때문에 <b style = "color:#d7385e;font-size:1.2">self-organizes</b>라고 할 수 있다. 에이전트 기반 모델링의 핵심은 어떤 현상에 대한 간단한 규칙을 찾아 emergence를 활용하는 것이다. 
 <br><br>
+
+<div style="display: inline-block; margin-left: 2em; margin-right: 0.5em; ">
+<img src="/images/post_img/fish-flocking.jpg" width="300" height="300"  >
 </div>
-<div style="border: 1px; float: right;margin-left: 1em; margin-right: 1em; " >
-<img src="/images/post_img/v_shape.jpg" width="310" height="300" >
-</div>
-<div style="border: 1px; margin-left: 1em; margin-right: 1em; ">
-<img src="/images/post_img/fish-flocking.jpg" width="310" height="300">
+<div style="display: inline-block; margin-right: 2 em; ">
+<img src="/images/post_img/v_shape.jpg" width="300" height="300" >
 </div>
 
 <div style = "font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; ">
@@ -76,3 +77,4 @@ ABM 장점 및 단점
 ABM은 복잡한 현상을 이해하기 쉽게 시각적으로 표현해주고 상호작용하는 요소들 사이의 연결을 잘 나태내어주는 장점을 가진다. 또한 귀납적(induction), 연역적(deduction)방법을 통합한 방법을 사용하여 알려진 전제들로 일반적인 이론을 만들기 위한 특정한 데이터 집합을 만들 수 있다. 우리가 알려진 하나의 전제를 알고 있을 경우 통합적인 패턴을 결정하는 것은 어렵지만 ABM은 이를 이해하기 쉽게 해주고, 반대로 통합적인 패턴을 알고 있을 경우에는 규칙을 제안하여 그 현상이 만들어지는지 확인함으로써 각각의 전제를 알 수 있도록 해준다. 
 <br><br>
 그러나 ABM의 계산적인 모델은 예측가능한 결과를 주로 만들고 구체적인 상황에 근사적으로 맞춰져있으며 확실하지 않다. 또한, 계산 모델을 수정하고 이해하기가 쉽지 않다는 단점이 있다.
+<br><br>
