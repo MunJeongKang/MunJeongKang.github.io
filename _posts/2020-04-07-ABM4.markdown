@@ -47,7 +47,7 @@ use_math: true
 <span style = "font-weight:700; font-size:1.3em;">
 Neighbors
 </span>
-<br><br>
+<br>
 NetLogo에서 turtle이나 patch의 이웃은 다음과 같이 표현된다. neighbors를 사용하면 주변에 모든 patch가 선택되고 neighbors4를 사용하면 상하좌우 4개의 patch만 선택된다.<br> <br>
 <p style = "text-align:center; " >
 <code>ask turtle 0 [show count neighbors with [pcolor = green]]</code>

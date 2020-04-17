@@ -5,8 +5,8 @@
     <description>github blog</description>
     <link>http://munjeongkang.github.io/</link>
     <atom:link href="http://munjeongkang.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 16 Apr 2020 12:34:17 +0900</pubDate>
-    <lastBuildDate>Thu, 16 Apr 2020 12:34:17 +0900</lastBuildDate>
+    <pubDate>Thu, 16 Apr 2020 20:58:58 +0900</pubDate>
+    <lastBuildDate>Thu, 16 Apr 2020 20:58:58 +0900</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -446,7 +446,7 @@ learning rate는 시행착오(trial and error)를 통해 선택될 수 있지만
 &lt;br /&gt;&lt;br /&gt;
 SGD와 관련된 미니배치 또는 online gradient-based optimization의 가장 중요한 특성은 업데이트당 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;계산 시간이 트레이닝 예제 수에 따라 증가하지 않는다&lt;/b&gt;는 것이다. 이는 심지어 트레이닝 예제의 수가 매우 커져도 수렴할 수 있음을 시사한다. 충분히 큰 데이터셋의 경우, SGD는 전체 트레이닝 셋을 처리하기 전에 마지막 테스트셋 에러의 일정한 허용오차(tolerance)이내로 수렴할 것이다. 
 &lt;br /&gt;&lt;br /&gt;
-SGD가 convex 문제에 적용될 때, 초과(excess) 에러는 $k$번 반복 후 $O(1/\sqrt{k})$ 이고, strongly convex인 경우 $O(1/k)$이다. Batch gradient descent는 이론상 SGD보다 수렴률이 더 높다. 그러나 $\text { Cramér-Rao }$는 일반화 에러가 $O(1/k)$보다 빨리 감소할 수 없다고 주장하고 있다. 큰 데이터셋을 가지는 SGD는 매우 적은 예제에 대해 기울기를 평가하면서 빠르게 초기 진행이 이루어지는 능력은 그것의 slow 수렴근사보다 더 크다. 학습과정동안 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;미니패치 사이즈를 점점 증가시킴으로써&lt;/b&gt; 배치와 SGD의 이점을 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;trade off&lt;/b&gt; 할 수 있다. 
+SGD가 convex 문제에 적용될 때, 초과(excess) 에러는 $k$번 반복 후 $O(1/\sqrt{k})$ 이고, strongly convex인 경우 $O(1/k)$이다. Batch gradient descent는 이론상 SGD보다 수렴률이 더 높다. 그러나 $\text { Cramér-Rao }$는 일반화 에러가 $O(1/k)$보다 빨리 감소할 수 없다고 주장하고 있다. 큰 데이터셋을 가지는 SGD는 매우 적은 예제에 대해 기울기를 평가하면서 빠르게 초기 진행이 이루어지는 능력은 그것의 slow 수렴근사보다 더 크다. 학습과정동안 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;미니배치 사이즈를 점점 증가시킴으로써&lt;/b&gt; 배치와 SGD의 이점을 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;trade off&lt;/b&gt; 할 수 있다. 
 &lt;br /&gt;&lt;br /&gt;
 &lt;span style=&quot;font-weight:700; font-size:1.3em;  margin-right: 1em;&quot;&gt;
 Momentum

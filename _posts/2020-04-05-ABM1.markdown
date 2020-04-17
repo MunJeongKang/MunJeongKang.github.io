@@ -13,16 +13,15 @@ use_math: true
 <img src="/images/post_img/NL.png" width="400" height="100">
 </p>
 <b style = "color:#d7385e; font-size:1.2" >NetLogo</b>는 agent-based modeling 언어로 주로 자연 현상이나 사회 현상에 대해 시뮬레이션 할 때 사용되며 배우기 쉬운 ABM tool 중 하나이다. 디자인 원칙으로 Low threshold 와 High ceiling이 있다. Low threshold는 처음 사용하는 사람들도 간단한 모델을 만들 수 있다는 의미이고 High ceiling은 high end complex 모델을 가능하게 할 만큼 충분히 표현되어야 하며 논문 출간시 사용될 수 있다는 의미이다. NetLogo는 <a href="https://ccl.northwestern.edu/netlogo/" style = "color:#d7385e;font-size:1.2">홈페이지</a>에서 다운받을 수 있으며 사용자 인터페이스는 다음과 같다. 
-</div>
-<br>
-<div style="display: inline-block; margin-left: 2em; margin-right: 0.5em; ">
+<br><br>
+<div style="display: inline-block; margin-left: 0em; margin-right: 1.5em; ">
 <img src="/images/post_img/NL2.png" width="300" height="300"  >
 </div>
-<div style="display: inline-block; margin-right: 2 em; ">
+<div style="display: inline-block; margin-right: 0 em; ">
 <img src="/images/post_img/NL3.png" width="300" height="300" >
 </div>
 
-<div style = "font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; ">
+<br>
 
 까맣게 보이는 창을 <b style = "color:#d7385e;font-size:1.2">world </b> 라고 하며 agent인 <b style = "color:#d7385e;font-size:1.2">turtle</b>이 <b style = "color:#d7385e;font-size:1.2">patch</b>들로 이루어진 grid위에서 움직일 수 있다. edit을 누르면 world의 설정을 바꿀 수 있다. NetLogo의 기본적인 요소로 turtles, patches, links, observer가 있으며 각각의 특징은 다음과 같다. 
 <ul>

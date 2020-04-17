@@ -55,16 +55,14 @@ use_math: true
 <b>Continuous </b> vs <b> Discrete</b><br>
 <b>Deterministic </b> vs <b> Stochastic</b><br><br>
 </div>
-</div>
 
-<div style="display: inline-block; margin-left: 2em; margin-right: 0.5em; ">
+<div style="display: inline-block; margin-left: 0em; margin-right: 1.5em; ">
 <img src="/images/post_img/NL6.jpg" width="300" height="300"  >
 </div>
-<div style="display: inline-block; margin-right: 2 em; ">
+<div style="display: inline-block; margin-right: 0 em; ">
 <img src="/images/post_img/NL7.jpg" width="300" height="300" >
 </div>
 
-<div style = "font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; ">
 <br>
 대부분의 시뮬레이션 모델링은 <b style = "color:#d7385e;font-size:1.2">dynamic</b>, <b style = "color:#d7385e;font-size:1.2">discrete-change</b>, <b style = "color:#d7385e;font-size:1.2">stochastic</b>한 특징을 가진다. 위의 그림은 scale의 추상화 정도와 시뮬레이션 모델링의 응용분야를 나타낸다. 추상화 정도가 높으면 detail이 적은 Macro level이며 추상화 정도가 낮으면 detail이 많은 Micro level이다. ABM은 그 중에서도 모든 추상화 범위를 아우를 수 있는 방법 중 하나이다. 
 <br><br>
