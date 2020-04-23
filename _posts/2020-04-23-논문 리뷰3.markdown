@@ -28,8 +28,6 @@ Finding: The findings outcome from this study have shown that: (1) A comprehensi
 
 <div style = "font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; ">
 
-이 논문은 드론과 같은 무인항공기와 트럭을 함께 사용하는 배달 시스템의 효율성을 판단한다. 유클리드 평면의 이론적 분석과 도로망에서의 실시간 시뮬레이션을 결합하여 무인항공기 도입에 따른 효율 향상은 트럭과 무인항공기의 속도 비율의 제곱근에 비례한다는 것이 결론이다. 
-
 </div>
 
 -----
@@ -40,7 +38,6 @@ Finding: The findings outcome from this study have shown that: (1) A comprehensi
 
 <div style = "font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify;  ">
 
-최근 교통과 물류에서 가장 많이 언급되는 것 중 하나가 <b style = "color:#d7385e; font-size:1.2">드론의 잠재적인 사용</b>에 관한 것이다. 특히 배송 시스템에 드론을 많이 활용하고자 하는데 아마존의 Amazon Prime Air, 구글의 Project Wing, DHL의 Parcelcopter 등을 예시로 들 수 있다. 
 <br><br>
 
 </div>
