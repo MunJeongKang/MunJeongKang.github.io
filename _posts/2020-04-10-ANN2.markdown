@@ -80,10 +80,10 @@ No Free Lunch Theorem
 정규화 (Regularization)
 </span>
 <br><br>
-No Free Lunch Theorem은 머신러닝 알고리즘이 구체적인 task를 잘 수행하도록 디자인 해야함을 시사한다. 지금까지 학습 알고리즘을 수정하는 유일한 방법은 솔루션의 가설 공간에 참수를 추가하거나 제거함으로써 모델의 표현 용량을 증가시키거나 감소시키는 것이었다. 어떤 종류의 함수에서 솔루션을 도출할 수 있게 선택하고 이러한 함수의 양을 조절함으로써 알고리즘의 성능을 제어할 수 있다. 
+No Free Lunch Theorem은 머신러닝 알고리즘이 구체적인 task를 잘 수행하도록 디자인 해야함을 시사한다. 지금까지 학습 알고리즘을 수정하는 유일한 방법은 솔루션의 가설 공간에 함수를 추가하거나 제거함으로써 모델의 표현 용량을 증가시키거나 감소시키는 것이었다. 어떤 종류의 함수에서 솔루션을 도출할 수 있게 선택하고 이러한 함수의 양을 조절함으로써 알고리즘의 성능을 제어할 수 있다. 
 <br><br>
 
-또한 가설 공간에서 다른곳으로 하나의 솔루션에 대한 선호도(preference)를 줄 수 있다. 예를 들어 <b style = "color:#d7385e;font-size:1.2">weight decay</b> ($J(w)=MSE_{trin} + \lambda w^Tw$) 가 있다. 트레이닝 데이터 적합에 대한 가중치를 선택할 수 있는 것인데 <b style = "color:#d7385e;font-size:1.2">weight decay의 값이 커질수록</b> 가중치 값이 작아져 <b style = "color:#d7385e;font-size:1.2">과적합 현상을 해소</b>할 수 있지만, weight decay 값을 너무 크게 하면 저적합 현상이 발생하므로 적당한 값을 사용해야 한다. 좀더 일반적으로 함수 $f(x;\theta)$ 를 비용함수에 정규화(regularizer)라 불리는 패널티로 추가해줌으로써 모델을 정규화할 수 있다. weight decay의 경우 regularizer는 $\Omega (w) = w^Tw$ 이다. 
+또한 가설 공간에서 다른곳으로 하나의 솔루션에 대한 선호도(preference)를 줄 수 있다. 예를 들어 <b style = "color:#d7385e;font-size:1.2">weight decay</b> ($J(w)=MSE_{train} + \lambda w^Tw$) 가 있다. 트레이닝 데이터 적합에 대한 가중치를 선택할 수 있는 것인데 <b style = "color:#d7385e;font-size:1.2">weight decay의 값이 커질수록</b> 가중치 값이 작아져 <b style = "color:#d7385e;font-size:1.2">과적합 현상을 해소</b>할 수 있지만, weight decay 값을 너무 크게 하면 저적합 현상이 발생하므로 적당한 값을 사용해야 한다. 좀더 일반적으로 함수 $f(x;\theta)$ 를 비용함수에 정규화(regularizer)라 불리는 패널티로 추가해줌으로써 모델을 정규화할 수 있다. weight decay의 경우 regularizer는 $\Omega (w) = w^Tw$ 이다. 
 <br><br>
 <p align="center">
 <img src="/images/post_img/AN5.png" width="650" height="300">

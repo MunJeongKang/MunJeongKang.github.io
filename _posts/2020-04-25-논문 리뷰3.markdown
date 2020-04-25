@@ -1,0 +1,92 @@
+---
+layout: post
+title:  "논문리뷰 - Solving vehicle routing problem by using improved genetic algorithm for optimal solution"
+date:   2020-04-25 18:00:08
+categories: 논문리뷰
+comments: true
+use_math: true
+---
+-----
+
+<div style = "font-weight:700; font-size:1.3em; text-align:center;">Abstract </div>
+<br>
+<div style = "font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; ">
+<b style = "color:#d7385e;font-size:1.2">Context</b> : The Vehicle Routing Problem (VRP) has numerous applications in real life. It clarifies in a wide area of transportation and distribution such as transportation of individuals and items, conveyance service and garbage collection. Thus, an appropriate selecting of vehicle routing has an extensive influence role to improve the economic interests and appropriateness of logistics planning.<br><br>
+<b style = "color:#d7385e;font-size:1.2">Problem</b> : In this study the problem is as follows: Universiti Tenaga Nasional (UNITEN) has eight buses which are used for transporting students within the campus. Each bus starts from a main location at different times every day. The bus picks up students from eight locations inside the campus in two different routes and returns back to the main location at specific times every day, starting from early morning until the end of official working hours, on the following conditions: Every location will be visited once in each route and the capacity of each bus is enough for all students included in each route. <br><br>
+<b style = "color:#d7385e;font-size:1.2">Objectives</b> : Our paper attempt to find an optimal route result for VRP of UNITEN by using genetic algorithm. To achieve an optimal solution for VRP of UNITEN with the accompanying targets: To reduce the time consuming and distance for all paths. which leads to the speedy transportation of students to their locations, to reduce the transportation costs such as fuel utilization and additionally the vehicle upkeep costs, to implement the Capacitated Vehicle Routing Problem (CVRP) model for optimizing UNITEN’s shuttle bus services. To implement the algorithm which can be used and applied for any problems in the like of UNITEN VRP. <br><br>
+<b style = "color:#d7385e;font-size:1.2">Approach</b> : The Approach has been presented based on two phases: firstly, find the shortest route for VRP to help UNITEN University reduce student’s transportation costs by genetic algorithm is used to solve this problem as it is capable of solving many complex problems; secondly, identify The CVRP model is implemented for optimizing UNITEN shuttle bus services.<br><br>
+<b style = "color:#d7385e;font-size:1.2">Finding</b> : The findings outcome from this study have shown that: (1) A comprehensive listed of active GACVRP; (2) Identified and established an evaluation criterion for GACVRP of UNITEN; (3) Highlight the methods, based on hybrid crossover operation, for selecting the best way (4) genetic algorithm finds a shorter distance for route A and route B. The proportion of reduction the distance for each route is relatively short, but the savings in the distance becomes greater when calculating the total distances traveled by all buses daily or monthly. This applies also to the time factor that has been reduced slightly based on the rate of reduction in the distances of the routes.<br><br>
+<em>Keywords : Genetic algorithm; Vehicle routing problem; Capacitated vehicle routing problem; Optimal solution </em> 
+</div>
+
+-----
+
+<div style = "font-weight:700; font-size:1.3em; text-align:center;">Summary
+</div>
+<br>
+
+<div style = "font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; ">
+
+이 논문은 유전 알고리즘을 이용해 UNITEN의 CVRP에 대한 최적의 경로 결과를 찾는다. 각 경로의 거리 감소 비율은 상대적으로 작지만, 모든 버스가 매일 또는 매월 운행하는 총 거리에 대한 절약량은 더 커진다.
+
+</div>
+
+-----
+
+<div style = "font-weight:700; font-size:1.3em; text-align:center;">본문 내용
+</div>
+<br>
+
+<div style = "font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify;  ">
+
+VRP(Vehicle Routing Problem)는 실생활에서 다양한 응용분야가 있으며 그중 운송(물류) 분야에 적용이 많이 된다. 이 논문에서는 UNITEN(Universiti Tenaga Nasional)의 셔틀버스 운행에 관한 <b style = "color:#d7385e; font-size:1.2">CVRP</b> (Capacitated Vehicle Routing Problem) 문제를 <b style = "color:#d7385e; font-size:1.2">유전알고리즘</b>을 사용하여 푼다. 8개의 버스가 운행되고 main location에서 매일 다른 시간에 출발한다. 버스는 8개의 다른 location에서 2개의 다른 경로로 학생들을 픽업하고 main location으로 돌아온다. 모든 location은 각 경로에서 한번 방문되고 버스는 모든 학생을 태우기에 충분한 capacity를 가진다고 가정한다. 
+
+<br><br>
+이 논문에서는 UNITEN CVRP의 optimal solution을 얻기 위해 다음을 목표로 한다.
+<ol>
+<li>모든 path에 대한 시간 소모와 거리를 줄이는 것 (빠른 수송을 가능하게 함)</li>
+<li>연료 사용과 추가적인 차량 유지 비용 등의 운송 비용을 줄이는 것</li>
+<li>UNITEN의 셔틀 버스 서비스를 최적화하는 CVRP 모델을 구현하는 것</li>
+<li>UNITEN CVRP와 같은 문제에 적용될 수 있는 알고리즘을 구현하는 것</li>
+</ol>
+
+유전 알고리즘은 large space에 대한 복잡한 문제를 해결하는데 효과적이라 VRP의 다양한 유형을 풀 때 사용되지만 CVRP를 푸는데는 거의 사용되지 않았다. 따라서 이 논문에서는 CVRP를 유전 알고리즘으로 풀고자한다. 
+<br><br>
+
+그래프 Gr은 다음과 같이 표현된다. S는 station 집합, D는 station 사이의 거리를 의미한다. 
+$$Gr = (S,D); S = {s_0,s_1,...,s_n}, D = {(s_x,s_y):s_x,s_y \in S, x < y} $$
+$z$개의 차량에 대해 Decision factor function이 다음과 같이 rout 옵션을 결정한다.
+$$
+D f(x, y, z)\left\{\begin{array}{ll}1, & \text { true } \longleftarrow \operatorname{arc}(x, y) \\ & 0, \quad \text { otherwise }\end{array}\right.
+$$
+$z$는 경로의 거리를 줄이기 위해 1로 가정하고 CVRP를 formulation 한다.
+$$
+\text { Minimize }=\left(\sum_{x=0, x \neq y}^{n} D_{x, y} D f_{x, y}\right) \\
+\text {Therefore } x=0, y=1 \text { are subject to:} \\
+Df_{x,y} = 1, \quad \forall x \in S \\
+Df_{x,y} = 1, \quad \forall y \in S \\
+f(x) = 100 / \sum_{x=0,y=1}^n D_{x,y}
+$$
+모든 path에 대한 최소 비용은 거리에 의존하기 때문에 염색체(chromosome)의 fitness value를 높이기 위해 거리를 줄여야 한다. 위의 $f(x)$는 fitness를 의미한다. 
+<br><br>
+이러한 CVRP모델을 푸는 유전알고리즘 과정은 다음과 같다.  
+<br><br>
+
+<p align="center">
+<img src="/images/post_img/ga.png" width="600" height="460">
+</p>
+
+<hr>
+
+
+<div style = "font-weight:700; font-size:1.3em; text-align:center;">Cite
+</div>
+<br>
+<span style = "font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; text-indent:0%; font-family: Times New Roman; ">
+Mohammed, M. A., Ghani, M. K. A., Hamed, R. I., Mostafa, S. A., Ahmad, M. S., & Ibrahim, D. A. (2017). Solving vehicle routing problem by using improved genetic algorithm for optimal solution. <i>Journal of Computational Science, 21,</i> 255-262.
+</span>
+<span style = "font-weight:400; font-size:1.0em;" >
+<a href= "https://www.sciencedirect.com/science/article/pii/S1877750317303848?casa_token=9Y5bAxWb2eIAAAAA:4nDqYopNV9xWFF64pz6X9yVt7MMBNFGP1FC490oSKSd1dSVbpQRF60KEf1uHrwj2HKF8J3HqAg"> 논문 링크 </a>
+</span>
+
+<!-- <span style="background-color: #f3c623"> -->

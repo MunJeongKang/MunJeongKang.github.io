@@ -80,7 +80,7 @@ $$
 
 <ol>
 <li>$w^*_i \le \alpha / H_{i,i}$인 경우 <br>
-여기서 $w_i = 0$ 이다. 정규화된 목적합수에 대한 $J(w;X,y)$의 contribution이 $L^1$ 정규화에 의해 $i$ 방향으로 overwhelmed 되기 때문에 발생한다.  </li>
+여기서 $w_i = 0$ 이다. 정규화된 목적함수에 대한 $J(w;X,y)$의 contribution이 $L^1$ 정규화에 의해 $i$ 방향으로 overwhelmed 되기 때문에 발생한다.  </li>
 <li>$w^*_i > \alpha / H_{i,i}$인 경우 <br>
 이 경우는 정규화가 $w_i$의 최적값을 0으로 이동시키는 것이 아니라 $\alpha H_{i,i}$와 같은 거리만큼 그 방향으로만 이동시킨다.</li>
 </ol>
