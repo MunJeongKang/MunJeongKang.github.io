@@ -133,7 +133,12 @@ UFL Example
 <img src="/images/post_img/ex2.png" width="300" height="150" >
 </div>
 <br>
-모든 $j = 2$에 대해 $y_2=0$이면 0의 값을 얻고 $y_2=1$이면 $x_{22}=1$, $x_{52}=1$로 설정하여 $y_2=1$인 net profit이 7-4 = 3이 된다. 그러므로 $z_2(u)=3$을 주는 $y_2=1$로 설정하는 것이 optimal 이다. 각 depot에 대해 비슷한 계산을 수행하면 IP($u$)의 optimal solution은 $y_1=y_3=y_5=0$, $y_2=x_{22}=x_{52}=1, y_4 = x_{64}=1$로 세팅하면 $z(u) = 3+1+\sum_{i \in M} u_i = 29$ 이다. 
+모든 $j = 2$에 대해 $y_2=0$이면 0의 값을 얻고 $y_2=1$이면 $x_{22}=1$, $x_{52}=1$로 설정하여 $y_2=1$인 net profit이 7-4 = 3이 된다. 그러므로 $z_2(u)=3$을 주는 $y_2=1$로 설정하는 것이 optimal 이다. 각 depot에 대해 비슷한 계산을 수행하면 IP($u$)의 optimal solution은 $y_1=y_3=y_5=0$, $y_2=x_{22}=x_{52}=1$, $y_4 = x_{64}=1$로 세팅하면 $z(u) = 3+1+\sum_{i \in M} u_i = 29$ 이다. 
 
 <br><br>
+
+
+<br><br>
+
+
 <!-- <span style="background-color: #f3c623"> -->
