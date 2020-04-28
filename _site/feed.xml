@@ -5,8 +5,8 @@
     <description>github blog</description>
     <link>http://munjeongkang.github.io/</link>
     <atom:link href="http://munjeongkang.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 27 Apr 2020 15:29:45 +0900</pubDate>
-    <lastBuildDate>Mon, 27 Apr 2020 15:29:45 +0900</lastBuildDate>
+    <pubDate>Tue, 28 Apr 2020 22:43:53 +0900</pubDate>
+    <lastBuildDate>Tue, 28 Apr 2020 22:43:53 +0900</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -72,7 +72,7 @@ Df_{x,y} = 1, \quad \forall x \in S \\
 Df_{x,y} = 1, \quad \forall y \in S \\
 f(x) = 100 / \sum_{x=0,y=1}^n D_{x,y}
 $$
-모든 path에 대한 최소 비용은 거리에 의존하기 때문에 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;염색체(chromosome)의 fitness value를 높이기 위해 거리를 줄여야&lt;/b&gt; 한다. 위의 $f(x)$는 fitness를 의미한다. 
+모든 path에 대한 최소 비용은 거리에 의존하기 때문에 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;염색체(chromosome)의 fitness value를 높이기 위해 거리를 줄여야&lt;/b&gt; 한다. 위의 $f(x)$는 fitness를 의미한다. (CVRP 모델이 이상하다..)
 &lt;br /&gt;&lt;br /&gt;
 이러한 CVRP모델을 푸는 유전알고리즘 과정은 다음과 같다.  
 &lt;br /&gt;&lt;br /&gt;
@@ -173,6 +173,9 @@ Table 1은 기존 경로의 거리를 나타내고 Table 2는 새로운 경로�
 &lt;li&gt;그러나 알고리즘에서 단일 변수인 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;거리&lt;/b&gt;만 고려하고 버스 정류장이 적고 한정되어 있어 솔루션을 찾기가 상당히 쉽기 때문에 복잡한 문제를 효율적으로 처리하는 것으로 알려진 유전 알고리즘의 강점을 드러내지 않았다는 한계점이 있다.&lt;/li&gt;
 &lt;li&gt;추후에는 Selangor와 UNITEN의 다른 locations간의 최단 거리를 찾는 알고리즘으로 확장할 것이다.&lt;/li&gt;
 &lt;/ul&gt;
+
+보통 유전알고리즘으로 CVRP 문제를 안푸는 이유는 잘 풀리지 않기 때문이라고 한다. 이 논문은 너무 작은 문제에 대해서 풀기도 했고 그냥 수리모형으로 formulation했으면 더 큰 문제도 금방 풀었을텐데 의미가 거의 없는 논문이라고 할 수 있다. 논문을 고를 때 좋은 논문을 고를 수 있도록 더 많은 논문을 읽어봐야겠다.
+
 
 &lt;hr /&gt;
 
