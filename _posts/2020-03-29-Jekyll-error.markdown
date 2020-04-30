@@ -14,7 +14,7 @@ macOS로 모하비를 사용하고 있었는데 이 때는 모든 명령어가 �
 bundle exec jekyll serve
 {% endhighlight %}
 
-bundel을 install 하라는 명령이 나오는데 이 또한 에러가 뜬다. ㅜ
+bundel을 install 하라는 명령이 나오는데 이 또한 에러가 뜬다. ㅜㅜ
 
 git 명령어 또한 작동하지 않고 다음과 같은 에러가 뜬다. 
 
