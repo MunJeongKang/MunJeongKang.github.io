@@ -123,6 +123,7 @@ Righini, G., & Salani, M. (2006). Symmetry helps: Bounded bi-directional dynamic
 <span style = "font-weight:400; font-size:1.0em;" >
 <a href= "https://www.sciencedirect.com/science/article/pii/S1572528606000417"> 논문 링크 </a>
 </span>
+<br>
 
 <!-- <span style="background-color: #f3c623"> -->
 
