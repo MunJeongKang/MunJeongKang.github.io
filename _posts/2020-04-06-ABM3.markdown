@@ -53,10 +53,10 @@ Complex systems에서 발생한 문제에 대한 답으로 단순한 모델은 �
 여기서 Agent는 특정한 성질(property)이나 상태(state) 또는 행동(action)을 지닌 자율적이고 계산적인 객체를 의미하며 <b style = "color:#d7385e;font-size:1.2">Emergence</b>는 다수의 분포된 element들의 상호작용을 통해 발생한 새롭고 일관적인 구조, 패턴, 성질을 의미한다. Emergent 구조는 element의 성질로 부터 단독으로 추론될 수 없고 element의 상호작용을 통해 생긴다. 또한, 어떠한 제어 요소없이 자발적으로 발생되기 때문에 <b style = "color:#d7385e;font-size:1.2">self-organizes</b>라고 할 수 있다. 에이전트 기반 모델링의 핵심은 어떤 현상에 대한 간단한 규칙을 찾아 emergence를 활용하는 것이다. 
 <br><br>
 
-<div style="display: inline-block; margin-left: 0em; margin-right: 1.5em; ">
+<div style="display: inline-block; margin-left: 0.75em; ">
 <img src="/images/post_img/fish-flocking.jpg" width="300" height="300"  >
 </div>
-<div style="display: inline-block; margin-right: 0 em; ">
+<div style="display: inline-block; margin-left: 0.75em; ">
 <img src="/images/post_img/v_shape.jpg" width="300" height="300" >
 </div>
 
