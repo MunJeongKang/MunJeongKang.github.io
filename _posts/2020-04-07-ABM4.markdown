@@ -24,10 +24,10 @@ use_math: true
 <li>turtle이 움직인 경로 나타내기 : <code>pen-down</code></li>
 </ol>
 
-<div style="display: inline-block; margin-left: 0em; margin-right: 1.5em; ">
+<div style="display: inline-block; margin-left: 0.75em;">
 <img src="/images/post_img/NL10.png" width="300" height="300"  >
 </div>
-<div style="display: inline-block; margin-right: 0em; ">
+<div style="display: inline-block; margin-left: 0.75em; ">
 <img src="/images/post_img/NL11.png" width="300" height="300" >
 </div>
 
@@ -37,10 +37,10 @@ use_math: true
 <br> <br>
 
 
-<div style="display: inline-block; margin-left: 0em; margin-right: 1.5em; ">
+<div style="display: inline-block; margin-left: 0.75em;  ">
 <img src="/images/post_img/NL12.png" width="300" height="300"  >
 </div>
-<div style="display: inline-block; margin-right: 0em; ">
+<div style="display: inline-block; margin-left: 0.75em; ">
 <img src="/images/post_img/NL13.png" width="300" height="300" >
 </div>
 
