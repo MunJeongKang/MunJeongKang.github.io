@@ -18,10 +18,10 @@ use_math: true
 <br><br>
 
 
-<div style="display: inline-block; margin-left: 0em; margin-right: 1.5em; ">
+<div style="display: inline-block; margin-left: 0.75em; ">
 <img src="/images/post_img/butterfly.gif" width="300" height="300"  >
 </div>
-<div style="display: inline-block; margin-right: 0em; ">
+<div style="display: inline-block; margin-left: 0.75em; ">
 <img src="/images/post_img/butterfly2.gif" width="300" height="300" >
 </div>
 
