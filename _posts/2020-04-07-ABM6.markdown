@@ -14,10 +14,10 @@ use_math: true
 앞서 살펴본 Butterfly model의 경우 나비의 움직임을 시뮬레이션 해볼 수는 있지만, corridors가 언제 어떻게 강하게 발현되는지에 대해서는 설명해주지 않는다. 이 경우 'corridor를 어떻게 묘사해야할까' 라는 의문이 든다. 그렇기 때문에 우리는 분석을 위한 <b style = "color:#d7385e;font-size:1.2">Quantitative Output</b>이 필요하다. 파라미터 <i>q</i> (나비가 가장 높은 위치로 이동할 확률)를 바꾸거나 지형을 바꿈으로써 나비가 움직인 경로의 길이가 어떻게 변화하는지 수량화하는 것도 하나의 방법이다. 
 <br><br>
 
-<div style="border: 1px; float: right;margin-left: 1em; margin-right: 1em; " >
+<div style="border: 1px; float: right;margin-left: 0.9em; margin-right: 1em; " >
 <img src="/images/post_img/butterfly4.gif" width="290" height="300" >
 </div>
-<div style="border: 1px; margin-left: 1em; margin-right: 1em; ">
+<div style="border: 1px; margin-left: 0.9em; margin-right: 1em; ">
 <img src="/images/post_img/butterfly3.gif" width="290" height="300">
 </div>
 
