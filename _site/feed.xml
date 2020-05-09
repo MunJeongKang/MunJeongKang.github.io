@@ -5,9 +5,198 @@
     <description>github blog</description>
     <link>http://munjeongkang.github.io/</link>
     <atom:link href="http://munjeongkang.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 28 Apr 2020 22:43:53 +0900</pubDate>
-    <lastBuildDate>Tue, 28 Apr 2020 22:43:53 +0900</lastBuildDate>
+    <pubDate>Sat, 09 May 2020 23:35:23 +0900</pubDate>
+    <lastBuildDate>Sat, 09 May 2020 23:35:23 +0900</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>논문리뷰 - Vehicle Routing Problem with elementary shortest path based column generation</title>
+        <description>&lt;hr /&gt;
+
+&lt;div style=&quot;font-weight:700; font-size:1.3em; text-align:center;&quot;&gt;Abstract &lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;div style=&quot;font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; &quot;&gt;
+The usual column generation model for a Vehicle Routing Problem involves an elementary shortest-path sub- problem. The worst-case complexity of the known algorithms for this problem being too high, the elementary-path constraint is usually relaxed. Indeed, as each customer must be visited exactly once, the two problems with and without the elementary-path constraint have the same optimal integer solutions. In this article, we propose one theoretical and several practical improvements to the algorithm for elementary paths. We obtain better lower bounds and pruning of the search tree, and these improvements allowed us to find an exact solution to 17 instances of the Solomon benchmark suite which were previously open.&lt;br /&gt;&lt;br /&gt;
+&lt;em&gt;Keywords : Vehicle routing; Branch-and-Price; Elementary shortest path; &lt;/em&gt; 
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;div style=&quot;font-weight:700; font-size:1.3em; text-align:center;&quot;&gt;Summary
+&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;div style=&quot;font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; &quot;&gt;
+
+VRP에서 보통 column generation은 elementary shortest-path를 subproblem으로 포함한다. 이 논문에서는 elementary path에 대한 알고리즘 개선을 제안한다. 더 좋은 lower bound 얻고 search tree를 pruning하여 솔로몬 데이터의 17개 인스턴스에 대한 exact solution을 찾았다.
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;div style=&quot;font-weight:700; font-size:1.3em; text-align:center;&quot;&gt;본문 내용
+&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;div style=&quot;font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify;  &quot;&gt;
+
+VRP(Vehicle Routing Problem)는 실생활에서 다양한 응용분야가 있으며 그중 운송(물류) 분야에 적용이 많이 된다. 이 논문에서는 UNITEN(Universiti Tenaga Nasional)의 셔틀버스 운행에 관한 &lt;b style=&quot;color:#d7385e; font-size:1.2&quot;&gt;CVRP&lt;/b&gt; (Capacitated Vehicle Routing Problem) 문제를 &lt;b style=&quot;color:#d7385e; font-size:1.2&quot;&gt;유전알고리즘&lt;/b&gt;을 사용하여 푼다. 8개의 버스가 운행되고 main location에서 매일 다른 시간에 출발한다. 버스는 8개의 다른 location에서 2개의 다른 경로로 학생들을 픽업하고 main location으로 돌아온다. 모든 location은 각 경로에서 한번 방문되고 버스는 모든 학생을 태우기에 충분한 capacity를 가진다고 가정한다. 
+
+&lt;br /&gt;&lt;br /&gt;
+이 논문에서는 UNITEN CVRP의 optimal solution을 얻기 위해 다음을 목표로 한다.
+&lt;ol&gt;
+&lt;li&gt;모든 path에 대한 시간 소모와 거리를 줄이는 것 (빠른 수송을 가능하게 함)&lt;/li&gt;
+&lt;li&gt;연료 사용과 추가적인 차량 유지 비용 등의 운송 비용을 줄이는 것&lt;/li&gt;
+&lt;li&gt;UNITEN의 셔틀 버스 서비스를 최적화하는 CVRP 모델을 구현하는 것&lt;/li&gt;
+&lt;li&gt;UNITEN CVRP와 같은 문제에 적용될 수 있는 알고리즘을 구현하는 것&lt;/li&gt;
+&lt;/ol&gt;
+
+유전 알고리즘은 large space에 대한 복잡한 문제를 해결하는데 효과적이라 VRP의 다양한 유형을 풀 때 사용되지만 CVRP를 푸는데는 거의 사용되지 않았다. 따라서 이 논문에서는 CVRP를 유전 알고리즘으로 풀고자한다. 
+&lt;br /&gt;&lt;br /&gt;
+
+그래프 Gr은 다음과 같이 표현된다. S는 station 집합, D는 station 사이의 거리를 의미한다. 
+$$Gr = (S,D); S = {s_0,s_1,...,s_n}, D = {(s_x,s_y):s_x,s_y \in S, x &amp;lt; y} $$
+$z$개의 차량에 대해 Decision factor function이 다음과 같이 rout 옵션을 결정한다.
+$$
+D f(x, y, z)\left\{\begin{array}{ll}1, &amp;amp; \text { true } \longleftarrow \operatorname{arc}(x, y) \\ &amp;amp; 0, \quad \text { otherwise }\end{array}\right.
+$$
+$z$는 경로의 거리를 줄이기 위해 1로 가정하고 CVRP를 formulation 한다.
+$$
+\text { Minimize }=\left(\sum_{x=0, x \neq y}^{n} D_{x, y} D f_{x, y}\right) \\
+\text {Therefore } x=0, y=1 \text { are subject to:} \\
+Df_{x,y} = 1, \quad \forall x \in S \\
+Df_{x,y} = 1, \quad \forall y \in S \\
+f(x) = 100 / \sum_{x=0,y=1}^n D_{x,y}
+$$
+모든 path에 대한 최소 비용은 거리에 의존하기 때문에 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;염색체(chromosome)의 fitness value를 높이기 위해 거리를 줄여야&lt;/b&gt; 한다. 위의 $f(x)$는 fitness를 의미한다. (CVRP 모델이 이상하다..)
+&lt;br /&gt;&lt;br /&gt;
+이러한 CVRP모델을 푸는 유전알고리즘 과정은 다음과 같다.  
+&lt;br /&gt;&lt;br /&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+&lt;img src=&quot;/images/post_img/ga.png&quot; width=&quot;600&quot; height=&quot;460&quot; /&gt;
+&lt;/p&gt;
+
+이를 flow chart로 나타내면 다음과 같다. 
+
+&lt;p align=&quot;center&quot;&gt;
+&lt;img src=&quot;/images/post_img/ga_flowchart.png&quot; width=&quot;400&quot; height=&quot;660&quot; /&gt;
+&lt;/p&gt;
+
+이 논문에서 사용된 유전 알고리즘 연산으로 모집단, 적합도, 선택, 교차, 변이가 있다. 
+&lt;br /&gt;&lt;br /&gt;
+&lt;span style=&quot;font-weight:700; font-size:1.2em;  margin-right: 1em;&quot;&gt;
+모집단 (Population)
+&lt;/span&gt;
+&lt;br /&gt;&lt;br /&gt;
+모집단은 랜덤하게 생성된다. 각각의 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;염색체(chromosome)&lt;/b&gt;는 하나의 유효한 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;경로(route)&lt;/b&gt;를 나타내고 각 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;location&lt;/b&gt;은 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;유전자(gene)&lt;/b&gt;에 해당한다. 초기 모집단인 첫번째 염색체는 다음과 같이 표현된다.
+$$
+1\quad 2\quad 3\quad 4\quad 5\quad 6\quad 7\quad 8\quad 9
+$$ 
+초기 염색체가 생성되면 적합도(fitness)가 계산되고 가장 좋은 염색체로 설정된다.
+
+&lt;br /&gt;&lt;br /&gt;
+
+&lt;span style=&quot;font-weight:700; font-size:1.2em;  margin-right: 1em;&quot;&gt;
+적합치 (Fitness values)
+&lt;/span&gt;
+&lt;br /&gt;&lt;br /&gt;
+UNITEN CVRP에서 모든 path의 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;최소 비용은 거리에 의존&lt;/b&gt;한다. 염색체의 적합도는 모든 path에 대한 총 거리를 구하여 계산할 수 있다. path 거리는 D1 = station 1에서 stop 2 , D2 = station 2에서 stop 5까지의 거리 등 축약해서 나타낸다. 염색체 적합도를 높이기 위해 거리를 줄여야하고 적합도는 (100/총 거리의 합)으로 나타낸다. 
+
+&lt;br /&gt;&lt;br /&gt;
+
+&lt;span style=&quot;font-weight:700; font-size:1.2em;  margin-right: 1em;&quot;&gt;
+선택 (Selection)
+&lt;/span&gt;
+&lt;br /&gt;&lt;br /&gt;
+Strong selective factor는 혼합(hybrid) 교차를 위한 최적의 염색체만을 선택하여 가장 이상적인 솔루션을 유도할 수 있다. 이는 유전 알고리즘을 빨리 끝낼 수 있게 한다. 반면 Weak selective factor는 혼합 교차에서 적합도가 낮은 솔루션까지 확인해야함으로 더 많은 시간이 걸린다. 기존의 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;룰렛 휠(roulette wheel)&lt;/b&gt;은 가장 높은 적합도를 가지는 염색체를 선택하여 새로운 염색체를 만들고 이를 복제하여 새로운 세대(generation)를 형성하는 염색체 선택 방식이다. 
+&lt;br /&gt;&lt;br /&gt;
+
+&lt;span style=&quot;font-weight:700; font-size:1.2em;  margin-right: 1em;&quot;&gt;
+교차 (Crossover)
+&lt;/span&gt;
+&lt;br /&gt;&lt;br /&gt;
+랜덤 벡터를 생성하여 유전자를 선택하는 혼합교차가 이 알고리즘에서 사용되었다. 1이면 primary parent에서 0이면 second parent의 유전자를 선택하고 이를 결합하여 자손을 만든다. 예를 들어 부모 C1과 C2가 다음과 같이 주어지고 이진 벡터가 [10101001]이라면 자손1이 다음과 같이 생성된다.
+&lt;br /&gt;&lt;br /&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+&lt;img src=&quot;/images/post_img/crossover.png&quot; width=&quot;350&quot; height=&quot;80&quot; /&gt;
+&lt;/p&gt;
+
+&lt;span style=&quot;font-weight:700; font-size:1.2em;  margin-right: 1em;&quot;&gt;
+변이 (Mutation)
+&lt;/span&gt;
+&lt;br /&gt;&lt;br /&gt;
+유전 알고리즘 연산을 계속 진행하면 local optimum에 도달하게 되는데 새로운 염색체에 확률적으로 돌연변이를 발생시켜 local optimum에서 빠져나올 수 있도록 한다. 돌연변이 체계는 모든 루프에서 3가지 상황을 반복한다. 첫 번째 염색체의 대체 염색체를 생성하며 테스트하고 두 개의 결과 유전자 사이에 immediate route가 없으면 새로운 염색체는 무효가 된다. 만약 새로운 염색체가 좋다면 적합도 함수 값이 계산된다. 만약 적합도 함수 값이 기존보다 우수하면 새로운 염색체가 best가 되고 루프가 종료된다. 
+&lt;br /&gt;&lt;br /&gt;
+
+
+&lt;span style=&quot;font-weight:700; font-size:1.2em;  margin-right: 1em;&quot;&gt;
+결과 (Results)
+&lt;/span&gt;
+&lt;br /&gt;&lt;br /&gt;
+이 연구는 UNITEN에서 학생들의 총 교통비를 줄이는 것을 목표로 하며 비용은 주로 경로의 거리에 관한 것이다. 향상된 유전 알고리즘은 테스트와 검증을 통해 station 양에 가장 적합한 경로를 찾는 것이 입증되었다. 버스는 학생들을 수송하기 위해 매일 A와 B 두 개의 경로로 운행된다. 
+
+&lt;br /&gt;&lt;br /&gt;
+
+&lt;div style=&quot;display: inline-block; margin-left: 0.55em;  &quot;&gt;
+&lt;img src=&quot;/images/post_img/table1.png&quot; width=&quot;300&quot; height=&quot;120&quot; /&gt;
+&lt;/div&gt;
+&lt;div style=&quot;display: inline-block; margin-left: 0.55em; &quot;&gt;
+&lt;img src=&quot;/images/post_img/table2.png&quot; width=&quot;300&quot; height=&quot;115&quot; /&gt;
+&lt;/div&gt;
+
+&lt;div style=&quot;display: inline-block; margin-left: 0.75em;  &quot;&gt;
+&lt;img src=&quot;/images/post_img/table3.png&quot; width=&quot;300&quot; height=&quot;120&quot; /&gt;
+&lt;/div&gt;
+&lt;div style=&quot;display: inline-block; margin-left: 0.75em; &quot;&gt;
+&lt;img src=&quot;/images/post_img/table4.png&quot; width=&quot;300&quot; height=&quot;115&quot; /&gt;
+&lt;/div&gt;
+
+Table 1은 기존 경로의 거리를 나타내고 Table 2는 새로운 경로의 거리를 나타낸다. Table 3은 이 둘의 차이를 나타내고 Table 4는 거리 감소에 대한 비용 절약정도를 나타낸다. 
+&lt;br /&gt;&lt;br /&gt;
+&lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;각 경로의 거리 감소 정도는 작지만 두 경로에 대한 장기적인 감소는 크다.&lt;/b&gt; 알고리즘의 성능과 신뢰성을 검증하기 위해 UKM의 동일한 문제를 풀기 위해 적용되었고 더 짧은 경로를 찾는데 성공하였다. UKM 각 경로의 거리 감소는 꽤 크다. 
+&lt;br /&gt;&lt;br /&gt;
+&lt;p align=&quot;center&quot;&gt;
+&lt;img src=&quot;/images/post_img/3_fig2.png&quot; width=&quot;600&quot; height=&quot;360&quot; /&gt;
+&lt;/p&gt;
+
+&lt;br /&gt;&lt;br /&gt;
+논문의 결론은 다음과 같이 정리할 수 있다. 
+&lt;ul&gt;
+
+&lt;li&gt;UNITEN의 셔틀 버스 서비스를 최적화하기 위해 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;CVRP 모델&lt;/b&gt;을 구현하고 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;유전 알고리즘&lt;/b&gt;을 활용하여 이를 해결하였다.&lt;/li&gt;
+&lt;li&gt;그러나 알고리즘에서 단일 변수인 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;거리&lt;/b&gt;만 고려하고 버스 정류장이 적고 한정되어 있어 솔루션을 찾기가 상당히 쉽기 때문에 복잡한 문제를 효율적으로 처리하는 것으로 알려진 유전 알고리즘의 강점을 드러내지 않았다는 한계점이 있다.&lt;/li&gt;
+&lt;li&gt;추후에는 Selangor와 UNITEN의 다른 locations간의 최단 거리를 찾는 알고리즘으로 확장할 것이다.&lt;/li&gt;
+&lt;/ul&gt;
+
+보통 유전알고리즘으로 CVRP 문제를 안푸는 이유는 잘 풀리지 않기 때문이라고 한다. 이 논문은 너무 작은 문제에 대해서 풀기도 했고 그냥 수리모형으로 formulation했으면 더 큰 문제도 금방 풀었을텐데 의미가 거의 없는 논문이라고 할 수 있다. 논문을 고를 때 좋은 논문을 고를 수 있도록 더 많은 논문을 읽어봐야겠다.
+
+
+&lt;hr /&gt;
+
+
+&lt;div style=&quot;font-weight:700; font-size:1.3em; text-align:center;&quot;&gt;Cite
+&lt;/div&gt;
+&lt;br /&gt;
+&lt;span style=&quot;font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; text-indent:0%; font-family: Times New Roman; &quot;&gt;
+Mohammed, M. A., Ghani, M. K. A., Hamed, R. I., Mostafa, S. A., Ahmad, M. S., &amp;amp; Ibrahim, D. A. (2017). Solving vehicle routing problem by using improved genetic algorithm for optimal solution. &lt;i&gt;Journal of Computational Science, 21,&lt;/i&gt; 255-262.
+&lt;/span&gt;
+&lt;span style=&quot;font-weight:400; font-size:1.0em;&quot;&gt;
+&lt;a href=&quot;https://www.sciencedirect.com/science/article/pii/S1877750317303848?casa_token=9Y5bAxWb2eIAAAAA:4nDqYopNV9xWFF64pz6X9yVt7MMBNFGP1FC490oSKSd1dSVbpQRF60KEf1uHrwj2HKF8J3HqAg&quot;&gt; 논문 링크 &lt;/a&gt;
+&lt;/span&gt;
+&lt;br /&gt;&lt;br /&gt;
+
+&lt;!-- &lt;span style=&quot;background-color: #f3c623&quot;&gt; --&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Sat, 09 May 2020 18:00:08 +0000</pubDate>
+        <link>http://munjeongkang.github.io/%E1%84%82%E1%85%A9%E1%86%AB%E1%84%86%E1%85%AE%E1%86%AB%20%E1%84%85%E1%85%B5%E1%84%87%E1%85%B24/</link>
+        <guid isPermaLink="true">http://munjeongkang.github.io/%E1%84%82%E1%85%A9%E1%86%AB%E1%84%86%E1%85%AE%E1%86%AB%20%E1%84%85%E1%85%B5%E1%84%87%E1%85%B24/</guid>
+        
+        
+        <category>논문리뷰</category>
+        
+      </item>
     
       <item>
         <title>논문리뷰 - Solving vehicle routing problem by using improved genetic algorithm for optimal solution</title>
@@ -825,99 +1014,6 @@ dropout의 상당 부분은 hidden units에 masking noise가 적용된다는 사
         <pubDate>Sat, 11 Apr 2020 18:00:08 +0000</pubDate>
         <link>http://munjeongkang.github.io/ANN5/</link>
         <guid isPermaLink="true">http://munjeongkang.github.io/ANN5/</guid>
-        
-        
-        <category>수업</category>
-        
-      </item>
-    
-      <item>
-        <title>인공신경망 - Parameter Norm Penalties</title>
-        <description>&lt;hr /&gt;
-
-&lt;div style=&quot;font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; &quot;&gt;
-&lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;정규화&lt;/b&gt;는 딥러닝의 출현 이전에도 수십년 동안 사용되어 왔다. 선형 회귀모형이나 로지스틱 회귀모형 같은 선형 모델은 간단하고 효과적인 정규화가 가능하다. 많은 정규화 방법은 목적함수 $J$에 파라미터 norm penalty $\Omega(\theta)$를 추가하여 모델의 capacity를 제한하는 것에 기초한다. 정규화된 목적함수는 다음과 같다. 
-&lt;p align=&quot;center&quot;&gt;
-$$
-\tilde{J}(\boldsymbol{\theta} ; \boldsymbol{X}, \boldsymbol{y})=J(\boldsymbol{\theta} ; \boldsymbol{X}, \boldsymbol{y})+\alpha \Omega(\boldsymbol{\theta}), \quad \text { where } \alpha \in[0, \infty)
-$$
-&lt;/p&gt;
-$\alpha$를 0으로 설정하면 정규화가 되지 않고 $\alpha$의 값이 클수록 더 정규화된다. &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;parameter norm&lt;/b&gt; $\Omega$에 대해 다른 솔루션이 더 선호될 수 있다. 일반적으로 각 계층에서 affine 변환의 가중치에 대해서만 패널티를 주고 편차(bias)를 정규화하지 않는 파라미터 norm penalty $\Omega$를 사용한다. 편차를 정확하게 fit하기 위해 가중치보다 더 적은 데이터가 필요하고 편차 파라미터 정규화는 상당한 underfitting 양을 도입할 수 있다. 
-&lt;br /&gt;&lt;br /&gt;
-&lt;span style=&quot;font-weight:700; font-size:1.3em;  margin-right: 1em;&quot;&gt;
-$L^2$ Parameter Regularization
-&lt;/span&gt;
-&lt;br /&gt;&lt;br /&gt;
-$L^2$ parameter norm penalty는 흔히 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;weight decay&lt;/b&gt;로 알려져 있다. 
-$$
-\begin{array}{c}\Omega(\boldsymbol{\theta})=\frac{1}{2}\|\boldsymbol{w}\|_{2}^{2} \\ \tilde{J}(\boldsymbol{w} ; \boldsymbol{X}, \boldsymbol{y})=\frac{\alpha}{2} \boldsymbol{w}^{\top} \boldsymbol{w}+J(\boldsymbol{w} ; \boldsymbol{X}, \boldsymbol{y}) \\ \nabla_{\boldsymbol{w}} \tilde{J}(\boldsymbol{w} ; \boldsymbol{X}, \boldsymbol{y})=\alpha \boldsymbol{w}+\nabla_{\boldsymbol{w}} J(\boldsymbol{w} ; \boldsymbol{X}, \boldsymbol{y})\end{array}
-$$
-single gradient step을 수행하여 가중치를 업데이트 하는 방법은 다음과 같다. 
-$$
-
-\begin{array}{l}\boldsymbol{w} \leftarrow \boldsymbol{w}-\epsilon\left(\alpha \boldsymbol{w}+\nabla_{\boldsymbol{w}} J(\boldsymbol{w} ; \boldsymbol{X}, \boldsymbol{y})\right) \\ \boldsymbol{w} \leftarrow(1-\epsilon \alpha) \boldsymbol{w}-\epsilon \nabla_{\boldsymbol{w}} J(\boldsymbol{w} ; \boldsymbol{X}, \boldsymbol{y})\end{array}
-$$
-
-정규화되지 않은 트레이닝 비용을 최소화하는 가중치 값과 인접한 목적 함수에 대한 2차(quadratic) 근사를 만들어 분석을 단순하게 할 수 있다. 여기서 $H$는 $w^*$에서 평가된 $w$에 관한 $J$의 헤시안(Hessian) 행렬이다. 
-$$
-\begin{aligned} 
-&amp;amp;\boldsymbol{w}^{*}=\arg \min _{\boldsymbol{w}} J(\boldsymbol{w}) \\
-&amp;amp;\hat{J}(\boldsymbol{\theta}) =J\left(\boldsymbol{w}^{*}\right)+\frac{1}{2}\left(\boldsymbol{w}-\boldsymbol{w}^{*}\right)^{\top} \boldsymbol{H}\left(\boldsymbol{w}-\boldsymbol{w}^{*}\right) 
-\end{aligned}
-$$
-gradient가 0일 때 $\hat{J}$가 최소가 된다. 
-$$
-\nabla_{\boldsymbol{w}} \hat{J}(\boldsymbol{w})=\boldsymbol{H}\left(\boldsymbol{w}-\boldsymbol{w}^{*}\right)
-$$
-이제 정규화된 $\hat{J}$의 최소값을 다음과 같이 구할 수 있게 된다. 
-$$
-\begin{array}{c}\alpha \tilde{\boldsymbol{w}}+\boldsymbol{H}\left(\tilde{\boldsymbol{w}}-\boldsymbol{w}^{*}\right)=0 \\ (\boldsymbol{H}+\alpha \boldsymbol{I}) \tilde{\boldsymbol{w}}=\boldsymbol{H} \boldsymbol{w}^{*} \\ \tilde{\boldsymbol{w}}=(\boldsymbol{H}+\alpha \boldsymbol{I})^{-1} \boldsymbol{H} \boldsymbol{w}^{*}\end{array}
-$$
-$\boldsymbol{H}=Q \Lambda Q^{\top}$로 분해(decompose) 할 수 있다. 
-$$
-\begin{aligned} \tilde{w} &amp;amp;=\left(Q \Lambda Q^{\top}+\alpha I\right)^{-1} Q \Lambda Q^{\top} w^{*} \\ &amp;amp;=\left[Q(\Lambda+\alpha I) Q^{\top}\right]^{-1} Q \Lambda Q^{\top} w^{*} \\ &amp;amp;=Q(\Lambda+\alpha I)^{-1} \Lambda Q^{\top} w^{*} \end{aligned}
-$$
-weight decay의 효과는 $\boldsymbol{H}$의 고유벡터(eigenvector)로 정의된 축을 따라서 $w^{*}$를 rescale하는 것이다. $\boldsymbol{H}$의 i번째 고유벡터로 정렬된 $w^*$의 성분은 $\lambda_i / (\lambda_i+\alpha)$ 의 인수로 재조정된다. $\boldsymbol{H}$의 고유값(eigenvalue)이 상대적으로 큰 방향을 따르면 (ex. $\lambda_i &amp;gt;&amp;gt; \alpha$) 정규화의 효과는 상대적으로 작아진다. 그러나 $\lambda_i &amp;lt;&amp;lt; \alpha$인 성분의 크기는 거의 0에 가까울 정도로 줄어들 것이다. 
-&lt;br /&gt;&lt;br /&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-&lt;img src=&quot;/images/post_img/AN7.png&quot; width=&quot;400&quot; height=&quot;300&quot; /&gt;
-&lt;/p&gt;
-
-&lt;span style=&quot;font-weight:700; font-size:1.3em;  margin-right: 1em;&quot;&gt;
-$L^1$ Regularization
-&lt;/span&gt;
-&lt;br /&gt;&lt;br /&gt;
-$L^2$ weight decay가 weight decay의 가장 흔한 형식인 반면에, 모델 파라미터의 사이즈를 패널라이즈(penalize)하는 다른 방법도 있다. 그것은 바로 다음과 같이 $L^1$ 정규화를 사용하는 것이다. 
-$$
-\begin{array}{c}\Omega(\boldsymbol{\theta})=\|\boldsymbol{w}\|_{1}=\sum\left|w_{i}\right| \\ \tilde{J}(\boldsymbol{w} ; \boldsymbol{X}, \boldsymbol{y})=\alpha\|\boldsymbol{w}\|_{1}+J(\boldsymbol{w} ; \boldsymbol{X}, \boldsymbol{y}) \\ \nabla_{w} \tilde{J}(\boldsymbol{w} ; \boldsymbol{X}, \boldsymbol{y})=\alpha \operatorname{sign}(\boldsymbol{w})+\nabla_{w} J(\boldsymbol{X}, y ; \boldsymbol{w})\end{array}
-$$
-$H=\operatorname{diag}\left(\left[H_{1,1}, \ldots, H_{n, n}\right]\right)$와 같이 헤시안이 대각(diagonal)이라는 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;더욱 간단한 가정&lt;/b&gt;을 한다. 이 가정은 입력 특징들 사이의 모든 상관관계(correlation)를 제거하기 위해 선형회귀 문제에 대한 데이터가 전처리된 경우에 적용된다.
-&lt;br /&gt;&lt;br /&gt;
-$L^1$ 정규화된 목적 함수의 2차 근사는 다음과 같이 파라미터에 걸쳐 합(sum)으로 분해된다. 
-$$
-\hat{J}(\boldsymbol{w} ; \boldsymbol{X}, \boldsymbol{y})=J\left(\boldsymbol{w}^{*} ; \boldsymbol{X}, \boldsymbol{y}\right)+\sum_{i}\left[\frac{1}{2} H_{i, i}\left(\boldsymbol{w}_{i}-\boldsymbol{w}_{i}^{*}\right)^{2}+\alpha\left|w_{i}\right|\right]
-$$
-비용함수의 근사를 최소화하는 문제는 다음과 같은 형태로 각 차원 $i$에 대한 분석적인 솔루션을 가진다. 
-$$
-w_{i}=\operatorname{sign}\left(w_{i}^{*}\right) \max \left\{\left|w_{i}^{*}\right|-\frac{\alpha}{H_{i, i}}, 0\right\}
-$$
-
-모든 $i$에 대해 $w^*_i &amp;gt; 0$인 상황을 고려해보자.
-
-&lt;ol&gt;
-&lt;li&gt;$w^*_i \le \alpha / H_{i,i}$인 경우 &lt;br /&gt;
-여기서 $w_i = 0$ 이다. 정규화된 목적함수에 대한 $J(w;X,y)$의 contribution이 $L^1$ 정규화에 의해 $i$ 방향으로 overwhelmed 되기 때문에 발생한다.  &lt;/li&gt;
-&lt;li&gt;$w^*_i &amp;gt; \alpha / H_{i,i}$인 경우 &lt;br /&gt;
-이 경우는 정규화가 $w_i$의 최적값을 0으로 이동시키는 것이 아니라 $\alpha H_{i,i}$와 같은 거리만큼 그 방향으로만 이동시킨다.&lt;/li&gt;
-&lt;/ol&gt;
-
-$L^2$ 정규화와 비교하여 $L^1$ 정규화는 더 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;희소한(sparse)&lt;/b&gt;한 솔루션을 준다. $L^1$ 정규화에 의해 유도된 희소성질 (sparsity property)은 특징 선택 (feature selection) 매커니즘으로 광범위하게 사용되어왔다. 
-&lt;/div&gt;
-</description>
-        <pubDate>Sat, 11 Apr 2020 18:00:08 +0000</pubDate>
-        <link>http://munjeongkang.github.io/ANN4/</link>
-        <guid isPermaLink="true">http://munjeongkang.github.io/ANN4/</guid>
         
         
         <category>수업</category>

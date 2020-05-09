@@ -23,7 +23,7 @@ Overview of a Simulation Study
 <li><b style = "color:#d7385e;font-size:1.2">모델 확인하기(vaildate)</b></li>
 <li>실험 디자인하기</li>
 <li>모델 실행하기</li>
-<li>결과에 대해 insight를 얻고 분석하여 문서화하기</li>
+<li>결과에 대한 insight를 얻고 분석하여 문서화하기</li>
 </ol>
 
 모델을 테스트하는 3단계는 <b style = "color:#d7385e;font-size:1.2">Vaildation</b>, <b style = "color:#d7385e;font-size:1.2">Verification</b>, <b style = "color:#d7385e;font-size:1.2">Debugging</b>이다. Verification은 모델 formulation이 소프트웨어에서 정확하게 실행되는지 확인하는 것이다. 즉, 원하는대로 프로그램이 실행되는지 확실히 하는 것이다. 이 과정에서 실수를 찾고 고치는 노력이 요구되며 모델링의 효율을 높이기 위해 가능한 빨리 테스트를 시작하고 코드를 지속적으로 테스트해야한다. (디버깅도 verification의 한 부분이다.) Vaildation은 모델이 실제 상황을 충분히 잘 반영하고 있는지 확인하는 것이다. ABM에서는 특히 예측되지 않은 결과(Unexpected Result)에 대한 주의가 필요하다. 결과가 새롭고(novel) 중요한지, 모델 디자인은 의심스럽지 않은지, 프로그래밍 실수가 있는지 등을 확인해야한다.  
