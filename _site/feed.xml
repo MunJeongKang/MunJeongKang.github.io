@@ -5,8 +5,8 @@
     <description>github blog</description>
     <link>http://munjeongkang.github.io/</link>
     <atom:link href="http://munjeongkang.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 11 May 2020 00:02:31 +0900</pubDate>
-    <lastBuildDate>Mon, 11 May 2020 00:02:31 +0900</lastBuildDate>
+    <pubDate>Mon, 11 May 2020 00:15:31 +0900</pubDate>
+    <lastBuildDate>Mon, 11 May 2020 00:15:31 +0900</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -28,7 +28,7 @@ The usual column generation model for a Vehicle Routing Problem involves an elem
 
 &lt;div style=&quot;font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; &quot;&gt;
 
-VRP에서 보통 column generation은 elementary shortest-path를 subproblem으로 포함한다. 이 논문에서는 elementary path에 대한 알고리즘 개선을 제안한다. 더 좋은 lower bound 얻고 search tree를 pruning하여 솔로몬 데이터의 17개 인스턴스에 대한 exact solution을 찾았다.
+VRP에서 보통 column generation은 elementary shortest-path를 subproblem으로 포함한다. 이 논문에서는 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;elementary path에 대한 알고리즘 개선&lt;/b&gt;을 제안한다. 더 좋은 lower bound 얻고 search tree를 pruning하여 솔로몬 데이터의 17개 인스턴스에 대한 exact solution을 찾았다.
 &lt;/div&gt;
 
 &lt;hr /&gt;
@@ -39,7 +39,7 @@ VRP에서 보통 column generation은 elementary shortest-path를 subproblem으�
 
 &lt;div style=&quot;font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify;&quot;&gt;
 
-이 논문에서는 Vehicle Routing Problem with Time Windows (VRPTW)를 다룬다. VRP는 exact method인 column generation을 사용하여 optimal solution을 찾을 수 있다. original linear program은 Dantzig-Wolfe decomposition을 통해 linear restricted master problem과 pricing subproblem으로 나뉜다. 마스터 문제는 이진 변수를 가지는 partitioning problem이 되고 pricing subproblem은 새로운 column 생성에 대한 제한된 최단 경로 문제가 된다. 
+이 논문에서는 Vehicle Routing Problem with Time Windows (VRPTW)를 다룬다. VRP는 exact method인 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;column generation&lt;/b&gt;을 사용하여 optimal solution을 찾을 수 있다. original linear program은 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;Dantzig-Wolfe decomposition&lt;/b&gt;을 통해 linear restricted master problem과 pricing subproblem으로 나뉜다. 마스터 문제는 이진 변수를 가지는 partitioning problem이 되고 pricing subproblem은 새로운 column 생성에 대한 제한된 최단 경로 문제가 된다. 
 &lt;br /&gt;&lt;br /&gt;
 경로에 cycle이 존재하는 Shortest Path with Resource Constraints and Time Windows (SPRCTW) column generation 모델의 optimal integer solution은 elementary routes만을 포함한다. ESPRCTW가 NP-hard인 반면에 SPRCTW는 pseudo-polynomial 알고리즘을 사용할 수 있기 때문에 이를 활용한다. 이 논문에서는 relaxed restricted master problem로 얻은 더 좋은 lower bound와 cycle 제약을 고려한 영향을 줄이기 위한 기술들을 제시한다. 
 &lt;br /&gt;&lt;br /&gt;
@@ -140,10 +140,10 @@ $$
 \end{align}
 $$
 &lt;br /&gt;
-decomposed model은 가능한 path 변수를 매우 많이 포함한다. 만약 $N$이 노드의 수라면 이론적으로 path 변수의 수는 $N$!개로 증가할 수 있다. 그렇기 때문에 column generation을 사용한다. 
+decomposed model은 가능한 path 변수를 매우 많이 포함한다. 만약 $N$이 노드의 수라면 이론적으로 path 변수의 수는 $N$!개로 증가할 수 있다. 그렇기 때문에 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;column generation을 사용&lt;/b&gt;한다. 
 &lt;br /&gt;&lt;br /&gt;
 
-Branch-and-Price는 흔히 사용되는 branching 기법이다. column generation을 할 때 reduced cost를 확인하여 제한된 모델에 추가될 새로운 변수를 찾는데 이러한 과정을 pricing이라 한다. 더 이상 추가할 column이 없을 때까지 반복하며 변수가 fractional인 경우에는 branching을 해준다. 일반적으로 set partitioning 제약식(11)은 set covering 제약으로 바뀐다. 
+&lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;Branch-and-Price&lt;/b&gt;는 흔히 사용되는 branching 기법이다. column generation을 할 때 reduced cost를 확인하여 제한된 모델에 추가될 새로운 변수를 찾는데 이러한 과정을 pricing이라 한다. 더 이상 추가할 column이 없을 때까지 반복하며 변수가 fractional인 경우에는 branching을 해준다. 일반적으로 set partitioning 제약식(11)은 set covering 제약으로 바뀐다. 
 &lt;br /&gt;&lt;br /&gt;
 
 &lt;span style=&quot;font-weight:700; font-size:1.2em;  margin-right: 1em;&quot;&gt;
@@ -176,7 +176,7 @@ $$
 d^l(i,k) \leqslant d^l(i,j) + d^l(j,k) \quad \forall l = 1\ldots L.
 \end{aligned}
 $$
-&lt;br /&gt;&lt;br /&gt;
+&lt;br /&gt;
 &lt;b&gt;Theorem 1.&lt;/b&gt; triangle inequality에 대한 resource 누적과 노드 사이의 cost 누적이 strictly positive일 때, non-elementary path를 가지는 마스터 문제의 optimal integer solution은 elementary path만을 포함한다. 
 &lt;br /&gt;&lt;br /&gt;
 일반적으로 최단경로 subproblems는 cycle이 허용되는 pseudo-polynomial labeling algorithm으로 풀린다. 그러나 elementary path만 사용된다면 relaxed 마스터 문제는 더 제한되고 더 좋은 bound가 제공될 것이다. 
@@ -186,19 +186,19 @@ $$
 Labeling algorithm
 &lt;/span&gt;
 &lt;br /&gt;&lt;br /&gt;
-노드 $i$에서 partial path $p$는 label $E_p = (rc_p, D^0_p, \ldots , D^L_p)$와 관련되어 있다. 레이블링 알고리즘에서 사용되는 기본적인 rule은 dominance rule이고 다음을 만족하면 partial path $p_1$은 다른 partial path $p_2$를 dominate한다. 
+노드 $i$에서 partial path $p$는 label $E_p = (rc_p, D^0_p, \ldots , D^L_p)$와 관련되어 있다. 레이블링 알고리즘에서 사용되는 기본적인 rule은 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;dominance rule&lt;/b&gt;이고 다음을 만족하면 partial path $p_1$은 다른 partial path $p_2$를 dominate한다. 
 $$
 \begin{align}
 &amp;amp;rc_1 \leqslant rc_2, \\
 &amp;amp;D^l_1 \leqslant D^l_2 \quad \forall l \in \{0,\ldots L\}
 \end{align}
 $$
-&lt;br /&gt;
-이 dominance rule은 elementary shortes path에 직접적으로 사용될 수 없다. 따라서 이 논문의 중점적인 결과는 실질적이고 효율적인 알고리즘의 수정을 제안하는 것이다. 
+
+dominance rule은 elementary shortes path에 직접적으로 사용될 수 없다. 따라서 이 논문의 중점은 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;실질적이고 효율적인 알고리즘의 수정을 제안하는 것&lt;/b&gt;이다. 
 &lt;br /&gt;&lt;br /&gt;
 이 논문에서는 Ryan-Foster rules에 기초한 branching 기법을 사용한다. 같은 node $i$와 $j$를 공유하는 두 개의 fractional routes를 찾는다. (한 경로는 arc $(i,j)$를 사용하고 다른 경로는 사용하지 않는다.) 각 branch에서 최단 경로 서브문제는 문제의 구조를 깨지 않고 쉽게 수정될 수 있다. 
 &lt;br /&gt;&lt;br /&gt;
-좋지 않은 lower bound를 가지는 노드를 prune하기 위해 bound의 quality가 중요한데 이 논문에서는 relaxation의 quality를 향상하기 위한 두 가지 방법을 제시한다. 첫 번째는 relaxation에 cutting plane을 추가하는 것이고 두 번째는 elementary shortest path subproblem에 기초한 것이다. SPRCTW를 사용할 경우 마스터 문제를 MP로 표시하고 ESPRCTW를 사용할 경우 EMP로 표시한다. MP에서 통합 제약을 제거하면 RMP로 표시하고 EMP에서 제거하면 REMP로 표시한다. 
+좋지 않은 lower bound를 가지는 노드를 prune하기 위해 bound의 quality가 중요한데 이 논문에서는 relaxation의 quality를 향상하기 위한 두 가지 방법을 제시한다. 첫 번째는 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;relaxation에 cutting plane을 추가하는 것&lt;/b&gt;이고 두 번째는 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;elementary shortest path subproblem에 기초한 것&lt;/b&gt;이다. SPRCTW를 사용할 경우 마스터 문제를 MP로 표시하고 ESPRCTW를 사용할 경우 EMP로 표시한다. MP에서 통합 제약을 제거하면 RMP로 표시하고 EMP에서 제거하면 REMP로 표시한다. 
 &lt;br /&gt;&lt;br /&gt;
 &lt;span style=&quot;font-weight:700; font-size:1.2em;  margin-right: 1em;&quot;&gt;
 Simple example
