@@ -273,17 +273,33 @@ Table 2는 series 2의 instance에 대해 얻은 lower bound 향상에 대한 �
 <p align="center">
 <img src="/images/post_img/4_table3.png" width="600" height="460">
 </p>
+Table 3은 17개의 Solomon instance에 대한 결과이다. OPT는 optimal solution 값을 나타내고 V는 사용된 차량의 수를 나타낸다. Gap은 Branch-and-Price root node와 optimal solution 사이의 차이이고 N은 Branch-and-Price 노드의 수, SP는 풀린 서브 문제의 수, $T_{opt}$는 최적해를 찾는 시간, $T_{proof}$는 optimality를 증명하는 시간을 뜻한다. (*)와 (**)는 각각 [12,13]에서 제시된 최적해보다 더 좋은 값이다. 
+<br><br>
+<p align="center">
+<img src="/images/post_img/4_table4.png" width="600" height="460">
+</p>
+Table 4는 솔로몬의 전체 instance에 대한 결과이다. 시간 제한은 1시간으로 두고 이전과 동일한 계산 조건을 사용한다. gap은 발견된 솔루션에서 가장 좋은 lower bound의 차이를 뜻하고 OPT는 최적에 도달한 경우의 수와 괄호안에 최적화가 입증된 경우의 수를 나타낸다. 시간 제한 때문에 최적해가 최적임이 증명되지 않아도 발견될 수 있다. 
+<br><br>
+논문의 결론은 다음과 같이 정리할 수 있다. 
+<ul>
+<li>일반적인 elementary shortest path 알고리즘에 대한 개선을 제안한다.</li>
+<li>elementary shortest path가 수정된 알고리즘이 사용될 때 실질적으로 유용함을 보여준다. </li>
+<li>새로운 최적해를 찾기 위해 cutting planes를 사용하는 것은 lower bound를 향상시키는 또다른 방법이다.</li>
+</ul>
+
 <hr>
+
 
 
 <div style = "font-weight:700; font-size:1.3em; text-align:center;">Cite
 </div>
 <br>
 <span style = "font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; text-indent:0%; font-family: Times New Roman; ">
-Mohammed, M. A., Ghani, M. K. A., Hamed, R. I., Mostafa, S. A., Ahmad, M. S., & Ibrahim, D. A. (2017). Solving vehicle routing problem by using improved genetic algorithm for optimal solution. <i>Journal of Computational Science, 21,</i> 255-262.
+Chabrier, A. (2006). Vehicle routing problem with elementary shortest path based column generation. <i>Computers & Operations Research, 33</i>(10), 2972-2990.
+
 </span>
 <span style = "font-weight:400; font-size:1.0em;" >
-<a href= "https://www.sciencedirect.com/science/article/pii/S1877750317303848?casa_token=9Y5bAxWb2eIAAAAA:4nDqYopNV9xWFF64pz6X9yVt7MMBNFGP1FC490oSKSd1dSVbpQRF60KEf1uHrwj2HKF8J3HqAg"> 논문 링크 </a>
+<a href= "https://www.sciencedirect.com/science/article/pii/S0305054805000857?casa_token=ZPCq16G80LAAAAAA:jTn_BT6tAUSeosl45Kg3TMddtEtnnsgG35TAvG_JnBlEVpFw51RJynwfPkR7BoTdFZtD_rvj7Q"> 논문 링크 </a>
 </span>
 <br><br>
 
