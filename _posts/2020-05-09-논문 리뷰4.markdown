@@ -32,141 +32,247 @@ VRP에서 보통 column generation은 elementary shortest-path를 subproblem으�
 </div>
 <br>
 
-<div style = "font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify;  ">
+<div style = "font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify;">
 
-VRP(Vehicle Routing Problem)는 실생활에서 다양한 응용분야가 있으며 그중 운송(물류) 분야에 적용이 많이 된다. 이 논문에서는 UNITEN(Universiti Tenaga Nasional)의 셔틀버스 운행에 관한 <b style = "color:#d7385e; font-size:1.2">CVRP</b> (Capacitated Vehicle Routing Problem) 문제를 <b style = "color:#d7385e; font-size:1.2">유전알고리즘</b>을 사용하여 푼다. 8개의 버스가 운행되고 main location에서 매일 다른 시간에 출발한다. 버스는 8개의 다른 location에서 2개의 다른 경로로 학생들을 픽업하고 main location으로 돌아온다. 모든 location은 각 경로에서 한번 방문되고 버스는 모든 학생을 태우기에 충분한 capacity를 가진다고 가정한다. 
+이 논문에서는 Vehicle Routing Problem with Time Windows (VRPTW)를 다룬다. VRP는 exact method인 column generation을 사용하여 optimal solution을 찾을 수 있다. original linear program은 Dantzig-Wolfe decomposition을 통해 linear restricted master problem과 pricing subproblem으로 나뉜다. 마스터 문제는 이진 변수를 가지는 partitioning problem이 되고 pricing subproblem은 새로운 column 생성에 대한 제한된 최단 경로 문제가 된다. 
+<br><br>
+경로에 cycle이 존재하는 Shortest Path with Resource Constraints and Time Windows (SPRCTW) column generation 모델의 optimal integer solution은 elementary routes만을 포함한다. ESPRCTW가 NP-hard인 반면에 SPRCTW는 pseudo-polynomial 알고리즘을 사용할 수 있기 때문에 이를 활용한다. 이 논문에서는 relaxed restricted master problem로 얻은 더 좋은 lower bound와 cycle 제약을 고려한 영향을 줄이기 위한 기술들을 제시한다. 
+<br><br>
+여기서는 두 가지 VRP 모델을 소개한다. 각각은 VRP with TIme Windows와 최대 용량 $C_k$를 가지는 $K$개의 차량이 있는 문제이다. $N$개의 노드가 방문되어야하고 각 노드 $i$에서 quantity $q_i$가 배송되어야만 한다. 각 노드는 $[a_i,b_i]$로 정의된 time window를 가지며 $A$는 arc 집합을 나타내고 $d$는 각 arc에 대한 거리를 나타낸다. 노드 0과 $N+1$은 dummy 노드 즉, depot를 나타낸다. 목적함수는 $K$개의 차량이 모든 노드에 quantity를 배송하기 위한 최소 거리의 경로 집합를 찾는 것이다.
+<br><br>
+<span style = "font-weight:700; font-size:1.2em;  margin-right: 1em;">
+MIP model
+</span>
+<br><br>
+$x_{ijk}$는 차량 $k$가 arc $(i,j)$ 사용에 대한 이진변수를 나타내고 $s_{ik}$는 차량 $k$가 노드 i에 도착하는 시간을 나타낸다. 제약식은 routes가 valid path를 갖도록 해준다. (모든 차량이 용량을 넘지않고 각 노드가 정확히 한번만 커버되는 것)
 
 <br><br>
-이 논문에서는 UNITEN CVRP의 optimal solution을 얻기 위해 다음을 목표로 한다.
+
+$$
+\begin{align}
+\min \quad & \sum_{k=1}^{K} \sum_{(i, j) \in A} d(i, j) x_{i j k}, \\ 
+& \sum_{j \in \delta^{+}(0)} x_{0 j k}=1 \quad \forall k \in\{1, \ldots, K\}, \\ 
+& \sum_{i \in \delta^{-}(j)} x_{i j k}-\sum_{i \in \delta^{+}(j)} x_{j i k}=0 \quad \forall k \in\{1, \ldots, K\}, \quad \forall j \in\{1, \ldots, N\}, \\ 
+& \sum_{i \in \delta^{-}(N+1)} x_{i, N+1, k}=1 \quad \forall k \in\{1, \ldots, K\}, \\ 
+& \sum_{i \in S} \sum_{j \in S, j \neq i} x_{i j k} \leqslant|S|-1 \quad \forall k \in\{1, \ldots, K\}, \quad \forall S \subset X ,  1<|S|< N, \\ 
+& \sum_{k=1}^{K} \sum_{j \in \delta^{+}(i)} x_{i j k}=1 \quad \forall i \in\{1, \ldots, N\}, \\ & \sum_{i=1}^{N} q_{i} \sum_{j \in \delta^{+}(i)} x_{i j k} \leqslant C_{k} \quad \forall k \in\{1, \ldots, K\}, \\ 
+& s_{i k}+d(i, j)-K\left(1-x_{i j k}\right) \leqslant s_{j k} \quad \forall(i, j) \in A, \quad \forall k \in\{1, \ldots, K\}, \\ 
+& \quad \quad \quad a_{i} \leqslant s_{i k} \leqslant b_{i} \quad \forall i \in\{1, \ldots, N\}, \quad \forall k \in\{1, \ldots, K\}, \\
+& \quad \quad \quad x_{ijk} \in \{0,1\} \quad \forall k \in \{1, \ldots, K\}, \quad \forall (i,j) \in A.
+\end{align}
+$$
+<br>
+목적함수(1)는 사용하는 arc의 거리 총합을 최소화하는 것이다. 제약식(2)-(4)는 차량 $k$의 flow를 나타내고 제약식(5)는 subtour를 제거해준다. 제약식(6)은 각 노드가 최대 한개의 차량에 의해 방문되어야함을 뜻하고 제약식(7)은 차량의 용량을 넘지않아야함을 뜻한다. 제약식(8)과 (9)는 time windows를 정의한다. 이 때 subtour 제약식의 수가 exponential이므로 Branch-and-Cut을 사용하여 search하는 동안 dynamically 추가해준다. 
+
+<br><br>
+<span style = "font-weight:700; font-size:1.2em;  margin-right: 1em;">
+Dantzig-Wolfe decomposition
+</span>
+<br><br>
+위에서 정의한 MIP 모델에 Dantzig-Wolfe decomposition이 적용된다. 주어진 $k$에 대한 제약식(2)-(5)와 (7)에 해당하는 행렬 $B_k$를 고려한다. $B_k$로 정의된 polytope은 차량 $k$에 대한 valid path의 extreme points 집합 $\Omega_k$를 허용한다. 따라서 그 포인트 중 하나를 path들의 linear combination으로 쓸 수 있다. 이를 위해 극점 $\lambda^p_k$에 해당하는 path에 속하면 1 아니면 0인 계수 $x^p_{ijk}$를 사용한다. 따라서 $k \in \{1,\ldots,K\}$에 대해 솔루션 $x_{ijk}$를 다음과 같이 나타낼 수 있다. 
+<br><br>
+$$
+\begin{aligned}
+&x_{ijk} = \sum_{p \in \Omega_k} x^p_{ijk} \lambda^p_k \quad \forall (i,j) \in A, \\
+&\sum_{p \in \Omega_k} \lambda^p_k  = 1 \quad \forall k \in \{1,\ldots,K\}, \\
+&\lambda^p_k \geqslant 0 \quad \forall p \in \Omega_k.
+\end{aligned}
+$$
+<br>
+차량 $k$에 대한 route $p$의 cost를 $c^p_k$로 정의힌다. 또한 양수인 정수 $a^p_{ik}$는 route $p$에 대해 차량 $k$가 노드 $i$를 방문한 횟수를 나타낸다. 
+<br><br>
+$$
+\begin{aligned}
+&c^p_k = \sum_{(i,j) \in A} c(i,j)x^p_{ijk} \quad \forall k \in \{1,\ldots,K\}, \quad \forall p \in \Omega_k, \\
+&a^p_{ik} = \sum_{j \in \delta^+(i)} x^p_{ijk} \quad \forall i \in \{1,\ldots,\}N \quad \forall k \in \{1,\ldots,\}K, \quad \forall p \in \Omega_k, 
+\end{aligned}
+$$
+<br>
+이러한 표현들을 원래 모델로 대체한다면 다음과 같은 decomposed model을 얻는다. 
+<br><br>
+$$
+\begin{aligned}
+\min \quad & \sum_{k=1}^{K} \sum_{p \in \Omega_k} c^p_k \lambda^p_k, \\ 
+&\sum_{k=1}^{K} \sum_{p \in \Omega_k} a^p_{ik} \lambda^p_k  = 1 \quad \forall i \in \{1,\ldots,N\}, \\
+&\sum_{p \in \Omega_k} \lambda^p_k = 1 \quad \forall k \in \{1,\ldots,K\}, \\
+&\lambda^p_k \geqslant 0 \quad \forall k \in \{1,\ldots,K\} \forall p \in \Omega_k.
+\end{aligned}
+$$
+<br>
+capacity, subtour elimination, time window 제약은 extreme point path의 validity를 정의하는 subproblems로 이동된다. 
+<br><br>
+$$
+\begin{aligned}
+\min \quad & \sum_{(i, j) \in A} d(i, j) x_{i j}, \\ 
+& \sum_{j \in \delta^{+}(0)} x_{0 j }=1 , \\ 
+& \sum_{i \in \delta^{-}(j)} x_{i j}-\sum_{i \in \delta^{+}(j)} x_{j i}=0 \quad \forall j \in\{1, \ldots, N\}, \\ 
+& \sum_{i \in \delta^{-}(N+1)} x_{i, N+1}=1 , \\ 
+& \sum_{i \in S} \sum_{j \in S, j \neq i} x_{i j} \leqslant|S|-1 \quad \forall S \subset X ,  1<|S|< N, \\ 
+& \sum_{i=1}^{N} q_{i} \sum_{j \in \delta^{+}(i)} x_{i j } \leqslant C_{k}, \\ 
+& s_{i }+d(i, j)-K\left(1-x_{i j }\right) \leqslant s_{j } \quad \forall(i, j) \in A, \\ 
+& \quad \quad \quad a_{i} \leqslant s_{i} \leqslant b_{i} \quad \forall i \in\{1, \ldots, N\},  \\
+& \quad \quad \quad x_{ij} \in \{0,1\} \quad \forall (i,j) \in A.
+\end{aligned}
+$$
+
+<span style = "font-weight:700; font-size:1.2em;  margin-right: 1em;">
+Identical vehicles
+</span>
+<br><br>
+차량이 동일할 때 (총 용량이 같을 때) 모델의 일부를 다음과 같이 바꿀 수 있다. 
+$$
+\begin{aligned}
+\lambda^p = \sum^K_{k=1} \lambda^p_k \quad \forall p \in \Omega = \bigcup^K_{k=1} \Omega_k
+\end{aligned}
+$$
+그러면 다음과 같은 모델을 얻을 수 있다. 
+$$
+\begin{align}
+\min \quad & \sum_{p \in \Omega} c^p \lambda^p, \notag \\ 
+&\sum_{p \in \Omega} a^p_{i} \lambda^p  = 1 \quad \forall i \in \{1,\ldots,N\}, \\
+&\sum_{p \in \Omega} \lambda^p = K, \notag \\
+& \quad \quad \lambda^p \geqslant 0 \quad \forall p \in \Omega.
+\end{align}
+$$
+<br>
+decomposed model은 가능한 path 변수를 매우 많이 포함한다. 만약 $N$이 노드의 수라면 이론적으로 path 변수의 수는 $N$!개로 증가할 수 있다. 그렇기 때문에 column generation을 사용한다. 
+<br><br>
+
+Branch-and-Price는 흔히 사용되는 branching 기법이다. column generation을 할 때 reduced cost를 확인하여 제한된 모델에 추가될 새로운 변수를 찾는데 이러한 과정을 pricing이라 한다. 더 이상 추가할 column이 없을 때까지 반복하며 변수가 fractional인 경우에는 branching을 해준다. 일반적으로 set partitioning 제약식(11)은 set covering 제약으로 바뀐다. 
+<br><br>
+
+<span style = "font-weight:700; font-size:1.2em;  margin-right: 1em;">
+The pricing scheme
+</span>
+<br><br>
+$\pi_i$와 $\pi_0$을 각각 제약식 (11)과 (12)에 대한 dual 이라고 한다면 reduced cost는 다음과 같다.
+$$
+\begin{aligned}
+rc(p) = c(p) - \sum^N_{i=1} a^p_i \pi_i - \pi_0 = \sum_{(i,j) \in p} (d(i,j)-\pi_j) - \pi_0
+\end{aligned}
+$$
+<br>
+따라서 subproblem은 다음과 같은 cost를 가지고 용량을 넘지 않는 the shortest elementary path를 찾는 문제가 된다. 
+$$
+\begin{aligned}
+&rc(i,j) = d(i,j)-\pi_j \quad \forall j \in \{1,\ldots,N\}, \\
+&rc(i,N+1) = -\pi_0.
+\end{aligned}
+$$
+<br>
+
+<span style = "font-weight:700; font-size:1.2em;  margin-right: 1em;">
+Various possible subproblems
+</span>
+<br><br>
+path $p = (i_0 = 0, i_1, \ldots, (N+1))$라 하자. resources는 $L$로 일반화 될 수 있고 $l$에 의해 인덱싱된다. $D^l_i$는 노드 $i$에서 resource $l$의 누적된 양을 나타낸다. 거리 함수 $d^l(i,j)$는 $i$와 $j$사이의 resource $l$의 누적을 정의한다. $[a^l_i,b^l_i]$는 resource와 노드 각각의 쌍으로 정의된다. 여기서는 두 개의 연속적인 노드 $i$와 $j$ 사이의 누적된 resource의 증가는 triangle inequality를 만족해야한다는 것을 이용한다.
+$$
+\begin{aligned}
+d^l(i,k) \leqslant d^l(i,j) + d^l(j,k) \quad \forall l = 1\ldots L.
+\end{aligned}
+$$
+<br><br>
+<b>Theorem 1.</b> triangle inequality에 대한 resource 누적과 노드 사이의 cost 누적이 strictly positive일 때, non-elementary path를 가지는 마스터 문제의 optimal integer solution은 elementary path만을 포함한다. 
+<br><br>
+일반적으로 최단경로 subproblems는 cycle이 허용되는 pseudo-polynomial labeling algorithm으로 풀린다. 그러나 elementary path만 사용된다면 relaxed 마스터 문제는 더 제한되고 더 좋은 bound가 제공될 것이다. 
+<br><br>
+
+<span style = "font-weight:700; font-size:1.2em;  margin-right: 1em;">
+Labeling algorithm
+</span>
+<br><br>
+노드 $i$에서 partial path $p$는 label $E_p = (rc_p, D^0_p, \ldots , D^L_p)$와 관련되어 있다. 레이블링 알고리즘에서 사용되는 기본적인 rule은 dominance rule이고 다음을 만족하면 partial path $p_1$은 다른 partial path $p_2$를 dominate한다. 
+$$
+\begin{align}
+&rc_1 \leqslant rc_2, \\
+&D^l_1 \leqslant D^l_2 \quad \forall l \in \{0,\ldots L\}
+\end{align}
+$$
+<br>
+이 dominance rule은 elementary shortes path에 직접적으로 사용될 수 없다. 따라서 이 논문의 중점적인 결과는 실질적이고 효율적인 알고리즘의 수정을 제안하는 것이다. 
+<br><br>
+이 논문에서는 Ryan-Foster rules에 기초한 branching 기법을 사용한다. 같은 node $i$와 $j$를 공유하는 두 개의 fractional routes를 찾는다. (한 경로는 arc $(i,j)$를 사용하고 다른 경로는 사용하지 않는다.) 각 branch에서 최단 경로 서브문제는 문제의 구조를 깨지 않고 쉽게 수정될 수 있다. 
+<br><br>
+좋지 않은 lower bound를 가지는 노드를 prune하기 위해 bound의 quality가 중요한데 이 논문에서는 relaxation의 quality를 향상하기 위한 두 가지 방법을 제시한다. 첫 번째는 relaxation에 cutting plane을 추가하는 것이고 두 번째는 elementary shortest path subproblem에 기초한 것이다. SPRCTW를 사용할 경우 마스터 문제를 MP로 표시하고 ESPRCTW를 사용할 경우 EMP로 표시한다. MP에서 통합 제약을 제거하면 RMP로 표시하고 EMP에서 제거하면 REMP로 표시한다. 
+<br><br>
+<span style = "font-weight:700; font-size:1.2em;  margin-right: 1em;">
+Simple example
+</span>
+<br><br>
+depot에서 매우 먼 두 개의 노드 $i$와 $j$를 가지는 문제에 대해 다음과 같이 가정한다.
+$$
+\begin{aligned}
+&d(0,i) = d(0,j) = 100,\\
+&d(i,j) == 1.
+\end{aligned}
+$$
+용량과 time window는 크다고 가정한다. EMP의 optimal relaxed solution은 $LB_{elem}$ = 201 이 되도록 unique route 0-$i$-$j$-$(N+1)$로 만들어 진다. cycles가 허용되면 0-$(i-j)^n$-($N$+1)의 route 형식으로 $i$-$j$가 $n$번 반복된다. 
+
+<br><br>
+<p align="center">
+<img src="/images/post_img/4_fig1.png" width="350" height="360">
+</p>
+<span style = "font-weight:700; font-size:1.2em;  margin-right: 1em;">
+Use of cuts
+</span>
+<br><br>
+relaxed problem으로 부터 얻은 솔루션을 향상시키는 가장 흔한 방법은 $k$-path cuts과 같은 cutting plane을 추가하는 것이다. 
+$S$를 노드 집합, $\delta(S)$를 $S$에서의 outgoing arcs의 집합 ($\delta(S)$ = {($i$,$j$ $\in$ $A$/ $i$ $\in$ $S$, $j$ $\notin$ $S$}), $\mu^p_S$를 path $p$가 $\delta(S)$에서 가지는 arcs의 수라고 하자. 
+어떤 $k$ $\leqslant$ $\kappa(S)$에 대해 그 집합에서 최소 한개의 노드를 포함하는 경로에 해당하는 변수 $\lambda$에 $k$-path cut으로 알려진 새로운 제약을 다음과 같이 추가할 수 있다. 
+$$
+\begin{aligned}
+\sum_{p \in \Omega} \mu^p_S \lambda^p \geqslant k.
+\end{aligned}
+$$
+cut을 추가하는 것은 lower bound를 향상 시킬 수 있다. 그러나 MP에 subtour cut을 추가하여 얻은 bound는 EMP에서 얻은 bound와 같지 않다. 예를 들어 세 개의 노드 $i$, $j$, $k$를 가지고 있다고 가정하면 경로의 집합은 각각 $
+\frac{1}{2}$의 값을 가질 수 있다. 
+<br><br>
+0-$j$-$k$-($N$+1),
+<br>
+0-$i$-$j$-$k$-$i$-($N$+1).
+<br><br>
+이 솔루션이 어떤 subtour cut도 위반하지 않더라도 cycle을 포함하여 EMP의 솔루션이 될 수 없을 것이다. ESP가 풀기 더 어렵지만 cutting plane을 사용할 때 relaxation에 추가되는 violated cut을 분리하기 위해 다른 복잡한 알고리즘을 사용해야만 한다. 
+<br><br>
+<span style = "font-weight:700; font-size:1.2em;  margin-right: 1em;">
+Use of elementary paths
+</span>
+<br><br>
+MP와 EMP의 제약조건이 동일하고 column 집합이 다른 하나에 포함되어 있으면 MP는 EMP의 relaxation이고 RMP는 REMP의 relaxation이다. 따라서 서브문제에 ESPRCTW를 사용한다. 알고리즘의 worst practical efficiency와 better quality of bounds 사이에서 적절한 타협점을 갖도록 한다. 
+<br><br>
+elementary path 문제에 대한 labeling algorithm의 수정에 대해 제안하는데 두 개의 주요한 차이점이 적용된다.
+
 <ol>
-<li>모든 path에 대한 시간 소모와 거리를 줄이는 것 (빠른 수송을 가능하게 함)</li>
-<li>연료 사용과 추가적인 차량 유지 비용 등의 운송 비용을 줄이는 것</li>
-<li>UNITEN의 셔틀 버스 서비스를 최적화하는 CVRP 모델을 구현하는 것</li>
-<li>UNITEN CVRP와 같은 문제에 적용될 수 있는 알고리즘을 구현하는 것</li>
+<li>partial route는 부분 경로에서 이미 존재하는 노드로 갈 수 없다. </li>
+<li>label은 dominance rule을 사용하여 직접적으로 파악할 수 없다.</li>
 </ol>
 
-유전 알고리즘은 large space에 대한 복잡한 문제를 해결하는데 효과적이라 VRP의 다양한 유형을 풀 때 사용되지만 CVRP를 푸는데는 거의 사용되지 않았다. 따라서 이 논문에서는 CVRP를 유전 알고리즘으로 풀고자한다. 
-<br><br>
-
-그래프 Gr은 다음과 같이 표현된다. S는 station 집합, D는 station 사이의 거리를 의미한다. 
-$$Gr = (S,D); S = {s_0,s_1,...,s_n}, D = {(s_x,s_y):s_x,s_y \in S, x < y} $$
-$z$개의 차량에 대해 Decision factor function이 다음과 같이 rout 옵션을 결정한다.
-$$
-D f(x, y, z)\left\{\begin{array}{ll}1, & \text { true } \longleftarrow \operatorname{arc}(x, y) \\ & 0, \quad \text { otherwise }\end{array}\right.
-$$
-$z$는 경로의 거리를 줄이기 위해 1로 가정하고 CVRP를 formulation 한다.
-$$
-\text { Minimize }=\left(\sum_{x=0, x \neq y}^{n} D_{x, y} D f_{x, y}\right) \\
-\text {Therefore } x=0, y=1 \text { are subject to:} \\
-Df_{x,y} = 1, \quad \forall x \in S \\
-Df_{x,y} = 1, \quad \forall y \in S \\
-f(x) = 100 / \sum_{x=0,y=1}^n D_{x,y}
-$$
-모든 path에 대한 최소 비용은 거리에 의존하기 때문에 <b style = "color:#d7385e;font-size:1.2">염색체(chromosome)의 fitness value를 높이기 위해 거리를 줄여야</b> 한다. 위의 $f(x)$는 fitness를 의미한다. (CVRP 모델이 이상하다..)
-<br><br>
-이러한 CVRP모델을 푸는 유전알고리즘 과정은 다음과 같다.  
-<br><br>
-
-<p align="center">
-<img src="/images/post_img/ga.png" width="600" height="460">
-</p>
-
-이를 flow chart로 나타내면 다음과 같다. 
-
-<p align="center">
-<img src="/images/post_img/ga_flowchart.png" width="400" height="660">
-</p>
-
-이 논문에서 사용된 유전 알고리즘 연산으로 모집단, 적합도, 선택, 교차, 변이가 있다. 
-<br><br>
-<span style = "font-weight:700; font-size:1.2em;  margin-right: 1em;">
-모집단 (Population)
-</span>
-<br><br>
-모집단은 랜덤하게 생성된다. 각각의 <b style = "color:#d7385e;font-size:1.2">염색체(chromosome)</b>는 하나의 유효한 <b style = "color:#d7385e;font-size:1.2">경로(route)</b>를 나타내고 각 <b style = "color:#d7385e;font-size:1.2">location</b>은 <b style = "color:#d7385e;font-size:1.2">유전자(gene)</b>에 해당한다. 초기 모집단인 첫번째 염색체는 다음과 같이 표현된다.
-$$
-1\quad 2\quad 3\quad 4\quad 5\quad 6\quad 7\quad 8\quad 9
-$$ 
-초기 염색체가 생성되면 적합도(fitness)가 계산되고 가장 좋은 염색체로 설정된다.
-
-<br><br>
-
-<span style = "font-weight:700; font-size:1.2em;  margin-right: 1em;">
-적합치 (Fitness values)
-</span>
-<br><br>
-UNITEN CVRP에서 모든 path의 <b style = "color:#d7385e;font-size:1.2">최소 비용은 거리에 의존</b>한다. 염색체의 적합도는 모든 path에 대한 총 거리를 구하여 계산할 수 있다. path 거리는 D1 = station 1에서 stop 2 , D2 = station 2에서 stop 5까지의 거리 등 축약해서 나타낸다. 염색체 적합도를 높이기 위해 거리를 줄여야하고 적합도는 (100/총 거리의 합)으로 나타낸다. 
-
-<br><br>
-
-<span style = "font-weight:700; font-size:1.2em;  margin-right: 1em;">
-선택 (Selection)
-</span>
-<br><br>
-Strong selective factor는 혼합(hybrid) 교차를 위한 최적의 염색체만을 선택하여 가장 이상적인 솔루션을 유도할 수 있다. 이는 유전 알고리즘을 빨리 끝낼 수 있게 한다. 반면 Weak selective factor는 혼합 교차에서 적합도가 낮은 솔루션까지 확인해야함으로 더 많은 시간이 걸린다. 기존의 <b style = "color:#d7385e;font-size:1.2">룰렛 휠(roulette wheel)</b>은 가장 높은 적합도를 가지는 염색체를 선택하여 새로운 염색체를 만들고 이를 복제하여 새로운 세대(generation)를 형성하는 염색체 선택 방식이다. 
-<br><br>
-
-<span style = "font-weight:700; font-size:1.2em;  margin-right: 1em;">
-교차 (Crossover)
-</span>
-<br><br>
-랜덤 벡터를 생성하여 유전자를 선택하는 혼합교차가 이 알고리즘에서 사용되었다. 1이면 primary parent에서 0이면 second parent의 유전자를 선택하고 이를 결합하여 자손을 만든다. 예를 들어 부모 C1과 C2가 다음과 같이 주어지고 이진 벡터가 [10101001]이라면 자손1이 다음과 같이 생성된다.
-<br><br>
-
-<p align="center">
-<img src="/images/post_img/crossover.png" width="350" height="80">
-</p>
-
-<span style = "font-weight:700; font-size:1.2em;  margin-right: 1em;">
-변이 (Mutation)
-</span>
-<br><br>
-유전 알고리즘 연산을 계속 진행하면 local optimum에 도달하게 되는데 새로운 염색체에 확률적으로 돌연변이를 발생시켜 local optimum에서 빠져나올 수 있도록 한다. 돌연변이 체계는 모든 루프에서 3가지 상황을 반복한다. 첫 번째 염색체의 대체 염색체를 생성하며 테스트하고 두 개의 결과 유전자 사이에 immediate route가 없으면 새로운 염색체는 무효가 된다. 만약 새로운 염색체가 좋다면 적합도 함수 값이 계산된다. 만약 적합도 함수 값이 기존보다 우수하면 새로운 염색체가 best가 되고 루프가 종료된다. 
+첫 번째 항목은 $i$에서 끝나는 부분 경로는 아직 방문하지 않은 $j$로만 갈 수 있다는 의미이다. 두 번째 항목이 문제의 주된 어려움이므로 지배 규칙을 개선시키는 것을 목표로 한다. 새로운 지배 규칙은 최적해의 일부가 아니라 가능한 많은 부분 경로를 가능한 빨리 파악할 수 있게 해야한다.
 <br><br>
 
 
 <span style = "font-weight:700; font-size:1.2em;  margin-right: 1em;">
-결과 (Results)
+Computational Results
 </span>
 <br><br>
-이 연구는 UNITEN에서 학생들의 총 교통비를 줄이는 것을 목표로 하며 비용은 주로 경로의 거리에 관한 것이다. 향상된 유전 알고리즘은 테스트와 검증을 통해 station 양에 가장 적합한 경로를 찾는 것이 입증되었다. 버스는 학생들을 수송하기 위해 매일 A와 B 두 개의 경로로 운행된다. 
-
-<br><br>
-
-<div style="display: inline-block; margin-left: 0.55em;  ">
-<img src="/images/post_img/table1.png" width="300" height="120"  >
-</div>
-<div style="display: inline-block; margin-left: 0.55em; ">
-<img src="/images/post_img/table2.png" width="300" height="115" >
-</div>
-
-<div style="display: inline-block; margin-left: 0.75em;  ">
-<img src="/images/post_img/table3.png" width="300" height="120"  >
-</div>
-<div style="display: inline-block; margin-left: 0.75em; ">
-<img src="/images/post_img/table4.png" width="300" height="115" >
-</div>
-
-Table 1은 기존 경로의 거리를 나타내고 Table 2는 새로운 경로의 거리를 나타낸다. Table 3은 이 둘의 차이를 나타내고 Table 4는 거리 감소에 대한 비용 절약정도를 나타낸다. 
-<br><br>
-<b style = "color:#d7385e;font-size:1.2">각 경로의 거리 감소 정도는 작지만 두 경로에 대한 장기적인 감소는 크다.</b> 알고리즘의 성능과 신뢰성을 검증하기 위해 UKM의 동일한 문제를 풀기 위해 적용되었고 더 짧은 경로를 찾는데 성공하였다. UKM 각 경로의 거리 감소는 꽤 크다. 
-<br><br>
-<p align="center">
-<img src="/images/post_img/3_fig2.png" width="600" height="360">
-</p>
-
-<br><br>
-논문의 결론은 다음과 같이 정리할 수 있다. 
+데이터는 Solomon을 사용한다. Table 1에서는 R1과 RC1에서 얻은 bound를 [11]과 비교한다. 
 <ul>
-
-<li>UNITEN의 셔틀 버스 서비스를 최적화하기 위해 <b style = "color:#d7385e;font-size:1.2">CVRP 모델</b>을 구현하고 <b style = "color:#d7385e;font-size:1.2">유전 알고리즘</b>을 활용하여 이를 해결하였다.</li>
-<li>그러나 알고리즘에서 단일 변수인 <b style = "color:#d7385e;font-size:1.2">거리</b>만 고려하고 버스 정류장이 적고 한정되어 있어 솔루션을 찾기가 상당히 쉽기 때문에 복잡한 문제를 효율적으로 처리하는 것으로 알려진 유전 알고리즘의 강점을 드러내지 않았다는 한계점이 있다.</li>
-<li>추후에는 Selangor와 UNITEN의 다른 locations간의 최단 거리를 찾는 알고리즘으로 확장할 것이다.</li>
+<li>$i$-$j$-$i$ 형태의 cycle만 금지하는 서브문제에 해당하는 $LB$와 [11]의 $LB(1)$ 비교 </li>
+<li>Branch-and-Price root node에 subtour cut과 2-path cut을 추가한 $LB(2)$와 [11]의 $LB(1)$ 비교 </li>
 </ul>
+<p align="center">
+<img src="/images/post_img/4_table1.png" width="600" height="160">
+</p>
+평균적으로 이 논문에서 제시한 lower bonud와 최적해의 갭은 $LB(1)$과 최적해의 갭보다 17% 더 작았다. $LB(2)$를 사용한 것은 갭이 47% 더 작았다. 
+<br><br>
+<p align="center">
+<img src="/images/post_img/4_table2.png" width="600" height="460">
+</p>
 
-보통 유전알고리즘으로 CVRP 문제를 안푸는 이유는 잘 풀리지 않기 때문이라고 한다. 이 논문은 너무 작은 문제에 대해서 풀기도 했고 그냥 수리모형으로 formulation했으면 더 큰 문제도 금방 풀었을텐데 의미가 거의 없는 논문이라고 할 수 있다. 논문을 고를 때 좋은 논문을 고를 수 있도록 더 많은 논문을 읽어봐야겠다.
-
-
+Table 2는 series 2의 instance에 대해 얻은 lower bound 향상에 대한 디테일을 제공한다. RC2 instance 대부분에 대한 향상된 bound는 integral solution에 해당하고 branching이 필요하지 않다. 
+<br><br>
+<p align="center">
+<img src="/images/post_img/4_table3.png" width="600" height="460">
+</p>
 <hr>
 
 
