@@ -249,7 +249,58 @@ elementary path 문제에 대한 labeling algorithm의 수정에 대해 제안�
 첫 번째 항목은 $i$에서 끝나는 부분 경로는 아직 방문하지 않은 $j$로만 갈 수 있다는 의미이다. 두 번째 항목이 문제의 주된 어려움이므로 지배 규칙을 개선시키는 것을 목표로 한다. 새로운 지배 규칙은 최적해의 일부가 아니라 가능한 많은 부분 경로를 가능한 빨리 파악할 수 있게 해야한다.
 <br><br>
 
+<span style = "font-weight:700; font-size:1.2em;  margin-right: 1em;">
+A preliminary modified dominance rule
+</span>
+<br><br>
+수정된 지배 규칙은 부분 경로 $p_1$이 다른 부분 경로 $p_2$를 지배하는 충분 조건이 (13)과 (14) 조건을 만족하고 노드 집합 $V(p_2)$에 $V(p_1)$을 포함할 때 사용된다. 
+$$
+\begin{align}
+V(p_1) \subseteq V(p_2).
+\end{align}
+$$
+기본적인 새로운 지배 규칙은 많은 레이블을 만들어낼 것이다. 실제로 노드의 집합이 다른 것에 포함되지 않는((15)를 만족하지 않는) 두 개의 부분 경로는 지배 규칙에 해당되지 않는다. 따라서 이 규칙에 대한 complete 수정과 heuristic 수정에 대한 개선을 소개한다. 
+<br><br>
 
+<span style = "font-weight:700; font-size:1.2em;  margin-right: 1em;">
+Exact improvement of the dominance rule
+</span>
+<br><br>
+$p_1$의 일부 노드를 거치면서 얻을 수 있는 reduced cost의 예상되는 개선을 추정함으로써 지배 규칙을 향상시킬 수 있다. 
+$p_1$과 $p_2$를 같은 노드 $m$에서 끝나는 두 개의 부분 경로라고 하자. $V(p)$는 부분 경로 $p$에 의해 방문된 노드의 집합이다. $V(p_1)$ \ $V(p_2)$ = {n}일 때 근사치를 고려해보자.
+<br><br>
+1. Bound on improvement with $\pi_n$ : $p^*_2$가 부분 경로 $p_2$의 확장이기 때문에 $n$을 제외하고 $p^*_1$을 같은 방법으로 만들 수 있다. $p^*_2$에서 이전 노드 $i$와 다음 노드 $j$를 사용하여 다음과 같이 나타낼 수 있다. 
+$$
+\begin{aligned}
+rc^*_2 - rc^*_1 = c(i,n) + c(n,j) - c(i,j) - \pi_n + rc_2 -rc_1.
+\end{aligned}
+$$
+따라서 다음과 같은 경우에만 $p^*_2$가 $p^*_1$보다 더 좋다. 
+$$
+\begin{aligned}
+ c(i,n) + c(n,j) - c(i,j) - \pi_n + rc_2 -rc_1 < 0.
+\end{aligned}
+$$
+비용 부분(triangle inequality로 인해 항상 양수이다)을 과소평가함으로써 $p_2$를 제거하기 위한 충분 조건은 다음과 같다.
+$$
+\begin{align}
+- \pi_n \geqslant rc_1 -rc_2.
+\end{align}
+$$
+2. Bounds on improvement with $\pi_n$ − $minAddedArcCost_n$: 비용 부분의 더 나은 근사를 사용하고 다음과 같은 식을 사용하여 과소평가 한다. 
+$$
+\begin{align}
+minAddedArcCost_n = min_{i\in prec(n),j\in succ(n)}(c(i, n) + c(n, j) − c(i, j)),
+\end{align}
+$$
+$prec(n)$은 노드 $n$의 가능한 predecessors의 집합, $succ(n)$은 가능한 successors의 집합이다. 이는 각 노드 $n$에 대한 알고리즘 초기화 단계에서 계산될 수 있다. 따라서 충분 조건은 다음과 같다.
+$$
+\begin{align}
+minAddedArcCost_n - \pi_n \geqslant rc_1 - rc_2.
+\end{align}
+$$
+(16)과 (17) 두 개의 조건은 더 많은 레이블을 파악하는데 사용될 수 있다. 이러한 조건들은 $Card(V(p_1)$\ $V(p_2))$ > 1인 경우에 일반화 될 수 있다. 그러나 실질적으로 좋은 bound를 찾는 것이 어렵기 때문에 알고리즘을 $Card(V(p_1)$\ $V(p_2))$ $\leqslant$ 2인 경우로 제한했다.
+<br><br>
 <span style = "font-weight:700; font-size:1.2em;  margin-right: 1em;">
 Computational Results
 </span>
