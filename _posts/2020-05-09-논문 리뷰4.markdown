@@ -62,7 +62,7 @@ $$
 \end{align}
 $$
 <br>
-목적함수(1)는 사용하는 arc의 거리 총합을 최소화하는 것이다. 제약식(2)-(4)는 차량 $k$의 flow를 나타내고 제약식(5)는 subtour를 제거해준다. 제약식(6)은 각 노드가 최대 한개의 차량에 의해 방문되어야함을 뜻하고 제약식(7)은 차량의 용량을 넘지않아야함을 뜻한다. 제약식(8)과 (9)는 time windows를 정의한다. 이 때 subtour 제약식의 수가 exponential이므로 Branch-and-Cut을 사용하여 search하는 동안 dynamically 추가해준다. 
+목적함수(1)는 사용하는 arc의 거리 총합을 최소화하는 것이다. 제약식(2)-(4)는 차량 $k$의 flow를 나타내고 제약식(5)는 subtour를 제거해준다. 제약식(6)은 각 노드가 최대 한개의 차량에 의해 방문되어야함을 뜻하고 제약식(7)은 차량의 용량을 넘지않아야함을 뜻한다. 제약식(8)과 (9)는 time windows를 정의한다. 이 때 subtour 제약식의 수가 exponential이므로 Branch-and-Cut을 사용하여 dynamically 추가해준다. 
 
 <br><br>
 <span style = "font-weight:700; font-size:1.2em;  margin-right: 1em;">
