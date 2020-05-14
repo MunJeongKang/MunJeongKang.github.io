@@ -329,7 +329,7 @@ Table 3은 17개의 Solomon instance에 대한 결과이다. OPT는 optimal solu
 <p align="center">
 <img src="/images/post_img/4_table4.png" width="600" height="460">
 </p>
-Table 4는 솔로몬의 전체 instance에 대한 결과이다. 시간 제한은 1시간으로 두고 이전과 동일한 계산 조건을 사용한다. gap은 발견된 솔루션에서 가장 좋은 lower bound의 차이를 뜻하고 OPT는 최적에 도달한 경우의 수와 괄호안에 최적화가 입증된 경우의 수를 나타낸다. 시간 제한 때문에 최적해가 최적임이 증명되지 않아도 발견될 수 있다. 
+Table 4는 솔로몬의 전체 instance에 대한 결과이다. 시간 제한은 1시간으로 두고 이전과 동일한 계산 조건을 사용한다. gap은 발견된 솔루션에서 가장 좋은 lower bound의 차이를 뜻하고 OPT는 최적에 도달한 경우의 수와 괄호안에 최적화가 입증된 경우의 수를 나타낸다. 시간 제한 때문에 최적해가 증명되지 않아도 발견될 수 있다. 
 <br><br>
 논문의 결론은 다음과 같이 정리할 수 있다. 
 <ul>
@@ -339,8 +339,6 @@ Table 4는 솔로몬의 전체 instance에 대한 결과이다. 시간 제한은
 </ul>
 
 <hr>
-
-
 
 <div style = "font-weight:700; font-size:1.3em; text-align:center;">Cite
 </div>
