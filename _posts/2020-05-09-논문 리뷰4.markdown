@@ -231,7 +231,7 @@ cut을 추가하는 것은 lower bound를 향상 시킬 수 있다. 그러나 MP
 <br>
 0-$i$-$j$-$k$-$i$-($N$+1).
 <br><br>
-이 솔루션이 어떤 subtour cut도 위반하지 않더라도 cycle을 포함하여 EMP의 솔루션이 될 수 없을 것이다. ESP가 풀기 더 어렵지만 cutting plane을 사용할 때 relaxation에 추가되는 violated cut을 분리하기 위해 다른 복잡한 알고리즘을 사용해야만 한다. 
+이 솔루션이 어떤 subtour cut을 위반하지 않더라도 cycle을 포함하여 EMP의 솔루션이 될 수 없을 것이다. ESP가 풀기 더 어렵지만 cutting plane을 사용할 때 relaxation에 추가되는 violated cut을 분리하기 위해 다른 복잡한 알고리즘을 사용해야만 한다. 
 <br><br>
 <span style = "font-weight:700; font-size:1.2em;  margin-right: 1em;">
 Use of elementary paths
