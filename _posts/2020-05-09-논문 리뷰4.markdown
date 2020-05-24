@@ -299,7 +299,7 @@ $$
 minAddedArcCost_n - \pi_n \geqslant rc_1 - rc_2.
 \end{align}
 $$
-(16)과 (17) 두 개의 조건은 더 많은 레이블을 파악하는데 사용될 수 있다. 이러한 조건들은 $Card(V(p_1)$\ $V(p_2))$ > 1인 경우에 일반화 될 수 있다. 그러나 실질적으로 좋은 bound를 찾는 것이 어렵기 때문에 알고리즘을 $Card(V(p_1)$\ $V(p_2))$ $\leqslant$ 2인 경우로 제한했다.
+(16)과 (17) 두 개의 조건은 더 많은 레이블을 파악하는데 사용될 수 있다. 이러한 조건들은 $Card(V(p_1)$\ $V(p_2))$ > 1인 경우에 일반화 될 수 있다. 그러나 좋은 bound를 찾는 것이 어렵기 때문에 알고리즘을 $Card(V(p_1)$\ $V(p_2))$ $\leqslant$ 2인 경우로 제한했다.
 <br><br>
 <span style = "font-weight:700; font-size:1.2em;  margin-right: 1em;">
 Computational Results
