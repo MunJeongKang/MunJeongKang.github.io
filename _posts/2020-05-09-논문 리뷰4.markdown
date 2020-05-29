@@ -174,7 +174,7 @@ $$
 <br>
 <b>Theorem 1.</b> triangle inequality에 대한 resource 누적과 노드 사이의 cost 누적이 strictly positive일 때, non-elementary path를 가지는 마스터 문제의 optimal integer solution은 elementary path만을 포함한다. 
 <br><br>
-일반적으로 최단경로 subproblems는 cycle이 허용되는 pseudo-polynomial labeling algorithm으로 풀린다. 그러나 elementary path만 사용된다면 relaxed 마스터 문제는 더 제한되고 더 좋은 bound가 제공될 것이다. 
+일반적으로 최단경로 서브문제는 cycle이 허용되는 pseudo-polynomial labeling algorithm으로 풀린다. 그러나 elementary path만 사용된다면 relaxed 마스터 문제는 더 제한되고 더 좋은 bound가 제공될 것이다. 
 <br><br>
 
 <span style = "font-weight:700; font-size:1.2em;  margin-right: 1em;">
