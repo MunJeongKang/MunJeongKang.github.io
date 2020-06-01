@@ -34,7 +34,7 @@ When <u>vehicle routing problems</u> with additional constraints, such as capaci
 
 <div style = "font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; text-indent:5%; ">
 
-VRP란 주어진 고객들을 모두 방문하는 차량 경로들의 집합을 구하는 문제이다. 목적함수는 총 비용(거리)를 최소화하는 경로를 찾는 것이다. Column generation을 적용하기 위해 set covering 문제로 reformulation을 하는데 이렇게 하는 이유는 매우 타이트한 lower bound를 줄 수 있기 때문이다. 
+VRP란 주어진 고객들을 모두 방문하는 차량 경로들의 집합을 구하는 문제다. 목적함수는 총 비용(거리)를 최소화하는 경로를 찾는 것이다. Column generation을 적용하기 위해 set covering 문제로 reformulation을 하는데 이렇게 하는 이유는 매우 타이트한 lower bound를 줄 수 있기 때문이다. 
 </div>
 
 <div >
