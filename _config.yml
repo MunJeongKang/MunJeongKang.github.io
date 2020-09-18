@@ -31,7 +31,7 @@ twitter:
   username: twitter_username            # change to your twitter username
 
 social:
-  name: mj                  # it will shows as the copyright owner in Footer
+  name: mj's blog                  # it will shows as the copyright owner in Footer
   email: mj0225868@gmail.com            # change to your email address
   links:
     # The first element serves as the copyright owner's link
@@ -125,18 +125,18 @@ defaults:
     values:
       comments: false
   -
-    scope:
-      path: tags
-    values:
-      tab_active: Tags
-      location: Tag
-      breadcrumb:
-        -
-          label: Home
-          url: /
-        -
-          label: Tags
-          url: /tabs/tags/
+    # scope:
+    #   path: tags
+    # values:
+    #   tab_active: Tags
+    #   location: Tag
+    #   breadcrumb:
+    #     -
+    #       label: Home
+    #       url: /
+    #     -
+    #       label: Tags
+    #       url: /tabs/tags/
   -
     scope:
       path: categories
