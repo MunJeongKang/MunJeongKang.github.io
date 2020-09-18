@@ -46,6 +46,9 @@ Optimization/Python Programming
     '**Network Design & Facility Operations Modeling**' <br>
     Sponserd by Bayer <br>
     수리계획법을 활용한 시뮬레이션을 구현하고 강화학습을 결합하여 최적화 문제를 풀었다. <br> with 현우, 기원, 형주.
+    - LG AI 해커톤 블록 장난감 제조 공정 최적화 경진대회 2등 <br>
+    Action Transfer Reinforcement Learning (ATRL) 알고리즘을 개발하여 제조 공정 최적화 with 현우, 민영, 영근. [발표자료](/images/lg.pdf), [수상사진](/images/lgwin.png)
+
 
 -----
 
@@ -67,4 +70,6 @@ Optimization/Python Programming
 
 #### * PAPER
 
-- Lee, Y., Kang, M., Kim, N., & Lee, C. (2019). 지역별 중요도를 고려한 드론 최적 경로 감시 시스템 / Drone surveillance system considering dynamic POIs. Journal of the Korean Institute of Industrial Engineers, 45(5).
+- Lee, Y., Kang, M., Kim, N., Lee, C., (2019). 지역별 중요도를 고려한 드론 최적 경로 감시 시스템 / Drone surveillance system considering dynamic POIs. *Journal of the Korean Institute of Industrial Engineers*,**45**(5), pp.416-429. [논문](/images/paper_DLRwA.pdf)
+
+- Kang, M., Kyung, J., Lee, C., (2020). 시간에 의존하는 이익이 발생하는 외판원문제에 대한 최적화 알고리즘/ An Algorithm for TSP with Time Dependent Profits (TSPwTDP). *Journal of the Korean Institute of Industrial Engineers*, **46**(3), pp.338-348. [논문](/images/paper_TSPwTDP.pdf)

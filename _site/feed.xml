@@ -5,8 +5,8 @@
     <description>github blog</description>
     <link>http://munjeongkang.github.io/</link>
     <atom:link href="http://munjeongkang.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 11 May 2020 03:48:52 +0900</pubDate>
-    <lastBuildDate>Mon, 11 May 2020 03:48:52 +0900</lastBuildDate>
+    <pubDate>Fri, 18 Sep 2020 19:17:51 +0900</pubDate>
+    <lastBuildDate>Fri, 18 Sep 2020 19:17:51 +0900</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -67,7 +67,7 @@ $$
 \end{align}
 $$
 &lt;br /&gt;
-목적함수(1)는 사용하는 arc의 거리 총합을 최소화하는 것이다. 제약식(2)-(4)는 차량 $k$의 flow를 나타내고 제약식(5)는 subtour를 제거해준다. 제약식(6)은 각 노드가 최대 한개의 차량에 의해 방문되어야함을 뜻하고 제약식(7)은 차량의 용량을 넘지않아야함을 뜻한다. 제약식(8)과 (9)는 time windows를 정의한다. 이 때 subtour 제약식의 수가 exponential이므로 Branch-and-Cut을 사용하여 search하는 동안 dynamically 추가해준다. 
+목적함수(1)는 사용하는 arc의 거리 총합을 최소화하는 것이다. 제약식(2)-(4)는 차량 $k$의 flow를 나타내고 제약식(5)는 subtour를 제거해준다. 제약식(6)은 각 노드가 최대 한개의 차량에 의해 방문되어야함을 뜻하고 제약식(7)은 차량의 용량을 넘지않아야함을 뜻한다. 제약식(8)과 (9)는 time windows를 정의한다. 이 때 subtour 제약식의 수가 exponential이므로 Branch-and-Cut을 사용하여 dynamically 추가해준다. 
 
 &lt;br /&gt;&lt;br /&gt;
 &lt;span style=&quot;font-weight:700; font-size:1.2em;  margin-right: 1em;&quot;&gt;
@@ -179,7 +179,7 @@ $$
 &lt;br /&gt;
 &lt;b&gt;Theorem 1.&lt;/b&gt; triangle inequality에 대한 resource 누적과 노드 사이의 cost 누적이 strictly positive일 때, non-elementary path를 가지는 마스터 문제의 optimal integer solution은 elementary path만을 포함한다. 
 &lt;br /&gt;&lt;br /&gt;
-일반적으로 최단경로 subproblems는 cycle이 허용되는 pseudo-polynomial labeling algorithm으로 풀린다. 그러나 elementary path만 사용된다면 relaxed 마스터 문제는 더 제한되고 더 좋은 bound가 제공될 것이다. 
+일반적으로 최단경로 서브문제는 cycle이 허용되는 pseudo-polynomial labeling algorithm으로 풀린다. 그러나 elementary path만 사용된다면 relaxed 마스터 문제는 더 제한되고 더 좋은 bound가 제공될 것이다. 
 &lt;br /&gt;&lt;br /&gt;
 
 &lt;span style=&quot;font-weight:700; font-size:1.2em;  margin-right: 1em;&quot;&gt;
@@ -236,7 +236,7 @@ cut을 추가하는 것은 lower bound를 향상 시킬 수 있다. 그러나 MP
 &lt;br /&gt;
 0-$i$-$j$-$k$-$i$-($N$+1).
 &lt;br /&gt;&lt;br /&gt;
-이 솔루션이 어떤 subtour cut도 위반하지 않더라도 cycle을 포함하여 EMP의 솔루션이 될 수 없을 것이다. ESP가 풀기 더 어렵지만 cutting plane을 사용할 때 relaxation에 추가되는 violated cut을 분리하기 위해 다른 복잡한 알고리즘을 사용해야만 한다. 
+이 솔루션이 어떤 subtour cut을 위반하지 않더라도 cycle을 포함하여 EMP의 솔루션이 될 수 없을 것이다. ESP가 풀기 더 어렵지만 cutting plane을 사용할 때 relaxation에 추가되는 violated cut을 분리하기 위해 다른 복잡한 알고리즘을 사용해야만 한다. 
 &lt;br /&gt;&lt;br /&gt;
 &lt;span style=&quot;font-weight:700; font-size:1.2em;  margin-right: 1em;&quot;&gt;
 Use of elementary paths
@@ -304,7 +304,7 @@ $$
 minAddedArcCost_n - \pi_n \geqslant rc_1 - rc_2.
 \end{align}
 $$
-(16)과 (17) 두 개의 조건은 더 많은 레이블을 파악하는데 사용될 수 있다. 이러한 조건들은 $Card(V(p_1)$\ $V(p_2))$ &amp;gt; 1인 경우에 일반화 될 수 있다. 그러나 실질적으로 좋은 bound를 찾는 것이 어렵기 때문에 알고리즘을 $Card(V(p_1)$\ $V(p_2))$ $\leqslant$ 2인 경우로 제한했다.
+(16)과 (17) 두 개의 조건은 더 많은 레이블을 파악하는데 사용될 수 있다. 이러한 조건들은 $Card(V(p_1)$\ $V(p_2))$ &amp;gt; 1인 경우에 일반화 될 수 있다. 그러나 좋은 bound를 찾는 것이 어렵기 때문에 알고리즘을 $Card(V(p_1)$\ $V(p_2))$ $\leqslant$ 2인 경우로 제한했다.
 &lt;br /&gt;&lt;br /&gt;
 &lt;span style=&quot;font-weight:700; font-size:1.2em;  margin-right: 1em;&quot;&gt;
 Computational Results
@@ -334,7 +334,7 @@ Table 3은 17개의 Solomon instance에 대한 결과이다. OPT는 optimal solu
 &lt;p align=&quot;center&quot;&gt;
 &lt;img src=&quot;/images/post_img/4_table4.png&quot; width=&quot;600&quot; height=&quot;460&quot; /&gt;
 &lt;/p&gt;
-Table 4는 솔로몬의 전체 instance에 대한 결과이다. 시간 제한은 1시간으로 두고 이전과 동일한 계산 조건을 사용한다. gap은 발견된 솔루션에서 가장 좋은 lower bound의 차이를 뜻하고 OPT는 최적에 도달한 경우의 수와 괄호안에 최적화가 입증된 경우의 수를 나타낸다. 시간 제한 때문에 최적해가 최적임이 증명되지 않아도 발견될 수 있다. 
+Table 4는 솔로몬의 전체 instance에 대한 결과이다. 시간 제한은 1시간으로 두고 이전과 동일한 계산 조건을 사용한다. gap은 발견된 솔루션에서 가장 좋은 lower bound의 차이를 뜻하고 OPT는 최적에 도달한 경우의 수와 괄호안에 최적화가 입증된 경우의 수를 나타낸다. 시간 제한이 있기 때문에 최적해가 증명되지 않아도 발견될 수 있다. 
 &lt;br /&gt;&lt;br /&gt;
 논문의 결론은 다음과 같이 정리할 수 있다. 
 &lt;ul&gt;
@@ -344,8 +344,6 @@ Table 4는 솔로몬의 전체 instance에 대한 결과이다. 시간 제한은
 &lt;/ul&gt;
 
 &lt;hr /&gt;
-
-
 
 &lt;div style=&quot;font-weight:700; font-size:1.3em; text-align:center;&quot;&gt;Cite
 &lt;/div&gt;
