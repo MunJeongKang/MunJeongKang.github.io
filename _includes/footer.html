@@ -1,33 +1,10 @@
-<!--
-  The Footer
-  v2.0
-  https://github.com/cotes2020/jekyll-theme-chirpy
-  © 2017-2019 Cotes Chung
-  MIT License
--->
+<footer class="footer t-center">
+  <div class="container">
 
-<footer class="d-flex w-100 justify-content-center">
-  <div class="d-flex justify-content-between align-items-center">
-    <div class="footer-left">
-      <p class="mb-0">
-        © {{ 'now' | date: "%Y" }}
-        <a href="{{ site.social.links[0] }}">{{ site.social.name }}</a>.
-        {% if site.data.rights.brief %}
-        <span data-toggle="tooltip" data-placement="top"
-          title="{{ site.data.rights.verbose }}">{{ site.data.rights.brief }}</span>
-        {% endif %}
-      </p>
-    </div>
+    {% include social-icons.html %}
 
-    <div class="footer-right">
-      <p class="mb-0">
-        Powered by
-        <a href="https://jekyllrb.com" target="_blank">Jekyll</a>
-        with
-        <a href="https://github.com/cotes2020/jekyll-theme-chirpy/">Chirpy</a>
-        theme.
-      </p>
-    </div>
-
-  </div> <!-- div.d-flex -->
+    <small>email : mj0225868@gmail.com</small>
+    <!-- <small>&copy; {{ site.time | date: '%Y' }} All rights reserved. Made with <a href="http://jekyllrb.com" target="_blank">Jekyll</a> and <i class="icon icon-heart"></i></small> -->
+    <!-- <small>by <a href="http://nandomoreira.me" target="_blank">nandomoreira.me</a></small> -->
+  </div>
 </footer>
