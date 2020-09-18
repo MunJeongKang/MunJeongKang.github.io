@@ -1,0 +1,34 @@
+# Site settings
+title: 코딩새내기 일상일지
+email: mj0225868@gmail.com
+description: github blog
+baseurl : ""
+url: "http://munjeongkang.github.io"
+
+author:
+  name     : 'Munjeong Kang'
+  email    : mj0225868@gmail.com
+  facebook : https://www.facebook.com/profile.php?id=100037691644622
+
+mylab: https://hufsoptblog.github.io
+
+#disqus_url : 'https://munjeong.disqus.com/embed.js'
+#disqus_id : disqus_65HYjgoI8N
+
+disqus_shortname: "munjeong"
+google_analytics: UA-162750328-1
+
+paginate: 10
+comments: true
+paginate_path: "/page/:num"
+
+sass:
+  style: :compressed
+  sass_dir: _sass
+
+# Build settings
+markdown  : kramdown
+permalink : /:title/
+
+plugins:
+  - jekyll-sitemap
