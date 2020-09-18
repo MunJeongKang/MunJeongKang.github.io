@@ -1,0 +1,12 @@
+I"�<hr />
+<p><span style="font-weight:700; font-size:1.3em; margin-left: 0.8em; margin-right: 1em;">
+모델 설명
+</span>
+<br /></p>
+<div style="font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; ">
+이번에는 <b style="color:#d7385e;font-size:1.2">Butterfly Hilltopping Model</b>의 <b style="color:#d7385e;font-size:1.2">ODD</b>를 설명하고자 한다. 일단 ODD란 <b style="color:#d7385e;font-size:1.2">O</b>verview, <b style="color:#d7385e;font-size:1.2">D</b>esign Concepts, <b style="color:#d7385e;font-size:1.2">D</b>etails의 약어이다. Overview는 이 모델이 무엇인지, 어떻게 디자인 되었는지 설명한다. (Purpose, Entities, State Variables, Scales, Process Overview, Scheduling 등) Design Concepts는 ABM의 필수적인 특징을 묘사하고 디자인 컨셉을 설명한다. Details는 완전한 묘사를 위해 필요한 세부 사항을 포함한다. (Initialization, Input Data, Submodels 등)
+<br /><br />
+많은 동물들이 여러 목적(mating 등)을 위해 home location을 떠나 다른 곳으로 이동한다. 특히 나비들은 landscape에 반응하여 움직이는데 이러한 움직임을 <b style="color:#d7385e;font-size:1.2">Corridors</b> 라고 불리는 경로로 연결시킬 수 있다. 이는 나비 떼가 짝을 만나기 위해 hilltop을 향해 이동하는 모양이 통로처럼 보여 붙여진 이름이다. Butterfly Hilltopping 모델은 가상의 corridors에 대해 설명하기 위해 디자인되었다. 즉, 나비들이 hilltop을 향해 움직이는 행동이 조건으로 주어졌을 때, landscape의 지형이 가상의 corridors의 발현(emergence)을 이끄는지 시뮬레이션 해보는 것이다. 
+<br /><br />
+</div>
+:ET

@@ -1,0 +1,28 @@
+I"
+<p>맥북을 사용할 때 유용한 단축키에 대해 정리하려고 한다.</p>
+
+<ul>
+  <li>창 숨기기 : <code class="language-plaintext highlighter-rouge">command + H</code> <br /></li>
+  <li>창 불러오기 : <code class="language-plaintext highlighter-rouge">command + Tab</code> <br /></li>
+  <li>현재 창 닫기 : <code class="language-plaintext highlighter-rouge">command + W</code> <br /></li>
+  <li>새로운 창 열기 : <code class="language-plaintext highlighter-rouge">command + N</code> <br /></li>
+  <li>새로운 탭 열기 : <code class="language-plaintext highlighter-rouge">command + T</code> <br /></li>
+  <li>실수로 닫은 창 다시 열기 : <code class="language-plaintext highlighter-rouge">command + shift + T</code></li>
+  <li>프로그램 종료 :  <code class="language-plaintext highlighter-rouge">command + Q</code> <br /></li>
+  <li>화면 맨 위로 이동 : <code class="language-plaintext highlighter-rouge">command + 화살표 위</code> <br /></li>
+  <li>화면 맨 아래로 이동 : <code class="language-plaintext highlighter-rouge">command + 화살표 아래</code> <br /></li>
+  <li>spotlight 불러오기 : <code class="language-plaintext highlighter-rouge">command + space</code> <br /></li>
+  <li>이미지 자르기 : 이미지에서 자를 부분을 선택하고 <code class="language-plaintext highlighter-rouge">command + K</code> <br /></li>
+  <li>부분 캡쳐하기 : <code class="language-plaintext highlighter-rouge">command + shift + $4</code> <br /></li>
+  <li>사용하는 창 전체를 캡쳐하기 : <code class="language-plaintext highlighter-rouge">command + shift + $4</code> 를 누른 후 <code class="language-plaintext highlighter-rouge">space</code> <br /></li>
+  <li>이모지 입력하기 : <code class="language-plaintext highlighter-rouge">control + command + space</code> <br /></li>
+  <li>강제 종료하기 : <code class="language-plaintext highlighter-rouge">option + command + ESC</code> <br /></li>
+  <li>화면 확대하기 : <code class="language-plaintext highlighter-rouge">control + 트랙패드를 위로 쓸기</code> (설정필요) <br /></li>
+  <li>화면 축소하기 : <code class="language-plaintext highlighter-rouge">control + 트랙패드를 아래로 쓸기</code> (설정필요)<br /></li>
+  <li>
+    <p>fn : Desktop 화면으로 전환 (설정필요)<br /></p>
+  </li>
+  <li>유튜브 볼 때 두 손가락으로 한번 트랙패드를 누르고 한번 더 눌러 화면속화면 (PIP모드)를 클릭하면 팝업창처럼 유튜브를 볼 수 있다.</li>
+</ul>
+
+:ET

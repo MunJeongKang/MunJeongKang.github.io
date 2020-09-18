@@ -1,13 +1,12 @@
 ---
-layout: default
-title: Home
-slug: home
+layout: home
+breadcrumb:
+  -
+    label: Posts
+
+# Index page
+# v2.0
+# https://github.com/cotes2020/jekyll-theme-chirpy
+# © 2017-2019 Cotes Chung
+# MIT License
 ---
-
-<div class="post-list">
-  {% for post in paginator.posts %}
-    {% include post.html %}
-  {% endfor %}
-
-  {% include pagination.html %}
-</div>

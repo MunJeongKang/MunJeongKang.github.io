@@ -1,0 +1,20 @@
+I"�<p>macOS로 모하비를 사용하고 있었는데 이 때는 모든 명령어가 잘 작동했었다. (지킬이나 깃 등)</p>
+
+<p>그러나 카탈리나로 버전을 업데이트 했더니 홈페이지를 실시간으로 확인하는 명령어가 작동하지 않았다..</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">bundle</span> <span class="k">exec</span> <span class="n">jekyll</span> <span class="n">serve</span></code></pre></figure>
+
+<p>bundel을 install 하라는 명령이 나오는데 이 또한 에러가 뜬다. ㅜㅜ</p>
+
+<p>git 명령어 또한 작동하지 않고 다음과 같은 에러가 뜬다.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="ss">xcrun: error: </span><span class="n">invalid</span> <span class="n">active</span> <span class="n">developer</span> <span class="n">path</span> <span class="p">(</span><span class="sr">/Library/</span><span class="no">Developer</span><span class="o">/</span><span class="no">CommandLineTools</span><span class="p">),</span> <span class="n">missing</span> <span class="n">xcrun</span> <span class="ss">at: </span><span class="sr">/Library/</span><span class="no">Developer</span><span class="o">/</span><span class="no">CommandLineTools</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">xcrun</span></code></pre></figure>
+
+<p>에러를 고치기 위해 구글링 해보니 맥 OS 업데이트 후 이와 같은 에러가 많이 발생하는 것 같다.</p>
+
+<p>이 경우 다음과 같이 XCode를 재설치하면 보통 해결된다고 한다.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">xcode</span><span class="o">-</span><span class="nb">select</span> <span class="o">--</span><span class="n">install</span></code></pre></figure>
+
+<p>XCode 재설치 후 bundle install을 하니 잘 작동한다.</p>
+:ET

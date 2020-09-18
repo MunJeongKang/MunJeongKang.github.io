@@ -1,0 +1,56 @@
+I"�	<hr />
+
+<div style="font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; ">
+<span style="font-weight:700; font-size:1.3em;  margin-right: 1em;">
+기초 연습 (Elementary Exercises)
+</span>
+<br />
+<ol>
+<li>전체 view 화면을 파란색으로 바꾸기 : <code>ask patches [set pcolor blue]</code></li>
+<li>특정 위치(0,0) patch를 빨간색으로 바꾸기 : <code>ask patch 0 0 [set pcolor red]</code></li>
+<li>특정 위치(0,5)에 turtle 1개 만들기 : <code>create-turtles 1 [ setxy 0 5 ]</code></li>
+<li>모든 turtle들을 1만큼 앞으로 움직이기 : <code>ask turtles [fd 1]</code></li>
+<li>모든 turtle들의 방향(heading) 우측으로 바꾸기 : <code>ask turtles [set heading 90]</code></li>
+<li>turtle 1의 색깔, 사이즈, 모양 바꾸기 : <code>ask turtle 1 [set size 5 set shape "cat" set color yellow]</code></li>
+<li>초기화하기 : <code>clear-all</code>또는 <code>ca</code></li>
+<li>turtle이 움직인 경로 나타내기 : <code>pen-down</code></li>
+</ol>
+
+<div style="display: inline-block; margin-left: 0.75em;">
+<img src="/images/post_img/NL10.png" width="300" height="300" />
+</div>
+<div style="display: inline-block; margin-left: 0.75em; ">
+<img src="/images/post_img/NL11.png" width="300" height="300" />
+</div>
+
+<br />
+
+이를 위와 같이 변수값은 global variable로 지정하여 interface에서 여러 값을 변환할 수 있게 할 수 있다. 또한 아래와 같이 위, 아래, 왼쪽, 오른쪽으로 turtle을 움직일 수 있고 주황색 부분은 통과할 수 없게 만들 수 있다. 
+<br /> <br />
+
+
+<div style="display: inline-block; margin-left: 0.75em;  ">
+<img src="/images/post_img/NL12.png" width="300" height="300" />
+</div>
+<div style="display: inline-block; margin-left: 0.75em; ">
+<img src="/images/post_img/NL13.png" width="300" height="300" />
+</div>
+
+<span style="font-weight:700; font-size:1.3em;">
+Neighbors
+</span>
+<br />
+NetLogo에서 turtle이나 patch의 이웃은 다음과 같이 표현된다. neighbors를 사용하면 주변에 모든 patch가 선택되고 neighbors4를 사용하면 상하좌우 4개의 patch만 선택된다.<br /> <br />
+<p style="text-align:center; ">
+<code>ask turtle 0 [show count neighbors with [pcolor = green]]</code>
+<br /> 
+<code>ask patch 0 0 [show count neighbors4 with [pcolor = green]]</code>
+</p>
+
+<p align="center">
+<img src="/images/post_img/NL14.png" width="500" height="300" />
+</p>
+
+
+</div>
+:ET
