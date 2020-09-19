@@ -14,7 +14,8 @@ order: 2
     <div id="#{{ category_name | slugize }}"></div>
     <p></p>
 
-    <h2 class="category-head" style="margin-left : 0.8em">{{ category_name }}</h2> 
+    <h2 class="category-head" style="margin-left : 0.8em">{{ category_name }}
+    (<span class="category-count">{{category | last | size}}</span>)</h2> 
     <ul>
     <a name="{{ category_name | slugize }}"></a>
     {% for post in site.categories[category_name] %}
