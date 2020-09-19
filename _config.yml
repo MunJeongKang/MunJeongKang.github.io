@@ -8,7 +8,8 @@ url: "http://munjeongkang.github.io"
 author:
   name     : 'Munjeong Kang'
   email    : mj0225868@gmail.com
-  facebook : https://www.facebook.com/profile.php?id=100037691644622
+  github   : https://github.com/MunJeongKang
+  youtube : https://www.youtube.com
 
 mylab: https://hufsoptblog.github.io
 
@@ -19,7 +20,7 @@ disqus_shortname: "munjeong"
 google_analytics: UA-162750328-1
 
 paginate: 10
-comments: true
+comments: truex
 paginate_path: "/page/:num"
 
 sass:
