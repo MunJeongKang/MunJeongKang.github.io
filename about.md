@@ -17,8 +17,16 @@ Hi, I'm mj from Hankuk University of Foreign Studies OptLab.
 
 <center>
 HUFS OptLab M.S. Student <br>
-Optimization/Python Programming
+Optimization/Python Programming <br>
 </center>
+
+-----
+
+#### * EDUCATION
+
+- 한국외국어대학교 대학원 산업경영공학과 데이터어낼리틱스 전공, 03/2019 - present
+- 한국외국어대학교 산업경영공학과 졸업 (국제금융학 이중전공), 03/2015 - 02/2019
+- 안산동산고등학교 졸업, 03/2012 - 02/2015
 
 -----
 
@@ -57,7 +65,7 @@ Optimization/Python Programming
 
 - 강문정, 김나영, 이유경, 윤재욱 (2017). 모바일 간편결제 비대면/대면 서비스의 고객 요구사항 비교분석. 한국품질경영학회 추계품질대회, 정선, 10월 27일.
 
-- 이유경, 강문정, 김나영, 이충목 (2018). A column generation based Heuristic algorithm for Ddrone Location and Routing with Altitude. 대한산업공학회 춘계학술대회, 경주, 4월 6일.
+- 이유경, 강문정, 김나영, 이충목 (2018). A column generation based Heuristic algorithm for Drone Location and Routing with Altitude. 대한산업공학회 춘계학술대회, 경주, 4월 6일.
 
 - 강문정, 이유경, 조진영, 이충목 (2019). A combined approach of reinforcement learning and mathematical programming for a real-world outbound supply chain optimization. 대한산업공학회 춘계학술대회, 광주, 4월 11일.
 
@@ -70,6 +78,6 @@ Optimization/Python Programming
 
 #### * PAPER
 
-- Lee, Y., Kang, M., Kim, N., Lee, C., (2019). 지역별 중요도를 고려한 드론 최적 경로 감시 시스템 / Drone surveillance system considering dynamic POIs. *Journal of the Korean Institute of Industrial Engineers*,**45**(5), pp.416-429. [논문](/images/paper_DLRwA.pdf)
+- Lee, Y., Kang, M., Kim, N., Lee, C., (2019). 지역별 중요도를 고려한 드론 최적 경로 감시 시스템 / Drone surveillance system considering dynamic POIs. *Journal of the Korean Institute of Industrial Engineers*, **<i>45</i>**(5), 416-429. [논문](/images/paper_DLRwA.pdf)
 
-- Kang, M., Kyung, J., Lee, C., (2020). 시간에 의존하는 이익이 발생하는 외판원문제에 대한 최적화 알고리즘/ An Algorithm for TSP with Time Dependent Profits (TSPwTDP). *Journal of the Korean Institute of Industrial Engineers*, **46**(3), pp.338-348. [논문](/images/paper_TSPwTDP.pdf)
+- Kang, M., Kyung, J., Lee, C., (2020). 시간에 의존하는 이익이 발생하는 외판원문제에 대한 최적화 알고리즘/ An Algorithm for TSP with Time Dependent Profits (TSPwTDP). *Journal of the Korean Institute of Industrial Engineers*, **<i>46</i>**(3), 338-348. [논문](/images/paper_TSPwTDP.pdf)

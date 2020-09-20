@@ -5,9 +5,167 @@
     <description>github blog</description>
     <link>http://munjeongkang.github.io/</link>
     <atom:link href="http://munjeongkang.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 20 Sep 2020 15:07:58 +0900</pubDate>
-    <lastBuildDate>Sun, 20 Sep 2020 15:07:58 +0900</lastBuildDate>
+    <pubDate>Mon, 21 Sep 2020 08:33:32 +0900</pubDate>
+    <lastBuildDate>Mon, 21 Sep 2020 08:33:32 +0900</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>CO@Work2020 - LP &amp; Polyhedral Theory</title>
+        <description>&lt;hr /&gt;
+
+&lt;div style=&quot;font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; &quot;&gt;
+&lt;embed src=&quot;/CO@WORK/Berthold_Theory_I.pdf&quot; type=&quot;application/pdf&quot; width=&quot;100%&quot; height=&quot;425px&quot; /&gt;
+&lt;br /&gt;&lt;br /&gt;
+&lt;!-- &lt;span style = &quot;font-weight:700; font-size:1.3em;  margin-right: 1em;&quot;&gt;
+Fundamentals about Mathematical Optimization 
+&lt;/span&gt;
+&lt;br&gt;&lt;br&gt;
+다음과 같은 IP(Integer program)를 생각해보자.  --&gt;
+
+
+ &lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;span style=&quot;font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; text-indent:0%;&quot;&gt;
+강의 자료 영상 :
+&lt;/span&gt;
+&lt;a href=&quot;https://www.youtube.com/watch?v=svG_zFSGZRY&amp;amp;list=PLYWmzh0Y6EObSVICd9OUamulR2SZ4NXmi&amp;amp;index=3&quot;&gt; LP &amp;amp; Polyhedral Theory &lt;/a&gt;&lt;/p&gt;
+
+&lt;!-- &lt;span style=&quot;background-color: #f3c623&quot;&gt; --&gt;
+
+&lt;!-- $$
+\begin{aligned}
+    \text{(IP)} \quad &amp;z=\max cx \\
+    &amp;Ax \le b \\
+    &amp;Dx \le d  \\
+    &amp;x \in Z^n_+
+\end{aligned}
+$$
+
+어떤 제약조건만 있는 IP는 쉽게 풀린다는 관점에서 $Ax \le b$ 식을 &quot;nice&quot;하다고 가정해보자. 그러면 복잡한(complicating) 제약식 $Dx \le d$만 없다면 원래 IP 문제를 푸는 것 보다 relaxation이 더 쉬워진다. 많은 문제들이 이처럼 나이스한 제약과 복잡한 제약을 동시에 갖고 있는데, &lt;b style = &quot;color:#d7385e;font-size:1.2&quot;&gt;복잡한 제약을 없앨 수 있다면 쉽게 문제를 풀 수도 있을 것&lt;/b&gt;이다. 예를 들어 TSP (traveling salesman problem)의 connectivity 제약식, UFL(uncapacitated facility location)의 client demand 제약식 등 복잡한 제약을 없앨 수 있다면 말이다. 그러나 그냥 없애버리면 중요한 제약식이 전부 무시되기 때문에 relaxation의 bound가 매우 좋지 않으므로 &lt;b style = &quot;color:#d7385e;font-size:1.2&quot;&gt;Lagrangian relaxation&lt;/b&gt;을 사용하고자 한다. 
+
+&lt;br&gt;&lt;br&gt;
+IP 문제를 좀더 간단하게 일반적인 폼 (general form)으로 바꿔보자. 
+
+$$
+\begin{aligned}
+    &amp;z=\max cx \\
+    &amp;Dx \le d  \\
+    &amp;x \in X
+\end{aligned}
+$$
+
+여기서 $Dx \le d $는 $m$개의 복잡한 제약식이다. 
+
+&lt;br&gt;&lt;br&gt;
+
+어떤 값 $u = (u_1, ... , u_m) \ge 0$ 에 대해 다음과 같이 IP의 relaxation을 정의하자. 
+
+$$
+\begin{aligned}
+    \text{(IP(u))} \quad &amp;z(u)=\max cx + u(d-Dx)\\
+    &amp;x \in X
+\end{aligned}
+$$
+
+IP($u$)는 $\{x : Dx \le d, x \in X\} \subseteq X $ 이므로 &lt;b style = &quot;color:#d7385e;font-size:1.2&quot;&gt;feasibel region&lt;/b&gt;은 같거나 크고, $u \ge 0$ 이고 모든 $x \in X$에 대해 $(d-Dx) \ge 0$이므로 &lt;b style = &quot;color:#d7385e;font-size:1.2&quot;&gt;목적값(objective value)&lt;/b&gt; 또한 원래 IP 문제보다 같거나 크다. 
+
+&lt;br&gt;&lt;br&gt;
+
+IP($u$)에서 복잡한 제약식이 목적함수의 penalty term인 $u(d-Dx)$으로 추가됨으로써 다루어지는 것을 볼 수 있다. 이 때 $u$ 를 $Dx \le d$ 제약에 대한 &lt;i&gt;&lt;b style = &quot;color:#d7385e; &quot;&gt;Lagrange multiplier&lt;/b&gt;&lt;/i&gt; (&lt;i&gt;price&lt;/i&gt;, &lt;i&gt;dual variable&lt;/i&gt;) 라고 한다. 
+&lt;br&gt;&lt;br&gt;
+
+따라서 IP($u$)를 파라미터 $u$를 가진 IP의 &lt;i&gt;Lagrangian relaxation (subproblem)&lt;/i&gt;이라 부른다. IP($u$)는 IP의 relaxation이기 때문에 $z(u) \ge z$이고 IP의 최적값(opmial value)의 upper bound를 얻을 수 있다. 가장 좋은 upper bound를 찾기 위해 &lt;i&gt;&lt;b style = &quot;color:#d7385e;font-size:1.2&quot;&gt;Lagrangian Dual Problem&lt;/b&gt;&lt;/i&gt;을 푼다. 
+&lt;br&gt;&lt;br&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+&lt;img src=&quot;/images/post_img/max_relaxation_bound.png&quot; width=&quot;350&quot; height=&quot;170&quot;&gt;
+&lt;/p&gt;
+Lagrangian Dual Problem은 다음과 같이 정의한다. 
+
+$$
+\begin{aligned}
+    \text{(LD)} \quad &amp;w_{LD}=\min \{z(u) : u \ge 0 \} 
+\end{aligned}
+$$
+
+Lagrangian relaxation을 풀어 IP의 최적 솔루션을 찾을 수도 있다.
+&lt;br&gt;&lt;br&gt;
+
+&lt;div style = &quot;border: 0px solid red; text-align: left; margin: 0 auto; width:45% &quot;&gt;
+ IF $u \ge 0$, &lt;br&gt;
+1. $x(u)$는 IP($u$)의 &lt;i&gt;optimal solution&lt;/i&gt;이고 &lt;br&gt;
+2. $D(x) \le d$ 이고 &lt;br&gt;  
+3. $u_i &gt; 0$일 경우, $(Dx(u))_i = d_i$&lt;br&gt;
+THEN $x(u)$는 IP의 optimal이다.
+&lt;/div&gt;
+&lt;br&gt;
+1에 의해 $w_{LD} \le z(u)$이고, 3에 의해 $cx(u)+u(d-Dx(u)) = cx(u)$이다. 2에 의해 $x(u)$는 IP에서 feasible이고 따라서 $cx(u) \le z$ 이다. 그러므로 $w_{LD} \le z(u) = cx(u) \le z$이고 equality 제약으로 인해 $w_{LD} \ge z$이므로 $x(u)$는 IP에서 optimal이다. 
+&lt;br&gt;&lt;br&gt;
+&lt;span style = &quot;font-weight:700; font-size:1.3em;  margin-right: 1em;&quot;&gt;
+Application - UFL
+&lt;/span&gt;
+&lt;br&gt;&lt;br&gt;
+UFL 문제에 이를 적용해 보자. 먼저, strong formulation으로 시작한다. 
+$$
+\begin{aligned}
+    \text{(IP)} \quad z=\max &amp;\sum_{i \in M} \sum_{j \in N} c_{ij}x_{ij} - \sum_{j \in N} f_j y_j \\
+    &amp;\sum_{j \in N} x_{ij} = 1 \quad \forall i \in M  \\
+    &amp;x_{ij}-y_j \le 0 \quad \forall i \in M, j \in N \\ 
+    &amp;x \in R^{|M|\times|N|}, y \in B^{|N|}
+\end{aligned}
+$$
+
+demand 제약식을 dualizing한다.
+$$
+\begin{aligned}
+    \text{(IP($u$))} \quad z=\max &amp;\sum_{i \in M} \sum_{j \in N} (c_{ij}-u_i)x_{ij} - \sum_{j \in N} f_j y_j + \sum_{i \in M}u_i \\
+    &amp;x_{ij}-y_j \le 0 \quad \forall i \in M, j \in N \\ 
+    &amp;x \in R^{|M|\times|N|}, y \in B^{|N|}
+\end{aligned}
+$$
+이는 각 location에 대한 subproblem으로 갈라진다. 
+$$
+\begin{aligned}
+    \text{(IP}_j(u)) \quad z_j(u)=\max &amp;\sum_{i \in M} (c_{ij}-u_i)x_{ij} - f_j y_j \\
+    &amp;x_{ij}-y_j \le 0 \quad \forall i \in M \\ 
+    &amp;x_{ij} \ge 0 \quad \forall i \in M, y_i \in B^1
+\end{aligned}
+$$
+
+따라서 $IP_j(u)$이면 $z(u) = \sum_{j \in N} z_j(u) + \sum_{i \in M} u_i$이다. 
+만약 $y_j = 0$이면 모든 $i$에 대해 $x_{ij} = 0$이고 목적값은 0이 된다. 만약 $y_j=1$이면 profitable한 모든 고객은 서비스를 받으므로 $c_{ij}-u_i &gt;0$이다. 따라서 $z_j(u) = \max \{0, \sum_{i \in M} \max [c_{ij}-u_i, 0]-f_j\}$이다.
+&lt;br&gt;&lt;br&gt;
+&lt;span style = &quot;font-weight:700; font-size:1.3em;  margin-right: 1em;&quot;&gt;
+UFL Example
+&lt;/span&gt;
+
+&lt;br&gt;&lt;br&gt;
+이와 관련된 간단한 예시를 들어보자. $m = 6$인 clients와 $n=5$인 potential locations가 있고 fixed location cost $f = (2,4,5,3,3)$이고 client-location profit matrix($c_{ij}$)는 왼쪽과 같다고 하자. $u=(5,6,3,2,5,4)$라 하면 ($c_{ij}-u_i$)를 오른쪽과 같이 나타낼 수 있다. 
+&lt;br&gt;&lt;br&gt;
+
+&lt;div style=&quot;display: inline-block; margin-left: 0.5em; margin-right: 0.5em; &quot;&gt;
+&lt;img src=&quot;/images/post_img/ex1.png&quot; width=&quot;250&quot; height=&quot;150&quot;  &gt;
+&lt;/div&gt;
+&lt;div style=&quot;display: inline-block; margin-right: 0.5em; &quot;&gt;
+&lt;img src=&quot;/images/post_img/ex2.png&quot; width=&quot;300&quot; height=&quot;150&quot; &gt;
+&lt;/div&gt;
+&lt;br&gt;
+모든 $j = 2$에 대해 $y_2=0$이면 0의 값을 얻고 $y_2=1$이면 $x_{22}=1$, $x_{52}=1$로 설정하여 $y_2=1$인 net profit이 7-4 = 3이 된다. 그러므로 $z_2(u)=3$을 주는 $y_2=1$로 설정하는 것이 optimal 이다. 각 depot에 대해 비슷한 계산을 수행하면 IP($u$)의 optimal solution은 $y_1=y_3=y_5=0$, $y_2=x_{22}=x_{52}=1$, $y_4 = x_{64}=1$로 세팅하면 $z(u) = 3+1+\sum_{i \in M} u_i = 29$ 이다. 
+
+&lt;br&gt;&lt;br&gt;
+&lt;hr&gt;
+ --&gt;
+
+&lt;!-- &lt;span style=&quot;background-color: #f3c623&quot;&gt; --&gt;
+</description>
+        <pubDate>Mon, 21 Sep 2020 18:00:08 +0000</pubDate>
+        <link>http://munjeongkang.github.io/CO@WORK/</link>
+        <guid isPermaLink="true">http://munjeongkang.github.io/CO@WORK/</guid>
+        
+        
+        <category>최적화</category>
+        
+      </item>
     
       <item>
         <title>논문리뷰 - The flying sidekick traveling salesman problem: Optimization of drone-assisted parcel delivery</title>
@@ -51,9 +209,9 @@ Murray, C. C., &amp;amp; Chu, A. G. (2015). The flying sidekick traveling salesm
 
 &lt;!-- &lt;span style=&quot;background-color: #f3c623&quot;&gt; --&gt;
 </description>
-        <pubDate>Thu, 24 Sep 2020 18:00:08 +0000</pubDate>
-        <link>http://munjeongkang.github.io/%EB%85%BC%EB%AC%B8%20%EB%A6%AC%EB%B7%B05/</link>
-        <guid isPermaLink="true">http://munjeongkang.github.io/%EB%85%BC%EB%AC%B8%20%EB%A6%AC%EB%B7%B05/</guid>
+        <pubDate>Fri, 18 Sep 2020 18:00:08 +0000</pubDate>
+        <link>http://munjeongkang.github.io/%E1%84%82%E1%85%A9%E1%86%AB%E1%84%86%E1%85%AE%E1%86%AB%20%E1%84%85%E1%85%B5%E1%84%87%E1%85%B25/</link>
+        <guid isPermaLink="true">http://munjeongkang.github.io/%E1%84%82%E1%85%A9%E1%86%AB%E1%84%86%E1%85%AE%E1%86%AB%20%E1%84%85%E1%85%B5%E1%84%87%E1%85%B25/</guid>
         
         
         <category>논문리뷰</category>
@@ -1098,44 +1256,6 @@ Nesterov 모멘텀과 표준 모멘텀의 차이는 &lt;b style=&quot;color:#d73
         <pubDate>Sun, 12 Apr 2020 18:00:08 +0000</pubDate>
         <link>http://munjeongkang.github.io/ANN07/</link>
         <guid isPermaLink="true">http://munjeongkang.github.io/ANN07/</guid>
-        
-        
-        <category>수업</category>
-        
-      </item>
-    
-      <item>
-        <title>인공신경망 - Batch and Minibatch Algorithms</title>
-        <description>&lt;hr /&gt;
-
-&lt;div style=&quot;font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; &quot;&gt;
-머신러닝을 위한 최적화 알고리즘은 일반적으로 전체 비용 함수의 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;일부&lt;/b&gt;만 사용하여 추정된 비용 함수의 기대값에 기초하여 파라미터에 대한 각각의 업데이트를 계산한다. 최적화 알고리즘의 대부분에서 사용되는 목적함수 $J$의 성질도 트레이닝셋에 대한 기대(expextations)이다. 가장 일반적으로 사용되는 성질은 gradient이다. 
-$$
-\nabla_{\boldsymbol{\theta}} J(\boldsymbol{\theta})=\mathbb{E}_{\mathbf{x}, y \sim \hat{p}_{\mathrm{data}}} \nabla_{\boldsymbol{\theta}} \log p_{\mathrm{model}}(\boldsymbol{x}, y ; \boldsymbol{\theta})
-$$
-실제로 데이터셋에서 작은 수의 예제를 랜덤하게 샘플링하고 그 예제에 대한 평균을 구해 이러한 기대치를 계산할 수 있다. 대부분의 최적화 알고리즘은 정확한 기울기를 천천히 계산하는 것보다 기울기의 근사된 추정치를 빠르게 계산할 수 있는 경우가 총 계산 관점에서 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;훨씬 더 빨리 수렴(converge)&lt;/b&gt;한다. 작은 샘플에서 기울기의 통계적인 추청에 동기를 부여하는 또 다른 고려사항은 트레이닝셋의 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;불필요한 중복(redundancy)&lt;/b&gt;이다. 기울기에 매우 유사한 기여를 하는 많은 예시를 찾을 수 있을 것이다. 
-&lt;br /&gt;&lt;br /&gt;
-전체 트레이닝셋을 사용하는 최적화 알고리즘을 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;batch &lt;/b&gt;또는 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;deterministic gradient method&lt;/b&gt;라 부른다. 한번에 하나의 예시만 사용하는 최적화 알고리즘은 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;stochastic&lt;/b&gt; 또는 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;online methods&lt;/b&gt;라 부른다. online이라는 용어는 주로 연속적으로 생성된 예제에서 추출할 때 사용된다. 딥러닝에 사용되는 알고리즘은 이 사이 어딘가 있지만, 모든 트레이닝 예제보다는 적게 사용한다. 이를 전통적으로 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;minibatch&lt;/b&gt; 또는 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;minibatch stochastic methods&lt;/b&gt;라 부른다. 이제는 simply stochastic methods로 흔히 부른다. 
-&lt;br /&gt;&lt;br /&gt;
-미니배치 크기는 일반적으로 다음과 같은 요인에 의해 나타난다.
-&lt;ul&gt;
-&lt;li&gt;배치 크기가 클수록 기울기에 대한 정확한 추정치를 제공하지만 linear returns 보단 아니다.&lt;/li&gt;
-&lt;li&gt;Multicore architectures는 극도로 작은 배치에 의해 주로 이용되지 않는다. &lt;/li&gt;
-&lt;li&gt;만약 배치의 모든 예시를 동시에(in parallel) 처리하려면 배치 사이즈에 따라 메모리 양을 조정해야한다.&lt;/li&gt;
-&lt;li&gt;어떤 하드웨어는 특정한 크기의 array로 더 나은 실행시간(runtime)을 얻는다.&lt;/li&gt;
-&lt;li&gt;작은 배치는 정규화 효과를 제공할 수 있다.&lt;/li&gt;
-&lt;/ul&gt;
-기울기 $\boldsymbol{g}$에만 기초하여 업데이트를 계산하는 방법은 주로 상대적으로 robust하고 100과 같이 더 작은 배치 크기를 처리할 수 있다. 또한, 헤시안 행렬 $\boldsymbol{H}$와 $\boldsymbol{H}^{-1}\boldsymbol{g}$와 같은 계산 업데이트를 사용하는 second-order methods는 일반적으로 10,000과 같은 훨씬 큰 배치 사이즈가 요구된다. 
-&lt;br /&gt;&lt;br /&gt;
-샘플 집합에서 기대되는 기울기의 unbiased estimate를 계산하려면 샘플이 독립이어야 한다. 또한, 두 개의 subsequent 미니배치 예제도 서로 독립이어야 한다. 많은 데이터셋은 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;연속적인(successive) 예시들이 높은 상관관계를 갖는 방식&lt;/b&gt;으로 가장 자연스럽게 배열된다. 이러한 경우, 데이터셋의 순서가 어느 정도 유의하면 미니배치를 선택하기 전에 예시를 섞을 필요가 있다. 
-&lt;br /&gt;&lt;br /&gt;
-minibatch stochastic gradient descent의 흥미로운 동기는 어떤 예제가 반복되지 않는 한 true 일반화 에러의 기울기를 따른다는 것이다. stochastic gradient descent가 일반화 오류를 최소화하는 사실은 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;online learning&lt;/b&gt;에서 가장 쉽게 볼 수 있으며 예시나 미니배치는 데이터 흐름으로 부터 나온다. 이 시나리오에서 예시는 절대 반복되지 않는다. 모든 experience는 $p_{\text{data}}$의 공정한 샘플이다.
-&lt;br /&gt;&lt;br /&gt;
-&lt;/div&gt;
-</description>
-        <pubDate>Sun, 12 Apr 2020 18:00:08 +0000</pubDate>
-        <link>http://munjeongkang.github.io/ANN06/</link>
-        <guid isPermaLink="true">http://munjeongkang.github.io/ANN06/</guid>
         
         
         <category>수업</category>

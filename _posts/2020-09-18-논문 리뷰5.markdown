@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "논문리뷰 - The flying sidekick traveling salesman problem: Optimization of drone-assisted parcel delivery"
-date:   2020-09-24 18:00:08
+date:   2020-09-18 18:00:08
 categories: 논문리뷰
 comments: true
 use_math: true
