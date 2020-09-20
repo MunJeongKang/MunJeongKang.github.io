@@ -30,7 +30,19 @@
       <h2 class="txt-center">
         Welcome to my blog 
       </h2>
+       
+    <!-- <div id="archives">
+      {% for category in site.categories %}
+        <div class="archive-group">
+          {% capture category_name %}{{ category | first }}{% endcapture %}
+          <div id="#{{ category_name | slugize }}"></div>  
+          <h4 class="category-head" style="margin-left : 0.8em">{{ category_name }}
+          (<span class="category-count">{{category | last | size}}</span>)</h4> 
+        </div>
+      {% endfor %}
+      </div> -->
     {% endif %}
+
 
   </div>
 

@@ -13,18 +13,17 @@ order: 2
     {% capture category_name %}{{ category | first }}{% endcapture %}
     <div id="#{{ category_name | slugize }}"></div>
     <p></p>
-
-    <h2 class="category-head" style="margin-left : 0.8em">{{ category_name }}
-    (<span class="category-count">{{category | last | size}}</span>)</h2> 
+    <h4 class="category-head" style="margin-left : 0.8em">{{ category_name }}
+    (<span class="category-count">{{category | last | size}}</span>)</h4> 
     <ul>
     <a name="{{ category_name | slugize }}"></a>
     {% for post in site.categories[category_name] %}
     <article class="archive-item">
       {% if post.title.size >= 80 %}
-        <li type="circle"><a href="{{ site.baseurl }}{{ post.url }}">{{post.title | slice: 0, 80}}...</a></li>
+        <li type="circle"><a href="{{ site.baseurl }}{{ post.url }}" style="text-decoration:none">{{post.title | slice: 0, 80}}...</a></li>
       {% endif %}
       {% if post.title.size < 80 %}
-         <li type="circle"><a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a></li>
+         <li type="circle"><a href="{{ site.baseurl }}{{ post.url }}" style="text-decoration:none">{{post.title}}</a></li>
       {% endif %}
     </article>
     {% endfor %}
