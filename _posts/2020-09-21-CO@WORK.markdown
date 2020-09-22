@@ -8,7 +8,9 @@ use_math: true
 ---
 -----
 
-<div style = "font-weight:500; font-size:1.0em; text-align:justify; ">
+<div style = "font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; ">
+
+<!-- <div style = "font-weight:500; font-size:1.0em; text-align:justify; "> -->
 <embed src="/CO@WORK/Berthold_Theory_I.pdf" type="application/pdf" width="100%" height="425px" />
 <br><br>
 <span style = "font-weight:700; font-size:1.3em;  margin-right: 1em;">
@@ -57,7 +59,7 @@ $n$차원 polytope의 몇 가지 중요한 special case가 있다. 첫번째는 
 <b style = "color:#d7385e;font-size:1.2">Farkas Lemma</b>는 수리 최적화에서 매우 중요한 이론 중 하나이다. 이는 부등식의 valid combination을 적용하여 false statement를 도출함으로써 <b style = "color:#d7385e;font-size:1.2">infeasible LP</b>에 대해 알려준다. Farkas Lemma는 $Ax \leq b$ 또는 $yA = 0, yb < 0 $ 중 하나만이 솔루션을 갖도록 formulation될 수 있고 Theorems of Alternatives로 불리는 Theorem class에 속한다. 또한 Duality theorems, Complementary slackness, Proof of LP optimality 등의 중요한 higher-level LP 이론의 기초가 된다. 
 <br><br>
 
-Farkas Lemma를 증명하는 한 가지 방법은 Fourier-Motzkin Elimination(FME)을 사용하는 것이다. 이는 변수 하나를 제거하여 $n$차원 공간을 $n$-1차원 공간으로 줄이는 방법이다. 이때 polyhedron이 nonempty인지 확인해야 한다. 각 elimination step은 worst case에서 총 $O(m^{2^n})$의 running time이 소요될 수 있으므로 실질적으로 다루기 어렵다. FME는 보통 polyhedral transformation 방법으로 잘 알려져 있고 trick을 사용하여 cube나 cross polytope을 single exponential running time으로 줄일 수는 있다.FME를 통해 polyhedral 이론과 LP 이론을 연결할 수 있다.
+Farkas Lemma를 증명하는 한 가지 방법은 Fourier-Motzkin Elimination(FME)을 사용하는 것이다. 이는 변수 하나를 제거하여 $n$차원 공간을 $n$-1차원 공간으로 줄이는 방법이다. 이때 polyhedron이 nonempty인지 확인해야 한다. 각 elimination step은 worst case에서 총 $O(m^{2^n})$의 running time이 소요될 수 있으므로 실질적으로 다루기 어렵다. FME는 보통 polyhedral transformation 방법으로 잘 알려져 있고 trick을 사용하여 cube나 cross polytope을 single exponential running time으로 줄일 수는 있다. FME를 통해 polyhedral 이론과 LP 이론을 연결할 수 있다.
 <br><br>
 
 <span style = "font-weight:700; font-size:1.3em;  margin-right: 1em;">
@@ -129,7 +131,6 @@ $$
 <br><br>
 
 
+강의 영상 : <a href= "https://www.youtube.com/watch?v=svG_zFSGZRY&list=PLYWmzh0Y6EObSVICd9OUamulR2SZ4NXmi&index=3"> LP & Polyhedral Theory </a>
  </div>
 
-
-강의 영상 : <a href= "https://www.youtube.com/watch?v=svG_zFSGZRY&list=PLYWmzh0Y6EObSVICd9OUamulR2SZ4NXmi&index=3"> LP & Polyhedral Theory </a>

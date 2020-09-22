@@ -5,15 +5,17 @@
     <description>github blog</description>
     <link>http://munjeongkang.github.io/</link>
     <atom:link href="http://munjeongkang.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 22 Sep 2020 15:00:15 +0900</pubDate>
-    <lastBuildDate>Tue, 22 Sep 2020 15:00:15 +0900</lastBuildDate>
+    <pubDate>Tue, 22 Sep 2020 15:19:16 +0900</pubDate>
+    <lastBuildDate>Tue, 22 Sep 2020 15:19:16 +0900</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
         <title>CO@Work2020 - LP &amp; Polyhedral Theory</title>
         <description>&lt;hr /&gt;
 
-&lt;div style=&quot;font-weight:500; font-size:1.0em; text-align:justify; &quot;&gt;
+&lt;div style=&quot;font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; &quot;&gt;
+
+&lt;!-- &lt;div style = &quot;font-weight:500; font-size:1.0em; text-align:justify; &quot;&gt; --&gt;
 &lt;embed src=&quot;/CO@WORK/Berthold_Theory_I.pdf&quot; type=&quot;application/pdf&quot; width=&quot;100%&quot; height=&quot;425px&quot; /&gt;
 &lt;br /&gt;&lt;br /&gt;
 &lt;span style=&quot;font-weight:700; font-size:1.3em;  margin-right: 1em;&quot;&gt;
@@ -62,7 +64,7 @@ $n$차원 polytope의 몇 가지 중요한 special case가 있다. 첫번째는 
 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;Farkas Lemma&lt;/b&gt;는 수리 최적화에서 매우 중요한 이론 중 하나이다. 이는 부등식의 valid combination을 적용하여 false statement를 도출함으로써 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;infeasible LP&lt;/b&gt;에 대해 알려준다. Farkas Lemma는 $Ax \leq b$ 또는 $yA = 0, yb &amp;lt; 0 $ 중 하나만이 솔루션을 갖도록 formulation될 수 있고 Theorems of Alternatives로 불리는 Theorem class에 속한다. 또한 Duality theorems, Complementary slackness, Proof of LP optimality 등의 중요한 higher-level LP 이론의 기초가 된다. 
 &lt;br /&gt;&lt;br /&gt;
 
-Farkas Lemma를 증명하는 한 가지 방법은 Fourier-Motzkin Elimination(FME)을 사용하는 것이다. 이는 변수 하나를 제거하여 $n$차원 공간을 $n$-1차원 공간으로 줄이는 방법이다. 이때 polyhedron이 nonempty인지 확인해야 한다. 각 elimination step은 worst case에서 총 $O(m^{2^n})$의 running time이 소요될 수 있으므로 실질적으로 다루기 어렵다. FME는 보통 polyhedral transformation 방법으로 잘 알려져 있고 trick을 사용하여 cube나 cross polytope을 single exponential running time으로 줄일 수는 있다.FME를 통해 polyhedral 이론과 LP 이론을 연결할 수 있다.
+Farkas Lemma를 증명하는 한 가지 방법은 Fourier-Motzkin Elimination(FME)을 사용하는 것이다. 이는 변수 하나를 제거하여 $n$차원 공간을 $n$-1차원 공간으로 줄이는 방법이다. 이때 polyhedron이 nonempty인지 확인해야 한다. 각 elimination step은 worst case에서 총 $O(m^{2^n})$의 running time이 소요될 수 있으므로 실질적으로 다루기 어렵다. FME는 보통 polyhedral transformation 방법으로 잘 알려져 있고 trick을 사용하여 cube나 cross polytope을 single exponential running time으로 줄일 수는 있다. FME를 통해 polyhedral 이론과 LP 이론을 연결할 수 있다.
 &lt;br /&gt;&lt;br /&gt;
 
 &lt;span style=&quot;font-weight:700; font-size:1.3em;  margin-right: 1em;&quot;&gt;
@@ -134,9 +136,9 @@ $$
 &lt;br /&gt;&lt;br /&gt;
 
 
+강의 영상 : &lt;a href=&quot;https://www.youtube.com/watch?v=svG_zFSGZRY&amp;amp;list=PLYWmzh0Y6EObSVICd9OUamulR2SZ4NXmi&amp;amp;index=3&quot;&gt; LP &amp;amp; Polyhedral Theory &lt;/a&gt;
  &lt;/div&gt;
 
-&lt;p&gt;강의 영상 : &lt;a href=&quot;https://www.youtube.com/watch?v=svG_zFSGZRY&amp;amp;list=PLYWmzh0Y6EObSVICd9OUamulR2SZ4NXmi&amp;amp;index=3&quot;&gt; LP &amp;amp; Polyhedral Theory &lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 21 Sep 2020 18:00:08 +0000</pubDate>
         <link>http://munjeongkang.github.io/CO@WORK/</link>
