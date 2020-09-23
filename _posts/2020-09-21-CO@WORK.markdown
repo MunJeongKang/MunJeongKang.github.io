@@ -120,7 +120,7 @@ $$
 $$
 <br>
 
-이는 어떤 문제의 변수와 그와 연관된 제약식의 관계((primal variable, dual constraint) or (primal constraint, dual variable))를 나타내며 동시에 slack을 가질 수 없다는 것이다. dual variable이 0일 때, primal constraint가 binding인 것은 가능하지만 (즉, no slack in two places) dual variable이 양수일 떼, primal constraint이 slack(non-binding)을 갖는 것은 불가능하다. 이러한 특성 때문에 상보여유(complementary slackness)라 부르는 것이고, 이 이론은 dual 문제와 변수에 대한 해석에 도움을 주기 때문에 매우 유용하다. dual variable은 shadow price로도 해석될 수 있는데 이는 특정한 제약식이 relaxed 된다면 목적함수 값이 얼만큼 변하는지를 나타낸다. 
+이는 어떤 문제의 변수와 그와 연관된 제약식의 관계((primal variable, dual constraint) or (primal constraint, dual variable))를 나타내며 동시에 slack을 가질 수 없다는 것이다. dual variable이 0일 때, primal constraint가 binding인 것은 가능하지만 (즉, no slack in two places) dual variable이 양수일 때, primal constraint가 slack(non-binding)을 갖는 것은 불가능하다. 이러한 특성 때문에 상보여유(complementary slackness)라 부르는 것이고, 이 이론은 dual 문제와 변수에 대한 해석에 도움을 주기 때문에 매우 유용하다. dual variable은 shadow price로도 해석될 수 있는데 이는 특정한 제약식이 relaxed 된다면 목적함수 값이 얼만큼 변하는지를 나타낸다. 
 <br><br>
 <p align="center">
 <img src="/images/degeneracy.png" width="500" height="150">
