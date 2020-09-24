@@ -1,9 +1,759 @@
-<!DOCTYPE html> <html lang="pt-br"> <head> <meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1"> <title> C++ 시작하기 &bull; 코딩새내기 일상일지 </title> <meta name="description" content="C++ 기본 문법에 대해서 정리해보려고 한다."> <link rel="stylesheet" href="/css/main.css"> <link rel="canonical" href="http://munjeongkang.github.io/C++_start/"> <link rel="alternate" type="application/rss+xml" title="코딩새내기 일상일지" href="http://munjeongkang.github.io/feed.xml" /> <script type="text/javascript"> var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-162750328-1']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })(); </script> <script type="text/x-mathjax-config"> MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "AMS" } }, tex2jax: { inlineMath: [ ['$', '$'] ], displayMath: [ ['$$', '$$'] ], processEscapes: true, } }); MathJax.Hub.Register.MessageHook("Math Processing Error",function (message) { alert("Math Processing Error: "+message[1]); }); MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) { alert("Math Processing Error: "+message[1]); }); </script> <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"> </script> </head> <body class="single"> <main class="main"> <header class="header"> <div class="overlay"> <div class="container"> <h2 class="title"> <a href="/">코딩새내기 일상일지</a> </h2> <nav class="navbar"> <a href="#" class="menu-icon"> <span></span> <span></span> <span></span> </a> <ul class="nav"> <li><a href="/about/">About</a></li> <li><a href="/category.html">category</a></li> <li><a href="/mj_cv.pdf" target="_blank">CV</a></li> </ul> </nav> </div> </div> </header> <article class="post container card"> <header class="post-header"> <h1 class="post-title">C++ 시작하기</h1> <span class="post-meta"> <time class="post-date" datetime="2020-09-24">Sep 24, 2020</time> <span class="post-author">by Munjeong Kang</span> </span> </header> <div class="post-content"> <p>C++ 기본 문법에 대해서 정리해보려고 한다.</p> <div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="cp">#include &lt;iostream&gt;</span>
+<!DOCTYPE html> <html lang="pt-br"> <head> <meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1"> <title> C++ 시작하기 &bull; 코딩새내기 일상일지 </title> <meta name="description" content="C++ 기본 문법에 대해서 정리해보려고 한다."> <link rel="stylesheet" href="/css/main.css"> <link rel="canonical" href="http://munjeongkang.github.io/C++_start/"> <link rel="alternate" type="application/rss+xml" title="코딩새내기 일상일지" href="http://munjeongkang.github.io/feed.xml" /> <script type="text/javascript"> var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-162750328-1']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })(); </script> <script type="text/x-mathjax-config"> MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "AMS" } }, tex2jax: { inlineMath: [ ['$', '$'] ], displayMath: [ ['$$', '$$'] ], processEscapes: true, } }); MathJax.Hub.Register.MessageHook("Math Processing Error",function (message) { alert("Math Processing Error: "+message[1]); }); MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) { alert("Math Processing Error: "+message[1]); }); </script> <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"> </script> </head> <body class="single"> <main class="main"> <header class="header"> <div class="overlay"> <div class="container"> <h2 class="title"> <a href="/">코딩새내기 일상일지</a> </h2> <nav class="navbar"> <a href="#" class="menu-icon"> <span></span> <span></span> <span></span> </a> <ul class="nav"> <li><a href="/about/">About</a></li> <li><a href="/category.html">category</a></li> <li><a href="/mj_cv.pdf" target="_blank">CV</a></li> </ul> </nav> </div> </div> </header> <article class="post container card"> <header class="post-header"> <h1 class="post-title">C++ 시작하기</h1> <span class="post-meta"> <time class="post-date" datetime="2020-09-24">Sep 24, 2020</time> <span class="post-author">by Munjeong Kang</span> </span> </header> <div class="post-content"> <p>C++ 기본 문법에 대해서 정리해보려고 한다.</p> <ul> <li>C++ Output (Print Text)</li> </ul> <div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="cp">#include &lt;iostream&gt;</span>
 <span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
   <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Hello World!&quot;</span><span class="p">;</span>
   <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div> <ul> <li>C++ New Lines</li> </ul> <div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="cp">#include &lt;iostream&gt;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Hello World!&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="c1">// or cout &lt;&lt; &quot;Hello World! \n&quot; </span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;I am learning C++&quot;</span><span class="p">;</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div> <ul> <li>C++ Variables</li> </ul> <div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">myNum</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>               <span class="c1">// Integer (whole number without decimals)</span>
+<span class="kt">double</span> <span class="n">myFloatNum</span> <span class="o">=</span> <span class="mf">5.99</span><span class="p">;</span>    <span class="c1">// Floating point number (with decimals) double variables have a precision of about 15 digits. </span>
+<span class="kt">float</span> <span class="n">myNum</span> <span class="o">=</span> <span class="mf">5.75</span><span class="p">;</span>         <span class="c1">//  The precision of float is only six or seven decimal digits</span>
+<span class="kt">char</span> <span class="n">myLetter</span> <span class="o">=</span> <span class="sc">&#39;D&#39;</span><span class="p">;</span>         <span class="c1">// The char data type is used to store a single character</span>
+<span class="n">string</span> <span class="n">myText</span> <span class="o">=</span> <span class="s">&quot;Hello&quot;</span><span class="p">;</span>     <span class="c1">// String (text)</span>
+<span class="kt">bool</span> <span class="n">myBoolean</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>    
+
+<span class="k">const</span> <span class="kt">int</span> <span class="n">minutesPerHour</span> <span class="o">=</span> <span class="mi">60</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">float</span> <span class="n">PI</span> <span class="o">=</span> <span class="mf">3.14</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">;</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">sum</span><span class="p">;</span></code></pre></div> <ul> <li>C++ User Input</li> </ul> <div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">sum</span><span class="p">;</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Type a number: &quot;</span><span class="p">;</span>
+<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">x</span><span class="p">;</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Type another number: &quot;</span><span class="p">;</span>
+<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">y</span><span class="p">;</span>
+<span class="n">sum</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">;</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Sum is: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">sum</span><span class="p">;</span></code></pre></div> <ul> <li>C++ Logical Operators</li> </ul> <div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="o">&amp;&amp;</span> <span class="c1">// Logical and , ex : x &lt; 5 &amp;&amp;  x &lt; 10</span>
+<span class="o">||</span> <span class="c1">// Logical or ,  ex : x &lt; 5 || x &lt; 4</span>
+<span class="o">!</span> <span class="c1">// Logical not , ex : !(x &lt; 5 &amp;&amp; x &lt; 10)</span></code></pre></div> <ul> <li>C++ Strings</li> </ul> <div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="cp">#include &lt;string&gt; </span><span class="c1">// Include the string library</span>
+
+<span class="n">string</span> <span class="n">greeting</span> <span class="o">=</span> <span class="s">&quot;Hello&quot;</span><span class="p">;</span> <span class="c1">// Create a string variable</span>
+
+<span class="n">string</span> <span class="n">firstName</span> <span class="o">=</span> <span class="s">&quot;John &quot;</span><span class="p">;</span>
+<span class="n">string</span> <span class="n">lastName</span> <span class="o">=</span> <span class="s">&quot;Doe&quot;</span><span class="p">;</span>
+<span class="n">string</span> <span class="n">fullName</span> <span class="o">=</span> <span class="n">firstName</span> <span class="o">+</span> <span class="n">lastName</span><span class="p">;</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">fullName</span><span class="p">;</span>
+
+<span class="n">string</span> <span class="n">fullName</span> <span class="o">=</span> <span class="n">firstName</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">lastName</span><span class="p">);</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">fullName</span><span class="p">;</span>
+
+<span class="n">string</span> <span class="n">txt</span> <span class="o">=</span> <span class="s">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;</span><span class="p">;</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;The length of the txt string is: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">txt</span><span class="p">.</span><span class="n">length</span><span class="p">();</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;The length of the txt string is: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">txt</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+
+<span class="n">string</span> <span class="n">myString</span> <span class="o">=</span> <span class="s">&quot;Hello&quot;</span><span class="p">;</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">myString</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span> <span class="c1">// Outputs H</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">myString</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span> <span class="c1">// Outputs e</span>
+
+
+<span class="n">string</span> <span class="n">myString</span> <span class="o">=</span> <span class="s">&quot;Hello&quot;</span><span class="p">;</span>
+<span class="n">myString</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="sc">&#39;J&#39;</span><span class="p">;</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">myString</span><span class="p">;</span> <span class="c1">// Outputs Jello instead of Hello</span></code></pre></div> <ul> <li>C++ User Input Strings</li> </ul> <div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="n">string</span> <span class="n">fullName</span><span class="p">;</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Type your full name: &quot;</span><span class="p">;</span> 
+<span class="n">getline</span> <span class="p">(</span><span class="n">cin</span><span class="p">,</span> <span class="n">fullName</span><span class="p">);</span> <span class="c1">// cin considers a space (whitespace, tabs, etc) as a terminating character, which means that it can only display a single word.</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Your name is: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">fullName</span><span class="p">;</span>
+
+<span class="c1">// Type your full name: John Doe</span>
+<span class="c1">// Your name is: John Doe</span></code></pre></div> <ul> <li>C++ Math</li> </ul> <div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">max</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">min</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+
+<span class="cp">#include &lt;cmath&gt;</span>
+
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">64</span><span class="p">);</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">round</span><span class="p">(</span><span class="mf">2.6</span><span class="p">);</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">log</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+
+<span class="cm">/*</span>
+<span class="cm">abs(x)	Returns the absolute value of x</span>
+<span class="cm">acos(x)	Returns the arccosine of x, in radians</span>
+<span class="cm">asin(x)	Returns the arcsine of x, in radians</span>
+<span class="cm">atan(x)	Returns the arctangent of x, in radians</span>
+<span class="cm">cbrt(x)	Returns the cube root of x</span>
+<span class="cm">ceil(x)	Returns the value of x rounded up to its nearest integer</span>
+<span class="cm">cos(x)	Returns the cosine of x, in radians</span>
+<span class="cm">cosh(x)	Returns the hyperbolic cosine of x, in radians</span>
+<span class="cm">exp(x)	Returns the value of E^x</span>
+<span class="cm">expm1(x)	Returns e^x -1</span>
+<span class="cm">fabs(x)	Returns the absolute value of a floating x</span>
+<span class="cm">fdim(x, y)	Returns the positive difference between x and y</span>
+<span class="cm">floor(x)	Returns the value of x rounded down to its nearest integer</span>
+<span class="cm">hypot(x, y)	Returns sqrt(x^2 +y^2) without intermediate overflow or underflow</span>
+<span class="cm">fma(x, y, z)	Returns x*y+z without losing precision</span>
+<span class="cm">fmax(x, y)	Returns the highest value of a floating x and y</span>
+<span class="cm">fmin(x, y)	Returns the lowest value of a floating x and y</span>
+<span class="cm">fmod(x, y)	Returns the floating point remainder of x/y</span>
+<span class="cm">pow(x, y)	Returns the value of x to the power of y</span>
+<span class="cm">sin(x)	Returns the sine of x (x is in radians)</span>
+<span class="cm">sinh(x)	Returns the hyperbolic sine of a double value</span>
+<span class="cm">tan(x)	Returns the tangent of an angle</span>
+<span class="cm">tanh(x)	Returns the hyperbolic tangent of a double value</span>
+<span class="cm">*/</span></code></pre></div> <ul> <li>C++ Conditions</li> </ul> <div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">time</span> <span class="o">=</span> <span class="mi">22</span><span class="p">;</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">time</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Good morning.&quot;</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">time</span> <span class="o">&lt;</span> <span class="mi">20</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Good day.&quot;</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Good evening.&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// Outputs &quot;Good evening.&quot;</span>
+
+<span class="kt">int</span> <span class="n">time</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+<span class="n">string</span> <span class="n">result</span> <span class="o">=</span> <span class="p">(</span><span class="n">time</span> <span class="o">&lt;</span> <span class="mi">18</span><span class="p">)</span> <span class="o">?</span> <span class="s">&quot;Good day.&quot;</span> <span class="o">:</span> <span class="s">&quot;Good evening.&quot;</span><span class="p">;</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">result</span><span class="p">;</span></code></pre></div> <ul> <li>C++ Switch</li> </ul> <div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">day</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="k">switch</span> <span class="p">(</span><span class="n">day</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">case</span> <span class="mi">6</span><span class="o">:</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Today is Saturday&quot;</span><span class="p">;</span>
+    <span class="k">break</span><span class="p">;</span>
+  <span class="k">case</span> <span class="mi">7</span><span class="o">:</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Today is Sunday&quot;</span><span class="p">;</span>
+    <span class="k">break</span><span class="p">;</span>
+  <span class="k">default</span><span class="o">:</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Looking forward to the Weekend&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// Outputs &quot;Looking forward to the Weekend&quot;</span></code></pre></div> <ul> <li>C++ While Loop</li> </ul> <div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">while</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+  <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">do</span> <span class="p">{</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+  <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">while</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">);</span></code></pre></div> <ul> <li>C++ For Loop</li> </ul> <div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">;</span> <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="mi">4</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">break</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="p">}</span> 
+
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="mi">4</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">continue</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div> <ul> <li>C++ Arrays</li> </ul> <div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">myNum</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">};</span>
+
+<span class="n">string</span> <span class="n">cars</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;Volvo&quot;</span><span class="p">,</span> <span class="s">&quot;BMW&quot;</span><span class="p">,</span> <span class="s">&quot;Ford&quot;</span><span class="p">,</span> <span class="s">&quot;Mazda&quot;</span><span class="p">};</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">cars</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<span class="c1">// Outputs Volvo</span>
+
+<span class="n">string</span> <span class="n">cars</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;Volvo&quot;</span><span class="p">,</span> <span class="s">&quot;BMW&quot;</span><span class="p">,</span> <span class="s">&quot;Ford&quot;</span><span class="p">,</span> <span class="s">&quot;Mazda&quot;</span><span class="p">};</span>
+<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">cars</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">string</span> <span class="n">cars</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;Volvo&quot;</span><span class="p">,</span> <span class="s">&quot;BMW&quot;</span><span class="p">,</span> <span class="s">&quot;Ford&quot;</span><span class="p">,</span> <span class="s">&quot;Mazda&quot;</span><span class="p">};</span>
+<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">cars</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">string</span> <span class="n">cars</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;Volvo&quot;</span><span class="p">,</span> <span class="s">&quot;BMW&quot;</span><span class="p">,</span> <span class="s">&quot;Ford&quot;</span><span class="p">};</span> <span class="c1">// size of array is 5, even though it&#39;s only three elements inside it</span></code></pre></div> <ul> <li>C++ References</li> </ul> <div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="n">string</span> <span class="n">food</span> <span class="o">=</span> <span class="s">&quot;Pizza&quot;</span><span class="p">;</span>
+<span class="n">string</span> <span class="o">&amp;</span><span class="n">meal</span> <span class="o">=</span> <span class="n">food</span><span class="p">;</span>
+
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">food</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>  <span class="c1">// Outputs Pizza</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">meal</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>  <span class="c1">// Outputs Pizza</span>
+
+<span class="n">string</span> <span class="n">food</span> <span class="o">=</span> <span class="s">&quot;Pizza&quot;</span><span class="p">;</span>
+
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">&amp;</span><span class="n">food</span><span class="p">;</span> <span class="c1">// Outputs 0x6dfed4</span>
+<span class="c1">// The memory address is in hexadecimal form (0x..). Note that you may not get the same result in your program.</span></code></pre></div> <ul> <li>C++ Pointers</li> </ul> <div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="n">string</span> <span class="n">food</span> <span class="o">=</span> <span class="s">&quot;Pizza&quot;</span><span class="p">;</span>  <span class="c1">// A food variable of type string</span>
+<span class="n">string</span><span class="o">*</span> <span class="n">ptr</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">food</span><span class="p">;</span>    <span class="c1">// A pointer variable, with the name ptr, that stores the address of food</span>
+
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">food</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span> <span class="c1">// Output the value of food (Pizza)</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">&amp;</span><span class="n">food</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span> <span class="c1">// Output the memory address of food (0x6dfed4)</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">ptr</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span> <span class="c1">// Output the memory address of food with the pointer (0x6dfed4)</span>
+
+<span class="n">string</span> <span class="n">food</span> <span class="o">=</span> <span class="s">&quot;Pizza&quot;</span><span class="p">;</span>  <span class="c1">// Variable declaration</span>
+<span class="n">string</span><span class="o">*</span> <span class="n">ptr</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">food</span><span class="p">;</span>    <span class="c1">// Pointer declaration</span>
+
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">ptr</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span> <span class="c1">// Reference: Output the memory address of food with the pointer (0x6dfed4)</span>
+
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">ptr</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span> <span class="c1">// Dereference: Output the value of food with the pointer (Pizza)</span>
+
+<span class="n">string</span> <span class="n">food</span> <span class="o">=</span> <span class="s">&quot;Pizza&quot;</span><span class="p">;</span>
+<span class="n">string</span><span class="o">*</span> <span class="n">ptr</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">food</span><span class="p">;</span>
+
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">food</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span> <span class="c1">// Output the value of food (Pizza)</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">&amp;</span><span class="n">food</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span> <span class="c1">// Output the memory address of food (0x6dfed4)</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">ptr</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span> <span class="c1">// Access the memory address of food and output its value (Pizza)</span>
+
+<span class="o">*</span><span class="n">ptr</span> <span class="o">=</span> <span class="s">&quot;Hamburger&quot;</span><span class="p">;</span> <span class="c1">// Change the value of the pointer</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">ptr</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span> <span class="c1">// Output the new value of the pointer (Hamburger)</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">food</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span> <span class="c1">// Output the new value of the food variable (Hamburger)</span></code></pre></div> <ul> <li>C++ Functions</li> </ul> <div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="c1">// Create a function</span>
+<span class="kt">void</span> <span class="nf">myFunction</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;I just got executed!&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">myFunction</span><span class="p">();</span> <span class="c1">// call the function</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span> <span class="c1">// Outputs &quot;I just got executed!&quot;</span>
+
+
+<span class="kt">void</span> <span class="nf">myFunction</span><span class="p">();</span> <span class="c1">// Function declaration</span>
+
+<span class="c1">// The main method</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">myFunction</span><span class="p">();</span>  <span class="c1">// call the function</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Function definition</span>
+<span class="kt">void</span> <span class="nf">myFunction</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;I just got executed!&quot;</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div> <ul> <li>C++ Function Parameters and Arguments</li> </ul> <div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="nf">myFunction</span><span class="p">(</span><span class="n">string</span> <span class="n">fname</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">fname</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; Refsnes</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">myFunction</span><span class="p">(</span><span class="s">&quot;Liam&quot;</span><span class="p">);</span>
+  <span class="n">myFunction</span><span class="p">(</span><span class="s">&quot;Jenny&quot;</span><span class="p">);</span>
+  <span class="n">myFunction</span><span class="p">(</span><span class="s">&quot;Anja&quot;</span><span class="p">);</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Liam Refsnes</span>
+<span class="c1">// Jenny Refsnes</span>
+<span class="c1">// Anja Refsnes</span>
+
+<span class="kt">void</span> <span class="nf">myFunction</span><span class="p">(</span><span class="n">string</span> <span class="n">country</span> <span class="o">=</span> <span class="s">&quot;Norway&quot;</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">country</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">myFunction</span><span class="p">(</span><span class="s">&quot;Sweden&quot;</span><span class="p">);</span>
+  <span class="n">myFunction</span><span class="p">(</span><span class="s">&quot;India&quot;</span><span class="p">);</span>
+  <span class="n">myFunction</span><span class="p">();</span>
+  <span class="n">myFunction</span><span class="p">(</span><span class="s">&quot;USA&quot;</span><span class="p">);</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Sweden</span>
+<span class="c1">// India</span>
+<span class="c1">// Norway</span>
+<span class="c1">// USA</span>
+
+<span class="kt">void</span> <span class="nf">myFunction</span><span class="p">(</span><span class="n">string</span> <span class="n">fname</span><span class="p">,</span> <span class="kt">int</span> <span class="n">age</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">fname</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; Refsnes. &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">age</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; years old. </span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">myFunction</span><span class="p">(</span><span class="s">&quot;Liam&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+  <span class="n">myFunction</span><span class="p">(</span><span class="s">&quot;Jenny&quot;</span><span class="p">,</span> <span class="mi">14</span><span class="p">);</span>
+  <span class="n">myFunction</span><span class="p">(</span><span class="s">&quot;Anja&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">);</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Liam Refsnes. 3 years old.</span>
+<span class="c1">// Jenny Refsnes. 14 years old.</span>
+<span class="c1">// Anja Refsnes. 30 years old.</span></code></pre></div> <ul> <li>C++ Functions Return Values</li> </ul> <div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="nf">myFunction</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="mi">5</span> <span class="o">+</span> <span class="n">x</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">myFunction</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Outputs 8 </span>
+
+<span class="kt">int</span> <span class="nf">myFunction</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">myFunction</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Outputs 8 </span>
+
+<span class="kt">int</span> <span class="nf">myFunction</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">z</span> <span class="o">=</span> <span class="n">myFunction</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">z</span><span class="p">;</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// Outputs 8</span></code></pre></div> <ul> <li>C++ Function Pass By Reference</li> </ul> <div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="nf">swapNums</span><span class="p">(</span><span class="kt">int</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">y</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">z</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>
+  <span class="n">x</span> <span class="o">=</span> <span class="n">y</span><span class="p">;</span>
+  <span class="n">y</span> <span class="o">=</span> <span class="n">z</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">firstNum</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">secondNum</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Before swap: &quot;</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">firstNum</span> <span class="o">&lt;&lt;</span> <span class="n">secondNum</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+
+  <span class="c1">// Call the function, which will change the values of firstNum and secondNum</span>
+  <span class="n">swapNums</span><span class="p">(</span><span class="n">firstNum</span><span class="p">,</span> <span class="n">secondNum</span><span class="p">);</span>
+
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;After swap: &quot;</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">firstNum</span> <span class="o">&lt;&lt;</span> <span class="n">secondNum</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">plusFuncInt</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">double</span> <span class="nf">plusFuncDouble</span><span class="p">(</span><span class="kt">double</span> <span class="n">x</span><span class="p">,</span> <span class="kt">double</span> <span class="n">y</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">myNum1</span> <span class="o">=</span> <span class="n">plusFuncInt</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+  <span class="kt">double</span> <span class="n">myNum2</span> <span class="o">=</span> <span class="n">plusFuncDouble</span><span class="p">(</span><span class="mf">4.3</span><span class="p">,</span> <span class="mf">6.26</span><span class="p">);</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Int: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">myNum1</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Double: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">myNum2</span><span class="p">;</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">plusFunc</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">double</span> <span class="nf">plusFunc</span><span class="p">(</span><span class="kt">double</span> <span class="n">x</span><span class="p">,</span> <span class="kt">double</span> <span class="n">y</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">myNum1</span> <span class="o">=</span> <span class="n">plusFunc</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+  <span class="kt">double</span> <span class="n">myNum2</span> <span class="o">=</span> <span class="n">plusFunc</span><span class="p">(</span><span class="mf">4.3</span><span class="p">,</span> <span class="mf">6.26</span><span class="p">);</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Int: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">myNum1</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Double: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">myNum2</span><span class="p">;</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Multiple functions can have the same name as long as the number and/or type of parameters are different.</span></code></pre></div> <ul> <li>C++ Classes and Objects</li> </ul> <div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">MyClass</span> <span class="p">{</span>       <span class="c1">// The class</span>
+  <span class="k">public</span><span class="o">:</span>             <span class="c1">// Access specifier</span>
+    <span class="kt">int</span> <span class="n">myNum</span><span class="p">;</span>        <span class="c1">// Attribute (int variable)</span>
+    <span class="n">string</span> <span class="n">myString</span><span class="p">;</span>  <span class="c1">// Attribute (string variable)</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">MyClass</span> <span class="n">myObj</span><span class="p">;</span>  <span class="c1">// Create an object of MyClass</span>
+
+  <span class="c1">// Access attributes and set values</span>
+  <span class="n">myObj</span><span class="p">.</span><span class="n">myNum</span> <span class="o">=</span> <span class="mi">15</span><span class="p">;</span> 
+  <span class="n">myObj</span><span class="p">.</span><span class="n">myString</span> <span class="o">=</span> <span class="s">&quot;Some text&quot;</span><span class="p">;</span>
+
+  <span class="c1">// Print attribute values</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">myObj</span><span class="p">.</span><span class="n">myNum</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span> 
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">myObj</span><span class="p">.</span><span class="n">myString</span><span class="p">;</span> 
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Create a Car class with some attributes</span>
+<span class="k">class</span> <span class="nc">Car</span> <span class="p">{</span>
+  <span class="k">public</span><span class="o">:</span>
+    <span class="n">string</span> <span class="n">brand</span><span class="p">;</span>   
+    <span class="n">string</span> <span class="n">model</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">year</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// Create an object of Car</span>
+  <span class="n">Car</span> <span class="n">carObj1</span><span class="p">;</span>
+  <span class="n">carObj1</span><span class="p">.</span><span class="n">brand</span> <span class="o">=</span> <span class="s">&quot;BMW&quot;</span><span class="p">;</span>
+  <span class="n">carObj1</span><span class="p">.</span><span class="n">model</span> <span class="o">=</span> <span class="s">&quot;X5&quot;</span><span class="p">;</span>
+  <span class="n">carObj1</span><span class="p">.</span><span class="n">year</span> <span class="o">=</span> <span class="mi">1999</span><span class="p">;</span>
+
+  <span class="c1">// Create another object of Car</span>
+  <span class="n">Car</span> <span class="n">carObj2</span><span class="p">;</span>
+  <span class="n">carObj2</span><span class="p">.</span><span class="n">brand</span> <span class="o">=</span> <span class="s">&quot;Ford&quot;</span><span class="p">;</span>
+  <span class="n">carObj2</span><span class="p">.</span><span class="n">model</span> <span class="o">=</span> <span class="s">&quot;Mustang&quot;</span><span class="p">;</span>
+  <span class="n">carObj2</span><span class="p">.</span><span class="n">year</span> <span class="o">=</span> <span class="mi">1969</span><span class="p">;</span>
+
+  <span class="c1">// Print attribute values</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">carObj1</span><span class="p">.</span><span class="n">brand</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">carObj1</span><span class="p">.</span><span class="n">model</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">carObj1</span><span class="p">.</span><span class="n">year</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">carObj2</span><span class="p">.</span><span class="n">brand</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">carObj2</span><span class="p">.</span><span class="n">model</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">carObj2</span><span class="p">.</span><span class="n">year</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div> <ul> <li>C++ Class Methods</li> </ul> <div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">MyClass</span> <span class="p">{</span>        <span class="c1">// The class</span>
+  <span class="k">public</span><span class="o">:</span>              <span class="c1">// Access specifier</span>
+    <span class="kt">void</span> <span class="n">myMethod</span><span class="p">()</span> <span class="p">{</span>  <span class="c1">// Method/function defined inside the class</span>
+      <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Hello World!&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">MyClass</span> <span class="n">myObj</span><span class="p">;</span>     <span class="c1">// Create an object of MyClass</span>
+  <span class="n">myObj</span><span class="p">.</span><span class="n">myMethod</span><span class="p">();</span>  <span class="c1">// Call the method</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">MyClass</span> <span class="p">{</span>        <span class="c1">// The class</span>
+  <span class="k">public</span><span class="o">:</span>              <span class="c1">// Access specifier</span>
+    <span class="kt">void</span> <span class="n">myMethod</span><span class="p">();</span>   <span class="c1">// Method/function declaration</span>
+<span class="p">};</span>
+
+<span class="c1">// Method/function definition outside the class</span>
+<span class="kt">void</span> <span class="n">MyClass</span><span class="o">::</span><span class="n">myMethod</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Hello World!&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">MyClass</span> <span class="n">myObj</span><span class="p">;</span>     <span class="c1">// Create an object of MyClass</span>
+  <span class="n">myObj</span><span class="p">.</span><span class="n">myMethod</span><span class="p">();</span>  <span class="c1">// Call the method</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cp">#include &lt;iostream&gt;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Car</span> <span class="p">{</span>
+  <span class="k">public</span><span class="o">:</span>
+    <span class="kt">int</span> <span class="n">speed</span><span class="p">(</span><span class="kt">int</span> <span class="n">maxSpeed</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="n">Car</span><span class="o">::</span><span class="n">speed</span><span class="p">(</span><span class="kt">int</span> <span class="n">maxSpeed</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="n">maxSpeed</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">Car</span> <span class="n">myObj</span><span class="p">;</span> <span class="c1">// Create an object of Car</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">myObj</span><span class="p">.</span><span class="n">speed</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span> <span class="c1">// Call the method with an argument</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div> <ul> <li>C++ Class Constructors</li> </ul> <div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">MyClass</span> <span class="p">{</span>     <span class="c1">// The class</span>
+  <span class="k">public</span><span class="o">:</span>           <span class="c1">// Access specifier</span>
+    <span class="n">MyClass</span><span class="p">()</span> <span class="p">{</span>     <span class="c1">// Constructor</span>
+      <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Hello World!&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">MyClass</span> <span class="n">myObj</span><span class="p">;</span>    <span class="c1">// Create an object of MyClass (this will call the constructor)</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">Car</span> <span class="p">{</span>        <span class="c1">// The class</span>
+  <span class="k">public</span><span class="o">:</span>          <span class="c1">// Access specifier</span>
+    <span class="n">string</span> <span class="n">brand</span><span class="p">;</span>  <span class="c1">// Attribute</span>
+    <span class="n">string</span> <span class="n">model</span><span class="p">;</span>  <span class="c1">// Attribute</span>
+    <span class="kt">int</span> <span class="n">year</span><span class="p">;</span>      <span class="c1">// Attribute</span>
+    <span class="n">Car</span><span class="p">(</span><span class="n">string</span> <span class="n">x</span><span class="p">,</span> <span class="n">string</span> <span class="n">y</span><span class="p">,</span> <span class="kt">int</span> <span class="n">z</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// Constructor with parameters</span>
+      <span class="n">brand</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>
+      <span class="n">model</span> <span class="o">=</span> <span class="n">y</span><span class="p">;</span>
+      <span class="n">year</span> <span class="o">=</span> <span class="n">z</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// Create Car objects and call the constructor with different values</span>
+  <span class="n">Car</span> <span class="n">carObj1</span><span class="p">(</span><span class="s">&quot;BMW&quot;</span><span class="p">,</span> <span class="s">&quot;X5&quot;</span><span class="p">,</span> <span class="mi">1999</span><span class="p">);</span>
+  <span class="n">Car</span> <span class="n">carObj2</span><span class="p">(</span><span class="s">&quot;Ford&quot;</span><span class="p">,</span> <span class="s">&quot;Mustang&quot;</span><span class="p">,</span> <span class="mi">1969</span><span class="p">);</span>
+
+  <span class="c1">// Print values</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">carObj1</span><span class="p">.</span><span class="n">brand</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">carObj1</span><span class="p">.</span><span class="n">model</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">carObj1</span><span class="p">.</span><span class="n">year</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">carObj2</span><span class="p">.</span><span class="n">brand</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">carObj2</span><span class="p">.</span><span class="n">model</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">carObj2</span><span class="p">.</span><span class="n">year</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">Car</span> <span class="p">{</span>        <span class="c1">// The class</span>
+  <span class="k">public</span><span class="o">:</span>          <span class="c1">// Access specifier</span>
+    <span class="n">string</span> <span class="n">brand</span><span class="p">;</span>  <span class="c1">// Attribute</span>
+    <span class="n">string</span> <span class="n">model</span><span class="p">;</span>  <span class="c1">// Attribute</span>
+    <span class="kt">int</span> <span class="n">year</span><span class="p">;</span>      <span class="c1">// Attribute</span>
+    <span class="n">Car</span><span class="p">(</span><span class="n">string</span> <span class="n">x</span><span class="p">,</span> <span class="n">string</span> <span class="n">y</span><span class="p">,</span> <span class="kt">int</span> <span class="n">z</span><span class="p">);</span> <span class="c1">// Constructor declaration</span>
+<span class="p">};</span>
+
+<span class="c1">// Constructor definition outside the class</span>
+<span class="n">Car</span><span class="o">::</span><span class="n">Car</span><span class="p">(</span><span class="n">string</span> <span class="n">x</span><span class="p">,</span> <span class="n">string</span> <span class="n">y</span><span class="p">,</span> <span class="kt">int</span> <span class="n">z</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">brand</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>
+  <span class="n">model</span> <span class="o">=</span> <span class="n">y</span><span class="p">;</span>
+  <span class="n">year</span> <span class="o">=</span> <span class="n">z</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// Create Car objects and call the constructor with different values</span>
+  <span class="n">Car</span> <span class="n">carObj1</span><span class="p">(</span><span class="s">&quot;BMW&quot;</span><span class="p">,</span> <span class="s">&quot;X5&quot;</span><span class="p">,</span> <span class="mi">1999</span><span class="p">);</span>
+  <span class="n">Car</span> <span class="nf">carObj2</span><span class="p">(</span><span class="s">&quot;Ford&quot;</span><span class="p">,</span> <span class="s">&quot;Mustang&quot;</span><span class="p">,</span> <span class="mi">1969</span><span class="p">);</span>
+
+  <span class="c1">// Print values</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">carObj1</span><span class="p">.</span><span class="n">brand</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">carObj1</span><span class="p">.</span><span class="n">model</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">carObj1</span><span class="p">.</span><span class="n">year</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">carObj2</span><span class="p">.</span><span class="n">brand</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">carObj2</span><span class="p">.</span><span class="n">model</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">carObj2</span><span class="p">.</span><span class="n">year</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div> <ul> <li>C++ Access Specifiers</li> </ul> <div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">MyClass</span> <span class="p">{</span>
+  <span class="k">public</span><span class="o">:</span>    <span class="c1">// Public access specifier</span>
+    <span class="kt">int</span> <span class="n">x</span><span class="p">;</span>   <span class="c1">// Public attribute</span>
+  <span class="k">private</span><span class="o">:</span>   <span class="c1">// Private access specifier</span>
+    <span class="kt">int</span> <span class="n">y</span><span class="p">;</span>   <span class="c1">// Private attribute</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">MyClass</span> <span class="n">myObj</span><span class="p">;</span>
+  <span class="n">myObj</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">25</span><span class="p">;</span>  <span class="c1">// Allowed (public)</span>
+  <span class="n">myObj</span><span class="p">.</span><span class="n">y</span> <span class="o">=</span> <span class="mi">50</span><span class="p">;</span>  <span class="c1">// Not allowed (private)</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div> <h1 id="include-iostream">include <iostream></iostream></h1> <p>using namespace std;</p> <p>class Employee { private: int salary;</p> <p>public: void setSalary(int s) { salary = s; } int getSalary() { return salary; } };</p> <p>int main() { Employee myObj; myObj.setSalary(50000); cout « myObj.getSalary(); return 0; }</p> <p>// It is considered good practice to declare your class attributes as private (as often as you can). Encapsulation ensures better control of your data, because you (or others) can change one part of the code without affecting other parts</p> <ul> <li>C++ Inheritance</li> </ul> <div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="c1">// Base class</span>
+<span class="k">class</span> <span class="nc">Vehicle</span> <span class="p">{</span>
+  <span class="k">public</span><span class="o">:</span> 
+    <span class="n">string</span> <span class="n">brand</span> <span class="o">=</span> <span class="s">&quot;Ford&quot;</span><span class="p">;</span>
+    <span class="kt">void</span> <span class="nf">honk</span><span class="p">()</span> <span class="p">{</span>
+      <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Tuut, tuut! </span><span class="se">\n</span><span class="s">&quot;</span> <span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// Derived class</span>
+<span class="k">class</span> <span class="nc">Car</span><span class="o">:</span> <span class="k">public</span> <span class="n">Vehicle</span> <span class="p">{</span>
+  <span class="k">public</span><span class="o">:</span> 
+    <span class="n">string</span> <span class="n">model</span> <span class="o">=</span> <span class="s">&quot;Mustang&quot;</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">Car</span> <span class="n">myCar</span><span class="p">;</span>
+  <span class="n">myCar</span><span class="p">.</span><span class="n">honk</span><span class="p">();</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">myCar</span><span class="p">.</span><span class="n">brand</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">myCar</span><span class="p">.</span><span class="n">model</span><span class="p">;</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Base class (parent)</span>
+<span class="k">class</span> <span class="nc">MyClass</span> <span class="p">{</span>
+  <span class="k">public</span><span class="o">:</span> 
+    <span class="kt">void</span> <span class="n">myFunction</span><span class="p">()</span> <span class="p">{</span>
+      <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Some content in parent class.&quot;</span> <span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// Derived class (child)</span>
+<span class="k">class</span> <span class="nc">MyChild</span><span class="o">:</span> <span class="k">public</span> <span class="n">MyClass</span> <span class="p">{</span>
+<span class="p">};</span>
+
+<span class="c1">// Derived class (grandchild) </span>
+<span class="k">class</span> <span class="nc">MyGrandChild</span><span class="o">:</span> <span class="k">public</span> <span class="n">MyChild</span> <span class="p">{</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">MyGrandChild</span> <span class="n">myObj</span><span class="p">;</span>
+  <span class="n">myObj</span><span class="p">.</span><span class="n">myFunction</span><span class="p">();</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Base class</span>
+<span class="k">class</span> <span class="nc">MyClass</span> <span class="p">{</span>
+  <span class="k">public</span><span class="o">:</span> 
+    <span class="kt">void</span> <span class="n">myFunction</span><span class="p">()</span> <span class="p">{</span>
+      <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Some content in parent class.&quot;</span> <span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// Another base class</span>
+<span class="k">class</span> <span class="nc">MyOtherClass</span> <span class="p">{</span>
+  <span class="k">public</span><span class="o">:</span> 
+    <span class="kt">void</span> <span class="n">myOtherFunction</span><span class="p">()</span> <span class="p">{</span>
+      <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Some content in another class.&quot;</span> <span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// Derived class </span>
+<span class="k">class</span> <span class="nc">MyChildClass</span><span class="o">:</span> <span class="k">public</span> <span class="n">MyClass</span><span class="p">,</span> <span class="k">public</span> <span class="n">MyOtherClass</span> <span class="p">{</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">MyChildClass</span> <span class="n">myObj</span><span class="p">;</span>
+  <span class="n">myObj</span><span class="p">.</span><span class="n">myFunction</span><span class="p">();</span>
+  <span class="n">myObj</span><span class="p">.</span><span class="n">myOtherFunction</span><span class="p">();</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Base class</span>
+<span class="k">class</span> <span class="nc">Employee</span> <span class="p">{</span>
+  <span class="k">protected</span><span class="o">:</span> <span class="c1">// Protected access specifier</span>
+    <span class="kt">int</span> <span class="n">salary</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="c1">// Derived class</span>
+<span class="k">class</span> <span class="nc">Programmer</span><span class="o">:</span> <span class="k">public</span> <span class="n">Employee</span> <span class="p">{</span>
+  <span class="k">public</span><span class="o">:</span>
+    <span class="kt">int</span> <span class="n">bonus</span><span class="p">;</span>
+    <span class="kt">void</span> <span class="nf">setSalary</span><span class="p">(</span><span class="kt">int</span> <span class="n">s</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">salary</span> <span class="o">=</span> <span class="n">s</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kt">int</span> <span class="nf">getSalary</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="n">salary</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">Programmer</span> <span class="n">myObj</span><span class="p">;</span>
+  <span class="n">myObj</span><span class="p">.</span><span class="n">setSalary</span><span class="p">(</span><span class="mi">50000</span><span class="p">);</span>
+  <span class="n">myObj</span><span class="p">.</span><span class="n">bonus</span> <span class="o">=</span> <span class="mi">15000</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Salary: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">myObj</span><span class="p">.</span><span class="n">getSalary</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Bonus: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">myObj</span><span class="p">.</span><span class="n">bonus</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Base class</span>
+<span class="k">class</span> <span class="nc">Employee</span> <span class="p">{</span>
+  <span class="k">protected</span><span class="o">:</span> <span class="c1">// Protected access specifier</span>
+    <span class="kt">int</span> <span class="n">salary</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="c1">// Derived class</span>
+<span class="k">class</span> <span class="nc">Programmer</span><span class="o">:</span> <span class="k">public</span> <span class="n">Employee</span> <span class="p">{</span>
+  <span class="k">public</span><span class="o">:</span>
+    <span class="kt">int</span> <span class="n">bonus</span><span class="p">;</span>
+    <span class="kt">void</span> <span class="nf">setSalary</span><span class="p">(</span><span class="kt">int</span> <span class="n">s</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">salary</span> <span class="o">=</span> <span class="n">s</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kt">int</span> <span class="nf">getSalary</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="n">salary</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">Programmer</span> <span class="n">myObj</span><span class="p">;</span>
+  <span class="n">myObj</span><span class="p">.</span><span class="n">setSalary</span><span class="p">(</span><span class="mi">50000</span><span class="p">);</span>
+  <span class="n">myObj</span><span class="p">.</span><span class="n">bonus</span> <span class="o">=</span> <span class="mi">15000</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Salary: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">myObj</span><span class="p">.</span><span class="n">getSalary</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Bonus: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">myObj</span><span class="p">.</span><span class="n">bonus</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div> <ul> <li>C++ Polymorphism</li> </ul> <div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="c1">// Base class</span>
+<span class="k">class</span> <span class="nc">Animal</span> <span class="p">{</span>
+  <span class="k">public</span><span class="o">:</span>
+    <span class="kt">void</span> <span class="n">animalSound</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;The animal makes a sound </span><span class="se">\n</span><span class="s">&quot;</span> <span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// Derived class</span>
+<span class="k">class</span> <span class="nc">Pig</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Animal</span> <span class="p">{</span>
+  <span class="k">public</span><span class="o">:</span>
+    <span class="kt">void</span> <span class="n">animalSound</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;The pig says: wee wee </span><span class="se">\n</span><span class="s">&quot;</span> <span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// Derived class</span>
+<span class="k">class</span> <span class="nc">Dog</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Animal</span> <span class="p">{</span>
+  <span class="k">public</span><span class="o">:</span>
+    <span class="kt">void</span> <span class="n">animalSound</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;The dog says: bow wow </span><span class="se">\n</span><span class="s">&quot;</span> <span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// Base class</span>
+<span class="k">class</span> <span class="nc">Animal</span> <span class="p">{</span>
+  <span class="k">public</span><span class="o">:</span>
+    <span class="kt">void</span> <span class="n">animalSound</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;The animal makes a sound </span><span class="se">\n</span><span class="s">&quot;</span> <span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// Derived class</span>
+<span class="k">class</span> <span class="nc">Pig</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Animal</span> <span class="p">{</span>
+  <span class="k">public</span><span class="o">:</span>
+    <span class="kt">void</span> <span class="n">animalSound</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;The pig says: wee wee </span><span class="se">\n</span><span class="s">&quot;</span> <span class="p">;</span>
+   <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// Derived class</span>
+<span class="k">class</span> <span class="nc">Dog</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Animal</span> <span class="p">{</span>
+  <span class="k">public</span><span class="o">:</span>
+    <span class="kt">void</span> <span class="n">animalSound</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;The dog says: bow wow </span><span class="se">\n</span><span class="s">&quot;</span> <span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">Animal</span> <span class="n">myAnimal</span><span class="p">;</span>
+  <span class="n">Pig</span> <span class="n">myPig</span><span class="p">;</span>
+  <span class="n">Dog</span> <span class="n">myDog</span><span class="p">;</span>
+
+  <span class="n">myAnimal</span><span class="p">.</span><span class="n">animalSound</span><span class="p">();</span>
+  <span class="n">myPig</span><span class="p">.</span><span class="n">animalSound</span><span class="p">();</span>
+  <span class="n">myDog</span><span class="p">.</span><span class="n">animalSound</span><span class="p">();</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div> <ul> <li>C++ Files</li> </ul> <div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="cp">#include &lt;iostream&gt;</span>
+<span class="cp">#include &lt;fstream&gt;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// Create and open a text file</span>
+  <span class="n">ofstream</span> <span class="n">MyFile</span><span class="p">(</span><span class="s">&quot;filename.txt&quot;</span><span class="p">);</span>
+
+  <span class="c1">// Write to the file</span>
+  <span class="n">MyFile</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Files can be tricky, but it is fun enough!&quot;</span><span class="p">;</span>
+
+  <span class="c1">// Close the file</span>
+  <span class="n">MyFile</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="c1">// Create a text string, which is used to output the text file</span>
+<span class="n">string</span> <span class="n">myText</span><span class="p">;</span>
+
+<span class="c1">// Read from the text file</span>
+<span class="n">ifstream</span> <span class="nf">MyReadFile</span><span class="p">(</span><span class="s">&quot;filename.txt&quot;</span><span class="p">);</span>
+
+<span class="c1">// Use a while loop together with the getline() function to read the file line by line</span>
+<span class="k">while</span> <span class="p">(</span><span class="n">getline</span> <span class="p">(</span><span class="n">MyReadFile</span><span class="p">,</span> <span class="n">myText</span><span class="p">))</span> <span class="p">{</span>
+  <span class="c1">// Output the text from the file</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">myText</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Close the file</span>
+<span class="n">MyReadFile</span><span class="p">.</span><span class="n">close</span><span class="p">();</span></code></pre></div> <ul> <li>C++ Exception</li> </ul> <div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="n">try</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">age</span> <span class="o">=</span> <span class="mi">15</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">age</span> <span class="o">&gt;</span> <span class="mi">18</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Access granted - you are old enough.&quot;</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">throw</span> <span class="p">(</span><span class="n">age</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">catch</span> <span class="p">(</span><span class="kt">int</span> <span class="n">myNum</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Access denied - You must be at least 18 years old.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Age is: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">myNum</span><span class="p">;</span> 
+<span class="p">}</span>
+
+<span class="n">try</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">age</span> <span class="o">=</span> <span class="mi">15</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">age</span> <span class="o">&gt;</span> <span class="mi">18</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Access granted - you are old enough.&quot;</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">throw</span> <span class="mi">505</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">catch</span> <span class="p">(</span><span class="kt">int</span> <span class="n">myNum</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Access denied - You must be at least 18 years old.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Error number: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">myNum</span><span class="p">;</span> 
+<span class="p">}</span>
+
+<span class="n">try</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">age</span> <span class="o">=</span> <span class="mi">15</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">age</span> <span class="o">&gt;</span> <span class="mi">18</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Access granted - you are old enough.&quot;</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">throw</span> <span class="mi">505</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">catch</span> <span class="p">(...)</span> <span class="p">{</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Access denied - You must be at least 18 years old.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
 <span class="p">}</span></code></pre></div> <aside class="share"> <span>Share this: </span> <a href="http://twitter.com/share?text=C++ 시작하기&amp;url=http://munjeongkang.github.io/C++_start/&amp;hashtags=web,dev,blog,soudev&amp;via=nandomoreirame" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"> <i class="fa fa-twitter-square"></i> </a> <a href="https://www.facebook.com/sharer/sharer.php?u=http://munjeongkang.github.io/C++_start/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"> <i class="fa fa-facebook-square"></i> </a> </aside> <hr> <aside id="comments" class="disqus"> <h4 class="txt-center">Comments</h4> <div id="disqus_thread"></div> <script type="text/javascript"> var disqus_shortname = 'munjeong'; var disqus_identifier = '/C++_start'; var disqus_title = 'C++ 시작하기'; var disqus_url = 'http://munjeongkang.github.io'; /*var disqus_developer = 1;*/ (function() { var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true; dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js'; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq); })(); </script> <noscript> Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a> </noscript> </aside> </div> </article> <footer class="footer t-center"> <div class="container"> <div class="social-icons"> <ul class="text-left"> <li><a href="mailto:mj0225868@gmail.com" target="_blank"><i class="fa fa-envelope"></i></a></li> <li><a href="https://github.com/MunJeongKang" target="_blank"><i class="fa fa-github"></i></a></li> <li><a href="https://www.youtube.com" target="_blank"><i class="fa fa-youtube"></i></a></li> </ul> </div> <small>email : mj0225868@gmail.com</small> <!-- <small>&copy; 2020 All rights reserved. Made with <a href="http://jekyllrb.com" target="_blank">Jekyll</a> and <i class="icon icon-heart"></i></small> --> <!-- <small>by <a href="http://nandomoreira.me" target="_blank">nandomoreira.me</a></small> --> </div> </footer> </main> </body> </html></body></html>
 <!--
 // # Zetsu Jekyll theme - https://github.com/nandomoreriame/zetsu/

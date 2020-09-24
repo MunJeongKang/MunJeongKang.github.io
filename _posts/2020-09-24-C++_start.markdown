@@ -8,6 +8,8 @@ comments: true
 
 C++ 기본 문법에 대해서 정리해보려고 한다. 
 
+- C++ Output (Print Text)
+
 {% highlight cpp%}
 #include <iostream>
 using namespace std;
@@ -18,3 +20,959 @@ int main() {
 }
 {% endhighlight %}
 
+- C++ New Lines
+
+{% highlight cpp%}
+#include <iostream>
+using namespace std;
+
+int main() {
+  cout << "Hello World!" << endl;
+  // or cout << "Hello World! \n" 
+  cout << "I am learning C++";
+  return 0;
+}
+{% endhighlight %}
+
+- C++ Variables 
+
+{% highlight cpp%}
+int myNum = 5;               // Integer (whole number without decimals)
+double myFloatNum = 5.99;    // Floating point number (with decimals) double variables have a precision of about 15 digits. 
+float myNum = 5.75;         //  The precision of float is only six or seven decimal digits
+char myLetter = 'D';         // The char data type is used to store a single character
+string myText = "Hello";     // String (text)
+bool myBoolean = true;    
+
+const int minutesPerHour = 60;
+const float PI = 3.14;
+
+int x = 5;
+int y = 6;
+int sum = x + y;
+cout << sum;
+
+{% endhighlight %}
+
+- C++ User Input
+
+{% highlight cpp%}
+
+int x, y;
+int sum;
+cout << "Type a number: ";
+cin >> x;
+cout << "Type another number: ";
+cin >> y;
+sum = x + y;
+cout << "Sum is: " << sum;
+
+{% endhighlight %}
+
+- C++ Logical Operators
+
+{% highlight cpp%}
+&& // Logical and , ex : x < 5 &&  x < 10
+|| // Logical or ,  ex : x < 5 || x < 4
+! // Logical not , ex : !(x < 5 && x < 10)
+{% endhighlight %}
+
+- C++ Strings
+
+{% highlight cpp%}
+
+#include <string> // Include the string library
+
+string greeting = "Hello"; // Create a string variable
+
+string firstName = "John ";
+string lastName = "Doe";
+string fullName = firstName + lastName;
+cout << fullName;
+
+string fullName = firstName.append(lastName);
+cout << fullName;
+
+string txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+cout << "The length of the txt string is: " << txt.length();
+cout << "The length of the txt string is: " << txt.size();
+
+string myString = "Hello";
+cout << myString[0]; // Outputs H
+cout << myString[1]; // Outputs e
+
+
+string myString = "Hello";
+myString[0] = 'J';
+cout << myString; // Outputs Jello instead of Hello
+
+{% endhighlight %}
+
+- C++ User Input Strings
+ 
+{% highlight cpp%}
+
+string fullName;
+cout << "Type your full name: "; 
+getline (cin, fullName); // cin considers a space (whitespace, tabs, etc) as a terminating character, which means that it can only display a single word.
+cout << "Your name is: " << fullName;
+
+// Type your full name: John Doe
+// Your name is: John Doe
+
+{% endhighlight %}
+
+- C++ Math
+
+{% highlight cpp%}
+cout << max(5, 10);
+cout << min(5, 10);
+
+#include <cmath>
+
+cout << sqrt(64);
+cout << round(2.6);
+cout << log(2);
+
+/*
+abs(x)	Returns the absolute value of x
+acos(x)	Returns the arccosine of x, in radians
+asin(x)	Returns the arcsine of x, in radians
+atan(x)	Returns the arctangent of x, in radians
+cbrt(x)	Returns the cube root of x
+ceil(x)	Returns the value of x rounded up to its nearest integer
+cos(x)	Returns the cosine of x, in radians
+cosh(x)	Returns the hyperbolic cosine of x, in radians
+exp(x)	Returns the value of E^x
+expm1(x)	Returns e^x -1
+fabs(x)	Returns the absolute value of a floating x
+fdim(x, y)	Returns the positive difference between x and y
+floor(x)	Returns the value of x rounded down to its nearest integer
+hypot(x, y)	Returns sqrt(x^2 +y^2) without intermediate overflow or underflow
+fma(x, y, z)	Returns x*y+z without losing precision
+fmax(x, y)	Returns the highest value of a floating x and y
+fmin(x, y)	Returns the lowest value of a floating x and y
+fmod(x, y)	Returns the floating point remainder of x/y
+pow(x, y)	Returns the value of x to the power of y
+sin(x)	Returns the sine of x (x is in radians)
+sinh(x)	Returns the hyperbolic sine of a double value
+tan(x)	Returns the tangent of an angle
+tanh(x)	Returns the hyperbolic tangent of a double value
+*/
+
+{% endhighlight %}
+
+- C++ Conditions
+
+{% highlight cpp%}
+
+int time = 22;
+if (time < 10) {
+  cout << "Good morning.";
+} else if (time < 20) {
+  cout << "Good day.";
+} else {
+  cout << "Good evening.";
+}
+// Outputs "Good evening."
+
+int time = 20;
+string result = (time < 18) ? "Good day." : "Good evening.";
+cout << result;
+
+{% endhighlight %}
+
+- C++ Switch
+
+{% highlight cpp%}
+
+int day = 4;
+switch (day) {
+  case 6:
+    cout << "Today is Saturday";
+    break;
+  case 7:
+    cout << "Today is Sunday";
+    break;
+  default:
+    cout << "Looking forward to the Weekend";
+}
+// Outputs "Looking forward to the Weekend"
+
+{% endhighlight %}
+
+- C++ While Loop
+{% highlight cpp%}
+
+int i = 0;
+while (i < 5) {
+  cout << i << "\n";
+  i++;
+}
+
+int i = 0;
+do {
+  cout << i << "\n";
+  i++;
+}
+while (i < 5);
+{% endhighlight %}
+
+- C++ For Loop
+{% highlight cpp%}
+
+for (int i = 0; i < 5; i++) {
+  cout << i << "\n";
+}
+
+for (int i = 0; i <= 10; i = i + 2) {
+  cout << i << "\n";
+}
+
+for (int i = 0; i < 10; i++) {
+  if (i == 4) {
+    break;
+  }
+  cout << i << "\n";
+} 
+
+for (int i = 0; i < 10; i++) {
+  if (i == 4) {
+    continue;
+  }
+  cout << i << "\n";
+} 
+
+{% endhighlight %}
+
+- C++ Arrays
+{% highlight cpp%}
+
+int myNum[3] = {10, 20, 30};
+
+string cars[4] = {"Volvo", "BMW", "Ford", "Mazda"};
+cout << cars[0];
+// Outputs Volvo
+
+string cars[4] = {"Volvo", "BMW", "Ford", "Mazda"};
+for(int i = 0; i < 4; i++) {
+  cout << cars[i] << "\n";
+}
+
+string cars[4] = {"Volvo", "BMW", "Ford", "Mazda"};
+for(int i = 0; i < 4; i++) {
+  cout << i << ": " << cars[i] << "\n";
+}
+
+string cars[5] = {"Volvo", "BMW", "Ford"}; // size of array is 5, even though it's only three elements inside it
+
+{% endhighlight %}
+
+- C++ References 
+{% highlight cpp%}
+string food = "Pizza";
+string &meal = food;
+
+cout << food << "\n";  // Outputs Pizza
+cout << meal << "\n";  // Outputs Pizza
+
+string food = "Pizza";
+
+cout << &food; // Outputs 0x6dfed4
+// The memory address is in hexadecimal form (0x..). Note that you may not get the same result in your program.
+{% endhighlight %}
+
+- C++ Pointers
+{% highlight cpp%}
+string food = "Pizza";  // A food variable of type string
+string* ptr = &food;    // A pointer variable, with the name ptr, that stores the address of food
+
+cout << food << "\n"; // Output the value of food (Pizza)
+cout << &food << "\n"; // Output the memory address of food (0x6dfed4)
+cout << ptr << "\n"; // Output the memory address of food with the pointer (0x6dfed4)
+
+string food = "Pizza";  // Variable declaration
+string* ptr = &food;    // Pointer declaration
+
+cout << ptr << "\n"; // Reference: Output the memory address of food with the pointer (0x6dfed4)
+
+cout << *ptr << "\n"; // Dereference: Output the value of food with the pointer (Pizza)
+
+string food = "Pizza";
+string* ptr = &food;
+
+cout << food << "\n"; // Output the value of food (Pizza)
+cout << &food << "\n"; // Output the memory address of food (0x6dfed4)
+cout << *ptr << "\n"; // Access the memory address of food and output its value (Pizza)
+
+*ptr = "Hamburger"; // Change the value of the pointer
+cout << *ptr << "\n"; // Output the new value of the pointer (Hamburger)
+cout << food << "\n"; // Output the new value of the food variable (Hamburger)
+
+{% endhighlight %}
+
+- C++ Functions
+{% highlight cpp%}
+
+// Create a function
+void myFunction() {
+  cout << "I just got executed!";
+}
+
+int main() {
+  myFunction(); // call the function
+  return 0;
+} // Outputs "I just got executed!"
+
+
+void myFunction(); // Function declaration
+
+// The main method
+int main() {
+  myFunction();  // call the function
+  return 0;
+}
+
+// Function definition
+void myFunction() {
+  cout << "I just got executed!";
+}
+
+{% endhighlight %}
+
+- C++ Function Parameters and Arguments
+
+{% highlight cpp%}
+
+void myFunction(string fname) {
+  cout << fname << " Refsnes\n";
+}
+
+int main() {
+  myFunction("Liam");
+  myFunction("Jenny");
+  myFunction("Anja");
+  return 0;
+}
+
+// Liam Refsnes
+// Jenny Refsnes
+// Anja Refsnes
+
+void myFunction(string country = "Norway") {
+  cout << country << "\n";
+}
+
+int main() {
+  myFunction("Sweden");
+  myFunction("India");
+  myFunction();
+  myFunction("USA");
+  return 0;
+}
+
+// Sweden
+// India
+// Norway
+// USA
+
+void myFunction(string fname, int age) {
+  cout << fname << " Refsnes. " << age << " years old. \n";
+}
+
+int main() {
+  myFunction("Liam", 3);
+  myFunction("Jenny", 14);
+  myFunction("Anja", 30);
+  return 0;
+}
+
+// Liam Refsnes. 3 years old.
+// Jenny Refsnes. 14 years old.
+// Anja Refsnes. 30 years old.
+
+{% endhighlight %}
+
+- C++ Functions Return Values
+
+{% highlight cpp%}
+
+int myFunction(int x) {
+  return 5 + x;
+}
+
+int main() {
+  cout << myFunction(3);
+  return 0;
+}
+
+// Outputs 8 
+
+int myFunction(int x, int y) {
+  return x + y;
+}
+
+int main() {
+  cout << myFunction(5, 3);
+  return 0;
+}
+
+// Outputs 8 
+
+int myFunction(int x, int y) {
+  return x + y;
+}
+
+int main() {
+  int z = myFunction(5, 3);
+  cout << z;
+  return 0;
+}
+// Outputs 8 
+
+{% endhighlight %}
+
+- C++ Function Pass By Reference
+
+{% highlight cpp%}
+
+void swapNums(int &x, int &y) {
+  int z = x;
+  x = y;
+  y = z;
+}
+
+int main() {
+  int firstNum = 10;
+  int secondNum = 20;
+
+  cout << "Before swap: " << "\n";
+  cout << firstNum << secondNum << "\n";
+
+  // Call the function, which will change the values of firstNum and secondNum
+  swapNums(firstNum, secondNum);
+
+  cout << "After swap: " << "\n";
+  cout << firstNum << secondNum << "\n";
+
+  return 0;
+}
+
+int plusFuncInt(int x, int y) {
+  return x + y;
+}
+
+double plusFuncDouble(double x, double y) {
+  return x + y;
+}
+
+int main() {
+  int myNum1 = plusFuncInt(8, 5);
+  double myNum2 = plusFuncDouble(4.3, 6.26);
+  cout << "Int: " << myNum1 << "\n";
+  cout << "Double: " << myNum2;
+  return 0;
+}
+
+int plusFunc(int x, int y) {
+  return x + y;
+}
+
+double plusFunc(double x, double y) {
+  return x + y;
+}
+
+int main() {
+  int myNum1 = plusFunc(8, 5);
+  double myNum2 = plusFunc(4.3, 6.26);
+  cout << "Int: " << myNum1 << "\n";
+  cout << "Double: " << myNum2;
+  return 0;
+}
+
+// Multiple functions can have the same name as long as the number and/or type of parameters are different.
+
+{% endhighlight %}
+
+- C++ Classes and Objects
+{% highlight cpp%}
+
+class MyClass {       // The class
+  public:             // Access specifier
+    int myNum;        // Attribute (int variable)
+    string myString;  // Attribute (string variable)
+};
+
+int main() {
+  MyClass myObj;  // Create an object of MyClass
+
+  // Access attributes and set values
+  myObj.myNum = 15; 
+  myObj.myString = "Some text";
+
+  // Print attribute values
+  cout << myObj.myNum << "\n"; 
+  cout << myObj.myString; 
+  return 0;
+}
+
+// Create a Car class with some attributes
+class Car {
+  public:
+    string brand;   
+    string model;
+    int year;
+};
+
+int main() {
+  // Create an object of Car
+  Car carObj1;
+  carObj1.brand = "BMW";
+  carObj1.model = "X5";
+  carObj1.year = 1999;
+
+  // Create another object of Car
+  Car carObj2;
+  carObj2.brand = "Ford";
+  carObj2.model = "Mustang";
+  carObj2.year = 1969;
+
+  // Print attribute values
+  cout << carObj1.brand << " " << carObj1.model << " " << carObj1.year << "\n";
+  cout << carObj2.brand << " " << carObj2.model << " " << carObj2.year << "\n";
+  return 0;
+}
+
+{% endhighlight %}
+
+- C++ Class Methods
+{% highlight cpp%}
+
+class MyClass {        // The class
+  public:              // Access specifier
+    void myMethod() {  // Method/function defined inside the class
+      cout << "Hello World!";
+    }
+};
+
+int main() {
+  MyClass myObj;     // Create an object of MyClass
+  myObj.myMethod();  // Call the method
+  return 0;
+}
+
+class MyClass {        // The class
+  public:              // Access specifier
+    void myMethod();   // Method/function declaration
+};
+
+// Method/function definition outside the class
+void MyClass::myMethod() {
+  cout << "Hello World!";
+}
+
+int main() {
+  MyClass myObj;     // Create an object of MyClass
+  myObj.myMethod();  // Call the method
+  return 0;
+}
+
+#include <iostream>
+using namespace std;
+
+class Car {
+  public:
+    int speed(int maxSpeed);
+};
+
+int Car::speed(int maxSpeed) {
+  return maxSpeed;
+}
+
+int main() {
+  Car myObj; // Create an object of Car
+  cout << myObj.speed(200); // Call the method with an argument
+  return 0;
+}
+
+{% endhighlight %}
+
+- C++ Class Constructors 
+{% highlight cpp%}
+
+class MyClass {     // The class
+  public:           // Access specifier
+    MyClass() {     // Constructor
+      cout << "Hello World!";
+    }
+};
+
+int main() {
+  MyClass myObj;    // Create an object of MyClass (this will call the constructor)
+  return 0;
+}
+
+class Car {        // The class
+  public:          // Access specifier
+    string brand;  // Attribute
+    string model;  // Attribute
+    int year;      // Attribute
+    Car(string x, string y, int z) { // Constructor with parameters
+      brand = x;
+      model = y;
+      year = z;
+    }
+};
+
+int main() {
+  // Create Car objects and call the constructor with different values
+  Car carObj1("BMW", "X5", 1999);
+  Car carObj2("Ford", "Mustang", 1969);
+
+  // Print values
+  cout << carObj1.brand << " " << carObj1.model << " " << carObj1.year << "\n";
+  cout << carObj2.brand << " " << carObj2.model << " " << carObj2.year << "\n";
+  return 0;
+}
+
+class Car {        // The class
+  public:          // Access specifier
+    string brand;  // Attribute
+    string model;  // Attribute
+    int year;      // Attribute
+    Car(string x, string y, int z); // Constructor declaration
+};
+
+// Constructor definition outside the class
+Car::Car(string x, string y, int z) {
+  brand = x;
+  model = y;
+  year = z;
+}
+
+int main() {
+  // Create Car objects and call the constructor with different values
+  Car carObj1("BMW", "X5", 1999);
+  Car carObj2("Ford", "Mustang", 1969);
+
+  // Print values
+  cout << carObj1.brand << " " << carObj1.model << " " << carObj1.year << "\n";
+  cout << carObj2.brand << " " << carObj2.model << " " << carObj2.year << "\n";
+  return 0;
+}
+
+{% endhighlight %}
+
+- C++ Access Specifiers 
+{% highlight cpp%}
+
+class MyClass {
+  public:    // Public access specifier
+    int x;   // Public attribute
+  private:   // Private access specifier
+    int y;   // Private attribute
+};
+
+int main() {
+  MyClass myObj;
+  myObj.x = 25;  // Allowed (public)
+  myObj.y = 50;  // Not allowed (private)
+  return 0;
+}
+{% endhighlight %}
+
+#include <iostream>
+using namespace std;
+
+class Employee {
+  private:
+    int salary;
+
+  public:
+    void setSalary(int s) {
+      salary = s;
+    }
+    int getSalary() {
+      return salary;
+    }
+};
+
+int main() {
+  Employee myObj;
+  myObj.setSalary(50000);
+  cout << myObj.getSalary();
+  return 0;
+}
+
+// It is considered good practice to declare your class attributes as private (as often as you can). Encapsulation ensures better control of your data, because you (or others) can change one part of the code without affecting other parts
+
+
+- C++ Inheritance 
+{% highlight cpp%}
+
+// Base class
+class Vehicle {
+  public: 
+    string brand = "Ford";
+    void honk() {
+      cout << "Tuut, tuut! \n" ;
+    }
+};
+
+// Derived class
+class Car: public Vehicle {
+  public: 
+    string model = "Mustang";
+};
+
+int main() {
+  Car myCar;
+  myCar.honk();
+  cout << myCar.brand + " " + myCar.model;
+  return 0;
+}
+
+// Base class (parent)
+class MyClass {
+  public: 
+    void myFunction() {
+      cout << "Some content in parent class." ;
+    }
+};
+
+// Derived class (child)
+class MyChild: public MyClass {
+};
+
+// Derived class (grandchild) 
+class MyGrandChild: public MyChild {
+};
+
+int main() {
+  MyGrandChild myObj;
+  myObj.myFunction();
+  return 0;
+}
+
+// Base class
+class MyClass {
+  public: 
+    void myFunction() {
+      cout << "Some content in parent class." ;
+    }
+};
+
+// Another base class
+class MyOtherClass {
+  public: 
+    void myOtherFunction() {
+      cout << "Some content in another class." ;
+    }
+};
+
+// Derived class 
+class MyChildClass: public MyClass, public MyOtherClass {
+};
+
+int main() {
+  MyChildClass myObj;
+  myObj.myFunction();
+  myObj.myOtherFunction();
+  return 0;
+}
+
+// Base class
+class Employee {
+  protected: // Protected access specifier
+    int salary;
+};
+
+// Derived class
+class Programmer: public Employee {
+  public:
+    int bonus;
+    void setSalary(int s) {
+      salary = s;
+    }
+    int getSalary() {
+      return salary;
+    }
+};
+
+int main() {
+  Programmer myObj;
+  myObj.setSalary(50000);
+  myObj.bonus = 15000;
+  cout << "Salary: " << myObj.getSalary() << "\n";
+  cout << "Bonus: " << myObj.bonus << "\n";
+  return 0;
+}
+
+// Base class
+class Employee {
+  protected: // Protected access specifier
+    int salary;
+};
+
+// Derived class
+class Programmer: public Employee {
+  public:
+    int bonus;
+    void setSalary(int s) {
+      salary = s;
+    }
+    int getSalary() {
+      return salary;
+    }
+};
+
+int main() {
+  Programmer myObj;
+  myObj.setSalary(50000);
+  myObj.bonus = 15000;
+  cout << "Salary: " << myObj.getSalary() << "\n";
+  cout << "Bonus: " << myObj.bonus << "\n";
+  return 0;
+}
+
+{% endhighlight %}
+
+- C++ Polymorphism  
+{% highlight cpp%}
+
+// Base class
+class Animal {
+  public:
+    void animalSound() {
+    cout << "The animal makes a sound \n" ;
+  }
+};
+
+// Derived class
+class Pig : public Animal {
+  public:
+    void animalSound() {
+    cout << "The pig says: wee wee \n" ;
+  }
+};
+
+// Derived class
+class Dog : public Animal {
+  public:
+    void animalSound() {
+    cout << "The dog says: bow wow \n" ;
+  }
+};
+
+// Base class
+class Animal {
+  public:
+    void animalSound() {
+    cout << "The animal makes a sound \n" ;
+  }
+};
+
+// Derived class
+class Pig : public Animal {
+  public:
+    void animalSound() {
+    cout << "The pig says: wee wee \n" ;
+   }
+};
+
+// Derived class
+class Dog : public Animal {
+  public:
+    void animalSound() {
+    cout << "The dog says: bow wow \n" ;
+  }
+};
+
+int main() {
+  Animal myAnimal;
+  Pig myPig;
+  Dog myDog;
+
+  myAnimal.animalSound();
+  myPig.animalSound();
+  myDog.animalSound();
+  return 0;
+}
+
+{% endhighlight %}
+
+- C++ Files 
+{% highlight cpp%}
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main() {
+  // Create and open a text file
+  ofstream MyFile("filename.txt");
+
+  // Write to the file
+  MyFile << "Files can be tricky, but it is fun enough!";
+
+  // Close the file
+  MyFile.close();
+}
+
+// Create a text string, which is used to output the text file
+string myText;
+
+// Read from the text file
+ifstream MyReadFile("filename.txt");
+
+// Use a while loop together with the getline() function to read the file line by line
+while (getline (MyReadFile, myText)) {
+  // Output the text from the file
+  cout << myText;
+}
+
+// Close the file
+MyReadFile.close();
+
+{% endhighlight %}
+
+- C++ Exception 
+{% highlight cpp%}
+try {
+  int age = 15;
+  if (age > 18) {
+    cout << "Access granted - you are old enough.";
+  } else {
+    throw (age);
+  }
+}
+catch (int myNum) {
+  cout << "Access denied - You must be at least 18 years old.\n";
+  cout << "Age is: " << myNum; 
+}
+
+try {
+  int age = 15;
+  if (age > 18) {
+    cout << "Access granted - you are old enough.";
+  } else {
+    throw 505;
+  }
+}
+catch (int myNum) {
+  cout << "Access denied - You must be at least 18 years old.\n";
+  cout << "Error number: " << myNum; 
+}
+
+try {
+  int age = 15;
+  if (age > 18) {
+    cout << "Access granted - you are old enough.";
+  } else {
+    throw 505;
+  }
+}
+catch (...) {
+  cout << "Access denied - You must be at least 18 years old.\n";
+}
+
+{% endhighlight %}
