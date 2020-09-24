@@ -1,0 +1,20 @@
+---
+layout: post
+title:  "C++ 시작하기"
+date:   2020-09-24 23:00:08
+categories: C++
+comments: true
+---
+
+C++ 기본 문법에 대해서 정리해보려고 한다. 
+
+{% highlight cpp%}
+#include <iostream>
+using namespace std;
+
+int main() {
+  cout << "Hello World!";
+  return 0;
+}
+{% endhighlight %}
+

@@ -5,9 +5,31 @@
     <description>github blog</description>
     <link>http://munjeongkang.github.io/</link>
     <atom:link href="http://munjeongkang.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 22 Sep 2020 15:19:16 +0900</pubDate>
-    <lastBuildDate>Tue, 22 Sep 2020 15:19:16 +0900</lastBuildDate>
+    <pubDate>Thu, 24 Sep 2020 22:11:21 +0900</pubDate>
+    <lastBuildDate>Thu, 24 Sep 2020 22:11:21 +0900</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>C++ 시작하기</title>
+        <description>&lt;p&gt;C++ 기본 문법에 대해서 정리해보려고 한다.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;iostream&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Hello World!&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+</description>
+        <pubDate>Thu, 24 Sep 2020 23:00:08 +0000</pubDate>
+        <link>http://munjeongkang.github.io/C++_start/</link>
+        <guid isPermaLink="true">http://munjeongkang.github.io/C++_start/</guid>
+        
+        
+        <category>c++</category>
+        
+      </item>
     
       <item>
         <title>CO@Work2020 - LP &amp; Polyhedral Theory</title>
@@ -125,7 +147,7 @@ $$
 $$
 &lt;br /&gt;
 
-이는 어떤 문제의 변수와 그와 연관된 제약식의 관계((primal variable, dual constraint) or (primal constraint, dual variable))를 나타내며 동시에 slack을 가질 수 없다는 것이다. dual variable이 0일 때, primal constraint가 binding인 것은 가능하지만 (즉, no slack in two places) dual variable이 양수일 떼, primal constraint이 slack(non-binding)을 갖는 것은 불가능하다. 이러한 특성 때문에 상보여유(complementary slackness)라 부르는 것이고, 이 이론은 dual 문제와 변수에 대한 해석에 도움을 주기 때문에 매우 유용하다. dual variable은 shadow price로도 해석될 수 있는데 이는 특정한 제약식이 relaxed 된다면 목적함수 값이 얼만큼 변하는지를 나타낸다. 
+이는 어떤 문제의 변수와 그와 연관된 제약식의 관계((primal variable, dual constraint) or (primal constraint, dual variable))를 나타내며 동시에 slack을 가질 수 없다는 것이다. dual variable이 0일 때, primal constraint가 binding인 것은 가능하지만 (즉, no slack in two places) dual variable이 양수일 때, primal constraint가 slack(non-binding)을 갖는 것은 불가능하다. 이러한 특성 때문에 상보여유(complementary slackness)라 부르는 것이고, 이 이론은 dual 문제와 변수에 대한 해석에 도움을 주기 때문에 매우 유용하다. dual variable은 shadow price로도 해석될 수 있는데 이는 특정한 제약식이 relaxed 된다면 목적함수 값이 얼만큼 변하는지를 나타낸다. 
 &lt;br /&gt;&lt;br /&gt;
 &lt;p align=&quot;center&quot;&gt;
 &lt;img src=&quot;/images/degeneracy.png&quot; width=&quot;500&quot; height=&quot;150&quot; /&gt;
@@ -1164,80 +1186,6 @@ parameter sharing의 특정한 형태는 레이어가 해석(translation)에 동
         <pubDate>Sun, 12 Apr 2020 18:00:08 +0000</pubDate>
         <link>http://munjeongkang.github.io/ANN08/</link>
         <guid isPermaLink="true">http://munjeongkang.github.io/ANN08/</guid>
-        
-        
-        <category>수업</category>
-        
-      </item>
-    
-      <item>
-        <title>인공신경망 - Basic Algorithms</title>
-        <description>&lt;hr /&gt;
-
-&lt;div style=&quot;font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; &quot;&gt;
-&lt;span style=&quot;font-weight:700; font-size:1.3em;  margin-right: 1em;&quot;&gt;
-Stochastic Gradient Descent
-&lt;/span&gt;
-&lt;br /&gt;&lt;br /&gt;
-Stochastic Gradient Descent(SGD)와 그 변형들은 머신러닝과 특히 딥러닝에서 가장 많이 사용된 최적화 알고리즘이다.
-&lt;p align=&quot;center&quot;&gt;
-&lt;img src=&quot;/images/post_img/AN10.png&quot; width=&quot;580&quot; height=&quot;300&quot; /&gt;
-&lt;/p&gt;
-
-SGD 알고리즘의 가장 중요한 파라미터는 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;learning rate&lt;/b&gt;이다. 실제로 시간이 지나면서 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;점차 learning rate를 줄일 필요&lt;/b&gt;가 있다. SGD 기울기 추정은 최소에 도달해도 사라지지(vanish) 않는 noise($m$개의 트레이닝 예제의 랜덤 샘플링)를 도입하기 때문이다. 실제로 흔히 반복(iteration) $\tau$ 까지 learning rate는 선형적으로 감소(decay)한다.
-$$
-\epsilon_{k}=(1-\alpha) \epsilon_{0}+\alpha \epsilon_{\tau}
-$$
-여기서 $\alpha=k/\tau$ 이고, 반복 $\tau$ 후 $\epsilon$은 상수로 남기는 것이 일반적이다. 
-&lt;br /&gt;&lt;br /&gt;
-learning rate는 시행착오(trial and error)를 통해 선택될 수 있지만 주로 시간의 함수로써 목적함수의 plot인 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;학습 곡선(curves)을 모니터링&lt;/b&gt;함으로써 선택하는 것이 가장 좋다. 선형 스케쥴을 사용할 때, 선택할 파라미터는 $\epsilon_{0}, \epsilon_{\tau}, \tau$ 이다. 일반적으로 $\tau$는 트레이닝 셋을 통해 수백번 통과하는데 필요한 반복 횟수로 설정되고 $\epsilon_{\tau}$는 $\epsilon_{0}$의 약 1%로 설정해야 한다. 
-&lt;br /&gt;&lt;br /&gt;
-그렇다면 $\epsilon_{0}$(초기 learning rate)은 어떻게 설정해야할까? 값이 너무 크면 학습 곡선이 격렬한(violent) 움직임(oscillations)을 보이고 비용 함수는 상당히 증가할 것이다. 반면 learning rate가 너무 낮으면 학습이 느리게 진행되고 초기 learning rate가 너무 낮으면 학습이 높은 비용값에 머무른다. 일반적으로 최적의 초기 learning rate는 처음 100번 정도 반복 후 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;가장 좋은 값을 내는 learning rate 보다는 높다.&lt;/b&gt; 그러므로 처음 몇 번의 반복을 모니터링하여 가장 좋은 learning rate보다 높은 값을 사용하지만 너무 높은 값은 심한 불안정을 초래하므로 적당한 값을 사용해야한다.  
-&lt;br /&gt;&lt;br /&gt;
-SGD와 관련된 미니배치 또는 online gradient-based optimization의 가장 중요한 특성은 업데이트당 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;계산 시간이 트레이닝 예제 수에 따라 증가하지 않는다&lt;/b&gt;는 것이다. 이는 심지어 트레이닝 예제의 수가 매우 커져도 수렴할 수 있음을 시사한다. 충분히 큰 데이터셋의 경우, SGD는 전체 트레이닝 셋을 처리하기 전에 마지막 테스트셋 에러의 일정한 허용오차(tolerance)이내로 수렴할 것이다. 
-&lt;br /&gt;&lt;br /&gt;
-SGD가 convex 문제에 적용될 때, 초과(excess) 에러는 $k$번 반복 후 $O(1/\sqrt{k})$ 이고, strongly convex인 경우 $O(1/k)$이다. Batch gradient descent는 이론상 SGD보다 수렴률이 더 높다. 그러나 $\text { Cramér-Rao }$는 일반화 에러가 $O(1/k)$보다 빨리 감소할 수 없다고 주장하고 있다. 큰 데이터셋을 가지는 SGD는 매우 적은 예제에 대해 기울기를 평가하면서 빠르게 초기 진행이 이루어지는 능력은 그것의 slow 수렴근사보다 더 크다. 학습과정동안 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;미니배치 사이즈를 점점 증가시킴으로써&lt;/b&gt; 배치와 SGD의 이점을 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;trade off&lt;/b&gt; 할 수 있다. 
-&lt;br /&gt;&lt;br /&gt;
-&lt;span style=&quot;font-weight:700; font-size:1.3em;  margin-right: 1em;&quot;&gt;
-Momentum
-&lt;/span&gt;
-&lt;br /&gt;&lt;br /&gt;
-SGD가 유명한 최적화 방법으로 남아있지만 이를 통한 학습은 간혹 느리게 진행될 수 있다. momentum 방법(Polyak,1964)은 특히 높은 곡률(curvature), 작지만 일정한 기울기 또는 noisy 기울기를 갖는 학습을 가속화하기 위해 설계되었다. 모멘텀 알고리즘은 이전 기울기들이 기하급수적으로 감소하는 이동 평균을 누적하여 그 방향으로 계속 움직인다. 
-&lt;p align=&quot;center&quot;&gt;
-&lt;img src=&quot;/images/post_img/AN11.png&quot; width=&quot;350&quot; height=&quot;320&quot; /&gt;
-&lt;/p&gt;
-모멘텀 알고리즘은 변수 $v$를 속도(velocity) 역할로 도입한다. 속도는 음의 기울기가 기하급수적으로 감소하는 평균으로 설정된다. 물리학에서 모멘텀은 질량 시간 속도이다. 모멘텀 학습 알고리즘에서 단위 질량을 가정하므로 속도 벡터 $v$도 입자의 모멘텀으로 간주될 수 있다. 업데이트 룰은 다음과 같다. 
-
-$$
-\begin{array}{l}\boldsymbol{v} \leftarrow \alpha \boldsymbol{v}-\epsilon \nabla_{\boldsymbol{\theta}}\left(\frac{1}{m} \sum_{i=1}^{m} L\left(\boldsymbol{f}\left(\boldsymbol{x}^{(i)} ; \boldsymbol{\theta}\right), \boldsymbol{y}^{(i)}\right)\right) \\ \boldsymbol{\theta} \leftarrow \boldsymbol{\theta}+\boldsymbol{v}\end{array}
-$$
-
-이제 step의 사이즈는 일련의 기울기가 얼마나 크고 얼마나 정렬되었는지에 따라 달라진다. 스텝 사이즈는 연속적인 기울기 포인트가 정확하게 같은 방향일 때 가장 크다. 만약 모멘텀 알고리즘이 항상 기울기 $g$를 관찰한다면 최종(terminal) 속도에 도달할 때까지 $-g$ 방향으로 가속화될 것이다. 각 스텝의 사이즈는 다음과 같다.  
-
-$$
-\frac{\epsilon\|\boldsymbol{g}\|}{1-\alpha}
-$$
-
-흔히 실제 사용되는 $\alpha$의 값은 0.5, 0.9, 0.99이다. learning rate와 마찬가지로 $\alpha$도 시간이 지남에 따라 맞춰진다. 
-
-&lt;br /&gt;&lt;br /&gt;
-&lt;span style=&quot;font-weight:700; font-size:1.3em;  margin-right: 1em;&quot;&gt;
-Nesterov Momentum
-&lt;/span&gt;
-&lt;br /&gt;&lt;br /&gt;
-
-Sutskever et al.(2013)은 모멘텀 알고리즘의 변형을 다음과 같이 제안했다. 
-
-$$
-\begin{array}{l}\boldsymbol{v} \leftarrow \alpha \boldsymbol{v}-\epsilon \nabla_{\boldsymbol{\theta}}\left[\frac{1}{m} \sum_{i=1}^{m} L\left(\boldsymbol{f}\left(\boldsymbol{x}^{(i)} ; \boldsymbol{\theta}+\alpha \boldsymbol{v}\right), \boldsymbol{y}^{(i)}\right)\right] \\ \boldsymbol{\theta} \leftarrow \boldsymbol{\theta}+\boldsymbol{v}\end{array}
-$$
-
-Nesterov 모멘텀과 표준 모멘텀의 차이는 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;어디서 기울기가 평가되는가&lt;/b&gt; 이다. Nesterov 모멘텀은 현재 속도가 적용된 후에 기울기가 평가된다. 따라서 Nesterov 모멘텀은 표준 모멘텀 방법에 보정(correction) 요소를 추가하려는 것으로 해석할 수 있다. convex batch gradient의 경우 Nesterov 모멘텀은 초과 에러의 수렴율을 $O(1/k)$ 에서 $O(1/k^2)$로 가져온다. 안타깝게도 SGD에서 Nesterov 모멘텀은 수렴율을 향상시키지 않는다. 
-&lt;/div&gt;
-</description>
-        <pubDate>Sun, 12 Apr 2020 18:00:08 +0000</pubDate>
-        <link>http://munjeongkang.github.io/ANN07/</link>
-        <guid isPermaLink="true">http://munjeongkang.github.io/ANN07/</guid>
         
         
         <category>수업</category>
