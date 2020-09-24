@@ -679,7 +679,6 @@ int main() {
   myObj.y = 50;  // Not allowed (private)
   return 0;
 }
-{% endhighlight %}
 
 #include <iostream>
 using namespace std;
@@ -706,6 +705,7 @@ int main() {
 
 // It is considered good practice to declare your class attributes as private (as often as you can). Encapsulation ensures better control of your data, because you (or others) can change one part of the code without affecting other parts
 
+{% endhighlight %}
 
 - C++ Inheritance 
 {% highlight cpp%}
