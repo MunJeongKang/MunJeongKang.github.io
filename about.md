@@ -35,7 +35,7 @@ Optimization/Python Programming <br>
 - 2017년도 <br>
     - 차세대 여성리더 아이디어톤 공모전 대상 (여성가족부 장관상) with 유경, 나영 <br>
 꿈과 목표를 공유하고 싶은 다수의 여성들이 모여 원하는 주제에 대해 함께 공부하고, 네트워크를 넓힐 수 있도록 돕는 온라인 플랫폼 '**함께 모여**' , [관련기사링크](http://www.womennews.co.kr/news/articleView.html?idxno=116785) , [수상사진](/images/prize.jpg)<br>
-    - International Monetary Fund (IMF) 및 Word Bank 견학 <br>
+    - International Monetary Fund (IMF) 및 World Bank 견학 <br>
     <br>
 - 2018년도 <br>
     - 제 14회 대한산업공학회 한국대학생 산업공학프로젝트 경진대회 대상 (과학기술정보통신부 장관상) **'지역별 중요도를 고려한 인공지능 드론 영역 감시 시스템'** with 유경, 나영.   [포스터](/images/poster.pdf) , [관련사진](/images/prize2.jpg) <br>
