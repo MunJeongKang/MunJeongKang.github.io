@@ -510,7 +510,32 @@
   <span class="n">myObj</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">25</span><span class="p">;</span>  <span class="c1">// Allowed (public)</span>
   <span class="n">myObj</span><span class="p">.</span><span class="n">y</span> <span class="o">=</span> <span class="mi">50</span><span class="p">;</span>  <span class="c1">// Not allowed (private)</span>
   <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span></code></pre></div> <h1 id="include-iostream">include <iostream></iostream></h1> <p>using namespace std;</p> <p>class Employee { private: int salary;</p> <p>public: void setSalary(int s) { salary = s; } int getSalary() { return salary; } };</p> <p>int main() { Employee myObj; myObj.setSalary(50000); cout « myObj.getSalary(); return 0; }</p> <p>// It is considered good practice to declare your class attributes as private (as often as you can). Encapsulation ensures better control of your data, because you (or others) can change one part of the code without affecting other parts</p> <ul> <li>C++ Inheritance</li> </ul> <div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="c1">// Base class</span>
+<span class="p">}</span>
+
+<span class="cp">#include &lt;iostream&gt;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Employee</span> <span class="p">{</span>
+  <span class="k">private</span><span class="o">:</span>
+    <span class="kt">int</span> <span class="n">salary</span><span class="p">;</span>
+
+  <span class="k">public</span><span class="o">:</span>
+    <span class="kt">void</span> <span class="n">setSalary</span><span class="p">(</span><span class="kt">int</span> <span class="n">s</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">salary</span> <span class="o">=</span> <span class="n">s</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kt">int</span> <span class="n">getSalary</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="n">salary</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">Employee</span> <span class="n">myObj</span><span class="p">;</span>
+  <span class="n">myObj</span><span class="p">.</span><span class="n">setSalary</span><span class="p">(</span><span class="mi">50000</span><span class="p">);</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">myObj</span><span class="p">.</span><span class="n">getSalary</span><span class="p">();</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// It is considered good practice to declare your class attributes as private (as often as you can). Encapsulation ensures better control of your data, because you (or others) can change one part of the code without affecting other parts</span></code></pre></div> <ul> <li>C++ Inheritance</li> </ul> <div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="c1">// Base class</span>
 <span class="k">class</span> <span class="nc">Vehicle</span> <span class="p">{</span>
   <span class="k">public</span><span class="o">:</span> 
     <span class="n">string</span> <span class="n">brand</span> <span class="o">=</span> <span class="s">&quot;Ford&quot;</span><span class="p">;</span>

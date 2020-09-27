@@ -1,0 +1,59 @@
+---
+layout: post
+title:  "CO@Work2020 - Theory and Basics"
+date:   2020-09-27 18:00:08
+categories: 최적화
+comments: true 
+use_math: true
+---
+-----
+
+<div style = "font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; ">
+
+<!-- <div style = "font-weight:500; font-size:1.0em; text-align:justify; "> -->
+<embed src="/CO@WORK/Berthold_Theory_II.pdf" type="application/pdf" width="100%" height="425px" />
+<br><br>
+<span style = "font-weight:700; font-size:1.3em;  margin-right: 1em;">
+Simplex Algorithm
+</span>
+<br><br>
+심플렉스 알고리즘은 기하학적 직관(geometry intuition)으로 다음과 같이 나타낼 수 있다. 
+<br><br>
+<p align="center">
+<img src="/images/simplex_ex.png" width="200" height="200">
+</p>
+<br>
+그림에서 보이는 것처럼 알고리즘은 어떤 vertex에서 vertex로 이동하는 것을 알 수 있다. 두 vertex 사이의 edge를 따라서 움직이며 현재 위치에서 목적 함수값을 좋게 하는 근처 vertex로 이동한다. 이러한 프로세스를 pivoting이라 하고 만약 더 이상 목적 함수값을 개선하는 vertex가 근처에 없다면 알고리즘은 종료된다. 즉, 현재 vertex가 optimal solution이 되는 것이다. 이 때 목적함수가 ray를 따라 움직이면 이는 LP가 unbounded가 되는 것을 증명한다. 
+<br><br>
+심플렉스에서 목적함수는 polygedron의 경계(boundart)에서 최적이 된다. 이는 convexity를 따르기 때문인데 만약 optimal inner point가 있었다면 목적함수의 방향으로 계속 움직이며 개선되었을 것이다. optimal solution은 항상 vertex에 존재하는데 이 때 목적함수와 모든 제약식이 선형이어야 한다. 만약 optimal solution이 어떤 고차원 면(face) 내부에 있다면 이 면은 목적함수의 normal vector와 직교해야만 가능하다. 그러나 이 면은 목적함수의 fixed level 안에 내포되어 있으므로 같은 목적함수 값을 가진 vertex를 찾을 수 있다. 알고리즘은 근처 vertex에서 목적함수를 개선할 수 없으면 종료되는데 이는 local optimality가 global optimality와 동일하고 convexity를 따르기 때문이다. 
+<br><br>
+$$
+\begin{aligned}
+    \min \quad &c^Tx \\
+     s.t. \quad &Ax = b \\
+     & x \in R^n_{\geq 0}
+\end{aligned}
+$$
+
+심플렉스 알고리즘은 주로 simplex tableaus를 계산하는 대수적인 방법(algebraic way)으로 소개된다. 이 때 대부분의 변수는 0이 되고 0이 아닌 변수의 수는 제약식의 수에 따라 bounded 된다. 이는 basic solution에 대한 중요한 개념이다. standard form에서 LP의 제약식 행렬 $A$는 full row rank를 가지며 여기서 full row rank란 한 행에서 전부 선형 독립임을 뜻한다. 이는 최소 하나의 $A$의 $m$ X $m$ non-singular로 표현될 수 있는 LP의 polyhedron의 모든 vertex로 보일 수 있다. 역행렬 $A^{-1}$과 우변 $b$를 곱하면 basic solution의 값을 얻을 수 있다. 이외의 모든 변수는 nonbasic이 되고 모두 0의 값을 가진다.
+<br><br>
+심플렉스는 standard form에서 시작해야 한다. vertex는 $n$개의 hyperplane의 교집합이고 이 중 $m$개만이 제약식이기 때문에 다른 $n-m$개는 좌표평면이므로 변수값이 0이다. 솔루션이 non-degenerate일 때 왜 vertex solution이 0이 아닌 변수의 집합으로 유일하게 존재하는지 볼 수 있다. 
+<br><br>
+심플렉스 알고리즘의 아이디어는 LP가 optimal solution을 갖는다면 vertex들 중 하나에서 항상 optimal soltuion을 갖는 것에서 시작했다. 각 vertex에 대해 basic solution이 있고 항상 optimal basic solution이 있다. 이것은 우리가 이론적으로 행렬의 모든 가능한 bases를 제거함으로써 LP를 풀 수 있다는 의미이다. ....ing
+<!-- <b style = "color:#d7385e;font-size:1.2"></b>
+$$
+\begin{aligned}
+    \max\{y^Tb| y^TA \leq c, y \geq 0\}  \leq  \min\{c^Tx| Ax \geq b, x \geq 0\}
+\end{aligned}
+$$
+<p align="center">
+<img src="/images/degeneracy.png" width="500" height="150">
+</p> -->
+
+
+<br><br>
+
+
+강의 영상 : <a href= "https://www.youtube.com/watch?v=5FDzY4xFYIY&feature=youtu.be"> Theory and Basics </a>
+ </div>
+

@@ -5,9 +5,72 @@
     <description>github blog</description>
     <link>http://munjeongkang.github.io/</link>
     <atom:link href="http://munjeongkang.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 25 Sep 2020 01:09:35 +0900</pubDate>
-    <lastBuildDate>Fri, 25 Sep 2020 01:09:35 +0900</lastBuildDate>
+    <pubDate>Sun, 27 Sep 2020 17:39:10 +0900</pubDate>
+    <lastBuildDate>Sun, 27 Sep 2020 17:39:10 +0900</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>CO@Work2020 - Theory and Basics</title>
+        <description>&lt;hr /&gt;
+
+&lt;div style=&quot;font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; &quot;&gt;
+
+&lt;!-- &lt;div style = &quot;font-weight:500; font-size:1.0em; text-align:justify; &quot;&gt; --&gt;
+&lt;embed src=&quot;/CO@WORK/Berthold_Theory_II.pdf&quot; type=&quot;application/pdf&quot; width=&quot;100%&quot; height=&quot;425px&quot; /&gt;
+&lt;br /&gt;&lt;br /&gt;
+&lt;span style=&quot;font-weight:700; font-size:1.3em;  margin-right: 1em;&quot;&gt;
+Simplex Algorithm
+&lt;/span&gt;
+&lt;br /&gt;&lt;br /&gt;
+심플렉스 알고리즘은 기하학적 직관(geometry intuition)으로 다음과 같이 나타낼 수 있다. 
+&lt;br /&gt;&lt;br /&gt;
+&lt;p align=&quot;center&quot;&gt;
+&lt;img src=&quot;/images/simplex_ex.png&quot; width=&quot;200&quot; height=&quot;200&quot; /&gt;
+&lt;/p&gt;
+&lt;br /&gt;
+그림에서 보이는 것처럼 알고리즘은 어떤 vertex에서 vertex로 이동하는 것을 알 수 있다. 두 vertex 사이의 edge를 따라서 움직이며 현재 위치에서 목적 함수값을 좋게 하는 근처 vertex로 이동한다. 이러한 프로세스를 pivoting이라 하고 만약 더 이상 목적 함수값을 개선하는 vertex가 근처에 없다면 알고리즘은 종료된다. 즉, 현재 vertex가 optimal solution이 되는 것이다. 이 때 목적함수가 ray를 따라 움직이면 이는 LP가 unbounded가 되는 것을 증명한다. 
+&lt;br /&gt;&lt;br /&gt;
+심플렉스에서 목적함수는 polygedron의 경계(boundart)에서 최적이 된다. 이는 convexity를 따르기 때문인데 만약 optimal inner point가 있었다면 목적함수의 방향으로 계속 움직이며 개선되었을 것이다. optimal solution은 항상 vertex에 존재하는데 이 때 목적함수와 모든 제약식이 선형이어야 한다. 만약 optimal solution이 어떤 고차원 면(face) 내부에 있다면 이 면은 목적함수의 normal vector와 직교해야만 가능하다. 그러나 이 면은 목적함수의 fixed level 안에 내포되어 있으므로 같은 목적함수 값을 가진 vertex를 찾을 수 있다. 알고리즘은 근처 vertex에서 목적함수를 개선할 수 없으면 종료되는데 이는 local optimality가 global optimality와 동일하고 convexity를 따르기 때문이다. 
+&lt;br /&gt;&lt;br /&gt;
+$$
+\begin{aligned}
+    \min \quad &amp;amp;c^Tx \\
+     s.t. \quad &amp;amp;Ax = b \\
+     &amp;amp; x \in R^n_{\geq 0}
+\end{aligned}
+$$
+
+심플렉스 알고리즘은 주로 simplex tableaus를 계산하는 대수적인 방법(algebraic way)으로 소개된다. 이 때 대부분의 변수는 0이 되고 0이 아닌 변수의 수는 제약식의 수에 따라 bounded 된다. 이는 basic solution에 대한 중요한 개념이다. standard form에서 LP의 제약식 행렬 $A$는 full row rank를 가지며 여기서 full row rank란 한 행에서 전부 선형 독립임을 뜻한다. 이는 최소 하나의 $A$의 $m$ X $m$ non-singular로 표현될 수 있는 LP의 polyhedron의 모든 vertex로 보일 수 있다. 역행렬 $A^{-1}$과 우변 $b$를 곱하면 basic solution의 값을 얻을 수 있다. 이외의 모든 변수는 nonbasic이 되고 모두 0의 값을 가진다.
+&lt;br /&gt;&lt;br /&gt;
+심플렉스는 standard form에서 시작해야 한다. vertex는 $n$개의 hyperplane의 교집합이고 이 중 $m$개만이 제약식이기 때문에 다른 $n-m$개는 좌표평면이므로 변수값이 0이다. 솔루션이 non-degenerate일 때 왜 vertex solution이 0이 아닌 변수의 집합으로 유일하게 존재하는지 볼 수 있다. 
+&lt;br /&gt;&lt;br /&gt;
+심플렉스 알고리즘의 아이디어는 LP가 optimal solution을 갖는다면 vertex들 중 하나에서 항상 optimal soltuion을 갖는 것에서 시작했다. 각 vertex에 대해 basic solution이 있고 항상 optimal basic solution이 있다. 이것은 우리가 이론적으로 행렬의 모든 가능한 bases를 제거함으로써 LP를 풀 수 있다는 의미이다. ....ing
+&lt;!-- &lt;b style = &quot;color:#d7385e;font-size:1.2&quot;&gt;&lt;/b&gt;
+$$
+\begin{aligned}
+    \max\{y^Tb| y^TA \leq c, y \geq 0\}  \leq  \min\{c^Tx| Ax \geq b, x \geq 0\}
+\end{aligned}
+$$
+&lt;p align=&quot;center&quot;&gt;
+&lt;img src=&quot;/images/degeneracy.png&quot; width=&quot;500&quot; height=&quot;150&quot;&gt;
+&lt;/p&gt; --&gt;
+
+
+&lt;br /&gt;&lt;br /&gt;
+
+
+강의 영상 : &lt;a href=&quot;https://www.youtube.com/watch?v=5FDzY4xFYIY&amp;amp;feature=youtu.be&quot;&gt; Theory and Basics &lt;/a&gt;
+ &lt;/div&gt;
+
+</description>
+        <pubDate>Sun, 27 Sep 2020 18:00:08 +0000</pubDate>
+        <link>http://munjeongkang.github.io/CO@WORK2/</link>
+        <guid isPermaLink="true">http://munjeongkang.github.io/CO@WORK2/</guid>
+        
+        
+        <category>최적화</category>
+        
+      </item>
     
       <item>
         <title>C++ 시작하기</title>
@@ -661,32 +724,32 @@
   &lt;span class=&quot;n&quot;&gt;myObj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// Allowed (public)&lt;/span&gt;
   &lt;span class=&quot;n&quot;&gt;myObj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// Not allowed (private)&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
-&lt;h1 id=&quot;include-iostream&quot;&gt;include &lt;iostream&gt;&lt;/iostream&gt;&lt;/h1&gt;
-&lt;p&gt;using namespace std;&lt;/p&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;iostream&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-&lt;p&gt;class Employee {
-  private:
-    int salary;&lt;/p&gt;
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Employee&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;salary&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-&lt;p&gt;public:
-    void setSalary(int s) {
-      salary = s;
-    }
-    int getSalary() {
-      return salary;
-    }
-};&lt;/p&gt;
+  &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;setSalary&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;salary&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;getSalary&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;salary&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
 
-&lt;p&gt;int main() {
-  Employee myObj;
-  myObj.setSalary(50000);
-  cout « myObj.getSalary();
-  return 0;
-}&lt;/p&gt;
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;Employee&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myObj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;myObj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;setSalary&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;50000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myObj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getSalary&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
-&lt;p&gt;// It is considered good practice to declare your class attributes as private (as often as you can). Encapsulation ensures better control of your data, because you (or others) can change one part of the code without affecting other parts&lt;/p&gt;
+&lt;span class=&quot;c1&quot;&gt;// It is considered good practice to declare your class attributes as private (as often as you can). Encapsulation ensures better control of your data, because you (or others) can change one part of the code without affecting other parts&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;ul&gt;
   &lt;li&gt;C++ Inheritance&lt;/li&gt;
@@ -2085,41 +2148,6 @@ $$
         <pubDate>Sun, 12 Apr 2020 18:00:08 +0000</pubDate>
         <link>http://munjeongkang.github.io/ANN09/</link>
         <guid isPermaLink="true">http://munjeongkang.github.io/ANN09/</guid>
-        
-        
-        <category>수업</category>
-        
-      </item>
-    
-      <item>
-        <title>인공신경망 - Motivation</title>
-        <description>&lt;hr /&gt;
-
-&lt;div style=&quot;font-weight:500; font-size:1.0em; margin-left: 1em; margin-right: 1em;text-align:justify; &quot;&gt;
-
-Convolution은 머신러닝 시스템을 향상시킬 수 있는 세 가지 중요한 아이디어를 활용한다. 각각은 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;sparse interactions&lt;/b&gt;, &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;parameter sharing&lt;/b&gt;, &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;equivariant representations&lt;/b&gt; 이다. 컨볼루션 네트워크는 주로 sparse interaction을 가진다. sparse interaction은 sparse connectivity 또는 sparse weights라고도 한다. 이것은 커널(kernel)을 인풋보다 작게 함으로써 이루어진다. 즉, 더 적은 파라미터를 저장해야한다는 의미이다. 또한, 아웃풋을 계산하기위해 더 적은 작업(operations)이 요구된다는 것이다. 
-&lt;br /&gt;&lt;br /&gt;
-
-&lt;div style=&quot;border: 1px; float: right;margin-left: 1em; margin-right: 1em; &quot;&gt;
-&lt;img src=&quot;/images/post_img/AN13.png&quot; width=&quot;290&quot; height=&quot;300&quot; /&gt;
-&lt;/div&gt;
-&lt;div style=&quot;border: 1px; margin-left: 1em; margin-right: 1em; &quot;&gt;
-&lt;img src=&quot;/images/post_img/AN12.png&quot; width=&quot;290&quot; height=&quot;300&quot; /&gt;
-&lt;/div&gt;
-&lt;br /&gt;
-아래 오른쪽의 이미지는 원본 사진의 각 픽셀을 취해 왼쪽의 인접 픽셀의 값을 빼면서 만들어졌다. 두 이미지 모두 280 픽셀이며 입력 이미지는 320 픽셀인 반면 출력 이미지는 319 픽셀이다. 이 변환은 두 개의 요소를 포함하는 컨볼루션 커널로 설명될 수 있고 319*280*3 = 267,960의 floating-point(부동 소수점, CPU의 성능을 수치로 나타낼 때 사용되는 단위) 연산이 요구된다. 행렬곱으로 동일한 변환을 설명하려면 320*280*319*280 또는 80억 이상의 entries가 필요하다. 
-&lt;br /&gt;&lt;br /&gt;
-&lt;div align=&quot;center&quot;&gt;
-&lt;img src=&quot;/images/post_img/AN14.png&quot; width=&quot;450&quot; height=&quot;280&quot; /&gt;
-&lt;/div&gt;
-&lt;br /&gt;
-parameter sharing의 특정한 형태는 레이어가 해석(translation)에 동일성(equivariance)이라 불리는 특성을 갖도록 한다. 함수가 동일하다고 말하는 것은 입력이 바뀌면 출력이 같은 방식으로 바뀐다는 것을 의미한다. 구체적으로 함수 $f(x)$는 $f(g(x)) = g(f(x))$이라면 함수 $g$와 동일하다. convolution의 경우 만약 $g$가 인풋을 해석하는 어떤 함수라면 convolution 함수는 $g$와 동일해진다. 만약 인풋에 있는 객체를 움직이면, 인풋의 representation은 아웃풋에서 같은 양만큼 움직일 것이다. 그러나 Convolution은 이미지의 크기(scale) 변화나 회전 등의 변형과는 동일시 되지 않는다. 
-
-&lt;/div&gt;
-</description>
-        <pubDate>Sun, 12 Apr 2020 18:00:08 +0000</pubDate>
-        <link>http://munjeongkang.github.io/ANN08/</link>
-        <guid isPermaLink="true">http://munjeongkang.github.io/ANN08/</guid>
         
         
         <category>수업</category>
