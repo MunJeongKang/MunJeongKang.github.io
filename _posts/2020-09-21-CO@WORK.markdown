@@ -126,7 +126,7 @@ $$
 <img src="/images/degeneracy.png" width="500" height="150">
 </p>
 
-이번에는 <b style = "color:#d7385e;font-size:1.2">degeneracy</b>에 대해 알아보자. 보통 naive intuition을 갖는 LP는 맨 왼쪽 그림 처럼 한 개의 optimal solution을 가진다. 즉, $n$개의 제약식이 binding되므로 primal과 dual의 optimal solution이 단 한 개만 존재한다. 그러나 가운데 그림처럼 어느 point에서 $n$개 이상의 제약식이 binding 되는 경우가 있다. 이를 primal degeneracy라고 한다. 마지막으로 맨 오른쪽 그림은 dual degeneracy를 나타내고, 하나의 primal solution에 대해 다른 dual solution들이 있고 alternative primal solution들이 있는 경우이다. 즉, optimal solution이 유일(unique)하지 않는 경우이다.  
+이번에는 <b style = "color:#d7385e;font-size:1.2">degeneracy</b>에 대해 알아보자. 보통 naive intuition을 갖는 LP는 맨 왼쪽 그림 처럼 한 개의 optimal solution을 가진다. 즉, 제약식이 제약식 개수만큼 binding되므로 primal과 dual의 optimal solution이 단 한 개만 존재한다. 그러나 가운데 그림처럼 어느 point에서 제약식 개수 이상의 제약식이 binding 되는 경우가 있다. 이를 primal degeneracy라고 한다. 마지막으로 맨 오른쪽 그림은 dual degeneracy를 나타내고, 하나의 primal solution에 대해 다른 dual solution들이 있고 alternative primal solution들이 있는 경우이다. 즉, optimal solution이 유일(unique)하지 않는 경우이다.  
 
 <br><br>
 
