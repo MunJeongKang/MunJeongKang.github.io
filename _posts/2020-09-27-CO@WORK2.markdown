@@ -41,7 +41,7 @@ $$
 <br><br>
 심플렉스 알고리즘의 아이디어는 LP가 optimal solution을 갖는다면 vertex들 중 하나에서 항상 optimal soltuion을 갖는 것에서 시작했다. 각 vertex에 대해 basic solution이 있고 항상 optimal basic solution이 있다. 이것은 우리가 이론적으로 행렬의 모든 가능한 bases를 제거함으로써 LP를 풀 수 있다는 의미이다. 제거해야하는 가능한 솔루션 후보의 수가 유한하게 있다. 심플렉스 알고리즘의 아이디어는 feasible start basis를 찾는 것이고 그 후 feasibility는 유지하고 목적함수값이 향상되게 basis에 있는 column 중 하나와 non-basis에 있는 column을 바꾸면서 반복하는 것이다. 
 <br><br>
-그렇다면 pivoting할 column을 어떻게 고르는 것일까. 목적함수가 더 좋은 방향으로 가야한다. 이 때 reduced cost를 계산하여 어떤 방향으로 갔을 때 얼만큼 목적함수 값을 좋게 해줄지 알 수 있다. 만약 모든 reduced cost 값이 non-negative인 경우 현재 솔루션이 optimal이 된다. 
+그렇다면 pivoting할 column을 어떻게 고르는 것일까. 목적함수가 더 좋은 방향으로 가야한다. 이 때 reduced cost를 계산하여 어떤 방향으로 갔을 때 얼만큼 목적함수 값을 좋게 해줄지 알 수 있다. 만약 모든 reduced cost 값이 non-negative인 경우 현재 솔루션이 optimal이 된다. minimum ratio rule을 통해 entering variable을 구한다. 
 <!-- <b style = "color:#d7385e;font-size:1.2"></b>
 $$
 \begin{aligned}
