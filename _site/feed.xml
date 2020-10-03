@@ -5,8 +5,8 @@
     <description>github blog</description>
     <link>http://munjeongkang.github.io/</link>
     <atom:link href="http://munjeongkang.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 27 Sep 2020 17:39:10 +0900</pubDate>
-    <lastBuildDate>Sun, 27 Sep 2020 17:39:10 +0900</lastBuildDate>
+    <pubDate>Sat, 03 Oct 2020 22:18:18 +0900</pubDate>
+    <lastBuildDate>Sat, 03 Oct 2020 22:18:18 +0900</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -22,15 +22,21 @@
 Simplex Algorithm
 &lt;/span&gt;
 &lt;br /&gt;&lt;br /&gt;
-심플렉스 알고리즘은 기하학적 직관(geometry intuition)으로 다음과 같이 나타낼 수 있다. 
+&lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;심플렉스 알고리즘&lt;/b&gt;은 기하학적 직관(geometry intuition)으로 다음과 같이 나타낼 수 있다. 
 &lt;br /&gt;&lt;br /&gt;
 &lt;p align=&quot;center&quot;&gt;
 &lt;img src=&quot;/images/simplex_ex.png&quot; width=&quot;200&quot; height=&quot;200&quot; /&gt;
 &lt;/p&gt;
 &lt;br /&gt;
-그림에서 보이는 것처럼 알고리즘은 어떤 vertex에서 vertex로 이동하는 것을 알 수 있다. 두 vertex 사이의 edge를 따라서 움직이며 현재 위치에서 목적 함수값을 좋게 하는 근처 vertex로 이동한다. 이러한 프로세스를 pivoting이라 하고 만약 더 이상 목적 함수값을 개선하는 vertex가 근처에 없다면 알고리즘은 종료된다. 즉, 현재 vertex가 optimal solution이 되는 것이다. 이 때 목적함수가 ray를 따라 움직이면 이는 LP가 unbounded가 되는 것을 증명한다. 
+그림에서 보이듯 알고리즘은 어떤 꼭짓점(vertex)에서 꼭짓점으로 이동한다. 두 꼭짓점 사이의 변(edge)을 따라서 움직이며 현재 위치에서 목적 함수값을 좋게 하는 근처 꼭짓점으로 이동한다. 이러한 프로세스를 pivoting이라 하고 만약 더 이상 목적 함수값을 개선하는 꼭짓점이 없다면 알고리즘은 종료된다. 즉, 현재 위치가 optimal solution이 되는 것이다. 이 때 만약 목적함수가 ray를 따라 움직인다면 이는 LP가 unbounded가 되는 것을 증명한다. 
 &lt;br /&gt;&lt;br /&gt;
-심플렉스에서 목적함수는 polygedron의 경계(boundart)에서 최적이 된다. 이는 convexity를 따르기 때문인데 만약 optimal inner point가 있었다면 목적함수의 방향으로 계속 움직이며 개선되었을 것이다. optimal solution은 항상 vertex에 존재하는데 이 때 목적함수와 모든 제약식이 선형이어야 한다. 만약 optimal solution이 어떤 고차원 면(face) 내부에 있다면 이 면은 목적함수의 normal vector와 직교해야만 가능하다. 그러나 이 면은 목적함수의 fixed level 안에 내포되어 있으므로 같은 목적함수 값을 가진 vertex를 찾을 수 있다. 알고리즘은 근처 vertex에서 목적함수를 개선할 수 없으면 종료되는데 이는 local optimality가 global optimality와 동일하고 convexity를 따르기 때문이다. 
+심플렉스 알고리즘의 특징은 다음과 같이 정리할 수 있다.
+&lt;ol&gt;
+&lt;li&gt;목적함수가 polyhedron의 경계(boundary)에서 최적이 된다. &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;(convexity)&lt;/b&gt;&lt;/li&gt;
+&lt;li&gt;최적해는 항상 꼭짓점에 존재하며 이 때 목적함수와 모든 제약식은 선형이어야 한다. &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;(linearity)&lt;/b&gt;&lt;/li&gt;
+&lt;li&gt;local optimality가 global optimality와 동일하다. &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;(convexity)&lt;/b&gt;&lt;/li&gt;
+&lt;/ol&gt;
+심플렉스 알고리즘은 convexity를 따르기 때문에 목적함수가 polyhedron의 경계(boundary)에서 최적이 된다. (만약 optimal inner point가 있었다면 목적함수의 방향으로 계속 움직이며 개선되었을 것이다.) 또한, optimal solution은 항상 꼭짓점에 존재하는데 이 때 목적함수와 모든 제약식은 선형이어야 한다. 만약 optimal solution이 어떤 고차원 면(face) 내부에 있다면 이 면은 목적함수의 normal vector와 직교해야만 가능하다. 그러나 이 면은 목적함수의 fixed level 안에 내포되어 있으므로 같은 목적함수 값을 가진 점을 찾을 수 있다. 심플렉스 알고리즘은 근처 꼭짓점에서 목적함수를 개선할 수 없으면 종료되고 이 솔루션이 optimal solution이 된다. 이는 local optimality가 global optimality와 동일하고 convexity를 따르기 때문이다. 
 &lt;br /&gt;&lt;br /&gt;
 $$
 \begin{aligned}
@@ -40,11 +46,30 @@ $$
 \end{aligned}
 $$
 
-심플렉스 알고리즘은 주로 simplex tableaus를 계산하는 대수적인 방법(algebraic way)으로 소개된다. 이 때 대부분의 변수는 0이 되고 0이 아닌 변수의 수는 제약식의 수에 따라 bounded 된다. 이는 basic solution에 대한 중요한 개념이다. standard form에서 LP의 제약식 행렬 $A$는 full row rank를 가지며 여기서 full row rank란 한 행에서 전부 선형 독립임을 뜻한다. 이는 최소 하나의 $A$의 $m$ X $m$ non-singular로 표현될 수 있는 LP의 polyhedron의 모든 vertex로 보일 수 있다. 역행렬 $A^{-1}$과 우변 $b$를 곱하면 basic solution의 값을 얻을 수 있다. 이외의 모든 변수는 nonbasic이 되고 모두 0의 값을 가진다.
+심플렉스 알고리즘은 주로 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;simplex tableaus&lt;/b&gt;를 계산하는 대수적인 방법(algebraic way)으로 소개된다. 이 때 대부분의 변수는 0이 되고 0이 아닌 변수의 수는 제약식의 수에 따라 bounded 된다. 이는 basic solution에 대한 중요한 개념이다. standard form에서 LP의 제약식 행렬 $A$는 full row rank를 가지며 여기서 full row rank란 한 행에서 전부 선형 독립임을 뜻한다. 
 &lt;br /&gt;&lt;br /&gt;
-심플렉스는 standard form에서 시작해야 한다. vertex는 $n$개의 hyperplane의 교집합이고 이 중 $m$개만이 제약식이기 때문에 다른 $n-m$개는 좌표평면이므로 변수값이 0이다. 솔루션이 non-degenerate일 때 왜 vertex solution이 0이 아닌 변수의 집합으로 유일하게 존재하는지 볼 수 있다. 
+위 식에서 행렬 $A$와 $x$를 다음과 같이 표현해보자. 
 &lt;br /&gt;&lt;br /&gt;
-심플렉스 알고리즘의 아이디어는 LP가 optimal solution을 갖는다면 vertex들 중 하나에서 항상 optimal soltuion을 갖는 것에서 시작했다. 각 vertex에 대해 basic solution이 있고 항상 optimal basic solution이 있다. 이것은 우리가 이론적으로 행렬의 모든 가능한 bases를 제거함으로써 LP를 풀 수 있다는 의미이다. ....ing
+&lt;p align=&quot;center&quot;&gt;
+&lt;img src=&quot;/images/matrixA.png&quot; width=&quot;350&quot; height=&quot;150&quot; /&gt;
+&lt;/p&gt;
+보통 변수의 개수를 $n$개, 제약식의 개수를 $m$개로 표현하는데 $A_B$를 non-singular $(m,m)$ submatrix라 하면 basic solution ($\tilde{x}_B$)과 non-basic solution ($\tilde{x}_{N}$)을 다음과 같이 표현할 수 있다.  
+$$
+\begin{aligned}
+    Ax = b \quad \rightarrow \quad B x_B + N x_N = b \quad \rightarrow \quad B x_B = b 
+\end{aligned}
+$$
+$$
+\begin{aligned}
+    \therefore \tilde{x}_B = A^{-1}_{B}b, \quad \tilde{x}_{N} = 0
+\end{aligned}
+$$
+즉, basic solution은 역행렬 $A^{-1}_{B}$와 우변 $b$를 곱하면 얻을 수 있고 이외의 모든 변수는 nonbasic이 되며 모두 0의 값을 가진다. 심플렉스 알고리즘은 위 식처럼 standard form에서 시작해야하는데 이 때 꼭짓점은 $n$개의 hyperplane의 교집합이고 이 중 $m$개만이 제약식이기 때문에 다른 $n-m$개는 좌표평면이므로 변수값이 0이 되는 것이다. 
+
+&lt;br /&gt;&lt;br /&gt;
+심플렉스 알고리즘의 아이디어는 LP가 optimal solution을 갖는다면 꼭짓점 중 하나에서 항상 optimal soltuion을 갖는 것에서 시작했다. 각 꼭짓점에 대해 basic solution이 있고 항상 optimal basic solution이 있다. 이는 이론적으로 행렬의 모든 가능한 bases를 제거함으로써 LP를 풀 수 있다는 의미이다. (제거해야하는 가능한 솔루션 후보의 수는 유한하게 있다.) 따라서 심플렉스 알고리즘의 아이디어는 feasible start basis를 찾은 후 feasibility를 유지하면서 목적함수값을 좋게 만다는 basis에 있는 column 중 하나와 non-basis에 있는 column을 바꾸면서 optimal solution을 찾을 때까지 반복하는 것이다. (즉, 수많은 방향 중 basic diretion으로 계속 이동하며 optimal을 찾는 것이다.)
+&lt;br /&gt;&lt;br /&gt;
+그렇다면 pivoting할 column은 어떻게 고르는 것일까? 이는 reduced cost 계산을 통해 고르게 되는데 reduced cost를 계산하면 어떤 방향으로 갔을 때 얼만큼 목적함수 값을 좋게 하는지 알 수 있다. 만약 모든 reduced cost 값이 non-negative인 경우 현재 솔루션이 optimal이 된다. 심플렉스 알고리즘 방법을 간단한 예시로 알아보자. 
 &lt;!-- &lt;b style = &quot;color:#d7385e;font-size:1.2&quot;&gt;&lt;/b&gt;
 $$
 \begin{aligned}
@@ -1150,7 +1175,7 @@ $$
 &lt;img src=&quot;/images/degeneracy.png&quot; width=&quot;500&quot; height=&quot;150&quot; /&gt;
 &lt;/p&gt;
 
-이번에는 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;degeneracy&lt;/b&gt;에 대해 알아보자. 보통 naive intuition을 갖는 LP는 맨 왼쪽 그림 처럼 한 개의 optimal solution을 가진다. 즉, $n$개의 제약식이 binding되므로 primal과 dual의 optimal solution이 단 한 개만 존재한다. 그러나 가운데 그림처럼 어느 point에서 $n$개 이상의 제약식이 binding 되는 경우가 있다. 이를 primal degeneracy라고 한다. 마지막으로 맨 오른쪽 그림은 dual degeneracy를 나타내고, 하나의 primal solution에 대해 다른 dual solution들이 있고 alternative primal solution들이 있는 경우이다. 즉, optimal solution이 유일(unique)하지 않는 경우이다.  
+이번에는 &lt;b style=&quot;color:#d7385e;font-size:1.2&quot;&gt;degeneracy&lt;/b&gt;에 대해 알아보자. 보통 naive intuition을 갖는 LP는 맨 왼쪽 그림 처럼 한 개의 optimal solution을 가진다. 즉, 제약식이 제약식 개수만큼 binding되므로 primal과 dual의 optimal solution이 단 한 개만 존재한다. 그러나 가운데 그림처럼 어느 point에서 제약식 개수 이상의 제약식이 binding 되는 경우가 있다. 이를 primal degeneracy라고 한다. 마지막으로 맨 오른쪽 그림은 dual degeneracy를 나타내고, 하나의 primal solution에 대해 다른 dual solution들이 있고 alternative primal solution들이 있는 경우이다. 즉, optimal solution이 유일(unique)하지 않는 경우이다.  
 
 &lt;br /&gt;&lt;br /&gt;
 
