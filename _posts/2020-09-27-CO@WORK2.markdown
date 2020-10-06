@@ -65,6 +65,10 @@ $$
 심플렉스 알고리즘의 아이디어는 LP가 optimal solution을 갖는다면 꼭짓점 중 하나에서 항상 optimal soltuion을 갖는 것에서 시작했다. 각 꼭짓점에 대해 basic solution이 있고 항상 optimal basic solution이 있다. 이는 이론적으로 행렬의 모든 가능한 bases를 제거함으로써 LP를 풀 수 있다는 의미이다. (제거해야하는 가능한 솔루션 후보의 수는 유한하게 있다.) 따라서 심플렉스 알고리즘의 아이디어는 feasible start basis를 찾은 후 feasibility를 유지하면서 목적함수값을 좋게 만다는 basis에 있는 column 중 하나와 non-basis에 있는 column을 바꾸면서 optimal solution을 찾을 때까지 반복하는 것이다. (즉, 수많은 방향 중 basic diretion으로 계속 이동하며 optimal을 찾는 것이다.)
 <br><br>
 그렇다면 pivoting할 column은 어떻게 고르는 것일까? 이는 reduced cost 계산을 통해 고르게 되는데 reduced cost를 계산하면 어떤 방향으로 갔을 때 얼만큼 목적함수 값을 좋게 하는지 알 수 있다. 만약 모든 reduced cost 값이 non-negative인 경우 현재 솔루션이 optimal이 된다. 심플렉스 알고리즘 방법을 예시를 통해 알아보자. 
+<br><br>
+<span style = "font-weight:700; font-size:1.1em;  margin-right: 1em;">
+Example - Unbounded Solution
+</span>
 $$
 \begin{aligned}
     \max \quad & -x_1 - 3x_2 \\
@@ -110,6 +114,10 @@ $x_6$를 entering variable로 설정하여 basic으로 바꿔주려면 현재 ba
 <p align="center">
 <img src="/images/simplex4.png" width="650" height="120">
 </p>
+<span style = "font-weight:700; font-size:1.1em;  margin-right: 1em;">
+Example - Optimal Solution
+</span>
+<br><br>
 그렇다면 이번에는 좀 더 간단한 예시를 통해 optimal solution을 가지는 문제를 풀어보자. 
 $$
 \begin{aligned}
@@ -119,7 +127,7 @@ $$
      & x_1 \geq 0, x_2 \geq 0, x_3 \geq 0, x_4 \geq 0
 \end{aligned}
 $$
-앞서 본 예제와 똑같은 방법으로 위 문제를 simplex tableaus로 나타내면 다음과 같다. $x_2$의 계수가 양수이기 때문에 entering variable로 설정한다. $x_3 = 0$ 또는 $x_4 = 0$이 되기 위해서는 $\Delta$ 가 2 또는 1이 되어야한다. $\Delta$가 2가 되면 1보다 목적함수 값을 더 좋게 하지만 $x_4$가 음수값이 되어버린다. 따라서 feasibility를 유지하면서 목적함수 값을 가장 좋게 만드는 $\Delta$ 는 1이다. 그러므로 $x_4$를 leaving variable로 설정한다. 이 때 <b style = "color:#d7385e;font-size:1.2">minimum ratio rule</b>을 통해 간단하게 계산할 수도 있다.제약식의 우변 값을 entering variable의 column값으로 나눴을 때 제일 작은 값을 선택하는 것이다. 즉, min(6/3,2/2) = 1 이다.
+앞서 본 예제와 똑같은 방법으로 위 문제를 simplex tableaus로 나타내면 다음과 같다. $x_2$의 계수가 양수이기 때문에 entering variable로 설정한다. $x_3 = 0$ 또는 $x_4 = 0$이 되기 위해서는 $\Delta$ 가 2 또는 1이 되어야한다. $\Delta$가 2가 되면 1보다 목적함수 값을 더 좋게 하지만 $x_4$가 음수값이 되어버린다. 따라서 feasibility를 유지하면서 목적함수 값을 가장 좋게 만드는 $\Delta$ 는 1이다. 그러므로 $x_4$를 leaving variable로 설정한다. 이 때 <b style = "color:#d7385e;font-size:1.2">minimum ratio rule</b>을 통해 간단하게 계산할 수도 있다. 제약식의 우변 값을 entering variable의 column값(양수인 값만 비교)으로 나눴을 때 제일 작은 값을 선택하는 것이다. 즉, min(6/3,2/2) = 1 이다.
 <p align="center">
 <img src="/images/simplex5.png" width="550" height="120">
 </p>
@@ -131,6 +139,59 @@ $$
 <p align="center">
 <img src="/images/simplex7.png" width="550" height="120">
 </p>
+<span style = "font-weight:700; font-size:1.1em;  margin-right: 1em;">
+Example - Alternative Solutions
+</span>
+<br><br>
+이번에는 alternative optimal solution, 즉, 하나 이상의 optimal solution을 갖는 경우에 대해 알아보자. 
+$$
+\begin{aligned}
+    \max \quad & 2x_1 + 4x_2 \\
+     s.t. \quad & x_1 + x_2 + x_3 = 3 \\
+     & 0.5x_1 + x_2 + x_4 = 2.5 \\
+     & x_1 \geq 0, x_2 \geq 0, x_3 \geq 0, x_4 \geq 0
+\end{aligned}
+$$
+계수가 가장 큰 $x_2$를 entering variable, minimum ratio rule에 의해 $x_4$를 leaving variable로 설정한다. 
+<p align="center">
+<img src="/images/simplex8.png" width="550" height="120">
+</p>
+그러면 tableaus가 다음과 같이 변하게 된다. 모든 계수가 non-positive이기 때문에 현재 solution은 optimal solution이 된다. 그러나 non-basic solution의 계수가 0인 것이 존재한다. 따라서 alternative optimal solution이 존재하게 되는데 이런 경우에는 목적함수 값은 같지만 basic solution 조합이 바뀌게 된다. $x_1$을 entering variable, $x_3$을 leaving variable로 설정해보자. 
+<p align="center">
+<img src="/images/simplex9.png" width="550" height="120">
+</p>
+tableaus에서 보이듯 목적함수값은 10으로 같지만 basic solution의 조합만 바뀐것을 알 수 있다. 그리고 만약 $x_3$을 entering variable로 설정하면 $x_1$이 leaving variable로 설정되므로 위의 tableaus로 다시 바뀌게 된다. 
+<p align="center">
+<img src="/images/simplex10.png" width="550" height="120">
+</p>
+<span style = "font-weight:700; font-size:1.1em;  margin-right: 1em;">
+Example - Degenerate Solution
+</span>
+<br><br>
+이번에는 degeneracy가 발생하는 경우에 대해 알아보자. 
+$$
+\begin{aligned}
+    \max \quad & x_1 + 2x_2 \\
+     s.t. \quad & x_1 + x_2 + x_3 = 3 \\
+     & x_2 + x_4 = 2 \\
+     & 0.5x_1 + x_2 + x_5 = 2.5 \\
+     & x_1 \geq 0, x_2 \geq 0, x_3 \geq 0, x_4 \geq 0, x_5 \geq 0
+\end{aligned}
+$$
+계수가 가장 큰 $x_2$를 entering variable, minimum ratio rule에 의해 $x_4$를 leaving variable로 설정한다. 
+<p align="center">
+<img src="/images/simplex11.png" width="550" height="120">
+</p>
+이 때 계수가 양수인 $x_1$을 entering variable로 설정하고 minimum ratio를 계산하면 1로 같게 된다. 즉, tie가 되는데 $x_3$를 leaving variable로 설정해보자.
+<p align="center">
+<img src="/images/simplex12.png" width="550" height="120">
+</p>
+모든 계수가 non-positive이므로 현재 솔루션이 optimal solution이 된다. 그러나 우변에 0 즉, basic solution $x_5$의 값이 0인 것을 볼 수 있다. 이렇듯 우변에 0인 값이 있는 경우 degenerate solution이 된다. 
+<p align="center">
+<img src="/images/simplex13.png" width="550" height="120">
+</p>
+alternative solution이나 degenerate solution 등 cycling이 발생할 때는 이런 cycle을 피하기 위해 lexicographic rule이나 pertubation을 적용하여 문제를 푼다. 예를 들어 tie가 발생했을 때 변수의 이름이 작은 것 부터 한다든지 우변에 0이 생기지 않도록 매우 작은 숫자를 우변에 더해주든지 등등 어떤 rule을 적용하는 것이다. (요즘 solver에는 다 적용되어 있다.)
+
 <!-- <b style = "color:#d7385e;font-size:1.2"></b>
 $$
 \begin{aligned}
